@@ -3,6 +3,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="style.css" type="text/css" />
+<style type="text/css">
+#charts {
+    text-align: center;
+}
+#charts table {
+    text-align: center;
+    table-layout: fixed;
+}
+#charts table td {
+    padding: 0.5em 1em;
+}
+#charts table .caption {
+    font-weight: bold;
+    font-size: 80%;
+    text-align: center;
+    margin: 0;
+}
+#charts table img {
+    border: 1px solid #ccc;
+}
+</style>
 <title>JSX - a faster, safer, easier alternative to JavaScript</title>
 </head>
 <body>
@@ -31,7 +52,7 @@ JSX is a statically-typed, object-oriented programming language designed to run 
 <dl>
 <dt>faster</dt>
 <dd>
-JSX performs optimization while compiling the source code to JavaScript.  The generated code runs faster than an equivalent code written directly in JavaScript (see the <a href="#">benchmarks</a>).
+JSX performs optimization while compiling the source code to JavaScript.  The generated code runs faster than an equivalent code written directly in JavaScript.
 </dd>
 <dt>safer</dt>
 <dd>
@@ -42,7 +63,25 @@ In contrast to JavaScript, JSX is statically-typed and mostly type-safe.  The qu
 JSX offers a solid class system much like the Java programming language, freeing the developers from working with the too-primitive prototype-based inheritance system provided by JavaScript.
 </dl>
 
-<h2 id="benchmark">Get Started</h2>
+<div id="charts">
+<table align="center">
+<tr>
+<td>
+<a href="images/benchmarks.png" target="_blank"><img src="images/benchmarks.png" width="225" height="150"></a>
+<div class="caption">
+Benchmarks
+</div>
+</td>
+<td>
+<a href="images/source-code-debugger.png" target="_blank"><img src="images/source-code-debugger.png" width="225" height="150"></a>
+<div class="caption">
+Source-code debugger
+</div>
+</td>
+</table>
+</div>
+
+<h2 id="getstarted">Get Started</h2>
 
 <div>
 You can start using JSX by using our <a href="http://qb7.2ch.net/_403/" target="_blank">web-based interface</a>, or by <a href="https://github.com/jsx/jsx/">downloading</a> the compiler and following the <a href="tutorial.html">tutorial</a>.
