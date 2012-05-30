@@ -149,10 +149,15 @@ function shiftOrReturnEmptyString(args : string[]) : string {
 When the source code is compiled in debug mode (which is the default), the compiler will insert run-time type-checking code.  An exception will be raised (or the debugger will be activated) when misuse of an undefined value as actual value is detected.  Run-time type checks can be omitted by compiling the source code with the <span class="pre">--release</span> option.
 </div>
 
-<h3 id="classes-and-interfaces"></h3>
+<h2 id="classes-and-interfaces">Classes and Interfaces</h3>
 <p>
-As we saw, JSX is a class-based object-oriented language, whose class model is similar to Java. That is, a class may extend another class and implement multiple interfaces. When a class extends another class, it inherits all the members from the base class. Interfaces are used for inter-class connection. A function can use an interface as a parameter type and you can pass any class which implements the interface. The class is interested only in the interface; it needs not to know the implementation details. See the following example.
+JSX is a class-based object-oriented language, and its class model is similar to Java.
 </p>
+<ul>
+<li>a class may extend another class (single inheritance)</li>
+<li>a class may implement multiple interfaces</li>
+<li>all classes share a single root class: the <span class="pre">Object</span> class</li>
+</ul>
 <pre>
 interface Flyable {
     abstract function fly() : void;
@@ -200,20 +205,19 @@ class _Main {
 }
 </pre>
 <p>
-The Bat class extnds the Animal class, so it inherits <code>Animal#eat()</code> member function and it can be assigned to a variable typed to Animal, and it also implements the Flyable interface, so it overrides <code>Flyable#fly()</code> member function and it can be assigned to a variable typed Flyable. There's also another flyable class, Bee. You can deal with both classes as a flyable being, even if the organ of a bee is completely different to that of a bat.
+In the example, the Bat class extends the Animal class, so it inherits the <code>Animal#eat()</code> member function, and it can be assigned to a variable typed to Animal.  The class also implements the <code>Flyable</code> interface overriding the <code>Flyable#fly()</code> member function, so it can be assigned to a variable typed <code>Flyable</code>. There's also another flyable class, <code>Bee</code>.  By using the <code>Flyable</code> interface, it is possible to deal with both classes as a flyable being, even if the organ of a bee is completely different from that of a bat.
 </p>
 
 <div class="note">
-If you overrides a member function, you have to use the <em>override</em> keyword. Otherwise the compiler will report errors. In other words, you are saved from unexpected interface changes in the base classes which cause compilation errors in derived classes instead of undesirable runtime errors.
+When overriding a member function, the use the <code>override</code> keyword is mandatory.  Otherwise the compiler will report an error.  In other words, you are saved from unexpected interface changes in the base classes which cause compilation errors in derived classes instead of undesirable runtime errors.
 </div>
 
-<h3 id="function-and-closures"></h3>
+<h2 id="function-and-closures">Functions and Closures</h2>
 
 <p>
-Functions is a first-class object and they have static types. You can declare a variable with a function type like <code>var f : function(arg : number) : number</code>, which takes a number as an argument and returns another number (or, just returns the same value as the argument; but it's not important here). The <code>f</code> can be called as <code>f(42)</code> from which you will get a number value. There are anonumous functions and closures, which cah be assigned to a variable typed functions in that way. Function types and closures are typically used to implement event listeners, which are popular in GUI programming.
+In JSX, functions are first-class objects and they have static types.  You can declare a variable of a function type like <code>var f : function(arg : number) : number</code>, a function that takes a number as an argument and returns another number (or, just returns the same value as the argument; but it's not important here). The variable <code>f</code> can be called as <code>f(42)</code> from which you will get a number value.
 </p>
-<p>
-Functions and closures are similar to JavaScript except for what <code>this</code> points: it refers the receiver of the member function. See the folloging example.
+It is possible to define closures (or anonymous functions).   They are typically used to implement event listeners, which are popular in GUI programming.  Closures are similar to JavaScript except for what <code>this</code> points at: when a closure is defined within a member function, it refers to the receiver of the member function.  See the following example.
 </p>
 <pre>
 class _Main {
