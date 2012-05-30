@@ -1,0 +1,124 @@
+body { 
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: Arial, sans-serif;
+    line-height: 1.3em;
+}
+
+#body {
+    background: #fff;
+    border-width: 0 1px;
+    border-color: #ccc;
+    border-style: solid;
+    margin: 0;
+    padding: 0;
+    width: 800px;
+    text-align: justify;
+}
+
+#top { 
+    background: #336;
+    color: #eee;
+    width: 700px;
+    margin: 0 0;
+    padding: 35px 50px 20px 50px;
+}
+
+#top h1 {
+    font-size: 60px;
+    margin: 0;
+    line-height: 1em;
+}
+
+#top h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#top ul {
+    float: right;
+    margin: 20px 0 0 0;
+    padding: 0 50px 0 0;
+}
+
+#top ul li { 
+    display: inline;
+    font-weight: bold;
+    margin: 0;
+    padding: 0 0 0 1em;
+}
+
+#top ul li a {
+    color: #600;
+}
+
+#menu {
+    width: 800px;
+    background: #fff;
+    padding: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+#menu td {
+    text-align: center;
+    border: 1px solid #999;
+    background: #ccc;
+    padding: 0.4em;
+}
+
+#menu td a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#menu .selected {
+    background: white;
+}
+
+#menu .selected a {
+    color: black;
+}
+
+#breadcrumb {
+    margin: 0;
+    padding: 1em 50px 0 50px;
+    font-weight: bold;    
+}
+
+#main {
+    margin: 0;
+    padding: 0 50px 1em 50px;
+}
+
+#main h2 {
+    font-size: 120%;
+    margin: 2em 0 1em 0;
+}
+
+#main div {
+    margin: 1em 0;
+}
+
+#main dt {
+    font-weight: bold;
+}
+
+#main pre {
+    border: 1px solid gray;
+    margin: 1em 0;
+    padding: 0.5em;
+    background: #eee;
+}
+
+#footer {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #ccc;
+    margin: 1em 0 0 0;
+    padding: 0.5em 50px 2em 50px;
+    text-align: center;
+}
