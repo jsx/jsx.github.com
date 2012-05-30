@@ -109,6 +109,7 @@ body {
 }
 
 #main dt {
+    margin-top: 0.5em;
     font-weight: bold;
 }
 
