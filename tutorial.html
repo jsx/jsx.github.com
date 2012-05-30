@@ -47,22 +47,22 @@ Also, another important reason why JSX was developed is to boost JavaScript perf
 <h2 id="run-hello-world">Run "Hello, World!"</h2>
 
 <p>
-Let's start by running our first JSX program: <span class="pre">hello.jsx</span>.  We use the <span class="pre">jsx</span> command, which is the JSX compiler in the JSX distribution, to compile JSX source code to JavaScript.
+Let's start by running our first JSX program: <code>hello.jsx</code>.  We use the <code>jsx</code> command, which is the JSX compiler in the JSX distribution, to compile JSX source code to JavaScript.
 </p>
 <p>
-Type as follows in the JSX distribution and/or repository, and then you will see it saying <span class="pre">"Hello, world!"</span>.
+Type as follows in the JSX distribution and/or repository, and then you will see it saying <code>"Hello, world!"</code>.
 </p>
 <pre>
 $ bin/jsx --run example/hello.jsx
 </pre>
 <p>
-We will look into the <span class="pre">hello.jsx</span> source code in the next section.
+We will look into the <code>hello.jsx</code> source code in the next section.
 </p>
 
 <h2 id="program-structure">Program Structure</h2>
 
 <p>
-Here is <span class="pre">hello.jsx</span>, the source code of the "Hello world!" example. You can see several features of JSX in this program, namely, static types and class structure within the source code.
+Here is <code>hello.jsx</code>, the source code of the "Hello world!" example. You can see several features of JSX in this program, namely, static types and class structure within the source code.
 </p>
 <pre>
 class _Main {
@@ -72,13 +72,13 @@ class _Main {
 }
 </pre>
 <p>
-Class <span class="pre">_Main</span> has a static member function (a.k.a. a class method) named <span class="pre">main</span>, that takes an array of strings and returns nothing. <span class="pre">_Main.main(:string[]):void</span> is the entry point of JSX applications that is called when a user invokes an application from command line.  JSX, like Java, does not allow top-level statements or functions.
+Class <code>_Main</code> has a static member function (a.k.a. a class method) named <code>main</code>, that takes an array of strings and returns nothing. <code>_Main.main(:string[]):void</code> is the entry point of JSX applications that is called when a user invokes an application from command line.  JSX, like Java, does not allow top-level statements or functions.
 </p>
 <p>
-The <span class="pre">log</span> statement is mapped to <span class="pre">console.log()</span> in JavaScript, which displays the arguments to stdout with a newline.
+The <code>log</code> statement is mapped to <code>console.log()</code> in JavaScript, which displays the arguments to stdout with a newline.
 </p>
 <p>
-Next, we look into another typical library class, <span class="pre">Point</span>:</p>
+Next, we look into another typical library class, <code>Point</code>:</p>
 <pre>
 class Point {
     var x = 0;
@@ -107,10 +107,10 @@ class Point {
 }
 </pre>
 <p>
-As you can see, member variables of Point, <span class="pre">var x</span> and <span class="pre">var y</span>, are declared without types, but their types are deducted from their initial values to be <span class="pre">number</span>.
+As you can see, member variables of Point, <code>var x</code> and <code>var y</code>, are declared without types, but their types are deducted from their initial values to be <code>number</code>.
 </p>
 <p>
-You might be surprised at multiple definition of member functions: one takes no parameters and the others take parameters.  They are overloaded by their types of parameters.  When you construct the class with <span class="pre">new Point()</span>, the first constructor, which takes no parameters, is called. The second with two parameters will be called on <span class="pre">new Point(2, 3)</span> and the third with one parameter will be called as a copy constructor. Other forms of construction, e.g. <span class="pre">new Point(42)</span> or <span class="pre">new Point("foo", "bar")</span> will cause compilation errors of mismatching signatures. The <span class="pre">Point#set()</span> functions are also overloaded and the compiler know how to call the correct one.
+You might be surprised at multiple definition of member functions: one takes no parameters and the others take parameters.  They are overloaded by their types of parameters.  When you construct the class with <code>new Point()</code>, the first constructor, which takes no parameters, is called. The second with two parameters will be called on <code>new Point(2, 3)</code> and the third with one parameter will be called as a copy constructor. Other forms of construction, e.g. <code>new Point(42)</code> or <code>new Point("foo", "bar")</code> will cause compilation errors of mismatching signatures. The <code>Point#set()</code> functions are also overloaded and the compiler know how to call the correct one.
 </p>
 
 <h2 id="static-types">Static Types</h2>
@@ -118,7 +118,7 @@ You might be surprised at multiple definition of member functions: one takes no 
 Basic type concept will be described in this section.  Primitive types, object types, variant type, and MayBeUndefined types exist in JSX.
 </p>
 <p>
-Primitive types, e.g. <span class="pre">string</span>, <span class="pre">boolean</span>, or <span class="pre">number</span> are non-nullable, immutable types.
+Primitive types, e.g. <code>string</code>, <code>boolean</code>, or <code>number</code> are non-nullable, immutable types.
 </p>
 <pre>
 var s : string = "hello";
@@ -126,7 +126,7 @@ var n : number = 42;
 var b : boolean = true;
 </pre>
 <p>
-Object types, e.g. <span class="pre">string[]</span> (array of string), functions or <span class="pre">Date</span>, are nullable, mutable types.</p>
+Object types, e.g. <code>string[]</code> (array of string), functions or <code>Date</code>, are nullable, mutable types.</p>
 <pre>
 var d : Date = new Date(); // Date
 var f : function():void = function() : void { log "Hi!"; };
@@ -136,7 +136,7 @@ var a : string[] = ["foo"]; // the same as Array.&lt;string&gt;
 Variant type, which means "no static type information," is used for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.  All you can do on variant values is to check equality of a variant value to another variant value. You have to cast it to another type before doing anything else on the value.
 </p>
 <p>
-MayBeUndefined type is a meta type which indicates a value may be undefined.  For example, the return type of <span class="pre">Array.&lt;string&gt;#shift()</span> is <span class="pre">MayBeUndefined.&lt;string&gt;</span>. When you use a MayBeUndefined value, you have to make sure of the value is not undefined.</p>
+MayBeUndefined type is a meta type which indicates a value may be undefined.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>MayBeUndefined.&lt;string&gt;</code>. When you use a MayBeUndefined value, you have to make sure of the value is not undefined.</p>
 <pre>
 function shiftOrReturnEmptyString(args : string[]) : string {
     if (args.length > 0)
@@ -146,7 +146,7 @@ function shiftOrReturnEmptyString(args : string[]) : string {
 }
 </pre>
 <div class="note">
-When the source code is compiled in debug mode (which is the default), the compiler will insert run-time type-checking code.  An exception will be raised (or the debugger will be activated) when misuse of an undefined value as actual value is detected.  Run-time type checks can be omitted by compiling the source code with the <span class="pre">--release</span> option.
+When the source code is compiled in debug mode (which is the default), the compiler will insert run-time type-checking code.  An exception will be raised (or the debugger will be activated) when misuse of an undefined value as actual value is detected.  Run-time type checks can be omitted by compiling the source code with the <code>--release</code> option.
 </div>
 
 <h2 id="classes-and-interfaces">Classes and Interfaces</h3>
@@ -156,7 +156,7 @@ JSX is a class-based object-oriented language, and its class model is similar to
 <ul>
 <li>a class may extend another class (single inheritance)</li>
 <li>a class may implement multiple interfaces</li>
-<li>all classes share a single root class: the <span class="pre">Object</span> class</li>
+<li>all classes share a single root class: the <code>Object</code> class</li>
 </ul>
 <pre>
 interface Flyable {
@@ -240,7 +240,7 @@ class _Main {
 <h2 id="modules">Modules</h2>
 
 <p>
-JSX has a module system. You can reuse JSX class libraries by the <span class="pre">import</span> statement. For example, the following program uses <span class="pre">timer.jsx</pre> module, which exports the <span class="pre">Timer</span> class.
+JSX has a module system. You can reuse JSX class libraries by the <code>import</code> statement. For example, the following program uses <code>timer.jsx</code> module, which exports the <code>Timer</code> class.
 </p>
 <pre>
 import "timer.jsx";
@@ -262,7 +262,7 @@ A module may export multiple classes, but you can specify what modules you impor
 <h2 id="on-web-browsers">Interface to Web Browsers</h2>
 
 <p>
-The <span class="pre">js/web.jsx</span> module provides the interface to web browser APIs, e.g. the <span class="pre">window</pan> object and DOM APIs.  The example below shows how to insert a text node into an HTML.
+The <code>js/web.jsx</code> module provides the interface to web browser APIs, e.g. the <code>window</pan> object and DOM APIs.  The example below shows how to insert a text node into an HTML.
 </p>
 <pre>
 // hello.jsx
@@ -295,7 +295,7 @@ class _Main {
 &lt;/html&gt;
 </pre>
 <p>
-Once you compile <span class="pre">hello.jsx</span> by the following command, then you can access the HTML and you will see it saying "Hello, world!."
+Once you compile <code>hello.jsx</code> by the following command, then you can access the HTML and you will see it saying "Hello, world!."
 </p>
 <pre>
 $ bin/jsx --output hello.jsx.js hello.jsx
