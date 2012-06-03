@@ -1,4 +1,26 @@
 (function(){var global = this;function debug(){return debug};function require(p, parent){ var path = require.resolve(p) , mod = require.modules[path]; if (!mod) throw new Error('failed to require "' + p + '" from ' + parent); if (!mod.exports) { mod.exports = {}; mod.call(mod.exports, mod, mod.exports, require.relative(path), global); } return mod.exports;}require.modules = {};require.resolve = function(path){ var orig = path , reg = path + '.js' , index = path + '/index.js'; return require.modules[reg] && reg || require.modules[index] && index || orig;};require.register = function(path, fn){ require.modules[path] = fn;};require.relative = function(parent) { return function(p){ if ('debug' == p) return debug; if ('.' != p.charAt(0)) return require(p); var path = parent.split('/') , segs = p.split('/'); path.pop(); for (var i = 0; i < segs.length; i++) { var seg = segs[i]; if ('..' == seg) path.pop(); else if ('.' != seg) path.push(seg); } return require(path.join('/'), parent); };};require.register("Class.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 "use strict";
 
 var Class = module.exports = function () {
@@ -41,6 +63,28 @@ Class.$import = function (name) {
 
 
 });require.register("classdef.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 var Type = require("./type");
 eval(Class.$import("./util"));
@@ -355,15 +399,18 @@ var ClassDefinition = exports.ClassDefinition = Class.extend({
 		for (var i = 0; i < this._objectTypesUsed.length; ++i)
 			this._objectTypesUsed[i].resolveType(context);
 		// create default constructor if no constructors exist
-		if ((this.flags() & ClassDefinition.IS_NATIVE) == 0
-			&& this.forEachMemberFunction(function (funcDef) { return funcDef.name() != "constructor"; })) {
+		if (this.forEachMemberFunction(function (funcDef) { return funcDef.name() != "constructor"; })) {
 			var Parser = require("./parser");
+			var isNative = (this.flags() & ClassDefinition.IS_NATIVE) != 0;
 			var func = new MemberFunctionDefinition(
 				this._token,
 				new Parser.Token("constructor", true),
 				ClassDefinition.IS_FINAL | (this.flags() & ClassDefinition.IS_NATIVE),
 				Type.Type.voidType,
-				[], [], [], [],
+				[],
+				isNative ? null : [],
+				isNative ? null : [],
+				isNative ? null : [],
 				this._token /* FIXME */);
 			func.setClassDef(this);
 			this._members.push(func);
@@ -1320,6 +1367,28 @@ var InstantiatedClassDefinition = exports.InstantiatedClassDefinition = ClassDef
 });
 
 });require.register("compiler.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./parser"));
 eval(Class.$import("./classdef"));
@@ -1497,7 +1566,9 @@ var Compiler = exports.Compiler = Class.extend({
 			}
 			var found = false;
 			for (var i = 0; i < files.length; ++i) {
-				if (files[i].length >= imprt.getSuffix().length && files[i].substring(files[i].length - imprt.getSuffix().length) == imprt.getSuffix()) {
+				if (files[i].length >= imprt.getSuffix().length
+					&& files[i].charAt(0) != "."
+					&& files[i].substring(files[i].length - imprt.getSuffix().length) == imprt.getSuffix()) {
 					var path = resolvedDir + "/" + files[i];
 					if (path != parser.getPath()) {
 						var parser = this.addSourceFile(imprt.getFilenameToken(), resolvedDir + "/" + files[i]);
@@ -1705,6 +1776,28 @@ var Compiler = exports.Compiler = Class.extend({
 // vim: set noexpandtab:
 
 });require.register("dump.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 "use strict;"
 /*
 # NAME
@@ -1743,6 +1836,28 @@ dump.p = function(__va_args__) {
 
 
 });require.register("emitter.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 
 "use strict";
@@ -1761,6 +1876,28 @@ var Emitter = exports.Emitter = Class.extend({
 });
 
 });require.register("expression.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./classdef"));
 eval(Class.$import("./type"));
@@ -3710,6 +3847,28 @@ var CommaExpression = exports.CommaExpression = Expression.extend({
 // vim: set noexpandtab:
 
 });require.register("jsemitter.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./classdef"));
 eval(Class.$import("./type"));
@@ -4436,7 +4595,7 @@ var _AsExpressionEmitter = exports._AsExpressionEmitter = _ExpressionEmitter.ext
 			if (srcType.resolveIfMayBeUndefined().isConvertibleTo(destType)) {
 				if (srcType instanceof MayBeUndefinedType) {
 					var prec = _BinaryExpressionEmitter._operatorPrecedence["||"];
-					this._emitter._emitWithParens(outerOpPrecedence, prec, prec, null, "|| null");
+					this._emitWithParens(outerOpPrecedence, prec, prec, null, "|| null");
 				} else {
 					this._emitter._getExpressionEmitterFor(this._expr.getExpr()).emit(outerOpPrecedence);
 				}
@@ -4979,7 +5138,8 @@ var _BinaryExpressionEmitter = exports._BinaryExpressionEmitter = _OperatorExpre
 		if (this._expr instanceof AssignmentExpression) {
 			this._emitter._emitRHSOfAssignment(secondExpr, firstExprType);
 		} else {
-			this._emitter._getExpressionEmitterFor(secondExpr).emit(this._precedence);
+			// RHS should have higher precedence (consider: 1 - (1 + 1))
+			this._emitter._getExpressionEmitterFor(secondExpr).emit(this._precedence - 1);
 		}
 	},
 
@@ -6053,6 +6213,27 @@ var JavaScriptEmitter = exports.JavaScriptEmitter = Class.extend({
 // vim: set noexpandtab:
 
 });require.register("jssourcemap.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
 
 var Class = require("./Class");
 
@@ -6097,6 +6278,28 @@ var SourceMapGenerator = exports.SourceMapGenerator = Class.extend({
 
 
 });require.register("optimizer.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./classdef"));
 eval(Class.$import("./parser"));
@@ -7268,6 +7471,28 @@ var _ReturnIfOptimizeCommand = exports._ReturnIfOptimizeCommand = _FunctionOptim
 });
 
 });require.register("parser.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./type"));
 eval(Class.$import("./classdef"));
@@ -7414,10 +7639,7 @@ var _Lexer = exports._TokenTable = Class.extend({
 			"protected",
 
 			// JSX specific reserved words
-			"extern", "native",
-			"trait", "using",
-			"as", "is",
-			"operator", "package"
+			"extern", "native", "as", "operator"
 		]);
 	}
 
@@ -7652,7 +7874,7 @@ var Parser = exports.Parser = Class.extend({
 	parse: function (input, errors) {
 		// lexer properties
 		this._input = input;
-		this._pos = 0;
+		this._initInput();
 		this._tokenLength = 0;
 		// for source map
 		this._lineNumber = 1;
@@ -7686,6 +7908,22 @@ var Parser = exports.Parser = Class.extend({
 			return false;
 
 		return true;
+	},
+
+	_initInput: function () {
+		this._remainingInput = this._input;
+	},
+	_getPos: function () {
+		return this._input.length - this._remainingInput.length;
+	},
+	_getInput: function () {
+		return this._remainingInput;
+	},
+	_getInputByLength: function (length) {
+		return this._remainingInput.substring(0, length);
+	},
+	_forwardPos: function (len) {
+		this._remainingInput = this._remainingInput.substring(len);
 	},
 
 	getSourceToken: function () {
@@ -7804,7 +8042,7 @@ var Parser = exports.Parser = Class.extend({
 		// FIXME use class
 		return {
 			// lexer properties
-			pos: this._pos,
+			pos: this._getPos(),
 			lineNumber: this._lineNumber,
 			tokenLength: this._tokenLength,
 			// errors
@@ -7815,7 +8053,8 @@ var Parser = exports.Parser = Class.extend({
 	},
 
 	_restoreState: function (state) {
-		this._pos = state.pos;
+		this._initInput();
+		this._forwardPos(state.pos);
 		this._lineNumber = state.lineNumber;
 		this._tokenLength = state.tokenLength;
 		this._errors.length = state.numErrors;
@@ -7823,9 +8062,9 @@ var Parser = exports.Parser = Class.extend({
 	},
 
 	_getColumn: function () {
-		var part = this._input.substring(0, this._pos);
-		var lastNewline = part.lastIndexOf("\n");
-		return part.length - lastNewline - 1;
+		var pos = this._getPos();
+		var lastNewline = this._input.lastIndexOf("\n", pos);
+		return pos - lastNewline - 1;
 	},
 
 	_newError: function (message) {
@@ -7833,20 +8072,20 @@ var Parser = exports.Parser = Class.extend({
 	},
 
 	_advanceToken: function () {
-		this._pos += this._tokenLength;
+		this._forwardPos(this._tokenLength);
 		this._tokenLength = 0;
 
 		// skip whitespaces
-		var matched = this._input.substring(this._pos).match(_Lexer.rxSpace);
+		var matched = this._getInput().match(_Lexer.rxSpace);
 		if(matched != null) {
-			this._pos += matched[0].length;
+			this._forwardPos(matched[0].length);
 			this._lineNumber += matched[0].split(_Lexer.rxNewline).length - 1;
 		}
 	},
 
 	_isEOF: function () {
 		this._advanceToken();
-		return this._input.length == this._pos;
+		return this._remainingInput.length === 0;
 	},
 
 	_expectIsNotEOF: function () {
@@ -7863,11 +8102,11 @@ var Parser = exports.Parser = Class.extend({
 
 		this._advanceToken();
 		for (var i = 0; i < expected.length; ++i) {
-			if (this._input.substring(this._pos, this._pos + expected[i].length) == expected[i]) {
+			if (this._getInputByLength(expected[i].length) == expected[i]) {
 				if (expected[i].match(_Lexer.rxIdent) != null
-					&& this._input.substring(this._pos).match(_Lexer.rxIdent)[0].length != expected[i].length) {
+					&& this._getInput().match(_Lexer.rxIdent)[0].length != expected[i].length) {
 					// part of a longer token
-				} else if (excludePattern != null && this._input.substring(this._pos).match(excludePattern) != null) {
+				} else if (excludePattern != null && this._getInput().match(excludePattern) != null) {
 					// skip if the token matches the exclude pattern
 				} else {
 					// found
@@ -7893,7 +8132,7 @@ var Parser = exports.Parser = Class.extend({
 
 	_expectIdentifierOpt: function () {
 		this._advanceToken();
-		var matched = this._input.substring(this._pos).match(_Lexer.rxIdent);
+		var matched = this._getInput().match(_Lexer.rxIdent);
 		if (matched == null)
 			return null;
 		if (_Lexer.keywords.hasOwnProperty(matched[0])) {
@@ -7918,7 +8157,7 @@ var Parser = exports.Parser = Class.extend({
 
 	_expectStringLiteralOpt: function () {
 		this._advanceToken();
-		var matched = this._input.substring(this._pos).match(_Lexer.rxStringLiteral);
+		var matched = this._getInput().match(_Lexer.rxStringLiteral);
 		if (matched == null)
 			return null;
 		this._tokenLength = matched[0].length;
@@ -7935,9 +8174,9 @@ var Parser = exports.Parser = Class.extend({
 
 	_expectNumberLiteralOpt: function () {
 		this._advanceToken();
-		var matched = this._input.substring(this._pos).match(_Lexer.rxIntegerLiteral);
+		var matched = this._getInput().match(_Lexer.rxIntegerLiteral);
 		if (matched == null)
-			matched = this._input.substring(this._pos).match(_Lexer.rxNumberLiteral);
+			matched = this._getInput().match(_Lexer.rxNumberLiteral);
 		if (matched == null)
 			return null;
 		this._tokenLength = matched[0].length;
@@ -7946,7 +8185,7 @@ var Parser = exports.Parser = Class.extend({
 
 	_expectRegExpLiteralOpt: function () {
 		this._advanceToken();
-		var matched = this._input.substring(this._pos).match(_Lexer.rxRegExpLiteral);
+		var matched = this._getInput().match(_Lexer.rxRegExpLiteral);
 		if (matched == null)
 			return null;
 		this._tokenLength = matched[0].length;
@@ -7954,8 +8193,8 @@ var Parser = exports.Parser = Class.extend({
 	},
 
 	_skipLine: function () {
-		var matched = this._input.substring(this._pos).match(/^.*(?:\r\n?|\n|$)/);
-		this._pos += matched[0].length;
+		var matched = this._getInput().match(/^.*(?:\r\n?|\n|$)/);
+		this._forwardPos(matched[0].length);
 		this._tokenLength = 0;
 
 		// count newlines
@@ -9118,24 +9357,9 @@ var Parser = exports.Parser = Class.extend({
 	},
 
 	_mulExpr: function () {
-		return this._binaryOpExpr([ "*", "/", "%" ], null, this._asExpr, false, function (op, e1, e2) {
+		return this._binaryOpExpr([ "*", "/", "%" ], null, this._unaryExpr, false, function (op, e1, e2) {
 			return new BinaryNumberExpression(op, e1, e2);
 		});
-	},
-
-	_asExpr: function () {
-		var expr = this._unaryExpr();
-		if (expr == null)
-			return null;
-		var token;
-		while ((token = this._expectOpt("as")) != null) {
-			var noConvert = this._expectOpt("__noconvert__");
-			var type = this._typeDeclaration(false);
-			if (type == null)
-				return null;
-			expr = noConvert ? new AsNoConvertExpression(token, expr, type) : new AsExpression(token, expr, type);
-		}
-		return expr;
 	},
 
 	_unaryExpr: function () {
@@ -9144,7 +9368,7 @@ var Parser = exports.Parser = Class.extend({
 		// read other unary operators
 		var op = this._expectOpt([ "++", "--", "+", "-", "~", "!", "typeof" ]);
 		if (op == null)
-			return this._postfixExpr();
+			return this._asExpr();
 		var expr = this._unaryExpr();
 		if (expr == null)
 			return null;
@@ -9162,6 +9386,21 @@ var Parser = exports.Parser = Class.extend({
 		case "typeof":
 			return new TypeofExpression(op, expr);
 		}
+	},
+
+	_asExpr: function () {
+		var expr = this._postfixExpr();
+		if (expr == null)
+			return null;
+		var token;
+		while ((token = this._expectOpt("as")) != null) {
+			var noConvert = this._expectOpt("__noconvert__");
+			var type = this._typeDeclaration(false);
+			if (type == null)
+				return null;
+			expr = noConvert ? new AsNoConvertExpression(token, expr, type) : new AsExpression(token, expr, type);
+		}
+		return expr;
 	},
 
 	_postfixExpr: function () {
@@ -9436,6 +9675,28 @@ var Parser = exports.Parser = Class.extend({
 });
 
 });require.register("platform.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 
 // interface
@@ -9469,6 +9730,28 @@ var Platform = exports.Platform = Class.extend({
 // vim: set noexpandtab
 
 });require.register("statement.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./classdef"));
 eval(Class.$import("./expression"));
@@ -10782,6 +11065,28 @@ var DebuggerStatement = exports.DebuggerStatement = InformationStatement.extend(
 });
 
 });require.register("Test.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 "use strict";
 /*
 # NAME
@@ -11056,6 +11361,28 @@ Test.Matcher = Class.extend({
 });
 
 });require.register("type.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 var Class = require("./Class");
 eval(Class.$import("./classdef"));
 eval(Class.$import("./util"));
@@ -11645,6 +11972,28 @@ var MemberFunctionType = exports.MemberFunctionType = ResolvedFunctionType.exten
 Type._initialize();
 
 });require.register("util.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 "use strict";
 
 var Class = require("./Class");
@@ -11898,6 +12247,28 @@ var CompileError = exports.CompileError = Class.extend({
 // vim: set noexpandtab:
 
 });require.register("validate.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
 "use strict";
 
 var inspect;
@@ -11935,6 +12306,27 @@ exports.isa = isa;
 
 
 });require.register("web-interface.js", function(module, exports, require, global){
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
 
 var Class = require("./Class");
 eval(Class.$import("./compiler"));
@@ -11950,5 +12342,5 @@ exports.JavaScriptEmitter = JavaScriptEmitter;
 exports.Optimizer = Optimizer;
 
 
-});jsx = require('web-interface');
+});if ("undefined" != typeof module) { module.exports = require('web-interface'); } else { jsx = require('web-interface'); }
 })();
