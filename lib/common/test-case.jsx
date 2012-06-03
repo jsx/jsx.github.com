@@ -1,63 +1,75 @@
+/*
+ * Copyright (c) 2012 DeNA Co., Ltd.
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to
+ * deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+ * sell copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ */
+
+ /**
+
+Unit Test Framework for JSX
+
+SYNPSIS:
+
+	import "test-case.jsx";
+	import "timer.jsx";
+
+	class _Test extends TestCase {
+
+		// synchrounous tests
+
+		function testClearTimeout() : void {
+			var id = Timer.setTimeout(function() : void {
+				this.fail("setTimeout called after clearTimeout");
+			}, 1);
+			Timer.clearTimeout(id);
+
+			this.expect(id, "clearTimeout").toBe(id);
+		}
+
+		// asynchronous tests
+
+		function testSetTimeout() : void {
+			this.async(function(async : AsyncContext) : void {
+				var to = 200;
+				var t0 = Date.now();
+				Timer.setTimeout(function() : void {
+					var t1 = Date.now();
+
+					this.expect(t1 - t0, "setTimeout 200 ms.").toBeGE(to - 50);
+
+					async.done();
+				}, to);
+			}, 1000);
+		}
+}
+
+See also t/lib/*.jsx
+
+ */
+
 import "timer.jsx";
 import "console.jsx";
 
-class _Matcher {
-
-	var _test : TestCase;
-	var _got  : variant;
-	var _name : MayBeUndefined.<string>;
-
-	function constructor(test : TestCase, got : variant) {
-		this._test = test;
-		this._got  = got;
-	}
-
-	function constructor(test : TestCase, got : variant, name : string) {
-		this._test = test;
-		this._got  = got;
-		this._name = name;
-	}
-
-	function _match(value : boolean, got : variant, expected : variant, op : string) : void {
-		if(value) {
-			this._test._ok(this._name);
-		}
-		else {
-			var diag = "comparing with " + op + "\n" +
-				"got:      " + got as string + "\n" +
-				"expected: " + expected as string + "\n";
-			this._test._nok(this._name, diag);
-		}
-	}
-
-	function toBe(x :  variant) : void {
-		this._match(this._got == x,
-			this._got, x, "==");
-	}
-	function notToBe(x :  variant) : void {
-		this._match(this._got != x,
-			this._got, x, "!=");
-	}
-	function toBeLT(x :  variant) : void {
-		this._match(this._got as number < x as number,
-			this._got, x, "<");
-	}
-	function toBeLE(x :  variant) : void {
-		this._match(this._got as number <= x as number,
-			this._got, x, "<=");
-	}
-	function toBeGT(x :  variant) : void {
-		this._match(this._got as number > x as number,
-			this._got, x, ">");
-	}
-	function toBeGE(x :  variant) : void {
-		this._match(this._got as number >= x as number,
-			this._got, x, ">=");
-	}
-}
-
-
 class TestCase {
+	// TODO turn off when the process has no tty
+	static var verbose = true;
+
 	var _totalCount = 0;
 	var _totalPass  = 0;
 	var _count = 0;
@@ -120,7 +132,11 @@ class TestCase {
 
 	function finish() : void {
 		if(this._totalCount != this._totalPass) {
-			this.diag("tests failed!");
+			var failed = this._totalCount - this._totalPass;
+			this.diag("tests failed "
+				+ failed as string
+				+ " of "
+				+ this._totalCount as string);
 		}
 	}
 
@@ -155,28 +171,53 @@ class TestCase {
 
 	function _ok(name : MayBeUndefined.<string>) : void {
 		++this._pass;
-		log "\t" + "ok " + (this._count) as string
-			+ (name != undefined ? " - " + name :  "");
+
+		var s = name != undefined ? " - " + name :  "";
+		this._say("\t" + "ok " + (this._count) as string + s);
 	}
 
-	function _nok(name : MayBeUndefined.<string>, diag : string) : void {
-		log "\t" + "not ok " + (this._count) as string
-			+ (name != undefined ? " - " + name :  "");
-		this.diag(diag);
+	function _nok(
+		name : MayBeUndefined.<string>,
+		op : string,
+		got : variant,
+		expected : variant
+	) : void {
+
+		var s = name != undefined ? " - " + name :  "";
+		this._say("\t" + "not ok " + (this._count) as string + s);
+
+		this.diag("comparing with " + op + s.replace(" - ", " for "));
+		this._dump("got:      ", got);
+		this._dump("expected: ", expected);
 	}
 
 	function fail(reason : string) : void {
-		log "not ok - fail";
+		this._say("not ok - fail");
 		this.diag(reason);
 	}
 
+	function _dump(tag : string, value : variant) : void {
+		if(typeof value == "object" && value as Object != null) {
+			this.diag(tag);
+			console.dir(value);
+		}
+		else { // primitive value
+			this.diag(tag + value as string);
+		}
+	}
+
+	function _say(message : string) : void {
+		console.info(message);
+	}
+
 	function diag(message : string) : void {
-		console.warn(message.replace(/^/mg, "# "));
+		this._say(message.replace(/^/mg, "# "));
 	}
 
 	function note(message : string) : void {
-		// TODO skip if the process has no tty
-		console.info(message.replace(/^/mg, "# "));
+		if(TestCase.verbose) {
+			this._say(message.replace(/^/mg, "# "));
+		}
 	}
 
 	override
@@ -223,3 +264,56 @@ class AsyncContext {
 		}
 	}
 }
+
+class _Matcher {
+
+	var _test : TestCase;
+	var _got  : variant;
+	var _name : MayBeUndefined.<string>;
+
+	function constructor(test : TestCase, got : variant) {
+		this._test = test;
+		this._got  = got;
+	}
+
+	function constructor(test : TestCase, got : variant, name : string) {
+		this._test = test;
+		this._got  = got;
+		this._name = name;
+	}
+
+	function _match(value : boolean, got : variant, expected : variant, op : string) : void {
+		if(value) {
+			this._test._ok(this._name);
+		}
+		else {
+			this._test._nok(this._name, op, got, expected);
+		}
+	}
+
+	function toBe(x :  variant) : void {
+		this._match(this._got == x,
+			this._got, x, "==");
+	}
+	function notToBe(x :  variant) : void {
+		this._match(this._got != x,
+			this._got, x, "!=");
+	}
+	function toBeLT(x :  number) : void {
+		this._match(this._got as number < x,
+			this._got, x, "<");
+	}
+	function toBeLE(x :  number) : void {
+		this._match(this._got as number <= x,
+			this._got, x, "<=");
+	}
+	function toBeGT(x :  number) : void {
+		this._match(this._got as number > x,
+			this._got, x, ">");
+	}
+	function toBeGE(x :  number) : void {
+		this._match(this._got as number >= x,
+			this._got, x, ">=");
+	}
+}
+
