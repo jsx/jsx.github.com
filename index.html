@@ -23,13 +23,16 @@
 #charts table img {
     border: 1px solid #ccc;
 }
-#start {
+#subview {
     margin: 2em 50px 20px 20px;
+    width: 250px;
+    float: right;
+}
+#start {
     padding: 15px 20px;
+    margin-bottom: 1em;
     background: #ddf;
     border-radius: 10px;
-    width: 25%;
-    float: right;
 }
 #start h2 {
     font-size: 100%;
@@ -55,11 +58,43 @@ a faster, safer, easier alternative to JavaScript
 </tr>
 </table>
 
+<div id="subview">
 <div id="start">
 <h2>Getting Started</h2>
 <div>
 Try our <a href="try-on-web/" target="_blank">web-based interface</a> or follow the <a href="tutorial.html">tutorial</a> to start using JSX.
 </div>
+</div>
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#JSX #update from:kazuho OR from:__gfx__ OR from:tkihira',
+  interval: 30000,
+  title: 'JSX updates',
+  subject: '',
+  width: 250,
+  height: 200,
+  theme: {
+    shell: {
+      background: '#8ec1da',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
 </div>
 
 <div id="main">
