@@ -1,11 +1,14 @@
 import "js/web.jsx";
 
 class Config {
-	static var quantity = 360;
+	static const quantity = 360;
 	static const size     = 2.0;
 	static const decay    = 0.98;
 	static const gravity  = 2.0;
 	static const speed    = 6.0;
+
+	static const canvasId = "night-sky";
+	static const fpsElementId = "fps";
 }
 
 
@@ -192,14 +195,13 @@ final class FPSWatcher {
 	}
 }
 
-final class Application {
-	static function main(canvasId : string, fpsId : string, quantity : int) : void {
-		Config.quantity = quantity;
+final class _Main {
+	static function main(args : string[]) : void {
 
-		var canvas = dom.id(canvasId) as HTMLCanvasElement;
+		var canvas = dom.id(Config.canvasId) as HTMLCanvasElement;
 
 		var view = new FireworkView(canvas);
-		var watcher = new FPSWatcher(fpsId);
+		var watcher = new FPSWatcher(Config.fpsElementId);
 
 		dom.window.setInterval( function() : void {
 			view.update();

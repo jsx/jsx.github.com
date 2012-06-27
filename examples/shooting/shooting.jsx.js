@@ -32,16 +32,35 @@ function $__jsx_lazy_init(obj, prop, func) {
 	});
 }
 
+/**
+ * sideeffect().a /= b
+ */
+function $__jsx_div_assign(obj, prop, divisor) {
+	return obj[prop] = (obj[prop] / divisor) | 0;
+}
+
 /*
- * global functions called by JSX as Number.* (renamed so that they do not conflict with local variable names)
+ * global functions called by JSX
+ * (enamed so that they do not conflict with local variable names)
  */
 var $__jsx_parseInt = parseInt;
 var $__jsx_parseFloat = parseFloat;
 var $__jsx_isNaN = isNaN;
 var $__jsx_isFinite = isFinite;
 
+var $__jsx_encodeURIComponent = encodeURIComponent;
+var $__jsx_decodeURIComponent = decodeURIComponent;
+var $__jsx_encodeURI = encodeURI;
+var $__jsx_decodeURI = decodeURI;
+
 var $__jsx_ObjectToString = Object.prototype.toString;
 var $__jsx_ObjectHasOwnProperty = Object.prototype.hasOwnProperty;
+
+/*
+ * profiler object, initialized afterwards
+ */
+function $__jsx_profiler() {
+}
 
 /*
  * public interface to JSX code
@@ -49,7 +68,21 @@ var $__jsx_ObjectHasOwnProperty = Object.prototype.hasOwnProperty;
 JSX.require = function (path) {
 	var m = $__jsx_classMap[path];
 	return m !== undefined ? m : null;
-}
+};
+
+JSX.profilerIsRunning = function () {
+	return $__jsx_profiler.getResults != null;
+};
+
+JSX.getProfileResults = function () {
+	return ($__jsx_profiler.getResults || function () { return {}; })();
+};
+
+JSX.postProfileResults = function (url) {
+	if ($__jsx_profiler.postResults == null)
+		throw new Error("profiler has not been turned on");
+	return $__jsx_profiler.postResults(url);
+};
 /**
  * class Config extends Object
  * @constructor
@@ -67,13 +100,12 @@ function Config$() {
 Config$.prototype = new Config;
 
 /**
- * class Sprite extends Object
+ * class Sprite
  * @constructor
  */
 function Sprite() {
 }
 
-Sprite.prototype = new Object;
 Sprite.prototype.$__jsx_implements_Sprite = true;
 
 /**
@@ -182,7 +214,7 @@ Bullet.prototype.update$LStage$ = function (st) {
 	var inDisplay;
 	/** @type {!string} */
 	var rockKey;
-	/** @type {undefined|Rock} */
+	/** @type {Rock} */
 	var rock;
 	/** @type {!string} */
 	var newState;
@@ -212,7 +244,7 @@ Bullet.prototype.update$LStage$ = function (st) {
 				st.scoreElement.innerHTML = fillz$0 + scoreStr$0 + "<br/>\n" + (st.fps + "") + " FPS";
 				rock.dx = rock.dy = 0;
 				rock.state = "bomb1";
-				rock.image = st.images["bomb1"];
+				rock.image = st.images.bomb1;
 			} else {
 				newState = (rock.state + "w").substring(0, 6);
 				rock.state = newState;
@@ -361,22 +393,22 @@ function Stage$LHTMLCanvasElement$LHTMLElement$(stageCanvas, scoreboard) {
 	/** @type {HTMLElement} */
 	var body;
 	var touchMove;
-	this.imageName = null;
-	this.images = null;
+	this.imageName = undefined;
+	this.images = undefined;
 	this.state = "loading";
-	this.ship = null;
+	this.ship = undefined;
 	this.dying = 0;
 	this.lastX = -1;
 	this.lastY = -1;
 	this.frameCount = 0;
 	this.currentTop = 0;
-	this.ctx = null;
-	this.bgCtx = null;
-	this.bullets = null;
-	this.rocks = null;
+	this.ctx = undefined;
+	this.bgCtx = undefined;
+	this.bullets = undefined;
+	this.rocks = undefined;
 	this.numRocks = 0;
 	this.score = 0;
-	this.scoreElement = null;
+	this.scoreElement = undefined;
 	this.start = Date.now();
 	this.fps = 0;
 	this.state = "loading";
@@ -526,7 +558,7 @@ Stage.prototype.isGameOver$ = function () {
  * @return {!number}
  */
 Stage.prototype.level$ = function () {
-	return this.frameCount / 500;
+	return (this.frameCount / 500 | 0);
 };
 
 /**
@@ -577,7 +609,7 @@ Stage.prototype.draw$ = function () {
 Stage.prototype.drawSpace$NN = function (px, py) {
 	/** @type {!string} */
 	var spaceType;
-	/** @type {undefined|HTMLCanvasElement} */
+	/** @type {HTMLCanvasElement} */
 	var image;
 	spaceType = (Math.random() * 10 + 1 | 0) + "";
 	image = this.images["space" + spaceType];
@@ -590,7 +622,7 @@ Stage.prototype.drawSpace$NN = function (px, py) {
  * @return {Bullet}
  */
 Stage.prototype.createBullet$NN = function (dx, dy) {
-	return new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, dx * 20, dy * 20, this.images["bullet"]);
+	return new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, dx * 20, dy * 20, this.images.bullet);
 };
 
 /**
@@ -646,7 +678,7 @@ Stage.prototype.tick$ = function () {
 	var rockKey;
 	/** @type {!string} */
 	var spaceType$0;
-	/** @type {undefined|HTMLCanvasElement} */
+	/** @type {HTMLCanvasElement} */
 	var image$0;
 	++ this.frameCount;
 	dom.window.setTimeout((function () {
@@ -670,11 +702,11 @@ Stage.prototype.tick$ = function () {
 	this.draw$();
 	fc = this.frameCount + "";
 	if (this.state === "gaming" && this.frameCount % 3 === 0) {
-		this.bullets[fc + "a"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, -20, -20, this.images["bullet"]);
-		this.bullets[fc + "b"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, 0, -20, this.images["bullet"]);
-		this.bullets[fc + "c"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, 20, -20, this.images["bullet"]);
-		this.bullets[fc + "d"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, -20, 20, this.images["bullet"]);
-		this.bullets[fc + "e"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, 20, 20, this.images["bullet"]);
+		this.bullets[fc + "a"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, -20, -20, this.images.bullet);
+		this.bullets[fc + "b"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, 0, -20, this.images.bullet);
+		this.bullets[fc + "c"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, 20, -20, this.images.bullet);
+		this.bullets[fc + "d"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, -20, 20, this.images.bullet);
+		this.bullets[fc + "e"] = new Bullet$NNNNLHTMLCanvasElement$(this.ship.x, this.ship.y, 20, 20, this.images.bullet);
 	}
 	if (this.numRocks < 5 + this.frameCount / 500) {
 		this.rocks[fc + "r"] = this.createRock$();
@@ -711,7 +743,7 @@ Stage.prototype.initialize$ = function () {
 	var k;
 	/** @type {!string} */
 	var spaceType$0;
-	/** @type {undefined|HTMLCanvasElement} */
+	/** @type {HTMLCanvasElement} */
 	var image$0;
 	for (px = 0; px < 10; ++ px) {
 		for (py = 0; py < 16; ++ py) {
@@ -733,7 +765,7 @@ Stage.prototype.initialize$ = function () {
 		this.images[k + "w"] = canvas;
 	}
 	this.currentTop = 512;
-	this.ship = new SpaceShip$NNLHTMLCanvasElement$(80, 360 | 0, this.images["my"]);
+	this.ship = new SpaceShip$NNLHTMLCanvasElement$(80, 360 | 0, this.images.my);
 	this.score = 0;
 	this.bullets = {  };
 	this.rocks = {  };
@@ -826,16 +858,13 @@ _Main.main$AS = function (args) {
 	var scoreboard;
 	/** @type {Stage} */
 	var stage;
-	/** @type {!string} */
-	var id$0;
-	stageCanvas = (function (o) { return o instanceof HTMLCanvasElement ? o : null; })(dom$id$S(args[0]));
-	id$0 = args[1];
-	scoreboard = (function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById(id$0));
+	stageCanvas = (function (o) { return o instanceof HTMLCanvasElement ? o : null; })((function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById("stage")));
+	scoreboard = (function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById("scoreboard"));
 	stage = new Stage$LHTMLCanvasElement$LHTMLElement$(stageCanvas, scoreboard);
 	stage.tick$();
 };
 
-_Main$main$AS = _Main.main$AS;
+var _Main$main$AS = _Main.main$AS;
 
 /**
  * class dom extends Object
@@ -861,7 +890,7 @@ dom.id$S = function (id) {
 	return (function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById(id));
 };
 
-dom$id$S = dom.id$S;
+var dom$id$S = dom.id$S;
 
 /**
  * @param {!string} id
@@ -871,7 +900,7 @@ dom.getElementById$S = function (id) {
 	return (function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById(id));
 };
 
-dom$getElementById$S = dom.getElementById$S;
+var dom$getElementById$S = dom.getElementById$S;
 
 /**
  * @param {!string} tag
@@ -881,7 +910,7 @@ dom.createElement$S = function (tag) {
 	return dom.window.document.createElement(tag);
 };
 
-dom$createElement$S = dom.createElement$S;
+var dom$createElement$S = dom.createElement$S;
 
 /**
  * class js extends Object
@@ -912,8 +941,10 @@ Config.FPS = 30;
 Config.width = 320;
 Config.height = 480;
 Config.imagePath = "img";
+Config.canvasId = "stage";
+Config.scoreboardId = "scoreboard";
 $__jsx_lazy_init(dom, "window", function () {
-	return js.global["window"];
+	return js.global.window;
 });
 js.global = (function () { return this; })();
 
@@ -947,4 +978,65 @@ var $__jsx_classMap = {
 };
 
 
-}());
+/**
+ * launches _Main.main(:string[]):void invoked by jsx --run|--executable
+ */
+JSX.runMain = function (sourceFile, args) {
+	var module = JSX.require(sourceFile);
+
+	if (! module._Main) {
+		throw new Error("entry point _Main not found in " + sourceFile);
+	}
+	if (! module._Main.main$AS) {
+		throw new Error("entry point _Main.main(:string[]):void not found in " + sourceFile);
+	}
+
+	module._Main.main$AS(args);
+}
+
+/**
+ * launches _Test#test*():void invoked by jsx --test
+ */
+JSX.runTests = function (sourceFile, tests) {
+	var module = JSX.require(sourceFile);
+	var testClass = module._Test$;
+
+	if (!testClass) return; // skip if there's no test class
+
+	if(tests.length === 0) {
+		var p = testClass.prototype;
+		for (var m in p) {
+			if (p[m] instanceof Function
+				&& /^test.*[$]$/.test(m)) {
+				tests.push(m);
+			}
+		}
+	}
+
+	var test = new testClass();
+
+	if (test.beforeClass$AS != null)
+		test.beforeClass$AS(tests);
+
+	for (var i = 0; i < tests.length; ++i) {
+		(function (m) {
+			test.run$SF$V$(m, function() { test[m](); });
+		}(tests[i]));
+	}
+
+	if (test.afterClass$ != null)
+		test.afterClass$();
+}
+/**
+ * call a function on load/DOMContentLoaded
+ */
+function $__jsx_onload (event) {
+	window.removeEventListener("load", $__jsx_onload);
+	window.removeEventListener("DOMContentLoaded", $__jsx_onload);
+	JSX.runMain("shooting.jsx", [])
+}
+
+window.addEventListener("load", $__jsx_onload);
+window.addEventListener("DOMContentLoaded", $__jsx_onload);
+
+})();

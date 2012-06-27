@@ -32,16 +32,35 @@ function $__jsx_lazy_init(obj, prop, func) {
 	});
 }
 
+/**
+ * sideeffect().a /= b
+ */
+function $__jsx_div_assign(obj, prop, divisor) {
+	return obj[prop] = (obj[prop] / divisor) | 0;
+}
+
 /*
- * global functions called by JSX as Number.* (renamed so that they do not conflict with local variable names)
+ * global functions called by JSX
+ * (enamed so that they do not conflict with local variable names)
  */
 var $__jsx_parseInt = parseInt;
 var $__jsx_parseFloat = parseFloat;
 var $__jsx_isNaN = isNaN;
 var $__jsx_isFinite = isFinite;
 
+var $__jsx_encodeURIComponent = encodeURIComponent;
+var $__jsx_decodeURIComponent = decodeURIComponent;
+var $__jsx_encodeURI = encodeURI;
+var $__jsx_decodeURI = decodeURI;
+
 var $__jsx_ObjectToString = Object.prototype.toString;
 var $__jsx_ObjectHasOwnProperty = Object.prototype.hasOwnProperty;
+
+/*
+ * profiler object, initialized afterwards
+ */
+function $__jsx_profiler() {
+}
 
 /*
  * public interface to JSX code
@@ -49,7 +68,21 @@ var $__jsx_ObjectHasOwnProperty = Object.prototype.hasOwnProperty;
 JSX.require = function (path) {
 	var m = $__jsx_classMap[path];
 	return m !== undefined ? m : null;
-}
+};
+
+JSX.profilerIsRunning = function () {
+	return $__jsx_profiler.getResults != null;
+};
+
+JSX.getProfileResults = function () {
+	return ($__jsx_profiler.getResults || function () { return {}; })();
+};
+
+JSX.postProfileResults = function (url) {
+	if ($__jsx_profiler.postResults == null)
+		throw new Error("profiler has not been turned on");
+	return $__jsx_profiler.postResults(url);
+};
 /**
  * class Config extends Object
  * @constructor
@@ -134,7 +167,7 @@ Spark.prototype._render$LFireworkView$ = function (view) {
  * @return {!boolean}
  */
 Spark.prototype._isLiving$LFireworkView$ = function (view) {
-	return this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true;
+	return (this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true);
 };
 
 /**
@@ -149,7 +182,7 @@ Spark.prototype.draw$LFireworkView$ = function (view) {
 	view.cx.arc(this.posX, this.posY, this.size, 0, 6.283185307179586, true);
 	view.cx.fillStyle = (Math.random() > 0.2 ? this.color : "white");
 	view.cx.fill();
-	return this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true;
+	return (this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true);
 };
 
 /**
@@ -174,7 +207,7 @@ function Firework$LFireworkView$II(view, x, y) {
 	this.sparks = [  ];
 	this.view = view;
 	color = "lime";
-	for (i = 0; i < Config.quantity; ++ i) {
+	for (i = 0; i < 360; ++ i) {
 		this.sparks.push(new Spark$NNNS(x, y, 2.0, color));
 	}
 };
@@ -199,7 +232,7 @@ Firework.randomColor$ = function () {
 	return "rgb(" + (rgb[0] + "") + "," + (rgb[1] + "") + "," + (rgb[2] + "") + ")";
 };
 
-Firework$randomColor$ = Firework.randomColor$;
+var Firework$randomColor$ = Firework.randomColor$;
 
 /**
  * @return {!boolean}
@@ -207,7 +240,7 @@ Firework$randomColor$ = Firework.randomColor$;
 Firework.prototype.update$ = function () {
 	/** @type {!number} */
 	var i;
-	/** @type {undefined|Spark} */
+	/** @type {Spark} */
 	var s;
 	for (i = 0; i < this.sparks.length; ++ i) {
 		s = this.sparks[i];
@@ -283,7 +316,7 @@ FireworkView.prototype.explode$II = function (x, y) {
 FireworkView.prototype.update$ = function () {
 	/** @type {!number} */
 	var i;
-	/** @type {undefined|Firework} */
+	/** @type {Firework} */
 	var fw;
 	if (this.fireworks.length === 0) {
 		this.explode$II(this.width / 2 + this.left, this.height / 3);
@@ -335,44 +368,41 @@ FPSWatcher.prototype.update$I = function (numSparks) {
 };
 
 /**
- * class Application extends Object
+ * class _Main extends Object
  * @constructor
  */
-function Application() {
+function _Main() {
 }
 
-Application.prototype = new Object;
+_Main.prototype = new Object;
 /**
  * @constructor
  */
-function Application$() {
+function _Main$() {
 };
 
-Application$.prototype = new Application;
+_Main$.prototype = new _Main;
 
 /**
- * @param {!string} canvasId
- * @param {!string} fpsId
- * @param {!number} quantity
+ * @param {Array.<undefined|!string>} args
  */
-Application.main$SSI = function (canvasId, fpsId, quantity) {
+_Main.main$AS = function (args) {
 	/** @type {HTMLCanvasElement} */
 	var canvas;
 	/** @type {FireworkView} */
 	var view;
 	/** @type {FPSWatcher} */
 	var watcher;
-	Config.quantity = quantity;
-	canvas = (function (o) { return o instanceof HTMLCanvasElement ? o : null; })((function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById(canvasId)));
+	canvas = (function (o) { return o instanceof HTMLCanvasElement ? o : null; })((function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById("night-sky")));
 	view = new FireworkView$LHTMLCanvasElement$(canvas);
-	watcher = new FPSWatcher$S(fpsId);
+	watcher = new FPSWatcher$S("fps");
 	dom.window.setInterval((function () {
 		view.update$();
 		watcher.update$I(view.numSparks);
 	}), 0);
 };
 
-Application$main$SSI = Application.main$SSI;
+var _Main$main$AS = _Main.main$AS;
 
 /**
  * class dom extends Object
@@ -398,7 +428,7 @@ dom.id$S = function (id) {
 	return (function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById(id));
 };
 
-dom$id$S = dom.id$S;
+var dom$id$S = dom.id$S;
 
 /**
  * @param {!string} id
@@ -408,7 +438,7 @@ dom.getElementById$S = function (id) {
 	return (function (o) { return o instanceof HTMLElement ? o : null; })(dom.window.document.getElementById(id));
 };
 
-dom$getElementById$S = dom.getElementById$S;
+var dom$getElementById$S = dom.getElementById$S;
 
 /**
  * @param {!string} tag
@@ -418,7 +448,7 @@ dom.createElement$S = function (tag) {
 	return dom.window.document.createElement(tag);
 };
 
-dom$createElement$S = dom.createElement$S;
+var dom$createElement$S = dom.createElement$S;
 
 /**
  * class js extends Object
@@ -441,9 +471,11 @@ Config.size = 2.0;
 Config.decay = 0.98;
 Config.gravity = 2.0;
 Config.speed = 6.0;
+Config.canvasId = "night-sky";
+Config.fpsElementId = "fps";
 Spark.rad = 6.283185307179586;
 $__jsx_lazy_init(dom, "window", function () {
-	return js.global["window"];
+	return js.global.window;
 });
 js.global = (function () { return this; })();
 
@@ -459,8 +491,8 @@ var $__jsx_classMap = {
 		FireworkView$LHTMLCanvasElement$: FireworkView$LHTMLCanvasElement$,
 		FPSWatcher: FPSWatcher,
 		FPSWatcher$S: FPSWatcher$S,
-		Application: Application,
-		Application$: Application$
+		_Main: _Main,
+		_Main$: _Main$
 	},
 	"system:lib/js/js/web.jsx": {
 		dom: dom,
@@ -473,4 +505,65 @@ var $__jsx_classMap = {
 };
 
 
-}());
+/**
+ * launches _Main.main(:string[]):void invoked by jsx --run|--executable
+ */
+JSX.runMain = function (sourceFile, args) {
+	var module = JSX.require(sourceFile);
+
+	if (! module._Main) {
+		throw new Error("entry point _Main not found in " + sourceFile);
+	}
+	if (! module._Main.main$AS) {
+		throw new Error("entry point _Main.main(:string[]):void not found in " + sourceFile);
+	}
+
+	module._Main.main$AS(args);
+}
+
+/**
+ * launches _Test#test*():void invoked by jsx --test
+ */
+JSX.runTests = function (sourceFile, tests) {
+	var module = JSX.require(sourceFile);
+	var testClass = module._Test$;
+
+	if (!testClass) return; // skip if there's no test class
+
+	if(tests.length === 0) {
+		var p = testClass.prototype;
+		for (var m in p) {
+			if (p[m] instanceof Function
+				&& /^test.*[$]$/.test(m)) {
+				tests.push(m);
+			}
+		}
+	}
+
+	var test = new testClass();
+
+	if (test.beforeClass$AS != null)
+		test.beforeClass$AS(tests);
+
+	for (var i = 0; i < tests.length; ++i) {
+		(function (m) {
+			test.run$SF$V$(m, function() { test[m](); });
+		}(tests[i]));
+	}
+
+	if (test.afterClass$ != null)
+		test.afterClass$();
+}
+/**
+ * call a function on load/DOMContentLoaded
+ */
+function $__jsx_onload (event) {
+	window.removeEventListener("load", $__jsx_onload);
+	window.removeEventListener("DOMContentLoaded", $__jsx_onload);
+	JSX.runMain("fireworks.jsx", [])
+}
+
+window.addEventListener("load", $__jsx_onload);
+window.addEventListener("DOMContentLoaded", $__jsx_onload);
+
+})();

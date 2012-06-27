@@ -19,17 +19,6 @@
       }
     </style>
     <script src="shooting.jsx.js"></script>
-    <script>
-      window.addEventListener("load", function(e) {
-        if(location.hash === "#js") {
-          _Main.main(["stage", "scoreboard"]);
-        }
-        else {
-          var shooting = JSX.require("shooting.jsx");
-          shooting._Main.main$AS(["stage", "scoreboard"]);
-        }
-      });
-    </script>
   </head>
   <body>
   <canvas id="stage"></canvas>

@@ -25,6 +25,9 @@ final class Config {
 	static const height = Config.rows * Config.cellHeight;
 
 	static const imagePath = "img";
+
+	static const canvasId = "stage";
+	static const scoreboardId = "scoreboard";
 }
 
 mixin Sprite {
@@ -552,12 +555,12 @@ final class Stage {
 
 final class _Main {
 	static function main(args : string[]) : void {
-        log "shooting.jsx";
+		log "start shooting.jsx";
 
-		var stageCanvas = dom.id(args[0]) as HTMLCanvasElement;
-        assert stageCanvas != null;
-		var scoreboard = dom.id(args[1]);
-        assert scoreboard != null;
+		var stageCanvas = dom.id(Config.canvasId) as HTMLCanvasElement;
+		assert stageCanvas != null;
+		var scoreboard = dom.id(Config.scoreboardId);
+		assert scoreboard != null;
 
 		var stage = new Stage(stageCanvas, scoreboard);
 		stage.tick();
