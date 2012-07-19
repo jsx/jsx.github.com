@@ -290,11 +290,6 @@ class _Main {
   &lt;head&gt;
     &lt;title&gt;Hello, world!&lt;/title&gt;
     &lt;script src="hello.jsx.js"&gt;&lt;/script&gt;
-    &lt;script&gt;
-        window.addEventListener("load", function(e) {
-            JSX.require("hello.jsx")._Main.say$();
-        });
-    &lt;/script&gt;
   &lt;/head&gt;
   &lt;body&gt;
   &lt;p id="hello"&gt;&lt;/p&gt;
@@ -305,7 +300,7 @@ class _Main {
 Once you compile <code>hello.jsx</code> by the following command, then you can access the HTML and you will see it saying "Hello, world!."
 </p>
 <pre><code>
-$ bin/jsx --output hello.jsx.js hello.jsx
+$ bin/jsx --executable web --output hello.jsx.js hello.jsx
 </code></pre>
 
 <h2 id="further-learning">Further Learning</h2>
