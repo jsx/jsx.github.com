@@ -278,8 +278,10 @@ import "js/web.jsx";
 class _Main {
 
     static function say() : void {
-        var text = dom.window.document.createTextNode("Hello, world!");
-        dom.getElementById("hello").appendChild(text);
+        var document = dom.window.document;
+
+        var text = document.createTextNode("Hello, world!");
+        document.getElementById("hello").appendChild(text);
     }
 
 }
