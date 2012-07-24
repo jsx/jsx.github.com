@@ -43,7 +43,7 @@ Let's start by running our first JSX program: <code>hello.jsx</code>.  We use th
 <p>
 Type as follows in the JSX distribution and/or repository, and then you will see it saying <code>"Hello, world!"</code>.
 </p>
-?= $context->{print_code}->(q{$ bin/jsx --run example/hello.jsx})
+?= $context->{prittify}->('bash', q{$ bin/jsx --run example/hello.jsx})
 <p>
 We will look into the <code>hello.jsx</code> source code in the next section.
 </p>
@@ -53,7 +53,7 @@ We will look into the <code>hello.jsx</code> source code in the next section.
 <p>
 Here is <code>hello.jsx</code>, the source code of the "Hello world!" example. You can see several features of JSX in this program, namely, static types and class structure within the source code.
 </p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 class _Main {
     static function main(args : string[]) : void {
         log "Hello, world!";
@@ -69,7 +69,7 @@ The <code>log</code> statement is mapped to <code>console.log()</code> in JavaSc
 </p>
 <p>
 Next, we look into another typical library class, <code>Point</code>:</p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 class Point {
     var x = 0;
     var y = 0;
@@ -111,7 +111,7 @@ Basic type concept will be described in this section.  Primitive types, object t
 <p>
 Primitive types, e.g. <code>string</code>, <code>boolean</code>, or <code>number</code> are non-nullable, immutable types.
 </p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 var s : string = "hello";
 var n : number = 42;
 var b : boolean = true;
@@ -119,7 +119,7 @@ EOT
 ?>
 <p>
 Object types, e.g. <code>string[]</code> (array of string), functions or <code>Date</code>, are nullable, mutable types.</p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 var d : Date = new Date(); // Date
 var f : function():void = function() : void { log "Hi!"; };
 var a : string[] = ["foo"]; // the same as Array.<string>;
@@ -130,7 +130,7 @@ Variant type, which means "no static type information," is used for interacting 
 </p>
 <p>
 Nullable type is a meta type which indicates a value may be null.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>Nullable.&lt;string&gt;</code>. When you use a Nullable value, you have to make sure of the value is not null.  Only primitive types can be marked Nullable.  Object types and variants are nullable by default.</p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 function shiftOrReturnEmptyString(args : string[]) : string {
     if (args.length &gt; 0)
         return args.shift();
@@ -152,7 +152,7 @@ JSX is a class-based object-oriented language, and its class model is similar to
 <li>a class may implement multiple interfaces</li>
 <li>all classes share a single root class: the <code>Object</code> class</li>
 </ul>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 interface Flyable {
     abstract function fly() : void;
 }
@@ -214,7 +214,7 @@ In JSX, functions are first-class objects and they have static types.  You can d
 </p>
 It is possible to define closures (or anonymous functions).   They are typically used to implement event listeners, which are popular in GUI programming.  Closures are similar to JavaScript except for what <code>this</code> points at: when a closure is defined within a member function, it refers to the receiver of the member function.  See the following example.
 </p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 class _Main {
     var foo = 42;
 
@@ -238,7 +238,7 @@ EOT
 <p>
 JSX has a module system. You can reuse JSX class libraries by the <code>import</code> statement. For example, the following program uses <code>timer.jsx</code> module, which exports the <code>Timer</code> class.
 </p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 import "timer.jsx";
 
 class _Main {
@@ -261,7 +261,7 @@ A module may export multiple classes, but you can specify what modules you impor
 <p>
 The <code>js/web.jsx</code> module provides the interface to web browser APIs, e.g. the <code>window</code> object and DOM APIs.  The example below shows how to insert a text node into an HTML.
 </p>
-<?= $context->{print_jsx_code}->(<<'EOT')
+<?= $context->{prittify}->('jsx', <<'EOT')
 // hello.jsx
 import "js/web.jsx";
 
@@ -277,7 +277,7 @@ class _Main {
 }
 EOT
 ?>
-<?= $context->{print_code}->(<<'EOT')
+<?= $context->{prittify}->('html', <<'EOT')
 <!DOCTYPE html>
 <html>
   <head>
@@ -293,9 +293,10 @@ EOT
 <p>
 Once you compile <code>hello.jsx</code> by the following command, then you can access the HTML and you will see it saying "Hello, world!."
 </p>
-<pre><code>
+<?= $context->{prittify}->('bash', <<'EOT')
 $ bin/jsx --executable web --output hello.jsx.js hello.jsx
-</code></pre>
+EOT
+?>
 
 <h2 id="further-learning">Further Learning</h2>
 
