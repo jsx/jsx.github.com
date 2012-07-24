@@ -11,7 +11,7 @@ my $selected = Text::MicroTemplate::encoded_string(q{ class="selected"});
 <div id="body">
 <div id="top">
 <h1><a href="./">JSX</a></h1>
-a faster, safer, easier alternative to JavaScript
+a faster, safer, easier JavaScript
 </div>
 <table id="menu">
 <tr>

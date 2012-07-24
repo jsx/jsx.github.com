@@ -39,7 +39,7 @@
     margin: 0 0 0.5em 0;
 }
 </style>
-<title>JSX - a faster, safer, easier alternative to JavaScript</title>
+<title>JSX - a faster, safer, easier JavaScript</title>
 
 ?= $_mt->render_file("header.mt")
 
