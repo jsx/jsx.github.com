@@ -1,8 +1,8 @@
 ? $_mt->wrapper_file("wrapper.mt")->(sub {
 
-<title>JSX FAQ</title>
+<title>Frequently Asked Questions - JSX</title>
 
-?= $_mt->render_file("header.mt", "faq")
+?= $_mt->render_file("header.mt")
 
 <div id="main">
 

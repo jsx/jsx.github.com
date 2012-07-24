@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="../" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<title>Literals - Documents - JSX</title>
+
+
+</head>
+<body>
+<center>
+<div id="body">
+<div id="top">
+<h1><a href="./">JSX</a></h1>
+a faster, safer, easier alternative to JavaScript
+</div>
+<table id="menu">
+<tr>
+<td><a href="try-on-web/" target="_blank">Try</a></td>
+<td><a href="https://github.com/jsx/JSX/" target="_blank">Download</a></td>
+<td><a href="doc.html">Documents</a></td>
+<td><a href="faq.html">FAQ</a></td>
+</tr>
+</table>
+
+<div id="breadcrumb">
+<a href="doc.html">Documents</a> &gt;
+Literals
+</div>
+
+
+<div id="main">
+
+<h2>Literals</h2>
+
+<h3>Keywords</h3>
+
+<p>
+The table lists the keyword literals of JSX.  In contrary to JavaScript, there is no distinction between undefined and null.
+</p>
+
+<table>
+<caption>Table 1. List of Keyword Literals</caption>
+<tr>
+<th>Keyword</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>null [: type]</td>
+<td>declares null, may have the type attributed</td>
+</tr>
+<tr>
+<td>false</td>
+<td>a boolean constant</td>
+</tr>
+<tr>
+<td>true</td>
+<td>a boolean constant</td>
+</tr>
+</table>
+
+<h3>Number Literal</h3>
+
+<p>
+Identical to JavaScript.
+</p>
+
+<h3>String Literal</h3>
+
+<p>
+Identical to JavaScript.
+</p>
+
+<h3>RegExp Literal</h3>
+
+<p>
+Identical to JavaScript.
+</p>
+
+<h3>Function Literal</h3>
+
+<p>
+Type annotations against arguments and return types are required for function declaration, unless the type can be deducted by the surrounding expression.
+</p>
+
+<pre class="prettyprint"><code class="language-jsx">// a function that takes no arguments, and returns void
+function () : void {}
+
+// a function that takes one argument (of number),
+// and returns a number that in incremented by one
+function (n : number) : number {
+    return n + 1;
+}
+
+// the argument types and return types may be omitted
+// (if it is deductable from the outer expression)
+var sum = 0;
+[ 1, 2, 3 ].forEach(function (e) {
+    sum += e;
+});
+log sum; // 6
+
+// short-handed
+var sum = 0;
+[ 1, 2, 3 ].forEach((e) -&gt; { sum += e; });
+log sum; // 6
+
+// short-handed, single-statement function expression
+var s = &quot;a0b1c&quot;.replace(/[a-z]/g, (ch) -&gt; ch.toUpperCase());
+log s; // A0B1C
+</code></pre>
+
+<p>
+A statement starting with <code>function</code> is parsed as inner function declaration, as is by JavaScript. Surround the function declaration with () if your intention is to create an anonymous function and call it immediately.
+</p>
+
+<pre class="prettyprint"><code class="language-jsx">// inner function declaration (when used within a function declaration)
+function innerFunc() : void {
+    ...;
+}
+
+// create an anonymous function and execute immediately
+(function () : void {
+    ...;
+})();
+</code></pre>
+
+<p>
+See also: <i>Member Function</i> in <a href="doc/class.html">Class, Interface, and Mixin</a>.
+</p>
+
+</div>
+
+
+<div id="footer">
+Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
+</div>
+
+</center>
+</body>
+</html>

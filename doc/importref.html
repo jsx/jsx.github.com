@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="../" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<title>Importing Files - Documents - JSX</title>
+
+
+</head>
+<body>
+<center>
+<div id="body">
+<div id="top">
+<h1><a href="./">JSX</a></h1>
+a faster, safer, easier alternative to JavaScript
+</div>
+<table id="menu">
+<tr>
+<td><a href="try-on-web/" target="_blank">Try</a></td>
+<td><a href="https://github.com/jsx/JSX/" target="_blank">Download</a></td>
+<td><a href="doc.html">Documents</a></td>
+<td><a href="faq.html">FAQ</a></td>
+</tr>
+</table>
+
+<div id="breadcrumb">
+<a href="doc.html">Documents</a> &gt;
+Importing Files
+</div>
+
+
+<div id="main">
+
+<h2>Importing Files</h2>
+
+<p>
+By using the import statement, it is possible to refer to classes defined in other source files.
+
+The statement has several variations. All the import statement must appear before the first class (or interface or mixin) declaration within the source file.
+</p>
+
+<pre class="prettyprint"><code class="language-jsx">// import all classes that do not start with &quot;_&quot; from &quot;a.jsx&quot;
+import &quot;a.jsx&quot;;
+
+// import two classes C1 and _Internal from &quot;a.jsx&quot;
+import C1, _Internal from &quot;a.jsx&quot;;
+
+// import all classes that do not start with &quot;_&quot; under prefix A
+import &quot;a.jsx&quot; into A; // class C1 of a.jsx can be referred to as: A.C1
+
+// import all files under directory &quot;sub&quot;
+import &quot;sub/*.jsx&quot;;
+</code></pre>
+
+<p>
+Note: JSX does not use a hierarchical namespace model. It instead adopts per-source file namespace model, which can also be found in Python and node.js.
+</p>
+
+</div>
+
+
+<div id="footer">
+Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
+</div>
+
+</center>
+</body>
+</html>

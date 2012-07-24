@@ -1,5 +1,8 @@
 <?
-my $cur_page = $_[0];
+my $context = $main::context;
+
+$context->{filename} =~ m{^([\./]*)};
+my $cur_tab = $1;
 my $selected = Text::MicroTemplate::encoded_string(q{ class="selected"});
 ?>
 </head>
@@ -13,9 +16,8 @@ a faster, safer, easier alternative to JavaScript
 <table id="menu">
 <tr>
 <td><a href="try-on-web/" target="_blank">Try</a></td>
-<td<?= $cur_page eq "tutorial" ? $selected : '' ?>><a href="tutorial.html">Tutorial</a></td>
 <td><a href="https://github.com/jsx/JSX/" target="_blank">Download</a></td>
-<td><a href="https://github.com/jsx/JSX/wiki" target="_blank">Wiki</a></td>
-<td<?= $cur_page eq "faq" ? $selected : '' ?>><a href="faq.html">FAQ</a></td>
+<td<?= $cur_tab eq "doc" ? $selected : '' ?>><a href="doc.html">Documents</a></td>
+<td<?= $cur_tab eq "faq" ? $selected : '' ?>><a href="faq.html">FAQ</a></td>
 </tr>
 </table>
