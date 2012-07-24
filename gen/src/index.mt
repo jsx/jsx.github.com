@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+? $_mt->wrapper_file("wrapper.mt")->(sub {
 
 <style type="text/css">
 #charts {
@@ -42,25 +38,7 @@
 </style>
 <title>JSX - a faster, safer, easier alternative to JavaScript</title>
 
-
-</head>
-<body>
-<center>
-<div id="body">
-<div id="top">
-<h1><a href="./">JSX</a></h1>
-a faster, safer, easier alternative to JavaScript
-</div>
-<table id="menu">
-<tr>
-<td><a href="try-on-web/" target="_blank">Try</a></td>
-<td><a href="tutorial.html">Tutorial</a></td>
-<td><a href="https://github.com/jsx/JSX/" target="_blank">Download</a></td>
-<td><a href="https://github.com/jsx/JSX/wiki" target="_blank">Wiki</a></td>
-<td><a href="faq.html">FAQ</a></td>
-</tr>
-</table>
-
+?= $_mt->render_file("header.mt", "top")
 
 <div id="subview">
 <div id="start">
@@ -184,11 +162,4 @@ The examples are best viewed on iPhone.
 
 </div>
 
-
-<div id="footer">
-Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
-</div>
-
-</center>
-</body>
-</html>
+? })

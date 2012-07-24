@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="style.css" type="text/css" />
+? my $context = $_[0];
+? $_mt->wrapper_file("wrapper.mt")->(sub {
 
 <link rel="stylesheet" href="google-code-prettify/prettify.css" type="text/css" />
 <script src="google-code-prettify/prettify.js"></script>
@@ -19,25 +16,7 @@
 </style>
 <title>JSX Tutorial</title>
 
-
-</head>
-<body>
-<center>
-<div id="body">
-<div id="top">
-<h1><a href="./">JSX</a></h1>
-a faster, safer, easier alternative to JavaScript
-</div>
-<table id="menu">
-<tr>
-<td><a href="try-on-web/" target="_blank">Try</a></td>
-<td class="selected"><a href="tutorial.html">Tutorial</a></td>
-<td><a href="https://github.com/jsx/JSX/" target="_blank">Download</a></td>
-<td><a href="https://github.com/jsx/JSX/wiki" target="_blank">Wiki</a></td>
-<td><a href="faq.html">FAQ</a></td>
-</tr>
-</table>
-
+?= $_mt->render_file("header.mt", "tutorial")
 
 <div id="main">
 
@@ -64,7 +43,7 @@ Let's start by running our first JSX program: <code>hello.jsx</code>.  We use th
 <p>
 Type as follows in the JSX distribution and/or repository, and then you will see it saying <code>"Hello, world!"</code>.
 </p>
-<pre class="prettyprint"><code class="language-bash">$ bin/jsx --run example/hello.jsx</code></pre>
+?= $context->{prittify}->('bash', q{$ bin/jsx --run example/hello.jsx})
 <p>
 We will look into the <code>hello.jsx</code> source code in the next section.
 </p>
@@ -74,12 +53,14 @@ We will look into the <code>hello.jsx</code> source code in the next section.
 <p>
 Here is <code>hello.jsx</code>, the source code of the "Hello world!" example. You can see several features of JSX in this program, namely, static types and class structure within the source code.
 </p>
-<pre class="prettyprint"><code class="language-jsx">class _Main {
+<?= $context->{prittify}->('jsx', <<'EOT')
+class _Main {
     static function main(args : string[]) : void {
-        log &quot;Hello, world!&quot;;
+        log "Hello, world!";
     }
 }
-</code></pre>
+EOT
+?>
 <p>
 Class <code>_Main</code> has a static member function (a.k.a. a class method) named <code>main</code>, that takes an array of strings and returns nothing. <code>_Main.main(:string[]):void</code> is the entry point of JSX applications that is called when a user invokes an application from command line.  JSX, like Java, does not allow top-level statements or functions.
 </p>
@@ -88,7 +69,8 @@ The <code>log</code> statement is mapped to <code>console.log()</code> in JavaSc
 </p>
 <p>
 Next, we look into another typical library class, <code>Point</code>:</p>
-<pre class="prettyprint"><code class="language-jsx">class Point {
+<?= $context->{prittify}->('jsx', <<'EOT')
+class Point {
     var x = 0;
     var y = 0;
 
@@ -113,7 +95,8 @@ Next, we look into another typical library class, <code>Point</code>:</p>
         this.y = other.y;
     }
 }
-</code></pre>
+EOT
+?>
 <p>
 As you can see, member variables of Point, <code>var x</code> and <code>var y</code>, are declared without types, but their types are deducted from their initial values to be <code>number</code>.
 </p>
@@ -128,28 +111,34 @@ Basic type concept will be described in this section.  Primitive types, object t
 <p>
 Primitive types, e.g. <code>string</code>, <code>boolean</code>, or <code>number</code> are non-nullable, immutable types.
 </p>
-<pre class="prettyprint"><code class="language-jsx">var s : string = &quot;hello&quot;;
+<?= $context->{prittify}->('jsx', <<'EOT')
+var s : string = "hello";
 var n : number = 42;
 var b : boolean = true;
-</code></pre>
+EOT
+?>
 <p>
 Object types, e.g. <code>string[]</code> (array of string), functions or <code>Date</code>, are nullable, mutable types.</p>
-<pre class="prettyprint"><code class="language-jsx">var d : Date = new Date(); // Date
-var f : function():void = function() : void { log &quot;Hi!&quot;; };
-var a : string[] = [&quot;foo&quot;]; // the same as Array.&lt;string&gt;;
-</code></pre>
+<?= $context->{prittify}->('jsx', <<'EOT')
+var d : Date = new Date(); // Date
+var f : function():void = function() : void { log "Hi!"; };
+var a : string[] = ["foo"]; // the same as Array.<string>;
+EOT
+?>
 <p>
 Variant type, which means "no static type information," is used for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.  All you can do on variant values is to check equality of a variant value to another variant value. You have to cast it to another type before doing anything else on the value.
 </p>
 <p>
 Nullable type is a meta type which indicates a value may be null.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>Nullable.&lt;string&gt;</code>. When you use a Nullable value, you have to make sure of the value is not null.  Only primitive types can be marked Nullable.  Object types and variants are nullable by default.</p>
-<pre class="prettyprint"><code class="language-jsx">function shiftOrReturnEmptyString(args : string[]) : string {
-    if (args.length &amp;gt; 0)
+<?= $context->{prittify}->('jsx', <<'EOT')
+function shiftOrReturnEmptyString(args : string[]) : string {
+    if (args.length &gt; 0)
         return args.shift();
     else
-        return &quot;&quot;;
+        return "";
 }
-</code></pre>
+EOT
+?>
 <div class="note">
 When the source code is compiled in debug mode (which is the default), the compiler will insert run-time type-checking code.  An exception will be raised (or the debugger will be activated) when misuse of a null value as actual value is detected.  Run-time type checks can be omitted by compiling the source code with the <code>--release</code> option.
 </div>
@@ -163,19 +152,20 @@ JSX is a class-based object-oriented language, and its class model is similar to
 <li>a class may implement multiple interfaces</li>
 <li>all classes share a single root class: the <code>Object</code> class</li>
 </ul>
-<pre class="prettyprint"><code class="language-jsx">interface Flyable {
+<?= $context->{prittify}->('jsx', <<'EOT')
+interface Flyable {
     abstract function fly() : void;
 }
 
 abstract class Animal {
     function eat() : void {
-      log &quot;An animal is eating!&quot;;
+      log "An animal is eating!";
     }
 }
 
 class Bat extends Animal implements Flyable {
     override function fly() : void {
-        log &quot;A bat is flying!&quot;;
+        log "A bat is flying!";
     }
 }
 
@@ -184,7 +174,7 @@ abstract class Insect {
 
 class Bee extends Insect implements Flyable {
     override function fly() : void {
-        log &quot;A bee is flying!&quot;;
+        log "A bee is flying!";
     }
 }
 
@@ -207,7 +197,8 @@ class _Main {
         flyable.fly();
     }
 }
-</code></pre>
+EOT
+?>
 <p>
 In the example, the Bat class extends the Animal class, so it inherits the <code>Animal#eat()</code> member function, and it can be assigned to a variable typed to Animal.  The class also implements the <code>Flyable</code> interface overriding the <code>Flyable#fly()</code> member function, so it can be assigned to a variable typed <code>Flyable</code>. There's also another flyable class, <code>Bee</code>.  By using the <code>Flyable</code> interface, it is possible to deal with both classes as a flyable being, even if the organ of a bee is completely different from that of a bat.
 </p>
@@ -223,7 +214,8 @@ In JSX, functions are first-class objects and they have static types.  You can d
 </p>
 It is possible to define closures (or anonymous functions).   They are typically used to implement event listeners, which are popular in GUI programming.  Closures are similar to JavaScript except for what <code>this</code> points at: when a closure is defined within a member function, it refers to the receiver of the member function.  See the following example.
 </p>
-<pre class="prettyprint"><code class="language-jsx">class _Main {
+<?= $context->{prittify}->('jsx', <<'EOT')
+class _Main {
     var foo = 42;
 
     function constructor() {
@@ -238,25 +230,28 @@ It is possible to define closures (or anonymous functions).   They are typically
         var o = new _Main();
     }
 }
-</code></pre>
+EOT
+?>
 
 <h2 id="modules">Modules</h2>
 
 <p>
 JSX has a module system. You can reuse JSX class libraries by the <code>import</code> statement. For example, the following program uses <code>timer.jsx</code> module, which exports the <code>Timer</code> class.
 </p>
-<pre class="prettyprint"><code class="language-jsx">import &quot;timer.jsx&quot;;
+<?= $context->{prittify}->('jsx', <<'EOT')
+import "timer.jsx";
 
 class _Main {
 
     static function main(args : string[]) : void {
         Timer.setTimeout(function() : void {
-            log &quot;Hello, world!&quot;;
+            log "Hello, world!";
         }, 1000);
     }
 
 }
-</code></pre>
+EOT
+?>
 <p>
 A module may export multiple classes, but you can specify what modules you import or name a namespace which the module is imported into.
 </p>
@@ -266,36 +261,42 @@ A module may export multiple classes, but you can specify what modules you impor
 <p>
 The <code>js/web.jsx</code> module provides the interface to web browser APIs, e.g. the <code>window</code> object and DOM APIs.  The example below shows how to insert a text node into an HTML.
 </p>
-<pre class="prettyprint"><code class="language-jsx">// hello.jsx
-import &quot;js/web.jsx&quot;;
+<?= $context->{prittify}->('jsx', <<'EOT')
+// hello.jsx
+import "js/web.jsx";
 
 class _Main {
 
     static function say() : void {
         var document = dom.window.document;
 
-        var text = document.createTextNode(&quot;Hello, world!&quot;);
-        document.getElementById(&quot;hello&quot;).appendChild(text);
+        var text = document.createTextNode("Hello, world!");
+        document.getElementById("hello").appendChild(text);
     }
 
 }
-</code></pre>
-<pre class="prettyprint"><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Hello, world!&lt;/title&gt;
-    &lt;script src=&quot;hello.jsx.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;p id=&quot;hello&quot;&gt;&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+EOT
+?>
+<?= $context->{prittify}->('html', <<'EOT')
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, world!</title>
+    <script src="hello.jsx.js"></script>
+  </head>
+  <body>
+  <p id="hello"></p>
+  </body>
+</html>
+EOT
+?>
 <p>
 Once you compile <code>hello.jsx</code> by the following command, then you can access the HTML and you will see it saying "Hello, world!."
 </p>
-<pre class="prettyprint"><code class="language-bash">$ bin/jsx --executable web --output hello.jsx.js hello.jsx
-</code></pre>
+<?= $context->{prittify}->('bash', <<'EOT')
+$ bin/jsx --executable web --output hello.jsx.js hello.jsx
+EOT
+?>
 
 <h2 id="further-learning">Further Learning</h2>
 
@@ -309,11 +310,4 @@ If you are looking for examples, please refer to the <a href="/#examples">exampl
 
 </div>
 
-
-<div id="footer">
-Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
-</div>
-
-</center>
-</body>
-</html>
+? })
