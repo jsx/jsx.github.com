@@ -86,8 +86,8 @@ body {
 
 #breadcrumb {
     margin: 0;
-    padding: 1em 50px 0 50px;
-    font-weight: bold;    
+    padding: 2em 50px 0 50px;
+    font-weight: bold;
 }
 
 #main {
@@ -119,6 +119,34 @@ body {
     margin: 1em 0;
     padding: 0.5em;
     background: #f6f6f6;
+}
+
+#main table {
+    margin: 1em auto;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+#main table td,th {
+    border: 1px solid #ccc;
+    padding: 0.3em 0.5em;
+}
+
+#main table th {
+    background-color: #eee;
+    text-align: center;
+}
+
+#main table caption {
+    caption-side: top;
+    font-size: 100%;
+    font-weight: normal;
+    padding: 0.3em;
+}
+
+#main .citations {
+    margin: 1em 0;
+    font-size: 70%;
 }
 
 #footer {

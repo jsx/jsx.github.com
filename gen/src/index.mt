@@ -4,20 +4,23 @@
 #charts {
     text-align: center;
 }
-#charts table {
+#main #charts table {
+    border: 0px;
     text-align: center;
     table-layout: fixed;
 }
-#charts table td {
+#main #charts table td {
+    margin: 0;
+    border: 0px;
     padding: 0.5em 1em;
 }
-#charts table .caption {
+#main #charts table .caption {
     font-weight: bold;
     font-size: 80%;
     text-align: center;
     margin: 0;
 }
-#charts table img {
+#main #charts table img {
     border: 1px solid #ccc;
 }
 #subview {
@@ -38,13 +41,13 @@
 </style>
 <title>JSX - a faster, safer, easier alternative to JavaScript</title>
 
-?= $_mt->render_file("header.mt", "top")
+?= $_mt->render_file("header.mt")
 
 <div id="subview">
 <div id="start">
 <h2>Getting Started</h2>
 <div>
-Try our <a href="try-on-web/" target="_blank">web-based interface</a> or follow the <a href="tutorial.html">tutorial</a> to start using JSX.
+Try our <a href="try-on-web/" target="_blank">web-based interface</a> or follow the <a href="doc/tutorial.html">tutorial</a> to start using JSX.
 </div>
 </div>
 <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
