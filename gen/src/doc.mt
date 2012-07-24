@@ -31,6 +31,7 @@
 <h2>Links</h2>
 
 <ul>
+<li><a href="https://github.com/jsx/JSX/wiki/Slides">Presentation Slides (wiki)</a> - presentation slides related to JSX</li>
 <li><a href="https://github.com/jsx/JSX/wiki/References">References (wiki)</a> - documents related to JSX</li>
 <li><a href="https://github.com/jsx/JSX/wiki/Resources">Resources (wiki)</a> - articles, examples and other resources</li>
 </ul>
