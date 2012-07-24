@@ -1,7 +1,7 @@
 <?
 my $context = $main::context;
 
-$context->{filename} =~ m{^([\./]*)};
+$context->{filename} =~ m{^([^\./]*)};
 my $cur_tab = $1;
 my $selected = Text::MicroTemplate::encoded_string(q{ class="selected"});
 ?>
