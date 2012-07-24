@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="../" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<style type="text/css">
+#main table td pre {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: white;
+}
+</style>
+<title>Statements - Documents - JSX</title>
+
+
+</head>
+<body>
+<center>
+<div id="body">
+<div id="top">
+<h1><a href="./">JSX</a></h1>
+a faster, safer, easier alternative to JavaScript
+</div>
+<table id="menu">
+<tr>
+<td><a href="try-on-web/" target="_blank">Try</a></td>
+<td><a href="https://github.com/jsx/JSX/" target="_blank">Download</a></td>
+<td><a href="doc.html">Documents</a></td>
+<td><a href="faq.html">FAQ</a></td>
+</tr>
+</table>
+
+<div id="breadcrumb">
+<a href="doc.html">Documents</a> &gt;
+Statements
+</div>
+
+
+<div id="main">
+
+<h2>Statements</h2>
+
+<p>
+Following types of statements are supported by JSX. The differences from JavaScript are:
+
+<ul>
+<li>a block cannot have a label</li>
+<li>super(...) statement has been introduced</li>
+<li>delete is a statement instead of an expression</li>
+<li>argument of catch clause can be typed, and thus the clause is nestable</li>
+</ul>
+
+</p>
+
+<table>
+<caption>Table 1. Types of Statements</caption>
+<tr>
+<th>Statement</th>
+<th>Description</th>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">;
+</code></pre></td>
+<td>empty statement</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">{
+    statement*
+}
+</code></pre></td>
+<td>block statement</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">expr;
+</code></pre></td>    
+<td>evaluates the expr</td>     
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">return;
+</code></pre></td>    
+<td>returns void</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">return expr;
+</code></pre></td>    
+<td>returns the result of the expr</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">if (expr)
+    statement
+[else
+    statement]
+</code></pre></td>    
+<td>if statement</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">var varname[ = expr][, varname2 = expr2, ...];
+</code></pre></td>
+<td>variable declaration</td>
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">break;
+</code></pre></td>
+<td>exits from the inner-most loop or switch statement</td>
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">break LABEL;
+</code></pre></td>
+<td>exits to the loop or switch statement with label LABEL</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">continue;
+</code></pre></td>    
+<td>skips to the end of the loop statement</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">continue LABEL;
+</code></pre></td>
+<td>skip to the end of the loop statement with label LABEL</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
+do
+    statement
+while (expr);
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
+for (expr in expr)
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
+for (var varname in expr)
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
+for (expr; expr; expr)
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
+for (var varname = expr; expr; expr)
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
+while (expr)
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">[LABEL:]switch (expr) {
+    statement*
+}
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">case expr:
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">default:
+    statement
+</code></pre></td>
+<td></td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">delete expr;
+</code></pre></td>
+<td>deletes the property of a Map returned by the expr</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">super(...);
+</code></pre></td>
+<td>calls the constructor of the super class</td>     
+</tr>
+<tr>   
+<td><pre class="prettyprint"><code class="language-jsx">try {
+    statement*
+} [catch (varname : type) {
+    statement*
+}]* [finally {
+    statement*
+}]
+</code></pre></td>    
+<td>catch statement can be nested</td>     
+</tr>
+</table>
+
+</div>
+
+
+<div id="footer">
+Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
+</div>
+
+</center>
+</body>
+</html>
