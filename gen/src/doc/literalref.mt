@@ -13,7 +13,7 @@
 <h3>Keywords</h3>
 
 <p>
-The table lists the keyword literals of JSX.  In contrary to JavaScript, there is no distinction between undefined and null.
+The table lists the keyword literals of JSX.  In contrary to JavaScript, there is no distinction between <code>undefined</code> and <code>null</code>.
 </p>
 
 <table>
@@ -23,15 +23,15 @@ The table lists the keyword literals of JSX.  In contrary to JavaScript, there i
 <th>Description</th>
 </tr>
 <tr>
-<td>null [: type]</td>
-<td>declares null, may have the type attributed</td>
+<td nowrap><code>null [: type]</code></td>
+<td>declares null, may have the type annotated.  The type is deducted (if possible) if the type annotation does not exist.</td>
 </tr>
 <tr>
-<td>false</td>
+<td><code>false</code></td>
 <td>a boolean constant</td>
 </tr>
 <tr>
-<td>true</td>
+<td><code>true</code></td>
 <td>a boolean constant</td>
 </tr>
 </table>
@@ -90,7 +90,7 @@ EOT
 ?>
 
 <p>
-A statement starting with <code>function</code> is parsed as inner function declaration, as is by JavaScript. Surround the function declaration with () if your intention is to create an anonymous function and call it immediately.
+A statement starting with <code>function</code> is parsed as inner function declaration, as is by JavaScript. Surround the function declaration with <code>()</code> if your intention is to create an anonymous function and call it immediately.
 </p>
 
 <?= $context->{prettify}->('jsx', <<'EOT')
