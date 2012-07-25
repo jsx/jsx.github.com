@@ -119,6 +119,7 @@ body {
     margin: 1em 0;
     padding: 0.5em;
     background: #f6f6f6;
+    overflow-x: auto;
 }
 
 #main table {
