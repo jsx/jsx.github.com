@@ -36,17 +36,17 @@ Class, Interface and Mixin
 <h2>Class, Interface and Mixin</h2>
 
 <p>
-A class of JSX have following characteristics.
+A class in JSX have following characteristics.
 </p>
 
 <ul>
-<li>all classes derive from the built-in Object class</li>
+<li>all classes derive from the built-in <code>Object</code> class</li>
 <li>single inheritance using the extends keyword</li>
 <li>more than one interfaces and mixins can be implemented using the implements keyword</li>
 </ul>
 
 <p>
-For example, <code>class E extends A implements C, D</code> means: C can override members of A (*1), D can override members of the production of *1 (*2), and that E can override members of the production of *2.
+For example, <code>class E extends A implements C, D</code> means: <code>C</code> can override members of A (*1), <code>D</code> can override members of the production of *1 (*2), and that <code>E</code> can override members of the production of *2.
 </p>
 
 <p>
@@ -71,7 +71,7 @@ An user-defined class may have zero ore more functions or variables.
 </p>
 
 <p>
-The example below defines a class called <em>Human</em> with a member variable <em>_name</em>, constructor function that takes a string as an argument, and a non-static member function (i.e. method) called <i>say</i>, that does not take any arguments and returns void).
+The example below defines a class called <code>Human</code> with a member variable <code>_name</code>, constructor function that takes a string as an argument, and a non-static member function (i.e. method) called <i>say</i>, that does not take any arguments and returns void).
 <p>
 
 <pre class="prettyprint"><code class="language-jsx">class Human {
@@ -156,7 +156,7 @@ An ordinary member variable may have the attributes listed in Table 3.
 <h3>Referring to Members</h3>
 
 <p>
-Member functions and variables can be referred to by applying the "." operator against a class name (for static members) or against a variable of the class type (or <em>this</em>).
+Member functions and variables can be referred to by applying the "." operator against a class name (for static members) or against a variable of the class type (or <code>this</code>).
 </p>
 
 <pre class="prettyprint"><code class="language-jsx">// refers to a static variable
@@ -177,7 +177,7 @@ this.func() // only within a non-static function
 <h2>Interface</h2>
 
 <p>
-An interface in JSX is similar to that of Java, except for the fact that it may have abstract variables. All the non-static functions are implicitly marked as <em>abstract</em>, and they cannot have bodies. An interface may <em>implement</em> other intefaces.
+An interface in JSX is similar to that of Java, except for the fact that it may have abstract variables. All the non-static functions are implicitly marked as <code>abstract</code>, and they cannot have bodies. An interface may <em>implement</em> other intefaces.
 </p>
 
 <h2>Mixin</h2>
