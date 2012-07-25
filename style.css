@@ -150,6 +150,12 @@ body {
     font-size: 70%;
 }
 
+#main .doc-image {
+    display: block;
+    margin:  1em auto;
+    border:  0;
+}
+
 #footer {
     border-width: 1px 0;
     border-style: solid;

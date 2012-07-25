@@ -12,7 +12,7 @@
 <li><a href="doc/tutorial.html">Tutorial</a></li>
 <li>Editor support</li>
 <li>Using the Source-code Debugger</li>
-<li>Using the Profiler</li>
+<li><a href="doc/profiler.html">Using the Profiler</a></li>
 </ul>
 
 <h2>Language Reference</h2>
