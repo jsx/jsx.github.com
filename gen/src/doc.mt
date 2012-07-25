@@ -10,7 +10,7 @@
 
 <ul>
 <li><a href="doc/tutorial.html">Tutorial</a></li>
-<li>Editor support</li>
+<li><a href="https://github.com/jsx/JSX/wiki/Editor-Support">Editor support (wiki)</a></li>
 <li>Using the Source-code Debugger</li>
 <li><a href="doc/profiler.html">Using the Profiler</a></li>
 </ul>
