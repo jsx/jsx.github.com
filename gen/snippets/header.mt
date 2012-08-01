@@ -7,7 +7,6 @@ my $selected = Text::MicroTemplate::encoded_string(q{ class="selected"});
 ?>
 </head>
 <body>
-<center>
 <div id="body">
 <div id="top">
 <h1><a href="./">JSX</a></h1>

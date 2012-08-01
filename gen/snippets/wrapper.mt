@@ -12,6 +12,5 @@
 Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
 </div>
 
-</center>
 </body>
 </html>
