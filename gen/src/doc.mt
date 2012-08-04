@@ -28,6 +28,12 @@
 <li>Templates (experimental)</li>
 </ul>
 
+<h2>Wiki</h2>
+
+<p>
+For additional documents, please check the <a href="https://github.com/jsx/JSX/wiki" target="_blank">wiki</a>.
+</p>
+
 <h2>Links</h2>
 
 <ul>
