@@ -132,7 +132,7 @@ Variant type, which means "no static type information," is used for interacting 
 Nullable type is a meta type which indicates a value may be null.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>Nullable.&lt;string&gt;</code>. When you use a Nullable value, you have to make sure of the value is not null.  Only primitive types can be marked Nullable.  Object types and variants are nullable by default.</p>
 <?= $context->{prettify}->('jsx', <<'EOT')
 function shiftOrReturnEmptyString(args : string[]) : string {
-    if (args.length &gt; 0)
+    if (args.length > 0)
         return args.shift();
     else
         return "";
