@@ -20,7 +20,6 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <li>binary ?: operator has been introduced (to cover the use of || in JavaScript to return non-boolean values)</li>
 <li>introduction of the as operator</li>
 <li>delete is a statement instead of an operator</li>
-<li>a wrapper object (Boolean, Number, String) cannot become a left-hand-side expression</li>
 </ul>
 
 <p>The table below lists the operators supported by JSX.</p>
@@ -41,7 +40,7 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <tr>
 <td>obj.prop</td>
 <td>typeof obj.prop</td>
-<td>obj: Object</td>
+<td>obj: any object type</td>
 </tr>
 <tr>
 <td>array[index]</td>
@@ -54,46 +53,27 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <td>map: Map.&lt;T&gt;<br />key: string</td>
 </tr>
 <tr>
-<td>x++</td>
+<td>x++<br />x--</td>
 <td>typeof x</td>
 <td>number or int</td>
 </tr>
 <tr>
-<td>x--</td>
-<td>typeof x</td>
-<td>number or int</td>
-</tr>
-<tr>
-<td>x instanceof y</td>
+<td>obj instanceof <i>type</i></td>
 <td>boolean</td>
-<td>x: Object<br />y: Class, Interface, Mixin</td>
+<td>obj: any object type<br />type: a Class, Interface, or Mixin</td>
 </tr>
 <tr>
-<td>x as type<?= $context->{note}->("cast operator") ?></td>
-<td>type</td>
-<td></td>
-</tr>
-<tr><td nowrap>x as &#95;&#95;noconvert&#95;&#95; type<?= $context->{note}->("cast operator (without run-time type check)") ?></td>
-<td>type</td>
+<td nowrap>x as <i>type</i><?= $context->{note}->("cast operator") ?><br />x as __noconvert__ <i>type</i><?= $context->{note}->("cast operator (without run-time type check)") ?></td>
+<td><i>type</i></td>
 <td></td>
 </tr>
 <tr>
-<td>++x</td>
+<td>++x<br />--x</td>
 <td>typeof x</td>
 <td>number or int</td>
 </tr>
 <tr>
-<td>--x</td>
-<td>typeof x</td>
-<td>number or int</td>
-</tr>
-<tr>
-<td>+x</td>
-<td>typeof x</td>
-<td>number or int</td>
-</tr>
-<tr>
-<td>-x</td>
+<td>+x<br />-x</td>
 <td>typeof x</td>
 <td>number or int</td>
 </tr>
@@ -109,73 +89,38 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 </tr>
 <tr>
 <td>typeof x</td>
-<td>boolean</td>
+<td>string</td>
 <td>variant</td>
 </tr>
 <tr>
-<td>x * y</td>
+<td>x * y<br />x % y</td>
 <td>number or int<?= $context->{note}->("int is returned if both operands are int") ?></td>
-<td>number, int, Number</td>
+<td>number or int</td>
 </tr>
 <tr>
 <td>x / y</td>
-<td>number or int<?= $context->{note}->(-1) ?></td>
-<td>number, int, Number</td>
+<td>number</td>
+<td>number or int</td>
 </tr>
 <tr>
-<td>x % y</td>
-<td>number</td>
-<td>number, int, Number</td>
+<td>x + y<br />x - y</td>
+<td>number or int<?= $context->{note}->(-1) ?></td>
+<td>number or int</td>
 </tr>
 <tr>
 <td>x + y</td>
 <td>string</td>
-<td>string or String</td>
+<td>string</td>
 </tr>
 <tr>
-<td>x + y</td>
-<td>number or int<?= $context->{note}->(-1) ?></td>
-<td>number, int, Number</td>
-</tr>
-<tr>
-<td>x - y</td>
-<td>number or int<?= $context->{note}->(-1) ?></td>
-<td>number, int, Number</td>
-</tr>
-<tr>
-<td>x &lt;&lt; y</td>
+<td>x &lt;&lt; y<br />x &gt;&gt; y<br />x &gt;&gt;&gt; y</td>
 <td>int</td>
-<td>number, int, Number</td>
+<td>number or int</td>
 </tr>
 <tr>
-<td>x >> y</td>
-<td>int</td>
-<td>number, int, Number</td>
-</tr>
-<tr>
-<td>x >>> y</td>
-<td>int</td>
-<td>number, int, Number</td>
-</tr>
-<tr>
-<td>x &lt; y</td>
+<td>x &lt; y<br />x&lt;= y<br />x &gt; y<br />x &gt;= y</td>
 <td>boolean</td>
-<td>number, int, string, Number, String</td>
-</tr>
-<tr>
-<td>x &lt;= y</td>
-<td>boolean</td>
-<td>number, int, string, Number, String</td>
-</tr>
-<tr>
-<td>x > y</td>
-<td>boolean</td>
-<td>number, int, string, Number, String</td>
-</tr>
-<tr>
-<td>x >= y</td>
-<td>boolean</td>
-<td>number, int, string, Number, String</td>
+<td>number, int, string<?= $context->{note}->("types of x and y should be equal, or either should be convertible to the other") ?></td></td>
 </tr>
 <tr>
 <td>x in y</td>
@@ -183,29 +128,24 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <td>x: string<br />y: Map.&lt;T></td>
 </tr>
 <tr>
-<td>x == y</td>
+<td>x == y<br />x != y</td>
 <td>boolean</td>
-<td>boolean, number, int, string, Object</td>
-</tr>
-<tr>
-<td>x != y</td>
-<td>boolean</td>
-<td>boolean, number, int, string, Object</td>
+<td>any except variant<?= $context->{note}->(-1) ?></td>
 </tr>
 <tr>
 <td>x & y</td>
 <td>int</td>
-<td>number, int, Number</td>
+<td>number or int</td>
 </tr>
 <tr>
 <td>x ^ y</td>
 <td>int</td>
-<td>number, int, Number</td>
+<td>number or int</td>
 </tr>
 <tr>
 <td>x &#124; y</td>
 <td>int</td>
-<td>number, int, Number</td>
+<td>number or int</td>
 </tr>
 <tr>
 <td>x && y</td>
@@ -220,12 +160,12 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <tr>
 <td>x ? y : z</td>
 <td>typeof y</td>
-<td>any<?= $context->{note}->("types of y and z should be equal") ?></td>
+<td>any<?= $context->{note}->("types of y and z should be equal, or either should be convertible to the other") ?></td>
 </tr>
 <tr>
 <td>x ?: y</td>
 <td>typeof x</td>
-<td>any<?= $context->{note}->("types of x and y should be equal") ?></td>
+<td>any<?= $context->{note}->(-2) ?></td>
 </tr>
 <tr>
 <td>x = y</td>
@@ -233,9 +173,9 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <td>any<?= $context->{note}->("type of y should be convertible to type of x") ?></td>
 </tr>
 <tr>
-<td>x op<?= $context->{note}->("any of: * / % + - << >> >>> & ^ |") ?>= y</td>
+<td>x <i>op</i><?= $context->{note}->("any of: * / % + - << >> >>> & ^ |") ?>= y</td>
 <td>typeof x</td>
-<td>same as op<?= $context->{note}->("Exception: x cannot be a wrapper object") ?></td>
+<td>same as <i>op</i></td>
 </tr>
 <tr>
 <td>x, y</td>
