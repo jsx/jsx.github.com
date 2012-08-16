@@ -47,7 +47,7 @@ Following types of statements are supported by JSX. The differences from JavaScr
 
 <ul>
 <li>a block cannot have a label</li>
-<li>super(...) statement has been introduced</li>
+<li>constructor invocation statements have been introduced</li>
 <li>delete is a statement instead of an expression</li>
 <li>argument of catch clause can be typed, and thus the clause is nestable</li>
 </ul>
@@ -74,125 +74,125 @@ Following types of statements are supported by JSX. The differences from JavaScr
 </tr>
 <tr>
 <td><pre class="prettyprint"><code class="language-jsx">expr;
-</code></pre></td>    
-<td>evaluates the expr</td>     
+</code></pre></td>
+<td>evaluates the expr</td>
 </tr>
 <tr>
 <td><pre class="prettyprint"><code class="language-jsx">return;
-</code></pre></td>    
-<td>returns void</td>     
+</code></pre></td>
+<td>returns void</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">return expr;
-</code></pre></td>    
-<td>returns the result of the expr</td>     
+</code></pre></td>
+<td>returns the result of the expr</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">if (expr)
     statement
 [else
     statement]
-</code></pre></td>    
-<td>if statement</td>     
+</code></pre></td>
+<td>if statement</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">var varname[ = expr][, varname2 = expr2, ...];
 </code></pre></td>
 <td>variable declaration</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">break;
 </code></pre></td>
 <td>exits from the inner-most loop or switch statement</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">break LABEL;
 </code></pre></td>
-<td>exits to the loop or switch statement with label LABEL</td>     
+<td>exits to the loop or switch statement with label LABEL</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">continue;
-</code></pre></td>    
-<td>skips to the end of the loop statement</td>     
+</code></pre></td>
+<td>skips to the end of the loop statement</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">continue LABEL;
 </code></pre></td>
-<td>skip to the end of the loop statement with label LABEL</td>     
+<td>skip to the end of the loop statement with label LABEL</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
 do
     statement
 while (expr);
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
 for (expr in expr)
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
 for (var varname in expr)
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
 for (expr; expr; expr)
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
 for (var varname = expr; expr; expr)
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]
 while (expr)
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">[LABEL:]switch (expr) {
     statement*
 }
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">case expr:
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">default:
     statement
 </code></pre></td>
-<td></td>     
+<td></td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">delete expr;
 </code></pre></td>
-<td>deletes the property of a Map returned by the expr</td>     
+<td>deletes the property of a Map returned by the expr</td>
 </tr>
-<tr>   
-<td><pre class="prettyprint"><code class="language-jsx">super(...);
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">classname(...);
 </code></pre></td>
-<td>calls the constructor of the super class</td>     
+<td>calls the constructor of the class (<code>this</code> can be used to refer to the current class, <code>super</code> can be used for referring to the super class)</td>
 </tr>
-<tr>   
+<tr>
 <td><pre class="prettyprint"><code class="language-jsx">try {
     statement*
 } [catch (varname : type) {
@@ -200,8 +200,8 @@ while (expr)
 }]* [finally {
     statement*
 }]
-</code></pre></td>    
-<td>catch statement can be nested</td>     
+</code></pre></td>
+<td>catch statement can be nested</td>
 </tr>
 </table>
 
