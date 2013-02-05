@@ -2,7 +2,7 @@ JSX := jsx
 
 all:
 	cd box2djsx/sample && make JSX="$(JSX)"
-	cp box2djsx/sample/box2d.js box2djsx/sample/box2djsx.html .
+	cp box2djsx/sample/*.jsx.js box2djsx/sample/*.html .
 
 box2djsx:
 	git clone git://github.com/tkihira/box2djsx.git
