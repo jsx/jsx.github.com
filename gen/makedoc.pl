@@ -21,6 +21,7 @@ die "no files"
 for my $src_file (@ARGV) {
     (my $dst_file = $src_file) =~ s|^src/(.*)\.mt$|../$1\.html|
         or die "file name should be \"src/**.mt\", but got: $src_file";
+    print "# generate $dst_file from $src_file\n";
     my @notes;
     $main::context = {
         filename => substr($src_file, 4),
@@ -52,5 +53,8 @@ for my $src_file (@ARGV) {
     };
     my $output = $mt->render_file($src_file);
     mkpath(dirname($dst_file));
+
+    chmod 0666, $dst_file;
     write_file($dst_file, $output);
+    chmod 0444, $dst_file;
 }
