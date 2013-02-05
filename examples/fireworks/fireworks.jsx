@@ -199,8 +199,10 @@ final class _Main {
 	static function main(args : string[]) : void {
 
 		var canvas = dom.id(Config.canvasId) as HTMLCanvasElement;
+		canvas.width  = Math.min(canvas.width, dom.window.innerWidth);
+		canvas.height = Math.min(canvas.height, dom.window.innerHeight);
 
-		var view = new FireworkView(canvas);
+		var view    = new FireworkView(canvas);
 		var watcher = new FPSWatcher(Config.fpsElementId);
 
 		dom.window.setInterval( function() : void {
