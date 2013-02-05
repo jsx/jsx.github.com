@@ -47,7 +47,7 @@
 <div id="start">
 <h2>Getting Started</h2>
 <div>
-Try our <a href="try-on-web/" target="_blank">web-based interface</a> or follow the <a href="doc/tutorial.html">tutorial</a> to start using JSX.
+Try our <a href="try-on-web/" target="_blank">playground</a> or follow the <a href="doc/tutorial.html">tutorial</a> to start using JSX.
 </div>
 </div>
 <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -100,7 +100,7 @@ In contrast to JavaScript, JSX is statically-typed and mostly type-safe.  The qu
 </dd>
 <dt>easier</dt>
 <dd>
-JSX offers a solid class system much like the Java programming language, freeing the developers from working with the too-primitive prototype-based inheritance system provided by JavaScript.  Expressions and Statements are mostly equal to JavaScript, so it is easy to for JavaScript programmers to start using JSX.
+JSX offers a solid class system much like Java, freeing the developers from working with the too-primitive prototype-based inheritance system provided by JavaScript.  Expressions and Statements are mostly equal to JavaScript, so it is easy to for JavaScript programmers to start using JSX. There are also plans on language-services for editors / IDEs like code completion.
 </dl>
 
 <div id="charts">

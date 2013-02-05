@@ -41,6 +41,10 @@ Also, another important reason why JSX was developed is to boost JavaScript perf
 Let's start by running our first JSX program: <code>hello.jsx</code>.  We use the <code>jsx</code> command, which is the JSX compiler in the JSX distribution, to compile JSX source code to JavaScript.
 </p>
 <p>
+First, install <a href="https://npmjs.org/package/jsx">jsx</a> with npm:<br />
+?= $context->{prettify}->('bash', q{$ npm install -g jsx})
+</p>
+<p>
 Type as follows in the JSX distribution and/or repository, and then you will see it saying <code>"Hello, world!"</code>.
 </p>
 ?= $context->{prettify}->('bash', q{$ bin/jsx --run example/hello.jsx})
