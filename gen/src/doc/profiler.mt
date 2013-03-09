@@ -23,13 +23,13 @@ Follow the steps to profile your application.
 </p>
 
 <p>
-<em>Step 1.</em> Add code that uploads the profile.  The code snippet below will post the profile information to the profile server running at <code>localhost:5000</code> after running the application for 10 seconds (10,000 milliseconds).
+<em>Step 1.</em> Add code that uploads the profile.  The code snippet below will post the profile information to the profile server running at <code>localhost:2012</code> after running the application for 10 seconds (10,000 milliseconds).
 </p>
 
 <?= $context->{prettify}->('jsx', <<'EOT')
 if (JSX.profilerIsRunning()) {
     dom.window.setTimeout(function () : void {
-        JSX.postProfileResults("http://localhost:5000/post-profile");
+        JSX.postProfileResults("http://localhost:2012/post-profile");
     }, 10000);
 }
 EOT
@@ -45,20 +45,21 @@ EOT
 ?>
 
 <p>
-<em>Step 3.</em> Run the profile server.  The server will bind to TCP port 5000.
+<em>Step 3.</em> Run the profile server.  The server will bind to TCP port 2012.
 </p>
 
 <?= $context->{prettify}->('bash', <<'EOT')
 $ make server
+# or `make server PORT=8080` will listen the port 8080
 EOT
 ?>
 
 <p>
-<em>Step 4.</em> Run the application.  When JSX.postProfileRelust() succeeds, you wil find a line like below in the console.
+<em>Step 4.</em> Run the application.  When <code>JSX.postProfileRelust()</code> succeeds, you wil find a line like below in the console.
 </p>
 
 <?= $context->{prettify}->('bash', <<'EOT')
-Open http://localhost:5000/web/profiler.html?20120626010422
+Open http://localhost:2012/web/profiler.html?20120626010422
 EOT
 ?>
 
