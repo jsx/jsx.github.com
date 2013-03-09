@@ -102,7 +102,7 @@ In contrast to JavaScript, JSX is statically-typed and mostly type-safe.  The qu
 <dt>easier</dt>
 <dd>
 JSX offers a solid class system much like Java, freeing the developers from working with the too-primitive prototype-based inheritance system provided by JavaScript.
-Expressions and statements, however, are mostly equal to JavaScript, so it is easy for JavaScript programmers to start using JSX. There are also plans on language-services for editors / IDEs, for example <a href="https://github.com/jsx/jsx.vim#code-completion">code completion</code>, to make coding easiler.
+Expressions and statements, however, are mostly equal to JavaScript, so it is easy for JavaScript programmers to start using JSX. There are also plans on language-services for editors / IDEs, for example <a href="https://github.com/jsx/jsx.vim#code-completion">code completion</a>, to make coding easiler.
 </dl>
 
 <div id="charts">
