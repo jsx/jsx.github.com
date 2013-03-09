@@ -87,7 +87,7 @@ new TWTR.Widget({
 <h2 id="intro">What is JSX?</h2>
 
 <div>
-JSX is a statically-typed, object-oriented programming language designed to run on modern web browsers.  Being developed at <a href="http://dena.jp/intl/" target="_blank">DeNA</a> as a research project, the language has following characteristics.
+JSX is a statically-typed, object-oriented programming language designed to run on modern web browsers.  Being developed at <a href="http://dena.com/intl/" target="_blank">DeNA</a> as a research project, the language has following characteristics.
 </div>
 <dl>
 <dt>faster</dt>

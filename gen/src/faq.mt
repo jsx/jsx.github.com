@@ -11,7 +11,7 @@
 <h3>Q. Who are you?</h3>
 
 <div>
-JSX has been developed as a research project at <a href="http://dena.jp/intl/" target="_blank">DeNA Co., Ltd.</a>, one of the leading social game providers in Japan and in the world.  The main developers are <a href="http://twitter.com/kazuho/" target="_blank">Kazuho Oku</a> and <a href="http://twitter.com/__gfx__/">Goro Fuji (a.k.a. gfx)</a>.
+JSX has been developed as a research project at <a href="http://dena.com/intl/" target="_blank">DeNA Co., Ltd.</a>, one of the leading social game providers in Japan and in the world.  The main developers are <a href="http://twitter.com/kazuho/" target="_blank">Kazuho Oku</a> and <a href="http://twitter.com/__gfx__/">Goro Fuji (a.k.a. gfx)</a>.
 </div>
 
 <h3>Q. What are the license terms?</h3>

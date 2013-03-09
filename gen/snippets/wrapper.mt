@@ -13,7 +13,7 @@
 <script src="search/oktavia-english-search.js"></script>
 ?= $_[0]
 <div id="footer">
-Copyright &copy; 2012 <a href="http://dena.jp/intl/">DeNA Co., Ltd.</a>
+Copyright &copy; 2012 <a href="http://dena.com/intl/">DeNA Co., Ltd.</a>
 </div>
 
 </body>
