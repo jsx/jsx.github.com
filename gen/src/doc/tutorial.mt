@@ -45,11 +45,22 @@ First, install <a href="https://npmjs.org/package/jsx">jsx</a> with npm:<br />
 ?= $context->{prettify}->('bash', q{$ npm install -g jsx})
 </p>
 <p>
-Type as follows in the JSX distribution and/or repository, and then you will see it saying <code>"Hello, world!"</code>.
+Then, make the code below as <code>hello.jsx</code>:
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+class _Main {
+    static function main(args : string[]) : void {
+        log "Hello, world!";
+    }
+}
+EOT
+?>
+<p>
+Now you can run a JSX program with the following command and you will get <code>Hello, world</code> on the console.
 </p>
 ?= $context->{prettify}->('bash', q{$ bin/jsx --run example/hello.jsx})
 <p>
-We will look into the <code>hello.jsx</code> source code in the next section.
+We will look into the detail of <code>hello.jsx</code> in the next section.
 </p>
 
 <h2 id="program-structure">Program Structure</h2>
@@ -311,7 +322,7 @@ More documents can be found on the <a href="https://github.com/jsx/JSX/wiki">wik
 </div>
 
 <div>
-If you are looking for examples, please refer to the <a href="/#examples">examples</a> on this web site, the <code>example</code> directory of the distribution, or to the links on <a href="https://github.com/jsx/JSX/wiki/Resources">Resouces</a> page of the wiki.
+If you are looking for examples, please refer to the <a href="/#examples">examples</a> on this web site, the <code>example</code> directory of the distribution, or to the links on <a href="https://github.com/jsx/JSX/wiki/Resources">Resources</a> page of the wiki.
 </div>
 
 </div>
