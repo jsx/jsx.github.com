@@ -58,7 +58,7 @@ EOT
 <p>
 Now you can run a JSX program with the following command and you will get <code>Hello, world</code> on the console.
 </p>
-?= $context->{prettify}->('bash', q{$ bin/jsx --run example/hello.jsx})
+?= $context->{prettify}->('bash', q{$ jsx --run hello.jsx})
 <p>
 We will look into the detail of <code>hello.jsx</code> in the next section.
 </p>
