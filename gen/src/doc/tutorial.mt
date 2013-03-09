@@ -23,7 +23,7 @@
 <h2 id="background">Background</h2>
 
 <p>
-JSX is a statically-typed, object-oriented programming language compiling to standalone JavaScript. The reason why JSX was developed is our need for a more robust programming language than JavaScript.  However, JSX is fairly close to JavaScript especially in its statements and expressions.
+JSX is a statically-typed, object-oriented programming language compiling to standalone JavaScript. The reason why JSX was developed is our need for a more robust programming language than JavaScript. JSX is, however, fairly close to JavaScript especially in its statements and expressions.
 </p>
 <p>
 Statically-typed programming language is robust because certain sorts of problems, for example typos in variable names or missing function definitions, are detected at compile-time. This is important especially in middle- to large-scale software development in which a number of engineers may be engaged.
@@ -38,7 +38,7 @@ Also, another important reason why JSX was developed is to boost JavaScript perf
 <h2 id="run-hello-world">Run "Hello, World!"</h2>
 
 <p>
-Let's start by running our first JSX program: <code>hello.jsx</code>.  We use the <code>jsx</code> command, which is the JSX compiler in the JSX distribution, to compile JSX source code to JavaScript.
+Let's start by running our first JSX program: <code>hello.jsx</code>. We use the <code>jsx</code> command, which is the JSX compiler in the JSX distribution, to compile JSX source code to JavaScript.
 </p>
 <p>
 First, install <a href="https://npmjs.org/package/jsx">jsx</a> with npm:<br />
@@ -95,8 +95,7 @@ class Point {
     }
 
     function set(other : Point) : void {
-        this.x = other.x;
-        this.y = other.y;
+        this.set(other.x, other.y);
     }
 }
 EOT
@@ -105,7 +104,8 @@ EOT
 As you can see, member variables of Point, <code>var x</code> and <code>var y</code>, are declared without types, but their types are deducted from their initial values to be <code>number</code>.
 </p>
 <p>
-You might be surprised at multiple definition of member functions: one takes no parameters and the others take parameters.  They are overloaded by their types of parameters.  When you construct the class with <code>new Point()</code>, the first constructor, which takes no parameters, is called. The second with two parameters will be called on <code>new Point(2, 3)</code> and the third with one parameter will be called as a copy constructor. Other forms of construction, e.g. <code>new Point(42)</code> or <code>new Point("foo", "bar")</code> will cause compilation errors of mismatching signatures. The <code>Point#set()</code> functions are also overloaded and the compiler know how to call the correct one.
+You might be surprised at multiple definition of constructors: one takes no parameters and the others take parameters.  They are overloaded by their types of parameters.  When you construct the class with <code>new Point()</code>, the first constructor, which takes no parameters, is called. The second with two parameters will be called on <code>new Point(2, 3)</code> and the third with one parameter will be called as a copy constructor.
+Other forms of construction, e.g. <code>new Point(42)</code> or <code>new Point("foo", "bar")</code> will cause compilation errors of mismatching signatures. The <code>Point#set()</code> functions are also overloaded and the compiler know how to call the correct one.
 </p>
 
 <h2 id="static-types">Static Types</h2>
@@ -126,11 +126,12 @@ Object types, e.g. <code>string[]</code> (array of string), functions or <code>D
 <?= $context->{prettify}->('jsx', <<'EOT')
 var d : Date = new Date(); // Date
 var f : function():void = function() : void { log "Hi!"; };
-var a : string[] = ["foo"]; // the same as Array.<string>;
+var a : string[] = ["foo"]; // string[] is an alias to Array.<string>;
 EOT
 ?>
 <p>
-Variant type, which means "no static type information," is used for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.  All you can do on variant values is to check equality of a variant value to another variant value. You have to cast it to another type before doing anything else on the value.
+Variant type, which means "no static type information," is used for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.
+All you can do on variant values is to check equality of a variant value to another variant value. You have to cast it to another type before doing anything else on the value.
 </p>
 <p>
 Nullable type is a meta type which indicates a value may be null.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>Nullable.&lt;string&gt;</code>. When you use a Nullable value, you have to make sure of the value is not null.  Only primitive types can be marked Nullable.  Object types and variants are nullable by default.</p>
@@ -153,7 +154,7 @@ JSX is a class-based object-oriented language, and its class model is similar to
 </p>
 <ul>
 <li>a class may extend another class (single inheritance)</li>
-<li>a class may implement multiple interfaces</li>
+<li>a class may implement multiple interfaces and mixins</li>
 <li>all classes share a single root class: the <code>Object</code> class</li>
 </ul>
 <?= $context->{prettify}->('jsx', <<'EOT')
@@ -204,7 +205,8 @@ class _Main {
 EOT
 ?>
 <p>
-In the example, the Bat class extends the Animal class, so it inherits the <code>Animal#eat()</code> member function, and it can be assigned to a variable typed to Animal.  The class also implements the <code>Flyable</code> interface overriding the <code>Flyable#fly()</code> member function, so it can be assigned to a variable typed <code>Flyable</code>. There's also another flyable class, <code>Bee</code>.  By using the <code>Flyable</code> interface, it is possible to deal with both classes as a flyable being, even if the organ of a bee is completely different from that of a bat.
+In the example, the Bat class extends the Animal class, so it inherits the <code>Animal#eat()</code> member function, and it can be assigned to a variable typed to Animal.  The class also implements the <code>Flyable</code> interface overriding the <code>Flyable#fly()</code> member function, so it can be assigned to a variable typed <code>Flyable</code>.
+There's also another flyable class, <code>Bee</code>.  By using the <code>Flyable</code> interface, it is possible to deal with both classes as a flyable being, even if the organ of a bee is completely different from that of a bat.
 </p>
 
 <div class="note">
@@ -240,7 +242,7 @@ EOT
 <h2 id="modules">Modules</h2>
 
 <p>
-JSX has a module system. You can reuse JSX class libraries by the <code>import</code> statement. For example, the following program uses <code>timer.jsx</code> module, which exports the <code>Timer</code> class.
+JSX has a module system. You can use JSX class libraries by the <code>import</code> statement. For example, the following program uses <code>timer.jsx</code> module, which exports the <code>Timer</code> class.
 </p>
 <?= $context->{prettify}->('jsx', <<'EOT')
 import "timer.jsx";
@@ -265,7 +267,7 @@ A module may export multiple classes, but you can specify what modules you impor
 <p>
 The <code>js/web.jsx</code> module provides the interface to web browser APIs, e.g. the <code>window</code> object and DOM APIs.  The example below shows how to insert a text node into an HTML.
 </p>
-<?= $context->{prettify}->('jsx', <<'EOT')
+<?= $context->{prettify}->('jsx', <<'EOT');
 // hello.jsx
 import "js/web.jsx";
 
@@ -281,7 +283,7 @@ class _Main {
 }
 EOT
 ?>
-<?= $context->{prettify}->('html', <<'EOT')
+<?= $context->{prettify}->('html', <<'EOT');
 <!DOCTYPE html>
 <html>
   <head>
