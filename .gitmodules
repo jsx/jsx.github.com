@@ -1,0 +1,3 @@
+[submodule "submodules/oktavia"]
+	path = submodules/oktavia
+	url = git@github.com:shibukawa/oktavia.git
