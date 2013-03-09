@@ -1,4 +1,4 @@
-body { 
+body {
     background: #f2f2f2;
     margin: 0;
     padding: 0;
@@ -18,12 +18,13 @@ body {
     text-align: justify;
 }
 
-#top { 
+#top {
     background: #336;
     color: #eee;
     width: 700px;
     margin: 0 0;
     padding: 35px 50px 20px 50px;
+    position: relative;
 }
 
 #top h1 {
@@ -43,7 +44,7 @@ body {
     padding: 0 50px 0 0;
 }
 
-#top ul li { 
+#top ul li {
     display: inline;
     font-weight: bold;
     margin: 0;
