@@ -104,7 +104,7 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <td>obj: any object type<br />type: a Class, Interface, or Mixin</td>
 </tr>
 <tr>
-<td nowrap>x as <i>type</i><sup><a href="#note_2" title="cast operator">[2]</sup></a></sup><br />x as __noconvert__ <i>type</i><sup><a href="#note_3" title="cast operator (without run-time type check)">[3]</sup></a></sup></td>
+<td nowrap>x as <i>type</i><sup><a href="#note_2" title="cast operator; in debug mode (i.e. unless --release or --disable-type-check is specified) raises an assertion failure when a invalid cast between object types are detected">[2]</sup></a></sup><br />x as __noconvert__ <i>type</i><sup><a href="#note_3" title="cast operator (simply changes the type of the value recognized by the compiler)">[3]</sup></a></sup></td>
 <td><i>type</i></td>
 <td></td>
 </tr>
@@ -227,8 +227,8 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 
 <ol class="citations">
 <li>grouping operator</li>
-<li>cast operator</li>
-<li>cast operator (without run-time type check)</li>
+<li>cast operator; in debug mode (i.e. unless --release or --disable-type-check is specified) raises an assertion failure when a invalid cast between object types are detected</li>
+<li>cast operator (simply changes the type of the value recognized by the compiler)</li>
 <li>int is returned if both operands are int</li>
 <li>types of x and y should be equal, or either should be convertible to the other</li>
 <li>types of y and z should be equal, or either should be convertible to the other</li>

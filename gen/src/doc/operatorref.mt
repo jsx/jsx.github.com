@@ -63,7 +63,7 @@ The operators of JSX are the same to those in JavaScript (ECMA-262 3rd edition) 
 <td>obj: any object type<br />type: a Class, Interface, or Mixin</td>
 </tr>
 <tr>
-<td nowrap>x as <i>type</i><?= $context->{note}->("cast operator") ?><br />x as __noconvert__ <i>type</i><?= $context->{note}->("cast operator (without run-time type check)") ?></td>
+<td nowrap>x as <i>type</i><?= $context->{note}->("cast operator; in debug mode (i.e. unless --release or --disable-type-check is specified) raises an assertion failure when a invalid cast between object types are detected") ?><br />x as __noconvert__ <i>type</i><?= $context->{note}->("cast operator (simply changes the type of the value recognized by the compiler)") ?></td>
 <td><i>type</i></td>
 <td></td>
 </tr>
