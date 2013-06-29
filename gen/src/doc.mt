@@ -26,6 +26,7 @@
 <li><a href="doc/classref.html">Class, Interface and Mixin</a></li>
 <li><a href="doc/importref.html">Importing Files</a></li>
 <li>Templates (experimental)</li>
+<li>Generators (experimental)</li>
 </ul>
 
 <h2>Wiki</h2>
