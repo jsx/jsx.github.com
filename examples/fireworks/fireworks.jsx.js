@@ -1,6 +1,17 @@
-// generatedy by JSX compiler 0.9.4 (2013-02-05 02:15:22 +0900; 3a61f2b9fc031f140b52ae22d5e4c1416dcb0195)
+// generatedy by JSX compiler 0.9.48 (2013-06-29 14:28:24 -0700; 694977540e8d28a6c304a6fa2130bc10a4225469)
 var JSX = {};
 (function (JSX) {
+/**
+ * extends the class
+ */
+function $__jsx_extend(derivations, base) {
+	var ctor = function () {};
+	ctor.prototype = base.prototype;
+	var proto = new ctor();
+	for (var i in derivations) {
+		derivations[i].prototype = proto;
+	}
+}
 
 /**
  * copies the implementations from source interface to target
@@ -41,8 +52,7 @@ function $__jsx_div_assign(obj, prop, divisor) {
 }
 
 /*
- * global functions called by JSX
- * (enamed so that they do not conflict with local variable names)
+ * global functions, renamed to avoid conflict with local variable names
  */
 var $__jsx_parseInt = parseInt;
 var $__jsx_parseFloat = parseFloat;
@@ -79,10 +89,10 @@ JSX.getProfileResults = function () {
 	return ($__jsx_profiler.getResults || function () { return {}; })();
 };
 
-JSX.postProfileResults = function (url) {
+JSX.postProfileResults = function (url, cb) {
 	if ($__jsx_profiler.postResults == null)
 		throw new Error("profiler has not been turned on");
-	return $__jsx_profiler.postResults(url);
+	return $__jsx_profiler.postResults(url, cb);
 };
 
 JSX.resetProfileResults = function () {
@@ -91,41 +101,17 @@ JSX.resetProfileResults = function () {
 	return $__jsx_profiler.resetResults();
 };
 JSX.DEBUG = false;
-/**
- * class Config extends Object
- * @constructor
- */
-function Config() {
-}
-
-Config.prototype = new Object;
-/**
- * @constructor
- */
-function Config$() {
+function g_StopIteration() {
+	Error.call(this);
 };
 
-Config$.prototype = new Config;
+$__jsx_extend([g_StopIteration], Error);
+function Config() {
+};
 
-/**
- * class Spark extends Object
- * @constructor
- */
-function Spark() {
-}
-
-Spark.prototype = new Object;
-/**
- * @constructor
- * @param {!number} posX
- * @param {!number} posY
- * @param {!number} size
- * @param {!string} color
- */
-function Spark$NNNS(posX, posY, size, color) {
-	/** @type {!number} */
+$__jsx_extend([Config], Object);
+function Spark(posX, posY, size, color) {
 	var angle;
-	/** @type {!number} */
 	var velocity;
 	this.state = 0;
 	this.posX = posX;
@@ -138,12 +124,8 @@ function Spark$NNNS(posX, posY, size, color) {
 	this.velY = Math.sin(angle) * velocity;
 };
 
-Spark$NNNS.prototype = new Spark;
-
-/**
- */
+$__jsx_extend([Spark], Object);
 Spark.prototype._decay$ = function () {
-	/** @type {!number} */
 	var size$0;
 	this.velX *= 0.98;
 	this.velY *= 0.98;
@@ -155,16 +137,34 @@ Spark.prototype._decay$ = function () {
 	}
 };
 
-/**
- */
+
+function Spark$_decay_0$LSpark$($this) {
+	var size$0;
+	$this.velX *= 0.98;
+	$this.velY *= 0.98;
+	size$0 = $this.size *= 0.98;
+	if (size$0 < 0.5 && $this.state === 0) {
+		$this.color = Firework$randomColor$();
+		$this.size = 2.0;
+		$this.state++;
+	}
+};
+
+Spark._decay_0$LSpark$ = Spark$_decay_0$LSpark$;
+
 Spark.prototype._move$ = function () {
 	this.posX += this.velX + (Math.random() - 0.5);
 	this.posY += this.velY + (Math.random() - 0.5) + 2.0;
 };
 
-/**
- * @param {FireworkView} view
- */
+
+function Spark$_move_0$LSpark$($this) {
+	$this.posX += $this.velX + (Math.random() - 0.5);
+	$this.posY += $this.velY + (Math.random() - 0.5) + 2.0;
+};
+
+Spark._move_0$LSpark$ = Spark$_move_0$LSpark$;
+
 Spark.prototype._render$LFireworkView$ = function (view) {
 	view.cx.beginPath();
 	view.cx.arc(this.posX, this.posY, this.size, 0, 6.283185307179586, true);
@@ -172,67 +172,61 @@ Spark.prototype._render$LFireworkView$ = function (view) {
 	view.cx.fill();
 };
 
-/**
- * @param {FireworkView} view
- * @return {!boolean}
- */
+
+function Spark$_render_0$LSpark$LFireworkView$($this, view) {
+	view.cx.beginPath();
+	view.cx.arc($this.posX, $this.posY, $this.size, 0, 6.283185307179586, true);
+	view.cx.fillStyle = (Math.random() > 0.2 ? $this.color : "white");
+	view.cx.fill();
+};
+
+Spark._render_0$LSpark$LFireworkView$ = Spark$_render_0$LSpark$LFireworkView$;
+
 Spark.prototype._isLiving$LFireworkView$ = function (view) {
 	return (this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true);
 };
 
-/**
- * @param {FireworkView} view
- * @return {!boolean}
- */
+
+function Spark$_isLiving_0$LSpark$LFireworkView$($this, view) {
+	return ($this.size <= 0.01 ? false : $this.posX <= 0 ? false : $this.posX >= view.width || $this.posY >= view.height ? false : true);
+};
+
+Spark._isLiving_0$LSpark$LFireworkView$ = Spark$_isLiving_0$LSpark$LFireworkView$;
+
 Spark.prototype.draw$LFireworkView$ = function (view) {
-	this._decay$();
+	Spark$_decay_0$LSpark$(this);
 	this.posX += this.velX + (Math.random() - 0.5);
 	this.posY += this.velY + (Math.random() - 0.5) + 2.0;
-	view.cx.beginPath();
-	view.cx.arc(this.posX, this.posY, this.size, 0, 6.283185307179586, true);
-	view.cx.fillStyle = (Math.random() > 0.2 ? this.color : "white");
-	view.cx.fill();
+	Spark$_render_0$LSpark$LFireworkView$(this, view);
 	return (this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true);
 };
 
-/**
- * class Firework extends Object
- * @constructor
- */
-function Firework() {
-}
 
-Firework.prototype = new Object;
-/**
- * @constructor
- * @param {FireworkView} view
- * @param {!number} x
- * @param {!number} y
- */
-function Firework$LFireworkView$II(view, x, y) {
-	/** @type {!string} */
+function Spark$draw_0$LSpark$LFireworkView$($this, view) {
+	Spark$_decay_0$LSpark$($this);
+	$this.posX += $this.velX + (Math.random() - 0.5);
+	$this.posY += $this.velY + (Math.random() - 0.5) + 2.0;
+	Spark$_render_0$LSpark$LFireworkView$($this, view);
+	return ($this.size <= 0.01 ? false : $this.posX <= 0 ? false : $this.posX >= view.width || $this.posY >= view.height ? false : true);
+};
+
+Spark.draw_0$LSpark$LFireworkView$ = Spark$draw_0$LSpark$LFireworkView$;
+
+function Firework(view, x, y) {
 	var color;
-	/** @type {!number} */
 	var i;
 	this.sparks = [  ];
 	this.view = view;
 	color = "lime";
 	for (i = 0; i < 360; ++ i) {
-		this.sparks.push(new Spark$NNNS(x, y, 2.0, color));
+		this.sparks.push(new Spark(x, y, 2.0, color));
 	}
 };
 
-Firework$LFireworkView$II.prototype = new Firework;
-
-/**
- * @return {!string}
- */
-Firework.randomColor$ = function () {
-	/** @type {!number} */
+$__jsx_extend([Firework], Object);
+function Firework$randomColor$() {
 	var blightness;
-	/** @type {Array.<undefined|!number>} */
 	var rgb;
-	/** @type {!number} */
 	var i;
 	blightness = 60;
 	rgb = [  ];
@@ -242,40 +236,37 @@ Firework.randomColor$ = function () {
 	return "rgb(" + (rgb[0] + "") + "," + (rgb[1] + "") + "," + (rgb[2] + "") + ")";
 };
 
-var Firework$randomColor$ = Firework.randomColor$;
+Firework.randomColor$ = Firework$randomColor$;
 
-/**
- * @return {!boolean}
- */
 Firework.prototype.update$ = function () {
-	/** @type {!number} */
 	var i;
-	/** @type {Spark} */
 	var s;
 	for (i = 0; i < this.sparks.length; ++ i) {
 		s = this.sparks[i];
-		if (! s.draw$LFireworkView$(this.view)) {
+		if (! Spark$draw_0$LSpark$LFireworkView$(s, this.view)) {
 			this.sparks.splice(i, 1);
 		}
 	}
 	return this.sparks.length > 0;
 };
 
-/**
- * class FireworkView extends Object
- * @constructor
- */
-function FireworkView() {
-}
 
-FireworkView.prototype = new Object;
-/**
- * @constructor
- * @param {HTMLCanvasElement} canvas
- */
-function FireworkView$LHTMLCanvasElement$(canvas) {
+function Firework$update_0$LFirework$($this) {
+	var i;
+	var s;
+	for (i = 0; i < $this.sparks.length; ++ i) {
+		s = $this.sparks[i];
+		if (! Spark$draw_0$LSpark$LFireworkView$(s, $this.view)) {
+			$this.sparks.splice(i, 1);
+		}
+	}
+	return $this.sparks.length > 0;
+};
+
+Firework.update_0$LFirework$ = Firework$update_0$LFirework$;
+
+function FireworkView(canvas) {
 	var $this = this;
-	/** @type {ClientRect} */
 	var rect;
 	this.fireworks = [  ];
 	this.numSparks = 0;
@@ -286,45 +277,40 @@ function FireworkView$LHTMLCanvasElement$(canvas) {
 	this.left = (rect.left | 0);
 	this.top = (rect.top | 0);
 	canvas.addEventListener("mousedown", (function (e) {
-		/** @type {MouseEvent} */
 		var me;
 		me = e;
-		$this.explode$II(me.clientX, me.clientY);
+		FireworkView$explode_0$LFireworkView$II($this, (me.clientX | 0), (me.clientY | 0));
 	}));
 	canvas.addEventListener("touchstart", (function (e) {
-		/** @type {TouchEvent} */
 		var te;
 		te = e;
-		$this.explode$II(te.touches[0].pageX, te.touches[0].pageY);
+		FireworkView$explode_0$LFireworkView$II($this, (te.touches[0].pageX | 0), (te.touches[0].pageY | 0));
 	}));
 };
 
-FireworkView$LHTMLCanvasElement$.prototype = new FireworkView;
-
-/**
- * @param {!number} x
- * @param {!number} y
- */
+$__jsx_extend([FireworkView], Object);
 FireworkView.prototype.explode$II = function (x, y) {
-	this.fireworks.push(new Firework$LFireworkView$II(this, x - this.left, y - this.top));
+	this.fireworks.push(new Firework(this, x - this.left, y - this.top));
 };
 
-/**
- */
+
+function FireworkView$explode_0$LFireworkView$II($this, x, y) {
+	$this.fireworks.push(new Firework($this, x - $this.left, y - $this.top));
+};
+
+FireworkView.explode_0$LFireworkView$II = FireworkView$explode_0$LFireworkView$II;
+
 FireworkView.prototype.update$ = function () {
-	/** @type {!number} */
 	var i;
-	/** @type {Firework} */
 	var fw;
-	/** @type {CanvasRenderingContext2D} */
 	var cx$0;
 	if (this.fireworks.length === 0) {
-		this.explode$II(this.width / 2 + this.left, this.height / 3);
+		FireworkView$explode_0$LFireworkView$II(this, (this.width / 2 + this.left | 0), (this.height / 3 | 0));
 	}
 	this.numSparks = 0;
 	for (i = 0; i < this.fireworks.length; ++ i) {
 		fw = this.fireworks[i];
-		if (fw.update$()) {
+		if (Firework$update_0$LFirework$(fw)) {
 			this.numSparks += fw.sparks.length;
 		} else {
 			this.fireworks.splice(i, 1);
@@ -334,31 +320,37 @@ FireworkView.prototype.update$ = function () {
 	cx$0.fillRect(0, 0, this.width, this.height);
 };
 
-/**
- * class FPSWatcher extends Object
- * @constructor
- */
-function FPSWatcher() {
-}
 
-FPSWatcher.prototype = new Object;
-/**
- * @constructor
- * @param {!string} elementId
- */
-function FPSWatcher$S(elementId) {
+function FireworkView$update_0$LFireworkView$($this) {
+	var i;
+	var fw;
+	var cx$0;
+	if ($this.fireworks.length === 0) {
+		FireworkView$explode_0$LFireworkView$II($this, ($this.width / 2 + $this.left | 0), ($this.height / 3 | 0));
+	}
+	$this.numSparks = 0;
+	for (i = 0; i < $this.fireworks.length; ++ i) {
+		fw = $this.fireworks[i];
+		if (Firework$update_0$LFirework$(fw)) {
+			$this.numSparks += fw.sparks.length;
+		} else {
+			$this.fireworks.splice(i, 1);
+		}
+	}
+	(cx$0 = $this.cx).fillStyle = "rgba(0, 0, 0, 0.3)";
+	cx$0.fillRect(0, 0, $this.width, $this.height);
+};
+
+FireworkView.update_0$LFireworkView$ = FireworkView$update_0$LFireworkView$;
+
+function FPSWatcher(elementId) {
 	this.start = Date.now();
 	this.frameCount = 0;
 	this.elementId = elementId;
 };
 
-FPSWatcher$S.prototype = new FPSWatcher;
-
-/**
- * @param {!number} numSparks
- */
+$__jsx_extend([FPSWatcher], Object);
 FPSWatcher.prototype.update$I = function (numSparks) {
-	/** @type {!string} */
 	var message;
 	++ this.frameCount;
 	if (this.frameCount % 100 === 0) {
@@ -367,39 +359,29 @@ FPSWatcher.prototype.update$I = function (numSparks) {
 	}
 };
 
-/**
- * class _Main extends Object
- * @constructor
- */
-function _Main() {
-}
 
-_Main.prototype = new Object;
-/**
- * @constructor
- */
-function _Main$() {
+function FPSWatcher$update_0$LFPSWatcher$I($this, numSparks) {
+	var message;
+	++ $this.frameCount;
+	if ($this.frameCount % 100 === 0) {
+		message = "FPS: " + (($this.frameCount / (Date.now() - $this.start) * 1000 | 0) + "") + " (sparks: " + (numSparks + "") + ")";
+		dom$id$S($this.elementId).innerHTML = message;
+	}
 };
 
-_Main$.prototype = new _Main;
+FPSWatcher.update_0$LFPSWatcher$I = FPSWatcher$update_0$LFPSWatcher$I;
 
-/**
- * @param {Array.<undefined|!string>} args
- */
-_Main.main$AS = function (args) {
-	/** @type {HTMLCanvasElement} */
+function _Main() {
+};
+
+$__jsx_extend([_Main], Object);
+function _Main$main$AS(args) {
 	var canvas;
-	/** @type {FireworkView} */
 	var view;
-	/** @type {FPSWatcher} */
 	var watcher;
-	/** @type {!number} */
 	var value1$0;
-	/** @type {!number} */
 	var value2$0;
-	/** @type {!number} */
 	var value1$1;
-	/** @type {!number} */
 	var value2$1;
 	canvas = dom.document.getElementById("night-sky");
 	value1$0 = canvas.width;
@@ -408,111 +390,53 @@ _Main.main$AS = function (args) {
 	value1$1 = canvas.height;
 	value2$1 = dom.window.innerHeight;
 	canvas.height = (value1$1 <= value2$1 ? value1$1 : value2$1);
-	view = new FireworkView$LHTMLCanvasElement$(canvas);
-	watcher = new FPSWatcher$S("fps");
+	view = new FireworkView(canvas);
+	watcher = new FPSWatcher("fps");
 	dom.window.setInterval((function () {
-		view.update$();
-		watcher.update$I(view.numSparks);
+		FireworkView$update_0$LFireworkView$(view);
+		FPSWatcher$update_0$LFPSWatcher$I(watcher, (view.numSparks | 0));
 	}), 0);
 };
 
-var _Main$main$AS = _Main.main$AS;
+_Main.main = _Main$main$AS;
+_Main.main$AS = _Main$main$AS;
 
-/**
- * class dom extends Object
- * @constructor
- */
 function dom() {
-}
-
-dom.prototype = new Object;
-/**
- * @constructor
- */
-function dom$() {
 };
 
-dom$.prototype = new dom;
-
-/**
- * @param {!string} id
- * @return {HTMLElement}
- */
-dom.id$S = function (id) {
+$__jsx_extend([dom], Object);
+function dom$id$S(id) {
 	return dom.document.getElementById(id);
 };
 
-var dom$id$S = dom.id$S;
+dom.id$S = dom$id$S;
 
-/**
- * @param {!string} id
- * @return {HTMLElement}
- */
-dom.getElementById$S = function (id) {
+function dom$getElementById$S(id) {
 	return dom.document.getElementById(id);
 };
 
-var dom$getElementById$S = dom.getElementById$S;
+dom.getElementById$S = dom$getElementById$S;
 
-/**
- * @param {!string} tag
- * @return {HTMLElement}
- */
-dom.createElement$S = function (tag) {
+function dom$createElement$S(tag) {
 	return dom.document.createElement(tag);
 };
 
-var dom$createElement$S = dom.createElement$S;
+dom.createElement$S = dom$createElement$S;
 
-/**
- * class EventInit extends Object
- * @constructor
- */
 function EventInit() {
-}
-
-EventInit.prototype = new Object;
-/**
- * @constructor
- */
-function EventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 };
 
-EventInit$.prototype = new EventInit;
-
-/**
- * class CustomEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([EventInit], Object);
 function CustomEventInit() {
-}
-
-CustomEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function CustomEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.detail = null;
 };
 
-CustomEventInit$.prototype = new CustomEventInit;
-
-/**
- * class MutationObserverInit extends Object
- * @constructor
- */
+$__jsx_extend([CustomEventInit], EventInit);
 function MutationObserverInit() {
-}
-
-MutationObserverInit.prototype = new Object;
-/**
- * @constructor
- */
-function MutationObserverInit$() {
 	this.childList = false;
 	this.attributes = false;
 	this.characterData = false;
@@ -522,40 +446,16 @@ function MutationObserverInit$() {
 	this.attributeFilter = null;
 };
 
-MutationObserverInit$.prototype = new MutationObserverInit;
-
-/**
- * class UIEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([MutationObserverInit], Object);
 function UIEventInit() {
-}
-
-UIEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function UIEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
 	this.detail = 0;
 };
 
-UIEventInit$.prototype = new UIEventInit;
-
-/**
- * class FocusEventInit extends Object
- * @constructor
- */
+$__jsx_extend([UIEventInit], EventInit);
 function FocusEventInit() {
-}
-
-FocusEventInit.prototype = new Object;
-/**
- * @constructor
- */
-function FocusEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
@@ -563,20 +463,8 @@ function FocusEventInit$() {
 	this.relatedTarget = null;
 };
 
-FocusEventInit$.prototype = new FocusEventInit;
-
-/**
- * class MouseEventInit extends UIEventInit
- * @constructor
- */
+$__jsx_extend([FocusEventInit], Object);
 function MouseEventInit() {
-}
-
-MouseEventInit.prototype = new UIEventInit;
-/**
- * @constructor
- */
-function MouseEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
@@ -595,20 +483,8 @@ function MouseEventInit$() {
 	this.region = null;
 };
 
-MouseEventInit$.prototype = new MouseEventInit;
-
-/**
- * class WheelEventInit extends Object
- * @constructor
- */
+$__jsx_extend([MouseEventInit], UIEventInit);
 function WheelEventInit() {
-}
-
-WheelEventInit.prototype = new Object;
-/**
- * @constructor
- */
-function WheelEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
@@ -630,20 +506,8 @@ function WheelEventInit$() {
 	this.deltaMode = 0;
 };
 
-WheelEventInit$.prototype = new WheelEventInit;
-
-/**
- * class KeyboardEventInit extends Object
- * @constructor
- */
+$__jsx_extend([WheelEventInit], Object);
 function KeyboardEventInit() {
-}
-
-KeyboardEventInit.prototype = new Object;
-/**
- * @constructor
- */
-function KeyboardEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
@@ -662,20 +526,8 @@ function KeyboardEventInit$() {
 	this.which = 0;
 };
 
-KeyboardEventInit$.prototype = new KeyboardEventInit;
-
-/**
- * class CompositionEventInit extends Object
- * @constructor
- */
+$__jsx_extend([KeyboardEventInit], Object);
 function CompositionEventInit() {
-}
-
-CompositionEventInit.prototype = new Object;
-/**
- * @constructor
- */
-function CompositionEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
@@ -684,20 +536,8 @@ function CompositionEventInit$() {
 	this.locale = "";
 };
 
-CompositionEventInit$.prototype = new CompositionEventInit;
-
-/**
- * class ProgressEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([CompositionEventInit], Object);
 function ProgressEventInit() {
-}
-
-ProgressEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function ProgressEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.lengthComputable = false;
@@ -705,114 +545,42 @@ function ProgressEventInit$() {
 	this.total = 0;
 };
 
-ProgressEventInit$.prototype = new ProgressEventInit;
-
-/**
- * class XMLHttpRequestOptions extends Object
- * @constructor
- */
+$__jsx_extend([ProgressEventInit], EventInit);
 function XMLHttpRequestOptions() {
-}
-
-XMLHttpRequestOptions.prototype = new Object;
-/**
- * @constructor
- */
-function XMLHttpRequestOptions$() {
 	this.anon = false;
 };
 
-XMLHttpRequestOptions$.prototype = new XMLHttpRequestOptions;
-
-/**
- * class TrackEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([XMLHttpRequestOptions], Object);
 function TrackEventInit() {
-}
-
-TrackEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function TrackEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.track = null;
 };
 
-TrackEventInit$.prototype = new TrackEventInit;
-
-/**
- * class PopStateEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([TrackEventInit], EventInit);
 function PopStateEventInit() {
-}
-
-PopStateEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function PopStateEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.state = null;
 };
 
-PopStateEventInit$.prototype = new PopStateEventInit;
-
-/**
- * class HashChangeEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([PopStateEventInit], EventInit);
 function HashChangeEventInit() {
-}
-
-HashChangeEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function HashChangeEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.oldURL = "";
 	this.newURL = "";
 };
 
-HashChangeEventInit$.prototype = new HashChangeEventInit;
-
-/**
- * class PageTransitionEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([HashChangeEventInit], EventInit);
 function PageTransitionEventInit() {
-}
-
-PageTransitionEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function PageTransitionEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.persisted = false;
 };
 
-PageTransitionEventInit$.prototype = new PageTransitionEventInit;
-
-/**
- * class DragEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([PageTransitionEventInit], EventInit);
 function DragEventInit() {
-}
-
-DragEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function DragEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.view = null;
@@ -831,20 +599,8 @@ function DragEventInit$() {
 	this.dataTransfer = null;
 };
 
-DragEventInit$.prototype = new DragEventInit;
-
-/**
- * class CloseEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([DragEventInit], EventInit);
 function CloseEventInit() {
-}
-
-CloseEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function CloseEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.wasClean = false;
@@ -852,20 +608,8 @@ function CloseEventInit$() {
 	this.reason = "";
 };
 
-CloseEventInit$.prototype = new CloseEventInit;
-
-/**
- * class StorageEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([CloseEventInit], EventInit);
 function StorageEventInit() {
-}
-
-StorageEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function StorageEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.key = null;
@@ -875,20 +619,8 @@ function StorageEventInit$() {
 	this.storageArea = null;
 };
 
-StorageEventInit$.prototype = new StorageEventInit;
-
-/**
- * class MessageEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([StorageEventInit], EventInit);
 function MessageEventInit() {
-}
-
-MessageEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function MessageEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.data = null;
@@ -898,20 +630,8 @@ function MessageEventInit$() {
 	this.ports = null;
 };
 
-MessageEventInit$.prototype = new MessageEventInit;
-
-/**
- * class ErrorEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([MessageEventInit], EventInit);
 function ErrorEventInit() {
-}
-
-ErrorEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function ErrorEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.message = "";
@@ -919,93 +639,33 @@ function ErrorEventInit$() {
 	this.lineno = 0;
 };
 
-ErrorEventInit$.prototype = new ErrorEventInit;
-
-/**
- * class EventSourceInit extends Object
- * @constructor
- */
+$__jsx_extend([ErrorEventInit], EventInit);
 function EventSourceInit() {
-}
-
-EventSourceInit.prototype = new Object;
-/**
- * @constructor
- */
-function EventSourceInit$() {
 	this.withCredentials = false;
 };
 
-EventSourceInit$.prototype = new EventSourceInit;
-
-/**
- * class IDBObjectStoreParameters extends Object
- * @constructor
- */
+$__jsx_extend([EventSourceInit], Object);
 function IDBObjectStoreParameters() {
-}
-
-IDBObjectStoreParameters.prototype = new Object;
-/**
- * @constructor
- */
-function IDBObjectStoreParameters$() {
 	this.keyPath = null;
 	this.autoIncrement = false;
 };
 
-IDBObjectStoreParameters$.prototype = new IDBObjectStoreParameters;
-
-/**
- * class IDBIndexParameters extends Object
- * @constructor
- */
+$__jsx_extend([IDBObjectStoreParameters], Object);
 function IDBIndexParameters() {
-}
-
-IDBIndexParameters.prototype = new Object;
-/**
- * @constructor
- */
-function IDBIndexParameters$() {
 	this.unique = false;
 	this.multiEntry = false;
 };
 
-IDBIndexParameters$.prototype = new IDBIndexParameters;
-
-/**
- * class IDBVersionChangeEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([IDBIndexParameters], Object);
 function IDBVersionChangeEventInit() {
-}
-
-IDBVersionChangeEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function IDBVersionChangeEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.oldVersion = 0;
 	this.newVersion = null;
 };
 
-IDBVersionChangeEventInit$.prototype = new IDBVersionChangeEventInit;
-
-/**
- * class NotificationOptions extends Object
- * @constructor
- */
+$__jsx_extend([IDBVersionChangeEventInit], EventInit);
 function NotificationOptions() {
-}
-
-NotificationOptions.prototype = new Object;
-/**
- * @constructor
- */
-function NotificationOptions$() {
 	this.titleDir = "";
 	this.body = "";
 	this.bodyDir = "";
@@ -1013,202 +673,70 @@ function NotificationOptions$() {
 	this.iconUrl = "";
 };
 
-NotificationOptions$.prototype = new NotificationOptions;
-
-/**
- * class RTCSessionDescriptionInit extends Object
- * @constructor
- */
+$__jsx_extend([NotificationOptions], Object);
 function RTCSessionDescriptionInit() {
-}
-
-RTCSessionDescriptionInit.prototype = new Object;
-/**
- * @constructor
- */
-function RTCSessionDescriptionInit$() {
 	this.type = "";
 	this.sdp = "";
 };
 
-RTCSessionDescriptionInit$.prototype = new RTCSessionDescriptionInit;
-
-/**
- * class RTCIceCandidateInit extends Object
- * @constructor
- */
+$__jsx_extend([RTCSessionDescriptionInit], Object);
 function RTCIceCandidateInit() {
-}
-
-RTCIceCandidateInit.prototype = new Object;
-/**
- * @constructor
- */
-function RTCIceCandidateInit$() {
 	this.candidate = "";
 	this.sdpMid = "";
 	this.sdpMLineIndex = 0;
 };
 
-RTCIceCandidateInit$.prototype = new RTCIceCandidateInit;
-
-/**
- * class RTCIceServer extends Object
- * @constructor
- */
+$__jsx_extend([RTCIceCandidateInit], Object);
 function RTCIceServer() {
-}
-
-RTCIceServer.prototype = new Object;
-/**
- * @constructor
- */
-function RTCIceServer$() {
 	this.url = "";
 	this.credential = null;
 };
 
-RTCIceServer$.prototype = new RTCIceServer;
-
-/**
- * class RTCConfiguration extends Object
- * @constructor
- */
+$__jsx_extend([RTCIceServer], Object);
 function RTCConfiguration() {
-}
-
-RTCConfiguration.prototype = new Object;
-/**
- * @constructor
- */
-function RTCConfiguration$() {
 	this.iceServers = null;
 };
 
-RTCConfiguration$.prototype = new RTCConfiguration;
-
-/**
- * class DataChannelInit extends Object
- * @constructor
- */
+$__jsx_extend([RTCConfiguration], Object);
 function DataChannelInit() {
-}
-
-DataChannelInit.prototype = new Object;
-/**
- * @constructor
- */
-function DataChannelInit$() {
 	this.reliable = false;
 };
 
-DataChannelInit$.prototype = new DataChannelInit;
-
-/**
- * class RTCPeerConnectionIceEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([DataChannelInit], Object);
 function RTCPeerConnectionIceEventInit() {
-}
-
-RTCPeerConnectionIceEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function RTCPeerConnectionIceEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.candidate = null;
 };
 
-RTCPeerConnectionIceEventInit$.prototype = new RTCPeerConnectionIceEventInit;
-
-/**
- * class MediaStreamEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([RTCPeerConnectionIceEventInit], EventInit);
 function MediaStreamEventInit() {
-}
-
-MediaStreamEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function MediaStreamEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.stream = null;
 };
 
-MediaStreamEventInit$.prototype = new MediaStreamEventInit;
-
-/**
- * class DataChannelEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([MediaStreamEventInit], EventInit);
 function DataChannelEventInit() {
-}
-
-DataChannelEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function DataChannelEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.channel = null;
 };
 
-DataChannelEventInit$.prototype = new DataChannelEventInit;
-
-/**
- * class MediaStreamConstraints extends Object
- * @constructor
- */
+$__jsx_extend([DataChannelEventInit], EventInit);
 function MediaStreamConstraints() {
-}
-
-MediaStreamConstraints.prototype = new Object;
-/**
- * @constructor
- */
-function MediaStreamConstraints$() {
 	this.video = null;
 	this.audio = null;
 };
 
-MediaStreamConstraints$.prototype = new MediaStreamConstraints;
-
-/**
- * class MediaTrackConstraints extends Object
- * @constructor
- */
+$__jsx_extend([MediaStreamConstraints], Object);
 function MediaTrackConstraints() {
-}
-
-MediaTrackConstraints.prototype = new Object;
-/**
- * @constructor
- */
-function MediaTrackConstraints$() {
 	this.mandatory = null;
 	this.optional = null;
 };
 
-MediaTrackConstraints$.prototype = new MediaTrackConstraints;
-
-/**
- * class HitRegionOptions extends Object
- * @constructor
- */
+$__jsx_extend([MediaTrackConstraints], Object);
 function HitRegionOptions() {
-}
-
-HitRegionOptions.prototype = new Object;
-/**
- * @constructor
- */
-function HitRegionOptions$() {
 	this.path = null;
 	this.id = "";
 	this.parentID = null;
@@ -1218,20 +746,8 @@ function HitRegionOptions$() {
 	this.role = null;
 };
 
-HitRegionOptions$.prototype = new HitRegionOptions;
-
-/**
- * class WebGLContextAttributes extends Object
- * @constructor
- */
+$__jsx_extend([HitRegionOptions], Object);
 function WebGLContextAttributes() {
-}
-
-WebGLContextAttributes.prototype = new Object;
-/**
- * @constructor
- */
-function WebGLContextAttributes$() {
 	this.alpha = false;
 	this.depth = false;
 	this.stencil = false;
@@ -1240,39 +756,15 @@ function WebGLContextAttributes$() {
 	this.preserveDrawingBuffer = false;
 };
 
-WebGLContextAttributes$.prototype = new WebGLContextAttributes;
-
-/**
- * class WebGLContextEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([WebGLContextAttributes], Object);
 function WebGLContextEventInit() {
-}
-
-WebGLContextEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function WebGLContextEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.statusMessage = "";
 };
 
-WebGLContextEventInit$.prototype = new WebGLContextEventInit;
-
-/**
- * class DeviceOrientationEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([WebGLContextEventInit], EventInit);
 function DeviceOrientationEventInit() {
-}
-
-DeviceOrientationEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function DeviceOrientationEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.alpha = null;
@@ -1281,20 +773,8 @@ function DeviceOrientationEventInit$() {
 	this.absolute = false;
 };
 
-DeviceOrientationEventInit$.prototype = new DeviceOrientationEventInit;
-
-/**
- * class DeviceMotionEventInit extends EventInit
- * @constructor
- */
+$__jsx_extend([DeviceOrientationEventInit], EventInit);
 function DeviceMotionEventInit() {
-}
-
-DeviceMotionEventInit.prototype = new EventInit;
-/**
- * @constructor
- */
-function DeviceMotionEventInit$() {
 	this.bubbles = false;
 	this.cancelable = false;
 	this.acceleration = null;
@@ -1303,24 +783,7 @@ function DeviceMotionEventInit$() {
 	this.interval = null;
 };
 
-DeviceMotionEventInit$.prototype = new DeviceMotionEventInit;
-
-/**
- * class js extends Object
- * @constructor
- */
-function js() {
-}
-
-js.prototype = new Object;
-/**
- * @constructor
- */
-function js$() {
-};
-
-js$.prototype = new js;
-
+$__jsx_extend([DeviceMotionEventInit], EventInit);
 Config.quantity = 360;
 Config.size = 2.0;
 Config.decay = 0.98;
@@ -1335,109 +798,110 @@ $__jsx_lazy_init(dom, "window", function () {
 $__jsx_lazy_init(dom, "document", function () {
 	return js.global.document;
 });
-js.global = (function () { return this; })();
+var js = { global: function () { return this; }() };
+
 var $__jsx_classMap = {
+	"system:lib/built-in.jsx": {
+		g_StopIteration: g_StopIteration,
+		g_StopIteration$: g_StopIteration
+	},
 	"fireworks.jsx": {
 		Config: Config,
-		Config$: Config$,
+		Config$: Config,
 		Spark: Spark,
-		Spark$NNNS: Spark$NNNS,
+		Spark$NNNS: Spark,
 		Firework: Firework,
-		Firework$LFireworkView$II: Firework$LFireworkView$II,
+		Firework$LFireworkView$II: Firework,
 		FireworkView: FireworkView,
-		FireworkView$LHTMLCanvasElement$: FireworkView$LHTMLCanvasElement$,
+		FireworkView$LHTMLCanvasElement$: FireworkView,
 		FPSWatcher: FPSWatcher,
-		FPSWatcher$S: FPSWatcher$S,
+		FPSWatcher$S: FPSWatcher,
 		_Main: _Main,
-		_Main$: _Main$
+		_Main$: _Main
 	},
 	"system:lib/js/js/web.jsx": {
 		dom: dom,
-		dom$: dom$,
+		dom$: dom,
 		EventInit: EventInit,
-		EventInit$: EventInit$,
+		EventInit$: EventInit,
 		CustomEventInit: CustomEventInit,
-		CustomEventInit$: CustomEventInit$,
+		CustomEventInit$: CustomEventInit,
 		MutationObserverInit: MutationObserverInit,
-		MutationObserverInit$: MutationObserverInit$,
+		MutationObserverInit$: MutationObserverInit,
 		UIEventInit: UIEventInit,
-		UIEventInit$: UIEventInit$,
+		UIEventInit$: UIEventInit,
 		FocusEventInit: FocusEventInit,
-		FocusEventInit$: FocusEventInit$,
+		FocusEventInit$: FocusEventInit,
 		MouseEventInit: MouseEventInit,
-		MouseEventInit$: MouseEventInit$,
+		MouseEventInit$: MouseEventInit,
 		WheelEventInit: WheelEventInit,
-		WheelEventInit$: WheelEventInit$,
+		WheelEventInit$: WheelEventInit,
 		KeyboardEventInit: KeyboardEventInit,
-		KeyboardEventInit$: KeyboardEventInit$,
+		KeyboardEventInit$: KeyboardEventInit,
 		CompositionEventInit: CompositionEventInit,
-		CompositionEventInit$: CompositionEventInit$,
+		CompositionEventInit$: CompositionEventInit,
 		ProgressEventInit: ProgressEventInit,
-		ProgressEventInit$: ProgressEventInit$,
+		ProgressEventInit$: ProgressEventInit,
 		XMLHttpRequestOptions: XMLHttpRequestOptions,
-		XMLHttpRequestOptions$: XMLHttpRequestOptions$,
+		XMLHttpRequestOptions$: XMLHttpRequestOptions,
 		TrackEventInit: TrackEventInit,
-		TrackEventInit$: TrackEventInit$,
+		TrackEventInit$: TrackEventInit,
 		PopStateEventInit: PopStateEventInit,
-		PopStateEventInit$: PopStateEventInit$,
+		PopStateEventInit$: PopStateEventInit,
 		HashChangeEventInit: HashChangeEventInit,
-		HashChangeEventInit$: HashChangeEventInit$,
+		HashChangeEventInit$: HashChangeEventInit,
 		PageTransitionEventInit: PageTransitionEventInit,
-		PageTransitionEventInit$: PageTransitionEventInit$,
+		PageTransitionEventInit$: PageTransitionEventInit,
 		DragEventInit: DragEventInit,
-		DragEventInit$: DragEventInit$,
+		DragEventInit$: DragEventInit,
 		CloseEventInit: CloseEventInit,
-		CloseEventInit$: CloseEventInit$,
+		CloseEventInit$: CloseEventInit,
 		StorageEventInit: StorageEventInit,
-		StorageEventInit$: StorageEventInit$,
+		StorageEventInit$: StorageEventInit,
 		MessageEventInit: MessageEventInit,
-		MessageEventInit$: MessageEventInit$,
+		MessageEventInit$: MessageEventInit,
 		ErrorEventInit: ErrorEventInit,
-		ErrorEventInit$: ErrorEventInit$,
+		ErrorEventInit$: ErrorEventInit,
 		EventSourceInit: EventSourceInit,
-		EventSourceInit$: EventSourceInit$,
+		EventSourceInit$: EventSourceInit,
 		IDBObjectStoreParameters: IDBObjectStoreParameters,
-		IDBObjectStoreParameters$: IDBObjectStoreParameters$,
+		IDBObjectStoreParameters$: IDBObjectStoreParameters,
 		IDBIndexParameters: IDBIndexParameters,
-		IDBIndexParameters$: IDBIndexParameters$,
+		IDBIndexParameters$: IDBIndexParameters,
 		IDBVersionChangeEventInit: IDBVersionChangeEventInit,
-		IDBVersionChangeEventInit$: IDBVersionChangeEventInit$,
+		IDBVersionChangeEventInit$: IDBVersionChangeEventInit,
 		NotificationOptions: NotificationOptions,
-		NotificationOptions$: NotificationOptions$,
+		NotificationOptions$: NotificationOptions,
 		RTCSessionDescriptionInit: RTCSessionDescriptionInit,
-		RTCSessionDescriptionInit$: RTCSessionDescriptionInit$,
+		RTCSessionDescriptionInit$: RTCSessionDescriptionInit,
 		RTCIceCandidateInit: RTCIceCandidateInit,
-		RTCIceCandidateInit$: RTCIceCandidateInit$,
+		RTCIceCandidateInit$: RTCIceCandidateInit,
 		RTCIceServer: RTCIceServer,
-		RTCIceServer$: RTCIceServer$,
+		RTCIceServer$: RTCIceServer,
 		RTCConfiguration: RTCConfiguration,
-		RTCConfiguration$: RTCConfiguration$,
+		RTCConfiguration$: RTCConfiguration,
 		DataChannelInit: DataChannelInit,
-		DataChannelInit$: DataChannelInit$,
+		DataChannelInit$: DataChannelInit,
 		RTCPeerConnectionIceEventInit: RTCPeerConnectionIceEventInit,
-		RTCPeerConnectionIceEventInit$: RTCPeerConnectionIceEventInit$,
+		RTCPeerConnectionIceEventInit$: RTCPeerConnectionIceEventInit,
 		MediaStreamEventInit: MediaStreamEventInit,
-		MediaStreamEventInit$: MediaStreamEventInit$,
+		MediaStreamEventInit$: MediaStreamEventInit,
 		DataChannelEventInit: DataChannelEventInit,
-		DataChannelEventInit$: DataChannelEventInit$,
+		DataChannelEventInit$: DataChannelEventInit,
 		MediaStreamConstraints: MediaStreamConstraints,
-		MediaStreamConstraints$: MediaStreamConstraints$,
+		MediaStreamConstraints$: MediaStreamConstraints,
 		MediaTrackConstraints: MediaTrackConstraints,
-		MediaTrackConstraints$: MediaTrackConstraints$,
+		MediaTrackConstraints$: MediaTrackConstraints,
 		HitRegionOptions: HitRegionOptions,
-		HitRegionOptions$: HitRegionOptions$,
+		HitRegionOptions$: HitRegionOptions,
 		WebGLContextAttributes: WebGLContextAttributes,
-		WebGLContextAttributes$: WebGLContextAttributes$,
+		WebGLContextAttributes$: WebGLContextAttributes,
 		WebGLContextEventInit: WebGLContextEventInit,
-		WebGLContextEventInit$: WebGLContextEventInit$,
+		WebGLContextEventInit$: WebGLContextEventInit,
 		DeviceOrientationEventInit: DeviceOrientationEventInit,
-		DeviceOrientationEventInit$: DeviceOrientationEventInit$,
+		DeviceOrientationEventInit$: DeviceOrientationEventInit,
 		DeviceMotionEventInit: DeviceMotionEventInit,
-		DeviceMotionEventInit$: DeviceMotionEventInit$
-	},
-	"system:lib/js/js.jsx": {
-		js: js,
-		js$: js$
+		DeviceMotionEventInit$: DeviceMotionEventInit
 	}
 };
 
@@ -1448,16 +912,15 @@ var $__jsx_classMap = {
 JSX.runMain = function (sourceFile, args) {
 	var module = JSX.require(sourceFile);
 	if (! module) {
-		throw new Error("entry point module not found in " + sourceFile);
+		throw new ReferenceError("entry point module not found in " + sourceFile);
 	}
-
 	if (! module._Main) {
-		throw new Error("entry point _Main not found in " + sourceFile);
+		throw new ReferenceError("entry point _Main not found in " + sourceFile);
 	}
-	if (! module._Main.main$AS) {
-		throw new Error("entry point _Main.main(:string[]):void not found in " + sourceFile);
+	if (! module._Main.main) {
+		throw new ReferenceError("entry point _Main.main(:string[]):void not found in " + sourceFile);
 	}
-	module._Main.main$AS(args);
+	module._Main.main(args);
 };
 
 /**
@@ -1465,34 +928,28 @@ JSX.runMain = function (sourceFile, args) {
  */
 JSX.runTests = function (sourceFile, tests) {
 	var module = JSX.require(sourceFile);
-	var testClass = module._Test$;
+	var testClass = module._Test;
 
 	if (!testClass) return; // skip if there's no test class
 
 	if(tests.length === 0) {
 		var p = testClass.prototype;
 		for (var m in p) {
-			if (p[m] instanceof Function
-				&& /^test.*[$]$/.test(m)) {
+			if (p[m] instanceof Function && m.match(/^test\w*$/)) {
 				tests.push(m);
 			}
 		}
 	}
-	else { // set as process arguments
-		tests = tests.map(function (name) {
-			return name + "$"; // mangle for function test*():void
-		});
-	}
 
 	var testCase = new testClass();
 
-	if (testCase.beforeClass$AS != null)
-		testCase.beforeClass$AS(tests);
+	if (testCase.beforeClass != null)
+		testCase.beforeClass(tests);
 
 	for (var i = 0; i < tests.length; ++i) {
 		(function (method) {
 			if (method in testCase) {
-				testCase.run$SF$V$(method, function() { testCase[method](); });
+				testCase.run(method, function() { testCase[method](); });
 			}
 			else {
 				throw new ReferenceError("No such test method: " + method);
@@ -1500,8 +957,8 @@ JSX.runTests = function (sourceFile, tests) {
 		}(tests[i]));
 	}
 
-	if (testCase.afterClass$ != null)
-		testCase.afterClass$();
+	if (testCase.afterClass != null)
+		testCase.afterClass();
 };
 /**
  * call a function on load/DOMContentLoaded

@@ -1,7 +1,7 @@
 JSX := jsx
 
-fireworks.jsx.js: fireworks.jsx fireworks.html
-	$(JSX) --release --executable web --output $@ $<
+all: fireworks.jsx fireworks.html
+	$(JSX) --release --executable web --output fireworks.jsx.js $<
 
 clean:
 	rm -rf *.jsx.js
