@@ -5,25 +5,32 @@ $context->{filename} =~ m{^([^\./]*)};
 my $cur_tab = $1;
 my $selected = Text::MicroTemplate::encoded_string(q{ class="selected"});
 ?>
+<!-- oktavia -->
+<link rel="stylesheet" href="searchstyle.css" type="text/css" />
+<script src="search/jquery-1.9.1.min.js"></script>
+<script src="search/oktavia-jquery-ui.js"></script>
+<script src="search/oktavia-english-search.js"></script>
+<!-- /oktavia -->
 </head>
 <body>
 <div id="body">
 <div id="top">
 <h1><a href="./">JSX</a></h1>
 a faster, safer, easier JavaScript
+
+<!-- oktavia -->
 <form id="searchform">
 <input class="search" type="search" name="search" id="search" results="5" value="" placeholder="Search" />
 <div id="searchresult_box">
 <div id="close_search_box">&times;</div>
-<div id="searchresult_summary">
-</div>
-<div id="searchresult">
-</div>
-<div id="searchresult_nav">
-</div>
+<div id="searchresult_summary"></div>
+<div id="searchresult"></div>
+<div id="searchresult_nav"></div>
 <span class="pr">Powered by <a href="https://github.com/shibukawa/oktavia">Oktavia</a></span>
 </div>
 </form>
+<!-- /oktavia -->
+
 </div>
 <table id="menu">
 <tr>
