@@ -1,14 +1,5 @@
 ? my $context = $main::context;
 ? $_mt->wrapper_file("wrapper.mt")->(sub {
-
-<link rel="stylesheet" href="google-code-prettify/prettify.css" type="text/css" />
-<script src="google-code-prettify/prettify.js"></script>
-<script src="lang-jsx.js"></script>
-<script>
-  window.addEventListener("load", function (e) {
-    prettyPrint();
-  });
-</script>
 <style>
   .headerlink {
     display: none;
