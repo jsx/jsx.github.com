@@ -111,7 +111,38 @@ Following types of statements are supported by JSX. The differences from JavaScr
 <td><pre class="prettyprint"><code class="language-jsx">return expr;
 </code></pre></td>
 <td>returns the result of the expr</td>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">throw expr;
+</code></pre></td>
+<td>throw an error object which can be caught by <code>try</code> statement</td>
 </tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">log expr;
+</code></pre></td>
+<td>displays expr to the console. <code>log</code> statements will be removed on release build</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">assert expr [, message];
+</code></pre></td>
+<td>throws a runtime error if <code>expr</code> is failsy with <code>message</code> or <code>"assertion failure"</code>. <code>assert</code> statements will be removed on release build</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">debugger;
+</code></pre></td>
+<td>stops running and starts a debugger if available</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">delete expr;
+</code></pre></td>
+<td>deletes the property of a Map returned by the expr</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">classname(...);
+</code></pre></td>
+<td>calls the constructor of the class (<code>this</code> can be used to refer to the current class, <code>super</code> can be used for referring to the super class)</td>
+</tr>
+
+<!-- block -->
 <tr>
 <td><pre class="prettyprint"><code class="language-jsx">if (expr)
     statement
@@ -199,23 +230,13 @@ while (expr)
 <td><pre class="prettyprint"><code class="language-jsx">case expr:
     statement
 </code></pre></td>
-<td></td>
+<td>allowed only inside <code>switch</code> statements</td>
 </tr>
 <tr>
 <td><pre class="prettyprint"><code class="language-jsx">default:
     statement
 </code></pre></td>
-<td></td>
-</tr>
-<tr>
-<td><pre class="prettyprint"><code class="language-jsx">delete expr;
-</code></pre></td>
-<td>deletes the property of a Map returned by the expr</td>
-</tr>
-<tr>
-<td><pre class="prettyprint"><code class="language-jsx">classname(...);
-</code></pre></td>
-<td>calls the constructor of the class (<code>this</code> can be used to refer to the current class, <code>super</code> can be used for referring to the super class)</td>
+<td>allowed only inside <code>switch</code> statements</td>
 </tr>
 <tr>
 <td><pre class="prettyprint"><code class="language-jsx">try {
@@ -227,6 +248,13 @@ while (expr)
 }]
 </code></pre></td>
 <td>catch statement can be nested</td>
+</tr>
+<tr>
+<td><pre class="prettyprint"><code class="language-jsx">function name(arg1 : type [, ...]) : type {
+    statement*
+}
+</code></pre></td>
+<td></td>
 </tr>
 </table>
 

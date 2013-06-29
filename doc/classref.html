@@ -112,11 +112,11 @@ The example below defines a class called <code>Human</code> with a member variab
 <h3>Member Function</h3>
 
 <p>
-A member function is defined by either of the following form. Arguments should have their types being annotated. The type after the closing parenthesis at the end of the argument list designates the return type of the function. Function that is not attributed abstract should have body. Function that is attributed abstract may have body.
+A member function is defined by either of the following form. Arguments should have their types being annotated. The default value may follow the type annotation, which will be evaluated in the function scope in runtime. The type after the closing parenthesis at the end of the argument list designates the return type of the function. Function that is not attributed <code>abstract</code> or <code>native</code> should have body. Function that is attributed <code>abstract</code> may have body.
 </p>
 
 <pre class="prettyprint"><code class="language-jsx">// function with body
-attribute* function funcname([arg1 : type[, arg2 : type, ...]]) : type { statement* }
+attribute* function funcname([arg1 : type [= defaultValue] [, arg2 : type, ...]]) : type { statement* }
 
 // function without body
 attribute* function funcname([arg1 : type[, arg2 : type, ...]]) : type;

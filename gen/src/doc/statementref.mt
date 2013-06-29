@@ -72,7 +72,50 @@ return expr;
 EOT
 ?></td>
 <td>returns the result of the expr</td>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+throw expr;
+EOT
+?></td>
+<td>throw an error object which can be caught by <code>try</code> statement</td>
 </tr>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+log expr;
+EOT
+?></td>
+<td>displays expr to the console. <code>log</code> statements will be removed on release build</td>
+</tr>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+assert expr [, message];
+EOT
+?></td>
+<td>throws a runtime error if <code>expr</code> is failsy with <code>message</code> or <code>"assertion failure"</code>. <code>assert</code> statements will be removed on release build</td>
+</tr>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+debugger;
+EOT
+?></td>
+<td>stops running and starts a debugger if available</td>
+</tr>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+delete expr;
+EOT
+?></td>
+<td>deletes the property of a Map returned by the expr</td>
+</tr>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+classname(...);
+EOT
+?></td>
+<td>calls the constructor of the class (<code>this</code> can be used to refer to the current class, <code>super</code> can be used for referring to the super class)</td>
+</tr>
+
+<!-- block -->
 <tr>
 <td><?= $context->{prettify}->('jsx', <<'EOT')
 if (expr)
@@ -188,7 +231,7 @@ case expr:
     statement
 EOT
 ?></td>
-<td></td>
+<td>allowed only inside <code>switch</code> statements</td>
 </tr>
 <tr>
 <td><?= $context->{prettify}->('jsx', <<'EOT')
@@ -196,21 +239,7 @@ default:
     statement
 EOT
 ?></td>
-<td></td>
-</tr>
-<tr>
-<td><?= $context->{prettify}->('jsx', <<'EOT')
-delete expr;
-EOT
-?></td>
-<td>deletes the property of a Map returned by the expr</td>
-</tr>
-<tr>
-<td><?= $context->{prettify}->('jsx', <<'EOT')
-classname(...);
-EOT
-?></td>
-<td>calls the constructor of the class (<code>this</code> can be used to refer to the current class, <code>super</code> can be used for referring to the super class)</td>
+<td>allowed only inside <code>switch</code> statements</td>
 </tr>
 <tr>
 <td><?= $context->{prettify}->('jsx', <<'EOT')
@@ -224,6 +253,15 @@ try {
 EOT
 ?></td>
 <td>catch statement can be nested</td>
+</tr>
+<tr>
+<td><?= $context->{prettify}->('jsx', <<'EOT')
+function name(arg1 : type [, ...]) : type {
+    statement*
+}
+EOT
+?></td>
+<td></td>
 </tr>
 </table>
 
