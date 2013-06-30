@@ -5,12 +5,6 @@ $context->{filename} =~ m{^([^\./]*)};
 my $cur_tab = $1;
 my $selected = Text::MicroTemplate::encoded_string(q{ class="selected"});
 ?>
-<!-- oktavia -->
-<link rel="stylesheet" href="searchstyle.css" type="text/css" />
-<script src="search/jquery-1.9.1.min.js"></script>
-<script src="search/oktavia-jquery-ui.js"></script>
-<script src="search/oktavia-english-search.js"></script>
-<!-- /oktavia -->
 </head>
 <body>
 <div id="body">
