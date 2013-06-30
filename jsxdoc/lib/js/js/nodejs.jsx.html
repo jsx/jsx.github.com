@@ -89,14 +89,14 @@ static const var util : <a href="lib/js/js/nodejs.jsx.html#class-_util">_util</a
 </div>
 <div class="member function">
 <h3>
-static final function require(source : string)
+static function require(source : string)
  : variant
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-EventEmitter">
-<h2> class EventEmitter</h2>
+<h2>native class EventEmitter</h2>
 
 <div class="member function">
 <h3>
@@ -127,7 +127,7 @@ new EventEmitter()
 </div>
 </div>
 <div class="class" id="class-process">
-<h2> class process</h2>
+<h2>native class process</h2>
 <ul class="see">
 <li><a href="http://nodejs.org/api/process.html">http://nodejs.org/api/process.html</a></li>
 </ul>
@@ -139,67 +139,67 @@ static var argv : Array.&lt;string&gt;
 </div>
 <div class="member property">
 <h3>
-static var stdin : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+static __readonly__ var stdin : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var stdout : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+static __readonly__ var stdout : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var stderr : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+static __readonly__ var stderr : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var execPath : string
+static __readonly__ var execPath : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var env : Map.&lt;string&gt;
+static __readonly__ var env : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var pid : int
+static __readonly__ var pid : int
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var arch : string
+static __readonly__ var arch : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var platform : string
+static __readonly__ var platform : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var version : string
+static __readonly__ var version : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var versions : Map.&lt;string&gt;
+static __readonly__ var versions : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var title : string
+static __readonly__ var title : string
 </h3>
 
 </div>
@@ -347,11 +347,11 @@ Returns the difference from previousTime in high-resolution real time.
 </div>
 </div>
 <div class="class" id="class-os">
-<h2> class os</h2>
+<h2>native class os</h2>
 
 <div class="member property">
 <h3>
-static var EOL : string
+static __readonly__ var EOL : string
 </h3>
 
 </div>
@@ -447,17 +447,17 @@ static function networkInterfaces()
 </div>
 </div>
 <div class="class" id="class-module">
-<h2> class module</h2>
+<h2>native class module</h2>
 
 <div class="member property">
 <h3>
-static var id : string
+static __readonly__ var id : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var paths : Array.&lt;string&gt;
+static __readonly__ var paths : Array.&lt;string&gt;
 </h3>
 
 </div>
@@ -469,17 +469,17 @@ new module()
 </div>
 </div>
 <div class="class" id="class-Stream">
-<h2> class Stream</h2>
+<h2>native class Stream</h2>
 
 <div class="member property">
 <h3>
- var fd : int
+__readonly__ var fd : int
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var isTTY : boolean
+__readonly__ var isTTY : boolean
 </h3>
 
 </div>
@@ -512,13 +512,13 @@ new Stream()
 </div>
 </div>
 <div class="class" id="class-Buffer">
-<h2> class Buffer</h2>
+<h2>native class Buffer</h2>
 <div class="description">
 Fixed-sized binary buffer, built in NodeJS.
 </div>
 <div class="member property">
 <h3>
- var length : number
+__readonly__ var length : number
 </h3>
 
 </div>
@@ -862,7 +862,7 @@ static function concat(list : Array.&lt;<a href="lib/js/js/nodejs.jsx.html#class
 </div>
 </div>
 <div class="class" id="class-querystring">
-<h2> class querystring</h2>
+<h2>native class querystring</h2>
 
 <div class="member function">
 <h3>
@@ -921,7 +921,7 @@ static function parse(query : string, sep : string, eq : string, options : Map.&
 </div>
 </div>
 <div class="class" id="class-Stats">
-<h2> class Stats</h2>
+<h2>native class Stats</h2>
 
 <div class="member function">
 <h3>
@@ -980,7 +980,7 @@ new Stats()
 </div>
 </div>
 <div class="class" id="class-FSWatcher">
-<h2> class FSWatcher</h2>
+<h2>native class FSWatcher</h2>
 
 <div class="member function">
 <h3>
@@ -997,29 +997,29 @@ new FSWatcher()
 </div>
 </div>
 <div class="class" id="class-ChildProcess">
-<h2> class ChildProcess</h2>
+<h2>native class ChildProcess</h2>
 
 <div class="member property">
 <h3>
- var stdin : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+__readonly__ var stdin : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var stdout : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+__readonly__ var stdout : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var stderr : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+__readonly__ var stderr : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var pid : int
+__readonly__ var pid : int
 </h3>
 
 </div>
@@ -1039,7 +1039,7 @@ new FSWatcher()
 </div>
 </div>
 <div class="class" id="class-Url">
-<h2> class Url</h2>
+<h2>native class Url</h2>
 
 <div class="member property">
 <h3>
@@ -1115,7 +1115,7 @@ new Url()
 </div>
 </div>
 <div class="class" id="class-HTTPServer">
-<h2> class HTTPServer</h2>
+<h2>native class HTTPServer</h2>
 
 <div class="member function">
 <h3>
@@ -1139,47 +1139,47 @@ new HTTPServer()
 </div>
 </div>
 <div class="class" id="class-ServerRequest">
-<h2> class ServerRequest</h2>
+<h2>native class ServerRequest</h2>
 
 <div class="member property">
 <h3>
- var method : string
+__readonly__ var method : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var url : string
+__readonly__ var url : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var headers : Map.&lt;string&gt;
+__readonly__ var headers : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var trailers : Map.&lt;string&gt;
+__readonly__ var trailers : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var httpVersin : string
+__readonly__ var httpVersin : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var httpVersinMajor : int
+__readonly__ var httpVersinMajor : int
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var httpVersinMinor : int
+__readonly__ var httpVersinMinor : int
 </h3>
 
 </div>
@@ -1198,7 +1198,7 @@ new ServerRequest()
 </div>
 </div>
 <div class="class" id="class-ServerResponse">
-<h2> class ServerResponse</h2>
+<h2>native class ServerResponse</h2>
 
 <div class="member function">
 <h3>
@@ -1257,7 +1257,7 @@ new ServerResponse()
 </div>
 </div>
 <div class="class" id="class-ClientRequest">
-<h2> class ClientRequest</h2>
+<h2>native class ClientRequest</h2>
 
 <div class="member function">
 <h3>
@@ -1267,41 +1267,41 @@ new ClientRequest()
 </div>
 </div>
 <div class="class" id="class-ClientResponse">
-<h2> class ClientResponse</h2>
+<h2>native class ClientResponse</h2>
 
 <div class="member property">
 <h3>
- var statusCode : int
+__readonly__ var statusCode : int
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var headers : Map.&lt;string&gt;
+__readonly__ var headers : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var trailers : Map.&lt;string&gt;
+__readonly__ var trailers : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var httpVersin : string
+__readonly__ var httpVersin : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var httpVersinMajor : int
+__readonly__ var httpVersinMajor : int
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var httpVersinMinor : int
+__readonly__ var httpVersinMinor : int
 </h3>
 
 </div>
@@ -1317,7 +1317,7 @@ new ClientResponse()
 
 <div id="footer">
 <p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.48<br />
-at 2013-06-30T00:15:44.807Z.</p>
+at 2013-06-30T01:11:25.019Z.</p>
 
 </div>
 </div>

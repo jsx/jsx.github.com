@@ -37,76 +37,76 @@ PhantomJS binding for JSX Usage: <code>JSX_RUNJS=phantomjs jsx --executable comm
 </div><!--/file-->
 <div class="classes">
 <div class="class" id="class-phantom">
-<h2>final class phantom</h2>
+<h2>final native class phantom</h2>
 <div class="description">
 Interface to <code>phantom</code>
 </div>
 <div class="member property">
 <h3>
-static var version : <a href="lib/js/js/phantomjs.jsx.html#class-Version">Version</a>
+static __readonly__ var version : <a href="lib/js/js/phantomjs.jsx.html#class-Version">Version</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function exit()
+static function exit()
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function exit(returnValue : int)
+static function exit(returnValue : int)
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-system">
-<h2>final class system</h2>
+<h2>final native class system</h2>
 <div class="description">
 PhantomJS System module
 </div>
 <div class="member property">
 <h3>
-static var platform : string
+static __readonly__ var platform : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var os : <a href="lib/js/js/phantomjs.jsx.html#class-OS">OS</a>
+static __readonly__ var os : <a href="lib/js/js/phantomjs.jsx.html#class-OS">OS</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var env : Map.&lt;string&gt;
+static __readonly__ var env : Map.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-static var args : Array.&lt;string&gt;
+static __readonly__ var args : Array.&lt;string&gt;
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-webpage">
-<h2>final class webpage</h2>
+<h2>final native class webpage</h2>
 <div class="description">
 PhantomJS WebPage module
 </div>
 <div class="member function">
 <h3>
-static final function create()
+static function create()
  : <a href="lib/js/js/phantomjs.jsx.html#class-WebPage">WebPage</a>
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-WebPage">
-<h2>final class WebPage</h2>
+<h2>final native class WebPage</h2>
 
 <div class="member property">
 <h3>
@@ -248,70 +248,70 @@ new WebPage()
 </div>
 <div class="member function">
 <h3>
-final function close()
+ function close()
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function evaluate(jsSource : string)
+ function evaluate(jsSource : string)
  : variant
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function evaluateAsync(jsSource : string)
+ function evaluateAsync(jsSource : string)
  : variant
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function includeJS(url : string, cb : function () : void)
+ function includeJS(url : string, cb : function () : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function open(url : string, cb : function (:string) : void)
+ function open(url : string, cb : function (:string) : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function render(filename : string)
+ function render(filename : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function renderBase64(filename : string)
+ function renderBase64(filename : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function sendEvent(type : string, mouseX : int, mouseY : int)
+ function sendEvent(type : string, mouseX : int, mouseY : int)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function uploadFile(selector : string, filename : string)
+ function uploadFile(selector : string, filename : string)
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-fs">
-<h2>final class fs</h2>
+<h2>final native class fs</h2>
 <div class="description">
 PhantomJS FileSystem module
 </div>
@@ -329,133 +329,133 @@ static var workingDirectory : string
 </div>
 <div class="member function">
 <h3>
-static final function list(path : string)
+static function list(path : string)
  : Array.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function absolute(path : string)
+static function absolute(path : string)
  : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function exists(path : string)
+static function exists(path : string)
  : boolean
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function changeWorkingDirectory(path : string)
+static function changeWorkingDirectory(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function makeDirectory(path : string)
+static function makeDirectory(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function makeTree(path : string)
+static function makeTree(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function removeDirectory(path : string)
+static function removeDirectory(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function removeTree(path : string)
+static function removeTree(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function copyTree(source : string, destination : string)
+static function copyTree(source : string, destination : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function open(path : string, mode : string)
+static function open(path : string, mode : string)
  : <a href="lib/js/js/phantomjs.jsx.html#class-Stream">Stream</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function read(path : string)
+static function read(path : string)
  : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function write(path : string, content : string, mode : string)
+static function write(path : string, content : string, mode : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function write(path : string, content : string)
+static function write(path : string, content : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function size(path : string)
+static function size(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function remove(path : string)
+static function remove(path : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function copy(source : string, destination : string)
+static function copy(source : string, destination : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function move(source : string, destination : string)
+static function move(source : string, destination : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-static final function touch(path : string)
+static function touch(path : string)
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-Stream">
-<h2>final class Stream</h2>
+<h2>final native class Stream</h2>
 
 <div class="member function">
 <h3>
@@ -465,80 +465,80 @@ new Stream()
 </div>
 <div class="member function">
 <h3>
-final function read()
+ function read()
  : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function readLine()
+ function readLine()
  : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function write(data : string)
+ function write(data : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function writeLine(data : string)
+ function writeLine(data : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function flush()
+ function flush()
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function close()
+ function close()
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-webserver">
-<h2>final class webserver</h2>
+<h2>final native class webserver</h2>
 <div class="description">
 PhantomJS WebServer module
 </div>
 <div class="member function">
 <h3>
-static final function create()
+static function create()
  : <a href="lib/js/js/phantomjs.jsx.html#class-WebServer">WebServer</a>
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-WebServer">
-<h2>final class WebServer</h2>
+<h2>final native class WebServer</h2>
 
 <div class="member function">
 <h3>
-final function listen(port : int, listener : function (:<a href="lib/js/js/phantomjs.jsx.html#class-Request">Request</a>, :<a href="lib/js/js/phantomjs.jsx.html#class-Response">Response</a>) : void)
+ function listen(port : int, listener : function (:<a href="lib/js/js/phantomjs.jsx.html#class-Request">Request</a>, :<a href="lib/js/js/phantomjs.jsx.html#class-Response">Response</a>) : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function listen(address : string, listener : function (:<a href="lib/js/js/phantomjs.jsx.html#class-Request">Request</a>, :<a href="lib/js/js/phantomjs.jsx.html#class-Response">Response</a>) : void)
+ function listen(address : string, listener : function (:<a href="lib/js/js/phantomjs.jsx.html#class-Request">Request</a>, :<a href="lib/js/js/phantomjs.jsx.html#class-Response">Response</a>) : void)
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-Request">
-<h2>final class Request</h2>
+<h2>final native class Request</h2>
 
 <div class="member property">
 <h3>
@@ -578,7 +578,7 @@ final function listen(address : string, listener : function (:<a href="lib/js/js
 </div>
 </div>
 <div class="class" id="class-Response">
-<h2>final class Response</h2>
+<h2>final native class Response</h2>
 
 <div class="member property">
 <h3>
@@ -594,28 +594,28 @@ final function listen(address : string, listener : function (:<a href="lib/js/js
 </div>
 <div class="member function">
 <h3>
-final function writeHead(statusCode : int, headers : Map.&lt;string&gt;)
+ function writeHead(statusCode : int, headers : Map.&lt;string&gt;)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function write(data : string)
+ function write(data : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-final function close()
+ function close()
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-Version">
-<h2>final class Version</h2>
+<h2>final native class Version</h2>
 
 <div class="member property">
 <h3>
@@ -637,7 +637,7 @@ final function close()
 </div>
 </div>
 <div class="class" id="class-OS">
-<h2>final class OS</h2>
+<h2>final native class OS</h2>
 
 <div class="member property">
 <h3>
@@ -777,7 +777,7 @@ new Settings()
 
 <div id="footer">
 <p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.48<br />
-at 2013-06-30T00:15:45.509Z.</p>
+at 2013-06-30T01:11:25.725Z.</p>
 
 </div>
 </div>
