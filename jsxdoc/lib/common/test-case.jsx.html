@@ -34,31 +34,31 @@ body {
 </div><!--/file-->
 <div class="classes">
 <div class="class" id="class-TestCase">
-<h2> class TestCase</h2>
+<h2> class <strong>TestCase</strong></h2>
 <div class="description">
 Base class for test cases
 </div>
 <div class="member property">
 <h3>
- var verbose : boolean
+ var <strong>verbose</strong> : boolean
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var showStackTrace : boolean
+ var <strong>showStackTrace</strong> : boolean
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new TestCase()
+new <strong>TestCase</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function setUp()
+ function <strong>setUp</strong>()
  : void
 </h3>
 <div class="description">
@@ -67,7 +67,7 @@ Set up for each test method.
 </div>
 <div class="member function">
 <h3>
- function tearDown()
+ function <strong>tearDown</strong>()
  : void
 </h3>
 <div class="description">
@@ -76,42 +76,42 @@ Tear down for each test method.
 </div>
 <div class="member function">
 <h3>
-__export__ function beforeClass(tests : Array.&lt;string&gt;)
+__export__ function <strong>beforeClass</strong>(tests : Array.&lt;string&gt;)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-__export__ function afterClass()
+__export__ function <strong>afterClass</strong>()
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-__export__ function run(name : string, testFunction : function () : void)
+__export__ function <strong>run</strong>(name : string, testFunction : function () : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function after(name : string)
+ function <strong>after</strong>(name : string)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function finish()
+ function <strong>finish</strong>()
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function async(testBody : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutHandler : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutMS : int)
+ function <strong>async</strong>(testBody : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutHandler : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutMS : int)
  : void
 </h3>
 <div class="description">
@@ -120,7 +120,7 @@ Prepares an asynchronous test with timeout handler.
 </div>
 <div class="member function">
 <h3>
- function async(testBody : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutMS : int)
+ function <strong>async</strong>(testBody : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutMS : int)
  : void
 </h3>
 <div class="description">
@@ -129,7 +129,7 @@ Prepares an asynchronous test. Automatically call <code>this.fail()</code> on ti
 </div>
 <div class="member function">
 <h3>
- function expect(value : variant)
+ function <strong>expect</strong>(value : variant)
  : <a href="lib/common/test-case.jsx.html#class-Matcher">Matcher</a>
 </h3>
 <div class="description">
@@ -138,14 +138,14 @@ Prepares an asynchronous test. Automatically call <code>this.fail()</code> on ti
 </div>
 <div class="member function">
 <h3>
- function expect(value : variant, message : string)
+ function <strong>expect</strong>(value : variant, message : string)
  : <a href="lib/common/test-case.jsx.html#class-Matcher">Matcher</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function pass(reason : string)
+ function <strong>pass</strong>(reason : string)
  : void
 </h3>
 <div class="description">
@@ -154,7 +154,7 @@ Tells a test passes.
 </div>
 <div class="member function">
 <h3>
- function fail(reason : string)
+ function <strong>fail</strong>(reason : string)
  : void
 </h3>
 <div class="description">
@@ -163,21 +163,21 @@ Tells a test fails.
 </div>
 <div class="member function">
 <h3>
- function equals(a : variant, b : variant)
+ function <strong>equals</strong>(a : variant, b : variant)
  : boolean
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function difflet(a : Array.&lt;variant&gt;, b : Array.&lt;variant&gt;)
+ function <strong>difflet</strong>(a : Array.&lt;variant&gt;, b : Array.&lt;variant&gt;)
  : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function diag(message : string)
+ function <strong>diag</strong>(message : string)
  : void
 </h3>
 <div class="description">
@@ -186,7 +186,7 @@ Shows diagnostic messages.
 </div>
 <div class="member function">
 <h3>
- function note(message : string)
+ function <strong>note</strong>(message : string)
  : void
 </h3>
 <div class="description">
@@ -195,31 +195,31 @@ Shows notes.
 </div>
 <div class="member function">
 <h3>
-override function toString()
+override function <strong>toString</strong>()
  : string
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-AsyncContext">
-<h2> class AsyncContext</h2>
+<h2> class <strong>AsyncContext</strong></h2>
 
 <div class="member function">
 <h3>
-new AsyncContext(test : <a href="lib/common/test-case.jsx.html#class-TestCase">TestCase</a>, name : string, timeoutHandler : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutMS : int)
+new <strong>AsyncContext</strong>(test : <a href="lib/common/test-case.jsx.html#class-TestCase">TestCase</a>, name : string, timeoutHandler : function (:<a href="lib/common/test-case.jsx.html#class-AsyncContext">AsyncContext</a>) : void, timeoutMS : int)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function name()
+ function <strong>name</strong>()
  : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function done()
+ function <strong>done</strong>()
  : void
 </h3>
 
@@ -232,7 +232,7 @@ new AsyncContext(test : <a href="lib/common/test-case.jsx.html#class-TestCase">T
 <p>This is <strong>lib/common/test-case.jsx version 1.0.0</strong>.</p>
 <p>Copyright &copy; DeNA., Co., Ltd.</p>
 <p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.48<br />
-at 2013-06-30T01:11:24.417Z.</p>
+at 2013-06-30T01:26:56.073Z.</p>
 
 </div>
 </div>
