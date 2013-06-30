@@ -1,0 +1,3673 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href=".." />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#body {
+    margin: 0px auto;
+    width: 800px;
+    border: 1px solid #ccc;
+}
+#footer {
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+    text-align: center;
+}
+</style>
+<title>lib/built-in.jsx - JSXDoc</title>
+</head>
+<body>
+<div id="body">
+<div class="jsxdoc">
+<div class="file">
+<h1>lib/built-in.jsx</h1>
+<div class="description">
+<p>The file defines the APIs of the built-in objects of JSX, designed to be compatible to <a href="http://www.ecma-international.org/publications/standards/Ecma-262-arch.htm">the 3rd edition of the ECMA-262 standard</a> whenever possible.</p> <p>The description of the API is based on <a href="https://developer.mozilla.org/en/JavaScript/Reference/">the MDN JavaScript Reference</a> under the <a href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons: Attribution-Sharealike license</a>.</p>
+</div>
+</div><!--/file-->
+<div class="classes">
+<div class="class" id="class-Map">
+<h2>final class Map.&lt;T&gt;</h2>
+<div class="description">
+Map is an associative container that contains a list of unique key-value pairs.  Type of the keys are strings, type of the values are Nullable.&lt;T&gt;.
+</div>
+<div class="member function">
+<h3>
+final function hasOwnProperty(key : string)
+ : boolean
+</h3>
+<div class="description">
+Returns a boolean indicating whether the object has the specified property.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">key</td>
+<td class="param-desc">The name of the property to test.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function keys()
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+<div class="description">
+Returns an array of keys of the map.
+</div>
+</div>
+</div>
+<div class="class" id="class-Array">
+<h2>final class Array.&lt;T&gt;</h2>
+<div class="description">
+<p>Array is a sequence of Nullable.&lt;T&gt; values.  The size of an array is not fixed.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+<div class="description">
+<p>A positive integer between 0 and a value less than 2<sup>32</sup> that specifies the number of elements in an array.</p> <p>You can set the length property to truncate an array at any time. When you extend an array by changing its length property, the created elements are initialized to null.</p>
+</div>
+</div>
+<div class="member function">
+<h3>
+new Array()
+</h3>
+<div class="description">
+Constructs an empty array.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Array(length : number)
+</h3>
+<div class="description">
+Constructs an array of given length.  The elements are initialized to null.
+</div>
+</div>
+<div class="member function">
+<h3>
+final override function toString()
+ : string
+</h3>
+<div class="description">
+Returns a string representing the object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toLocaleString()
+ : string
+</h3>
+<div class="description">
+Returns a string representing the object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function concat(arrayN : ...<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Returns a new array comprised of this array joined with other array(s) and/or value(s).
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">arrayN</td>
+<td class="param-desc">Arrays to concatenate to the resulting array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function join()
+ : string
+</h3>
+<div class="description">
+Joins all elements of an array into a string, separating each element with a comma.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function join(separator : string)
+ : string
+</h3>
+<div class="description">
+Joins all elements of an array into a string.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">separator</td>
+<td class="param-desc">Specifies a string to separate each element of the array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function pop()
+ : Nullable.&lt;T&gt;
+</h3>
+<div class="description">
+Removes the last element from an array and returns that element.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function push(itemN : ...Nullable.&lt;T&gt;)
+ : int
+</h3>
+<div class="description">
+Mutates an array by appending the given elements and returning the new length of the array.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">itemN</td>
+<td class="param-desc">The elements to add to the end of the array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function reverse()
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Reverses an array in place.  The first array element becomes the last and the last becomes the first.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function shift()
+ : Nullable.&lt;T&gt;
+</h3>
+<div class="description">
+Removes the first element from an array and returns that element. This method changes the length of the array.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function slice(start : number)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Returns a one-level deep copy of a portion of an array.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">Zero-based index at which to begin extraction.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function slice(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Returns a one-level deep copy of a portion of an array.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">Zero-based index at which to begin extraction.</td>
+</tr>
+<tr>
+<td class="param-name">end</td>
+<td class="param-desc">Zero-based index at which to end extraction. slice extracts up to but not including end.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function sort()
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The array is sorted lexicographically (in dictionary order) according to the string conversion of each element.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function sort(comparefn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : number)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Sorts the elements of an array in place and returns the array. The sort is not necessarily stable.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">comparefn</td>
+<td class="param-desc">Specifies a function that defines the sort order.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function splice(start : number, deleteCount : number, itemN : ...T)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Changes the content of an array, adding new elements while removing old elements.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">Index at which to start changing the array. If negative, will begin that many elements from the end.</td>
+</tr>
+<tr>
+<td class="param-name">deleteCount</td>
+<td class="param-desc">An integer indicating the number of old array elements to remove.</td>
+</tr>
+<tr>
+<td class="param-name">itemN</td>
+<td class="param-desc">The elements to add to the array.  If you don't specify any elements, <code>splice</code> simply removes elements from the array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function unshift(itemN : ...Nullable.&lt;T&gt;)
+ : int
+</h3>
+<div class="description">
+Adds one or more elements to the beginning of an array and returns the new length of the array.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">itemN</td>
+<td class="param-desc">The elements to add to the front of the array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function indexOf(value : Nullable.&lt;T&gt;)
+ : number
+</h3>
+<div class="description">
+Returns the first index at which a given element can be found in the array, or -1 if it is not present.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function indexOf(value : Nullable.&lt;T&gt;, fromIndex : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function lastIndexOf(value : Nullable.&lt;T&gt;)
+ : number
+</h3>
+<div class="description">
+Returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backward.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function lastIndexOf(value : Nullable.&lt;T&gt;, fromIndex : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function every(callbackfn : function (:Nullable.&lt;T&gt;) : boolean)
+ : boolean
+</h3>
+<div class="description">
+Tests whether all elements in the array pass the test implemented by the provided function.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function every(callbackfn : function (:Nullable.&lt;T&gt;, :number) : boolean)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function every(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : boolean)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function some(callbackfn : function (:Nullable.&lt;T&gt;) : boolean)
+ : boolean
+</h3>
+<div class="description">
+Tests whether some element in the array passes the test implemented by the provided function.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function some(callbackfn : function (:Nullable.&lt;T&gt;, :number) : boolean)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function some(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : boolean)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final inline function forEach(callbackfn : function (:Nullable.&lt;T&gt;) : void)
+ : void
+</h3>
+<div class="description">
+Calls callbackfn once for each element in the array, in ascending order.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">callbackfn</td>
+<td class="param-desc">A function to call for each element.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function forEach(callbackfn : function (:Nullable.&lt;T&gt;, :number) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function forEach(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function map.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;) : Nullable.&lt;U&gt;)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
+</h3>
+<div class="description">
+Creates a new array with the results of calling a provided function on every element in this array.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">callbackfn</td>
+<td class="param-desc">A function that produces an element of the new <code>Array.&lt;U&gt;</code> from an element of the current one.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function map.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :number) : Nullable.&lt;U&gt;)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function map.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : Nullable.&lt;U&gt;)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function filter(callbackfn : function (:Nullable.&lt;T&gt;) : boolean)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+<div class="description">
+Creates a new array with all elements that pass the test implemented the provided function.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">callbackfn</td>
+<td class="param-desc">A function to test each elements of the array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function filter(callbackfn : function (:Nullable.&lt;T&gt;, :number) : boolean)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function filter(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : boolean)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduce.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : U)
+ : U
+</h3>
+<div class="description">
+Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value. <code>reduce</code> will throw <code>TypeError</code> if the array contains no elements and no initialValue is suplied.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">callbackfn</td>
+<td class="param-desc">A function to execute on each value in the element, taking four arguments: the previousValue (the value previously returned in the last invocation of the callback), the currentValue (the current element being processed in the array), the currentIndex and the array.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function reduce.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number) : U)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduce.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduce.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : U, initialValue : T)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduce.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number) : U, initialValue : T)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduce.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U, initialValue : T)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduceRight.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : U)
+ : U
+</h3>
+<div class="description">
+Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function reduceRight.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number) : U)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduceRight.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduceRight.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : U, initialValue : T)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduceRight.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number) : U, initialValue : T)
+ : U
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function reduceRight.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U, initialValue : T)
+ : U
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-g_Enumerable">
+<h2> interface g_Enumerable.&lt;T&gt;</h2>
+
+<div class="member function">
+<h3>
+abstract function next()
+ : T
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Object">
+<h2> class Object</h2>
+<div class="description">
+The root class of all classes.
+</div>
+<div class="member function">
+<h3>
+new Object()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function toString()
+ : string
+</h3>
+<div class="description">
+Returns a string representing the object.
+</div>
+</div>
+</div>
+<div class="class" id="class-Function">
+<h2>final class Function</h2>
+<div class="description">
+A class representing a static function. Unlike JavaScript, JSX does not provide <em>Function#call()</em> or <em>Function#apply()</em> since it is a statically-typed language.
+</div>
+</div>
+<div class="class" id="class-String">
+<h2>final class String</h2>
+<div class="description">
+<p>A wrapper object for primitive <code>string</code>s.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+</div>
+<div class="member property">
+<h3>
+ var length : int
+</h3>
+<div class="description">
+The length of a string.
+</div>
+</div>
+<div class="member function">
+<h3>
+new String()
+</h3>
+<div class="description">
+Constructs a String object containing an empty string.
+</div>
+</div>
+<div class="member function">
+<h3>
+new String(s : string)
+</h3>
+<div class="description">
+Constructs a String object wrapping the given string.
+</div>
+</div>
+<div class="member function">
+<h3>
+new String(s : <a href="lib/built-in.jsx.html#class-String">String</a>)
+</h3>
+<div class="description">
+Constructs a String object wrapping the value wrapped by the given object.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function fromCharCode(charN : ...number)
+ : string
+</h3>
+<div class="description">
+Returns a string value containing as many characters as the number of arguments.
+</div>
+</div>
+<div class="member function">
+<h3>
+final override function toString()
+ : string
+</h3>
+<div class="description">
+Returns this string value. (Note that, for a String object, the toString method happens to return the same thing as the valueOf method.)
+</div>
+</div>
+<div class="member function">
+<h3>
+final function valueOf()
+ : string
+</h3>
+<div class="description">
+Returns this string value.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function charAt(pos : number)
+ : string
+</h3>
+<div class="description">
+Returns a string containing the character at position <code>pos</code> in the string resulting from converting this object to a string. If there is no character at that position, the result is the empty string. The result is a string value, not a String object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function charCodeAt(pos : number)
+ : number
+</h3>
+<div class="description">
+Returns a number (a nonnegative integer less than 2<sup>16</sup>) representing the code point value of the character at position pos in the string resulting from converting this object to a string. If there is no character at that position, the result is NaN.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function concat(stringN : ...string)
+ : string
+</h3>
+<div class="description">
+When the <code>concat</code> method is called with zero or more arguments <code>string1</code>, <code>string2</code>, etc., it returns a string consisting of the characters of this object followed by the characters of each of string1, string2, etc. The result is a string value, not a String object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function indexOf(searchString : string)
+ : int
+</h3>
+<div class="description">
+If searchString appears as a substring of the result of converting this object to a string then the index of the smallest such position is returned; otherwise, -1 is returned.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function indexOf(searchString : string, position : number)
+ : int
+</h3>
+<div class="description">
+If searchString appears as a substring of the result of converting this object to a string, at one or more positions that are greater than or equal to position, then the index of the smallest such position is returned; otherwise, -1 is returned.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function lastIndexOf(searchString : string)
+ : int
+</h3>
+<div class="description">
+If searchString appears as a substring of the result of converting this object to a string then the index of the greatest such position is returned; otherwise, -1 is returned.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function lastIndexOf(searchString : string, position : number)
+ : int
+</h3>
+<div class="description">
+If searchString appears as a substring of the result of converting this object to a string at one or more positions that are smaller than or equal to position, then the index of the greatest such position is returned; otherwise, -1 is returned.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function localeCompare(that : string)
+ : number
+</h3>
+<div class="description">
+Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order. Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order. Returns a negative number if the string occurs earlier in a sort than compareString, returns a positive number if the string occurs afterwards in such a sort, and returns 0 if they occur at the same level.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">that</td>
+<td class="param-desc">The string against which the referring string is comparing.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function match(regexp : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+<div class="description">
+Used to retrieve the matches when matching a string against a regular expression. If the regular expression does not include the g flag, returns the same result as regexp.exec(string).  If the regular expression includes the g flag, the method returns an Array containing all matches. If there were no matches, the method returns null.  The returned Array has an extra input property, which contains the regexp that generated it as a result. In addition, it has an index property, which represents the zero-based index of the match in the string.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">regexp</td>
+<td class="param-desc">A regular expression object.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function replace(searchValue : string, replaceValue : string)
+ : string
+</h3>
+<div class="description">
+Returns a new string with some or all matches of a pattern replaced by a replacement.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function replace(searchValue : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>, replaceValue : string)
+ : string
+</h3>
+<div class="description">
+Returns a new string with some or all matches of a pattern replaced by a replacement.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function replace(searchValue : string, replaceValue : function (:string) : string)
+ : string
+</h3>
+<div class="description">
+Returns a new string with some or all matches of a pattern replaced by a replacement.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function replace(searchValue : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>, replaceValue : function (:string) : string)
+ : string
+</h3>
+<div class="description">
+Returns a new string with some or all matches of a pattern replaced by a replacement.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function search(searchValue : string)
+ : int
+</h3>
+<div class="description">
+Executes the search for a match between a regular expression and this <code>String</code> object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function search(searchValue : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>)
+ : int
+</h3>
+<div class="description">
+Executes the search for a match between a regular expression and this <code>String</code> object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function slice(start : number)
+ : string
+</h3>
+<div class="description">
+Extracts a section of a string and returns a new string.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">The zero-based index at which to begin extraction.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function slice(start : number, end : number)
+ : string
+</h3>
+<div class="description">
+Extracts a section of a string and returns a new string.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">The zero-based index at which to begin extraction.</td>
+</tr>
+<tr>
+<td class="param-name">end</td>
+<td class="param-desc">The zero-based index at which to end extraction.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function split(separator : string)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+<div class="description">
+Splits a String object into an array of strings by separating the string into substrings.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">separator</td>
+<td class="param-desc">Specifies the character sequence to use for separating the string.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function split(separator : string, limit : number)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+<div class="description">
+Splits a String object into an array of strings by separating the string into substrings.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">separator</td>
+<td class="param-desc">Specifies the character sequence to use for separating the string.</td>
+</tr>
+<tr>
+<td class="param-name">limit</td>
+<td class="param-desc">Integer specifying a limit on the number of splits to be found.  The <code>split</code> method still splits on every match of <code>separator</code>, but it truncates the returned array to at most <code>limit</code> elements.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function split(separator : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+<div class="description">
+Splits a String object into an array of strings by separating the string into substrings.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">separator</td>
+<td class="param-desc">Specifies an regular expression to use for separating the string.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function split(separator : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>, limit : number)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+<div class="description">
+Splits a String object into an array of strings by separating the string into substrings.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">separator</td>
+<td class="param-desc">Specifies an regular expression to use for separating the string.</td>
+</tr>
+<tr>
+<td class="param-name">limit</td>
+<td class="param-desc">Integer specifying a limit on the number of splits to be found.  The <code>split</code> method still splits on every match of <code>separator</code>, but it truncates the returned array to at most <code>limit</code> elements.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function substring(start : number)
+ : string
+</h3>
+<div class="description">
+Returns a subset of a <code>string</code> starting at the given offset.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">The zero-based index at which to begin extraction.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function substring(start : number, end : number)
+ : string
+</h3>
+<div class="description">
+Returns a subset of a <code>string</code> starting at the given offset.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">start</td>
+<td class="param-desc">The zero-based index at which to begin extraction.</td>
+</tr>
+<tr>
+<td class="param-name">end</td>
+<td class="param-desc">The zero-based index at which to end extraction.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function toLowerCase()
+ : string
+</h3>
+<div class="description">
+Returns the calling string value converted to lowercase.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toLocaleLowerCase()
+ : string
+</h3>
+<div class="description">
+Returns the calling string value converted to lowercase.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toUpperCase()
+ : string
+</h3>
+<div class="description">
+Returns the calling string value converted to uppercase.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toLocaleUpperCase()
+ : string
+</h3>
+<div class="description">
+Returns the calling string value converted to uppercase.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function trim()
+ : string
+</h3>
+<div class="description">
+Removes whitespace from both ends of the string.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function encodeURIComponent(str : string)
+ : string
+</h3>
+<div class="description">
+Encodes a Uniform Resource Identifier (URI) component by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">str</td>
+<td class="param-desc">A component of a URI.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+static final function decodeURIComponent(encodedURI : string)
+ : string
+</h3>
+<div class="description">
+Decodes a Uniform Resource Identifier (URI) component previously created by encodeURIComponent or by a similar routine.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">encodedURI</td>
+<td class="param-desc">An encoded component of a Uniform Resource Identifier.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+static final function encodeURI(str : string)
+ : string
+</h3>
+<div class="description">
+Encodes a Uniform Resource Identifier (URI) by replacing each instance of certain characters by one, two, three, or four escape sequences representing the UTF-8 encoding of the character.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">str</td>
+<td class="param-desc">A complete Uniform Resource Identifier.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+static final function decodeURI(encodedURI : string)
+ : string
+</h3>
+<div class="description">
+Decodes a Uniform Resource Identifier (URI) previously created by encodeURI or by a similar routine.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">encodedURI</td>
+<td class="param-desc">A complete, encoded Uniform Resuorce Identifier.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="class" id="class-Boolean">
+<h2>final class Boolean</h2>
+<div class="description">
+A wrapper object for primitive <code>boolean</code>s.
+</div>
+<div class="member function">
+<h3>
+new Boolean()
+</h3>
+<div class="description">
+Constructs a Boolean object containing a <code>false</code>.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Boolean(value : boolean)
+</h3>
+<div class="description">
+Constructs a Boolean object wrapping the given value.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Boolean(value : <a href="lib/built-in.jsx.html#class-Boolean">Boolean</a>)
+</h3>
+<div class="description">
+Constructs a Boolean object wrapping the value wrapped by the given object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final override function toString()
+ : string
+</h3>
+<div class="description">
+Returns a string of either "true" or "false" depending upon the value of the object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function valueOf()
+ : boolean
+</h3>
+<div class="description">
+Returns the wrapped <code>boolean</code> value.
+</div>
+</div>
+</div>
+<div class="class" id="class-Number">
+<h2>final class Number</h2>
+<div class="description">
+A wrapper object for primitive <code>number</code>s.
+</div>
+<div class="member property">
+<h3>
+static const var MAX_VALUE : number
+</h3>
+<div class="description">
+The maximum numeric value representable.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var MIN_VALUE : number
+</h3>
+<div class="description">
+The minimum numeric value representable.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Number()
+</h3>
+<div class="description">
+Constructs a Number object containing <code>0.0</code>.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Number(value : number)
+</h3>
+<div class="description">
+Constructs a Number object wrapping the given value.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Number(value : <a href="lib/built-in.jsx.html#class-Number">Number</a>)
+</h3>
+<div class="description">
+Constructs a Number object wrapping the value wrapped by the given object.
+</div>
+</div>
+<div class="member function">
+<h3>
+final override function toString()
+ : string
+</h3>
+<div class="description">
+Returns a string representing the number.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toString(radix : number)
+ : string
+</h3>
+<div class="description">
+Returns a string representing the number.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">radix</td>
+<td class="param-desc">An integer between 2 and 36 specifying the base to use for representing numeric values.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+final function toLocaleString()
+ : string
+</h3>
+<div class="description">
+This method available to numbers will convert the number into a string which is suitable for presentation in the given locale.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function valueOf()
+ : number
+</h3>
+<div class="description">
+Returns the wrapped <code>number</code> value.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toFixed(fractionDigits : number)
+ : string
+</h3>
+<div class="description">
+Formats a number using fixed-point notation.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toExponential(fractionDigits : number)
+ : string
+</h3>
+<div class="description">
+Returns a string representing the Number object in exponential notation.
+</div>
+</div>
+<div class="member function">
+<h3>
+final function toPrecision(precision : number)
+ : string
+</h3>
+<div class="description">
+Returns a string representing the Number object to the specified precision.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function parseInt(str : string)
+ : number
+</h3>
+<div class="description">
+Parses a string argument and returns an integer if successful, or <code>NaN</code> if failed.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">str</td>
+<td class="param-desc">The value to parse.  Leading whitespace in the string is ignored.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+static final function parseInt(str : string, radix : number)
+ : number
+</h3>
+<div class="description">
+Parses a string argument and returns an integer if successful, or <code>NaN</code> if failed.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">str</td>
+<td class="param-desc">The value to parse.  Leading whitespace in the string is ignored.</td>
+</tr>
+<tr>
+<td class="param-name">radix</td>
+<td class="param-desc">An integer that represents the radix of the above mentioned string.</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+static final function parseFloat(str : string)
+ : number
+</h3>
+<div class="description">
+<p>Parses a string argument and returns a floating point number.</p> <p>If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.</p> <p>If the first character cannot be converted to a number, parseFloat returns <code>NaN</code>.</p>
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function isNaN(num : number)
+ : boolean
+</h3>
+<div class="description">
+Determines whether a number is <code>NaN</code> or not.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function isFinite(num : number)
+ : boolean
+</h3>
+<div class="description">
+Determines whether a number is finite or not.
+</div>
+</div>
+</div>
+<div class="class" id="class-Math">
+<h2>final class Math</h2>
+<div class="description">
+<p>Provides mathmetical constants and functions.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+</div>
+<div class="member property">
+<h3>
+static const var E : number
+</h3>
+<div class="description">
+Euler's constant and the base of natural logarithms, approximately 2.718.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var LN10 : number
+</h3>
+<div class="description">
+Natural logarithm of 10, approximately 2.302.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var LN2 : number
+</h3>
+<div class="description">
+Natural logarithm of 2, approximately 0.693.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var LOG2E : number
+</h3>
+<div class="description">
+Base 2 logarithm of E, approximately 1.442.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var LOG10E : number
+</h3>
+<div class="description">
+Base 10 logarithm of E, approximately 0.434.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var PI : number
+</h3>
+<div class="description">
+Ratio of the circumference of a circle to its diameter, approximately 3.14159.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var SQRT1_2 : number
+</h3>
+<div class="description">
+Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.
+</div>
+</div>
+<div class="member property">
+<h3>
+static const var SQRT2 : number
+</h3>
+<div class="description">
+Square root of 2, approximately 1.414.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function abs(x : number)
+ : number
+</h3>
+<div class="description">
+Returns the absolute value of a number.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function acos(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function asin(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function atan(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function atan2(y : number, x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function ceil(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function cos(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function exp(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function floor(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function log(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function max(value1 : number, value2 : number, value3 : number, valueN : ...number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function max(value1 : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function min(value1 : number, value2 : number, value3 : number, valueN : ...number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function min(value1 : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function pow(x : number, y : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function random()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function round(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function sin(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function sqrt(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function tan(x : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function max(value1 : number, value2 : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function min(value1 : number, value2 : number)
+ : number
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Date">
+<h2>final class Date</h2>
+<div class="description">
+<p>An object for working with dates and times.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+</div>
+<div class="member function">
+<h3>
+new Date(year : number, month : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date(year : number, month : number, date : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date(year : number, month : number, date : number, hours : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date(year : number, month : number, date : number, hours : number, minutes : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date(year : number, month : number, date : number, hours : number, minutes : number, seconds : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date(year : number, month : number, date : number, hours : number, minutes : number, seconds : number, ms : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date(value : string)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">value</td>
+<td class="param-desc">String value representing a date. The string should be in a format recognized by the <code>parse</code> method (IETF-compliant RFC 2822 timestamps).</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+new Date(value : number)
+</h3>
+<div class="description">
+Creates a Date object.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">value</td>
+<td class="param-desc">Integer value representing the number of milliseconds since 1 January 1970 00:00:00 UTC (Unix Epoch).</td>
+</tr>
+</table>
+</div>
+<div class="member function">
+<h3>
+new Date(value : <a href="lib/built-in.jsx.html#class-Date">Date</a>)
+</h3>
+<div class="description">
+Clones the given object.
+</div>
+</div>
+<div class="member function">
+<h3>
+new Date()
+</h3>
+<div class="description">
+Creates a Date object for today's date and time according to local time.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function parse(value : string)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function UTC(year : number, month : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function UTC(year : number, month : number, date : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function UTC(year : number, month : number, date : number, hours : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function UTC(year : number, month : number, date : number, hours : number, minutes : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function UTC(year : number, month : number, date : number, hours : number, minutes : number, seconds : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function UTC(year : number, month : number, date : number, hours : number, minutes : number, seconds : number, ms : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function now()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final override function toString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toDateString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toTimeString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toLocaleString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toLocaleDateString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toLocaleTimeString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function valueOf()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getTime()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getFullYear()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCFullYear()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getMonth()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCMonth()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getDate()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCDate()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getDay()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCDay()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getHours()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCHours()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getMinutes()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCMinutes()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getSeconds()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCSeconds()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getMilliseconds()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUTCMilliseconds()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getTimezoneOffset()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setTime(time : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setMilliseconds(ms : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCMilliseconds(ms : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setSeconds(sec : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCSeconds(sec : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setMinutes(min : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCMinutes(min : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setHours(hour : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCHours(hour : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setDate(date : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCDate(date : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setMonth(month : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCMonth(month : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setFullYear(year : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUTCFullYear(year : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toUTCString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toISOString()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toJSON()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function toJSON(key : string)
+ : string
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-RegExp">
+<h2>final class RegExp</h2>
+<div class="description">
+<p>An object that represents a regular-expression.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+</div>
+<div class="member property">
+<h3>
+ var source : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var global : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var ignoreCase : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var multiline : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var lastIndex : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new RegExp(pattern : string, flags : string)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new RegExp(pattern : string)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new RegExp(pattern : <a href="lib/built-in.jsx.html#class-RegExp">RegExp</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function exec(str : string)
+ : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function test(str : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final override function toString()
+ : string
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Error">
+<h2> class Error</h2>
+
+<div class="member property">
+<h3>
+ var name : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var message : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var stack : string
+</h3>
+<div class="description">
+Implementation-dependent stack trace information
+</div>
+</div>
+<div class="member function">
+<h3>
+new Error()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Error(message : string)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-EvalError">
+<h2> class EvalError</h2>
+
+<div class="member function">
+<h3>
+new EvalError()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new EvalError(message : string)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-RangeError">
+<h2> class RangeError</h2>
+
+<div class="member function">
+<h3>
+new RangeError()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new RangeError(message : string)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ReferenceError">
+<h2> class ReferenceError</h2>
+
+<div class="member function">
+<h3>
+new ReferenceError()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new ReferenceError(message : string)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-SyntaxError">
+<h2> class SyntaxError</h2>
+
+<div class="member function">
+<h3>
+new SyntaxError()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new SyntaxError(message : string)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-TypeError">
+<h2> class TypeError</h2>
+
+<div class="member function">
+<h3>
+new TypeError()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new TypeError(message : string)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-g_StopIteration">
+<h2> class g_StopIteration</h2>
+<div class="description">
+Provides classes and interfaces related to generator.
+</div>
+<div class="member function">
+<h3>
+new g_StopIteration()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-JSON">
+<h2>final class JSON</h2>
+<div class="description">
+<p>Provides static functions to manipulate JSON.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 5th edition.</p>
+</div>
+<div class="member function">
+<h3>
+static final function parse(text : string)
+ : variant
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function parse(text : string, reviver : function (:string, :variant) : variant)
+ : variant
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function stringify(value : variant)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function stringify(value : variant, replacer : function (:string, :variant) : variant)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function stringify(value : variant, replacer : function (:string, :variant) : variant, space : number)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function stringify(value : variant, replacer : function (:string, :variant) : variant, space : string)
+ : string
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Transferable">
+<h2> class Transferable</h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
+</ul>
+<div class="member function">
+<h3>
+new Transferable()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ArrayBuffer">
+<h2>final class ArrayBuffer</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+ var byteLength : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new ArrayBuffer(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function slice(begin : number)
+ : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function slice(begin : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ArrayBufferView">
+<h2> class ArrayBufferView</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+ var buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var byteOffset : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var byteLength : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new ArrayBufferView()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Int8Array">
+<h2>final class Int8Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(array : <a href="lib/built-in.jsx.html#class-Int8Array">Int8Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int8Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Int8Array">Int8Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Int8Array">Int8Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Int8Array">Int8Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Uint8Array">
+<h2> class Uint8Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(array : <a href="lib/built-in.jsx.html#class-Uint8Array">Uint8Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(array : <a href="lib/built-in.jsx.html#class-Uint8Array">Uint8Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(array : <a href="lib/built-in.jsx.html#class-Uint8Array">Uint8Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Uint8Array">Uint8Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Uint8ClampedArray">
+<h2>final class Uint8ClampedArray</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(array : <a href="lib/built-in.jsx.html#class-Uint8ClampedArray">Uint8ClampedArray</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(array : <a href="lib/built-in.jsx.html#class-Uint8Array">Uint8Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint8ClampedArray(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Uint8ClampedArray">Uint8ClampedArray</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Uint8ClampedArray">Uint8ClampedArray</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final override function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Uint8ClampedArray">Uint8ClampedArray</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Int16Array">
+<h2>final class Int16Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(array : <a href="lib/built-in.jsx.html#class-Int16Array">Int16Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int16Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Int16Array">Int16Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Int16Array">Int16Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Int16Array">Int16Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Uint16Array">
+<h2>final class Uint16Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(array : <a href="lib/built-in.jsx.html#class-Uint16Array">Uint16Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint16Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Uint16Array">Uint16Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Uint16Array">Uint16Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Uint16Array">Uint16Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Int32Array">
+<h2>final class Int32Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(array : <a href="lib/built-in.jsx.html#class-Int32Array">Int32Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Int32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Int32Array">Int32Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Int32Array">Int32Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Int32Array">Int32Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Uint32Array">
+<h2>final class Uint32Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(array : <a href="lib/built-in.jsx.html#class-Uint32Array">Uint32Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Uint32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Uint32Array">Uint32Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Uint32Array">Uint32Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Uint32Array">Uint32Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Float32Array">
+<h2>final class Float32Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(array : <a href="lib/built-in.jsx.html#class-Float32Array">Float32Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float32Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Float32Array">Float32Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Float32Array">Float32Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Float32Array">Float32Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Float64Array">
+<h2>final class Float64Array</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var BYTES_PER_ELEMENT : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(array : <a href="lib/built-in.jsx.html#class-Float64Array">Float64Array</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Float64Array(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, length : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function get(index : number)
+ : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(index : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Float64Array">Float64Array</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Float64Array">Float64Array</a>, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;number&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function set(array : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;int&gt;, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function subarray(start : number, end : number)
+ : <a href="lib/built-in.jsx.html#class-Float64Array">Float64Array</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-DataView">
+<h2>final class DataView</h2>
+<ul class="see">
+<li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
+</ul>
+<div class="member function">
+<h3>
+new DataView(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new DataView(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new DataView(buffer : <a href="lib/built-in.jsx.html#class-ArrayBuffer">ArrayBuffer</a>, byteOffset : number, byteLength : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getInt8(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUint8(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getInt16(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getInt16(byteOffset : number, littleEndian : boolean)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUint16(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUint16(byteOffset : number, littleEndian : boolean)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getInt32(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getInt32(byteOffset : number, littleEndian : boolean)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUint32(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getUint32(byteOffset : number, littleEndian : boolean)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getFloat32(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getFloat32(byteOffset : number, littleEndian : boolean)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getFloat64(byteOffset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function getFloat64(byteOffset : number, littleEndian : boolean)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setInt8(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUint8(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setInt16(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setInt16(byteOffset : number, value : number, littleEndian : boolean)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUint16(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUint16(byteOffset : number, value : number, littleEndian : boolean)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setInt32(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setInt32(byteOffset : number, value : number, littleEndian : boolean)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUint32(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setUint32(byteOffset : number, value : number, littleEndian : boolean)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setFloat32(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setFloat32(byteOffset : number, value : number, littleEndian : boolean)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setFloat64(byteOffset : number, value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function setFloat64(byteOffset : number, value : number, littleEndian : boolean)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-JSX">
+<h2>final class JSX</h2>
+<div class="description">
+Provides static functions to control the behaviour of the JSX runtime.
+</div>
+<div class="member property">
+<h3>
+static const var DEBUG : boolean
+</h3>
+<div class="description">
+A flag which is disabled by <code>--optimize no-debug</code>.<br /> This is intended to remove debugging statements on release build.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function profilerIsRunning()
+ : boolean
+</h3>
+<div class="description">
+Returns whether or not the profiler is running.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function getProfileResults()
+ : variant
+</h3>
+<div class="description">
+Returns the profiler results.
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function postProfileResults(url : string)
+ : void
+</h3>
+<div class="description">
+<p>Posts the profiler results to the given URL.</p> <p>Please refer to <a href="http://jsx.github.io/doc/profiler.html">the profiler document</a> for using the function.</p>
+</div>
+</div>
+<div class="member function">
+<h3>
+static final function postProfileResults(url : string, cb : function (:<a href="lib/built-in.jsx.html#class-Error">Error</a>, :string) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function resetProfileResults()
+ : void
+</h3>
+<div class="description">
+Resets the collected profiler results.
+</div>
+</div>
+</div>
+</div>
+</div><!--/jsxdoc-->
+
+<div id="footer">
+<p>Copyright &copy; DeNA., Co., Ltd.</p>
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.48<br />
+at 2013-06-30T00:15:43.777Z.</p>
+
+</div>
+</div>
+</body>
+</html>

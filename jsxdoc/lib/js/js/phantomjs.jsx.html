@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="../../.." />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#body {
+    margin: 0px auto;
+    width: 800px;
+    border: 1px solid #ccc;
+}
+#footer {
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+    text-align: center;
+}
+</style>
+<title>lib/js/js/phantomjs.jsx - JSXDoc</title>
+</head>
+<body>
+<div id="body">
+<div class="jsxdoc">
+<div class="file">
+<h1>lib/js/js/phantomjs.jsx</h1>
+<div class="description">
+PhantomJS binding for JSX Usage: <code>JSX_RUNJS=phantomjs jsx --executable commonjs a.jsx</code>
+</div>
+<ul class="see">
+<li><a href="http://phantomjs.org/">http://phantomjs.org/</a></li>
+</ul>
+</div><!--/file-->
+<div class="classes">
+<div class="class" id="class-phantom">
+<h2>final class phantom</h2>
+<div class="description">
+Interface to <code>phantom</code>
+</div>
+<div class="member property">
+<h3>
+static var version : <a href="lib/js/js/phantomjs.jsx.html#class-Version">Version</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function exit()
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function exit(returnValue : int)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-system">
+<h2>final class system</h2>
+<div class="description">
+PhantomJS System module
+</div>
+<div class="member property">
+<h3>
+static var platform : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var os : <a href="lib/js/js/phantomjs.jsx.html#class-OS">OS</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var env : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var args : Array.&lt;string&gt;
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-webpage">
+<h2>final class webpage</h2>
+<div class="description">
+PhantomJS WebPage module
+</div>
+<div class="member function">
+<h3>
+static final function create()
+ : <a href="lib/js/js/phantomjs.jsx.html#class-WebPage">WebPage</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-WebPage">
+<h2>final class WebPage</h2>
+
+<div class="member property">
+<h3>
+ var clipRect : <a href="lib/js/js/phantomjs.jsx.html#class-Rectangle">Rectangle</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var content : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var navigationLocked : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var paperSize : variant
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var settings : <a href="lib/js/js/phantomjs.jsx.html#class-Settings">Settings</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var viewportSize : <a href="lib/js/js/phantomjs.jsx.html#class-Size">Size</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var zoomFactor : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var customHeaders : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onAlert : function (:string) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onCallback : function (:variant) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onClosing : function (:<a href="lib/js/js/phantomjs.jsx.html#class-WebPage">WebPage</a>) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onConfirm : function (:string) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onConsoleMessage : function (:string, :int, :string) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onError : function (:string, :Array.&lt;variant&gt;) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onInitialized : function () : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onLoadFinished : function (:string) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onLoadStarted : function () : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onNavigationRequested : function (:string, :string, :boolean, :boolean) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onPrompt : function (:string, :variant) : variant
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onResourceRequested : function (:variant) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onResponseReceived : function (:variant) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var onUrlChanged : function (:string) : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new WebPage()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function close()
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function evaluate(jsSource : string)
+ : variant
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function evaluateAsync(jsSource : string)
+ : variant
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function includeJS(url : string, cb : function () : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function open(url : string, cb : function (:string) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function render(filename : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function renderBase64(filename : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function sendEvent(type : string, mouseX : int, mouseY : int)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function uploadFile(selector : string, filename : string)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-fs">
+<h2>final class fs</h2>
+<div class="description">
+PhantomJS FileSystem module
+</div>
+<div class="member property">
+<h3>
+static var separator : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var workingDirectory : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function list(path : string)
+ : Array.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function absolute(path : string)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function exists(path : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function changeWorkingDirectory(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function makeDirectory(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function makeTree(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function removeDirectory(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function removeTree(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function copyTree(source : string, destination : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function open(path : string, mode : string)
+ : <a href="lib/js/js/phantomjs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function read(path : string)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function write(path : string, content : string, mode : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function write(path : string, content : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function size(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function remove(path : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function copy(source : string, destination : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function move(source : string, destination : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function touch(path : string)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Stream">
+<h2>final class Stream</h2>
+
+<div class="member function">
+<h3>
+new Stream()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function read()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function readLine()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function write(data : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function writeLine(data : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function flush()
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function close()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-webserver">
+<h2>final class webserver</h2>
+<div class="description">
+PhantomJS WebServer module
+</div>
+<div class="member function">
+<h3>
+static final function create()
+ : <a href="lib/js/js/phantomjs.jsx.html#class-WebServer">WebServer</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-WebServer">
+<h2>final class WebServer</h2>
+
+<div class="member function">
+<h3>
+final function listen(port : int, listener : function (:<a href="lib/js/js/phantomjs.jsx.html#class-Request">Request</a>, :<a href="lib/js/js/phantomjs.jsx.html#class-Response">Response</a>) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function listen(address : string, listener : function (:<a href="lib/js/js/phantomjs.jsx.html#class-Request">Request</a>, :<a href="lib/js/js/phantomjs.jsx.html#class-Response">Response</a>) : void)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Request">
+<h2>final class Request</h2>
+
+<div class="member property">
+<h3>
+ var method : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var url : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersion : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var headers : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var post : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var postRaw : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Response">
+<h2>final class Response</h2>
+
+<div class="member property">
+<h3>
+ var headers : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var statusCode : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function writeHead(statusCode : int, headers : Map.&lt;string&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function write(data : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+final function close()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Version">
+<h2>final class Version</h2>
+
+<div class="member property">
+<h3>
+ var major : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var minor : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var patch : int
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-OS">
+<h2>final class OS</h2>
+
+<div class="member property">
+<h3>
+ var architecture : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var name : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var version : string
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Rectangle">
+<h2>final class Rectangle</h2>
+
+<div class="member property">
+<h3>
+ var top : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var left : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var width : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var height : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Rectangle(top : int, left : int, width : int, height : int)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Size">
+<h2>final class Size</h2>
+
+<div class="member property">
+<h3>
+ var width : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var height : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Size(width : int, height : int)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Settings">
+<h2>final class Settings</h2>
+
+<div class="member property">
+<h3>
+ var javascriptEnabled : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var loadImages : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var localToRemoteUrlAccessEnabled : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var userAgent : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var userName : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var password : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var XSSAuditingEnabled : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var webSecurityEnabled : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Settings()
+</h3>
+
+</div>
+</div>
+</div>
+</div><!--/jsxdoc-->
+
+<div id="footer">
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.48<br />
+at 2013-06-30T00:15:45.509Z.</p>
+
+</div>
+</div>
+</body>
+</html>

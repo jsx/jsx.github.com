@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="../../.." />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<style type="text/css">
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+#body {
+    margin: 0px auto;
+    width: 800px;
+    border: 1px solid #ccc;
+}
+#footer {
+    border-top: 1px solid #ccc;
+    padding: 1em 0;
+    text-align: center;
+}
+</style>
+<title>lib/js/js/nodejs.jsx - JSXDoc</title>
+</head>
+<body>
+<div id="body">
+<div class="jsxdoc">
+<div class="file">
+<h1>lib/js/js/nodejs.jsx</h1>
+<div class="description">
+NodeJS binding for JSX (EXPERIMENTAL) This module is experimental. Any API is subject to change.
+</div>
+<ul class="see">
+<li><a href="http://nodejs.org/api/">http://nodejs.org/api/</a></li>
+</ul>
+</div><!--/file-->
+<div class="classes">
+<div class="class" id="class-node">
+<h2>final class node</h2>
+
+<div class="member property">
+<h3>
+static const var fs : <a href="lib/js/js/nodejs.jsx.html#class-_fs">_fs</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var path : <a href="lib/js/js/nodejs.jsx.html#class-_path">_path</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var child_process : <a href="lib/js/js/nodejs.jsx.html#class-_child_process">_child_process</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var url : <a href="lib/js/js/nodejs.jsx.html#class-_url">_url</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var http : <a href="lib/js/js/nodejs.jsx.html#class-_http">_http</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var https : <a href="lib/js/js/nodejs.jsx.html#class-_https">_https</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var net : <a href="lib/js/js/nodejs.jsx.html#class-_net">_net</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static const var util : <a href="lib/js/js/nodejs.jsx.html#class-_util">_util</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static final function require(source : string)
+ : variant
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-EventEmitter">
+<h2> class EventEmitter</h2>
+
+<div class="member function">
+<h3>
+new EventEmitter()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function on(event : string, listener : function () : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function on(event : string, listener : function (:variant) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function on(event : string, listener : function (:variant, :variant) : void)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-process">
+<h2> class process</h2>
+<ul class="see">
+<li><a href="http://nodejs.org/api/process.html">http://nodejs.org/api/process.html</a></li>
+</ul>
+<div class="member property">
+<h3>
+static var argv : Array.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var stdin : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var stdout : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var stderr : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var execPath : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var env : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var pid : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var arch : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var platform : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var version : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var versions : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var title : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new process()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function on(event : string, listener : function () : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function on(event : string, listener : function (:variant) : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function chdir(directory : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function cwd()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function exit()
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function exit(status : int)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function getgid()
+ : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function setgid(id : int)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function getuid()
+ : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function setuid(id : int)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function kill(pid : int)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function kill(pid : int, signal : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function memoryUsage()
+ : Map.&lt;int&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function nextTick(callback : function () : void)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function umask(mask : int)
+ : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function uptime()
+ : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function hrtime()
+ : Array.&lt;number&gt;
+</h3>
+<div class="description">
+Returns the current high-resolution real time.
+</div>
+</div>
+<div class="member function">
+<h3>
+static function hrtime(previousTime : Array.&lt;number&gt;)
+ : Array.&lt;number&gt;
+</h3>
+<div class="description">
+Returns the difference from previousTime in high-resolution real time.
+</div>
+<table class="arguments">
+<tr>
+<td class="param-name">previousTime</td>
+<td class="param-desc">a result of a previous call to <code>process.hrtime()</code>.</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="class" id="class-os">
+<h2> class os</h2>
+
+<div class="member property">
+<h3>
+static var EOL : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new os()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function tmpDir()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function hostname()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function type()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function platform()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function arch()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function release()
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function uptime()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function loadavg()
+ : Array.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function totalmem()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function freemem()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function cpus()
+ : Array.&lt;<a href="lib/js/js/nodejs.jsx.html#class-_CPUInfo">_CPUInfo</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function networkInterfaces()
+ : Map.&lt;Array.&lt;<a href="lib/js/js/nodejs.jsx.html#class-_IFInfo">_IFInfo</a>&gt;&gt;
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-module">
+<h2> class module</h2>
+
+<div class="member property">
+<h3>
+static var id : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static var paths : Array.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new module()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Stream">
+<h2> class Stream</h2>
+
+<div class="member property">
+<h3>
+ var fd : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var isTTY : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Stream()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function write(str : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function write(buffer : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function end()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Buffer">
+<h2> class Buffer</h2>
+<div class="description">
+Fixed-sized binary buffer, built in NodeJS.
+</div>
+<div class="member property">
+<h3>
+ var length : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Buffer(size : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Buffer(array : Array.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Buffer(array : Array.&lt;number&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Buffer(array : Uint8Array)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Buffer(str : string, encoding : string)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function byteLength(str : string, encoding : string)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function concat(list : Array.&lt;<a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>&gt;)
+ : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function concat(list : Array.&lt;<a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>&gt;, totalLength : number)
+ : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function write(str : string, offset : number, length : number, encoding : string)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function toString(encoding : string)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function toString(encoding : string, start : number)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function toString(encoding : string, start : number, end : number)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function copy(targetBuffer : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function copy(targetBuffer : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>, targetStart : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function copy(targetBuffer : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>, targetStart : number, sourceStart : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function copy(targetBuffer : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>, targetStart : number, sourceStart : number, sourceEnd : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function slice(start : number)
+ : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function slice(start : number, end : number)
+ : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readUInt8(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readUInt16LE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readUInt16BE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readUInt32LE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readUInt32BE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readInt8(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readInt16LE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readInt16BE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readInt32LE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readInt32BE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readFloatLE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readFloatBE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readDoubleLE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function readDoubleBE(offset : number)
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeUInt8(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeUInt16LE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeUInt16BE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeUInt32LE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeUInt32BE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeInt8(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeInt16LE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeInt16BE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeInt32LE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeInt32BE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeFloatLE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeFloatBE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeDoubleLE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeDoubleBE(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function fill(value : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function fill(value : number, offset : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function fill(value : number, offset : number, end : number)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-querystring">
+<h2> class querystring</h2>
+
+<div class="member function">
+<h3>
+new querystring()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function stringify(params : Map.&lt;variant&gt;)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function stringify(params : Map.&lt;variant&gt;, sep : string)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function stringify(params : Map.&lt;variant&gt;, sep : string, eq : string)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function parse(query : string)
+ : Map.&lt;variant&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function parse(query : string, sep : string)
+ : Map.&lt;variant&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function parse(query : string, sep : string, eq : string)
+ : Map.&lt;variant&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function parse(query : string, sep : string, eq : string, options : Map.&lt;variant&gt;)
+ : Map.&lt;variant&gt;
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Stats">
+<h2> class Stats</h2>
+
+<div class="member function">
+<h3>
+new Stats()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isFile()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isDirectory()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isBlockDevice()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isCharacterDevice()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isSymbolicLink()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isFIFO()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function isSocket()
+ : boolean
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-FSWatcher">
+<h2> class FSWatcher</h2>
+
+<div class="member function">
+<h3>
+new FSWatcher()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function close()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ChildProcess">
+<h2> class ChildProcess</h2>
+
+<div class="member property">
+<h3>
+ var stdin : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var stdout : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var stderr : <a href="lib/js/js/nodejs.jsx.html#class-Stream">Stream</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var pid : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function kill()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function kill(signal : string)
+ : boolean
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-Url">
+<h2> class Url</h2>
+
+<div class="member property">
+<h3>
+ var protocol : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var slashes : Nullable.&lt;boolean&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var auth : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var host : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var port : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var hostname : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var hash : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var search : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var query : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var pathname : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var path : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new Url()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-HTTPServer">
+<h2> class HTTPServer</h2>
+
+<div class="member function">
+<h3>
+new HTTPServer()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function listen(port : int)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function close()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ServerRequest">
+<h2> class ServerRequest</h2>
+
+<div class="member property">
+<h3>
+ var method : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var url : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var headers : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var trailers : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersin : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersinMajor : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersinMinor : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new ServerRequest()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function setEncoding(encoding : string)
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ServerResponse">
+<h2> class ServerResponse</h2>
+
+<div class="member function">
+<h3>
+new ServerResponse()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeHead(status : int, headers : Map.&lt;string&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function writeHead(status : int, responsePhrase : string, headers : Map.&lt;string&gt;)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function write(content : string, encoding : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function write(content : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function end()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function end(data : string, encoding : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function end(data : <a href="lib/js/js/nodejs.jsx.html#class-Buffer">Buffer</a>)
+ : boolean
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ClientRequest">
+<h2> class ClientRequest</h2>
+
+<div class="member function">
+<h3>
+new ClientRequest()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ClientResponse">
+<h2> class ClientResponse</h2>
+
+<div class="member property">
+<h3>
+ var statusCode : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var headers : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var trailers : Map.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersin : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersinMajor : int
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var httpVersinMinor : int
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new ClientResponse()
+</h3>
+
+</div>
+</div>
+</div>
+</div><!--/jsxdoc-->
+
+<div id="footer">
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.48<br />
+at 2013-06-30T00:15:44.807Z.</p>
+
+</div>
+</div>
+</body>
+</html>
