@@ -1,3 +1,6 @@
 [submodule "oktavia"]
 	path = oktavia
 	url = git://github.com/shibukawa/oktavia.git
+[submodule "JSX"]
+	path = JSX
+	url = git://github.com/jsx/JSX.git
