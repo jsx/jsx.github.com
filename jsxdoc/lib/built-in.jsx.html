@@ -29,7 +29,9 @@ body {
 <div class="file">
 <h1>lib/built-in.jsx</h1>
 <div class="description">
-<p>The file defines the APIs of the built-in objects of JSX, designed to be compatible to <a href="http://www.ecma-international.org/publications/standards/Ecma-262-arch.htm">the 3rd edition of the ECMA-262 standard</a> whenever possible.</p> <p>The description of the API is based on <a href="https://developer.mozilla.org/en/JavaScript/Reference/">the MDN JavaScript Reference</a> under the <a href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons: Attribution-Sharealike license</a>.</p>
+<p>The file defines the APIs of the built-in objects of JSX, designed to be compatible to <a href="http://www.ecma-international.org/publications/standards/Ecma-262-arch.htm">the 3rd edition of the ECMA-262 standard</a> whenever possible.</p>
+
+<p>The description of the API is based on <a href="https://developer.mozilla.org/en/JavaScript/Reference/">the MDN JavaScript Reference</a> under the <a href="http://creativecommons.org/licenses/by-sa/2.5/">Creative Commons: Attribution-Sharealike license</a>.</p>
 </div>
 </div><!--/file-->
 <div class="classes">
@@ -66,14 +68,17 @@ Returns an array of keys of the map.
 <div class="class" id="class-Array">
 <h2>final native class <strong>Array</strong>.&lt;T&gt;</h2>
 <div class="description">
-<p>Array is a sequence of Nullable.&lt;T&gt; values.  The size of an array is not fixed.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+<p>Array is a sequence of Nullable.&lt;T&gt; values.  The size of an array is not fixed.</p>
+<p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
 </div>
 <div class="member property">
 <h3>
  var <strong>length</strong> : number
 </h3>
 <div class="description">
-<p>A positive integer between 0 and a value less than 2<sup>32</sup> that specifies the number of elements in an array.</p> <p>You can set the length property to truncate an array at any time. When you extend an array by changing its length property, the created elements are initialized to null.</p>
+<p>A positive integer between 0 and a value less than 2<sup>32</sup> that specifies the number of elements in an array.</p>
+
+<p>You can set the length property to truncate an array at any time. When you extend an array by changing its length property, the created elements are initialized to null.</p>
 </div>
 </div>
 <div class="member function">
@@ -231,7 +236,9 @@ Returns a one-level deep copy of a portion of an array.
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
 </h3>
 <div class="description">
-Sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The array is sorted lexicographically (in dictionary order) according to the string conversion of each element.
+Sorts the elements of an array in place and returns the array.
+The sort is not necessarily stable.
+The array is sorted lexicographically (in dictionary order) according to the string conversion of each element.
 </div>
 </div>
 <div class="member function">
@@ -240,7 +247,8 @@ Sorts the elements of an array in place and returns the array. The sort is not n
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
 </h3>
 <div class="description">
-Sorts the elements of an array in place and returns the array. The sort is not necessarily stable.
+Sorts the elements of an array in place and returns the array.
+The sort is not necessarily stable.
 </div>
 <table class="arguments">
 <tr>
@@ -293,7 +301,8 @@ Adds one or more elements to the beginning of an array and returns the new lengt
  : number
 </h3>
 <div class="description">
-Returns the first index at which a given element can be found in the array, or -1 if it is not present.
+Returns the first index at which a given element can be found in the
+array, or -1 if it is not present.
 </div>
 </div>
 <div class="member function">
@@ -309,7 +318,8 @@ Returns the first index at which a given element can be found in the array, or -
  : number
 </h3>
 <div class="description">
-Returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backward.
+Returns the last index at which a given element can be found in the
+array, or -1 if it is not present. The array is searched backward.
 </div>
 </div>
 <div class="member function">
@@ -325,7 +335,8 @@ Returns the last index at which a given element can be found in the array, or -1
  : boolean
 </h3>
 <div class="description">
-Tests whether all elements in the array pass the test implemented by the provided function.
+Tests whether all elements in the array pass the test implemented by
+the provided function.
 </div>
 </div>
 <div class="member function">
@@ -348,7 +359,8 @@ Tests whether all elements in the array pass the test implemented by the provide
  : boolean
 </h3>
 <div class="description">
-Tests whether some element in the array passes the test implemented by the provided function.
+Tests whether some element in the array passes the test implemented
+by the provided function.
 </div>
 </div>
 <div class="member function">
@@ -371,7 +383,8 @@ Tests whether some element in the array passes the test implemented by the provi
  : void
 </h3>
 <div class="description">
-Calls callbackfn once for each element in the array, in ascending order.
+Calls callbackfn once for each element in the array, in ascending
+order.
 </div>
 <table class="arguments">
 <tr>
@@ -400,12 +413,14 @@ Calls callbackfn once for each element in the array, in ascending order.
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
 </h3>
 <div class="description">
-Creates a new array with the results of calling a provided function on every element in this array.
+Creates a new array with the results of calling a provided function
+on every element in this array.
 </div>
 <table class="arguments">
 <tr>
 <td class="param-name">callbackfn</td>
-<td class="param-desc">A function that produces an element of the new <code>Array.&lt;U&gt;</code> from an element of the current one.</td>
+<td class="param-desc">A function that produces an element of the new
+<code>Array.&lt;U&gt;</code> from an element of the current one.</td>
 </tr>
 </table>
 </div>
@@ -429,7 +444,8 @@ Creates a new array with the results of calling a provided function on every ele
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
 </h3>
 <div class="description">
-Creates a new array with all elements that pass the test implemented the provided function.
+Creates a new array with all elements that pass the test implemented
+the provided function.
 </div>
 <table class="arguments">
 <tr>
@@ -458,12 +474,20 @@ Creates a new array with all elements that pass the test implemented the provide
  : U
 </h3>
 <div class="description">
-Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value. <code>reduce</code> will throw <code>TypeError</code> if the array contains no elements and no initialValue is suplied.
+Apply a function against an accumulator and each value of the array
+(from left-to-right) as to reduce it to a single value.
+
+<code>reduce</code> will throw <code>TypeError</code> if the array
+contains no elements and no initialValue is suplied.
 </div>
 <table class="arguments">
 <tr>
 <td class="param-name">callbackfn</td>
-<td class="param-desc">A function to execute on each value in the element, taking four arguments: the previousValue (the value previously returned in the last invocation of the callback), the currentValue (the current element being processed in the array), the currentIndex and the array.</td>
+<td class="param-desc">A function to execute on each value in the element,
+taking four arguments: the previousValue (the value previously
+returned in the last invocation of the callback), the
+currentValue (the current element being processed in the array),
+the currentIndex and the array.</td>
 </tr>
 </table>
 </div>
@@ -508,7 +532,8 @@ Apply a function against an accumulator and each value of the array (from left-t
  : U
 </h3>
 <div class="description">
-Apply a function simultaneously against two values of the array (from right-to-left) as to reduce it to a single value.
+Apply a function simultaneously against two values of the array
+(from right-to-left) as to reduce it to a single value.
 </div>
 </div>
 <div class="member function">
@@ -582,13 +607,16 @@ Returns a string representing the object.
 <div class="class" id="class-Function">
 <h2>final native class <strong>Function</strong></h2>
 <div class="description">
-A class representing a static function. Unlike JavaScript, JSX does not provide <em>Function#call()</em> or <em>Function#apply()</em> since it is a statically-typed language.
+A class representing a static function.
+Unlike JavaScript, JSX does not provide <em>Function#call()</em> or <em>Function#apply()</em> since it is a statically-typed language.
 </div>
 </div>
 <div class="class" id="class-String">
 <h2>final native class <strong>String</strong></h2>
 <div class="description">
-<p>A wrapper object for primitive <code>string</code>s.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+<p>A wrapper object for primitive <code>string</code>s.</p>
+
+<p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
 </div>
 <div class="member property">
 <h3>
@@ -718,7 +746,9 @@ If searchString appears as a substring of the result of converting this object t
  : number
 </h3>
 <div class="description">
-Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order. Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order. Returns a negative number if the string occurs earlier in a sort than compareString, returns a positive number if the string occurs afterwards in such a sort, and returns 0 if they occur at the same level.
+Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order.
+
+Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order. Returns a negative number if the string occurs earlier in a sort than compareString, returns a positive number if the string occurs afterwards in such a sort, and returns 0 if they occur at the same level.
 </div>
 <table class="arguments">
 <tr>
@@ -733,7 +763,9 @@ Returns a number indicating whether a reference string comes before or after or 
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;string&gt;
 </h3>
 <div class="description">
-Used to retrieve the matches when matching a string against a regular expression. If the regular expression does not include the g flag, returns the same result as regexp.exec(string).  If the regular expression includes the g flag, the method returns an Array containing all matches. If there were no matches, the method returns null.  The returned Array has an extra input property, which contains the regexp that generated it as a result. In addition, it has an index property, which represents the zero-based index of the match in the string.
+Used to retrieve the matches when matching a string against a regular expression.
+
+If the regular expression does not include the g flag, returns the same result as regexp.exec(string).  If the regular expression includes the g flag, the method returns an Array containing all matches. If there were no matches, the method returns null.  The returned Array has an extra input property, which contains the regexp that generated it as a result. In addition, it has an index property, which represents the zero-based index of the match in the string.
 </div>
 <table class="arguments">
 <tr>
@@ -1240,7 +1272,11 @@ static function <strong>parseFloat</strong>(str : string)
  : number
 </h3>
 <div class="description">
-<p>Parses a string argument and returns a floating point number.</p> <p>If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.</p> <p>If the first character cannot be converted to a number, parseFloat returns <code>NaN</code>.</p>
+<p>Parses a string argument and returns a floating point number.</p>
+
+<p>If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.</p>
+
+<p>If the first character cannot be converted to a number, parseFloat returns <code>NaN</code>.</p>
 </div>
 </div>
 <div class="member function">
@@ -1265,7 +1301,9 @@ Determines whether a number is finite or not.
 <div class="class" id="class-Math">
 <h2>final native class <strong>Math</strong></h2>
 <div class="description">
-<p>Provides mathmetical constants and functions.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+<p>Provides mathmetical constants and functions.</p>
+
+<p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
 </div>
 <div class="member property">
 <h3>
@@ -1491,7 +1529,9 @@ static function <strong>min</strong>(value1 : number, value2 : number)
 <div class="class" id="class-Date">
 <h2>final native class <strong>Date</strong></h2>
 <div class="description">
-<p>An object for working with dates and times.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+<p>An object for working with dates and times.</p>
+
+<p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
 </div>
 <div class="member function">
 <h3>
@@ -1953,7 +1993,9 @@ override function <strong>toString</strong>()
 <div class="class" id="class-RegExp">
 <h2>final native class <strong>RegExp</strong></h2>
 <div class="description">
-<p>An object that represents a regular-expression.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
+<p>An object that represents a regular-expression.</p>
+
+<p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 3rd edition.</p>
 </div>
 <div class="member property">
 <h3>
@@ -2156,7 +2198,9 @@ new <strong>g_StopIteration</strong>()
 <div class="class" id="class-JSON">
 <h2>final native class <strong>JSON</strong></h2>
 <div class="description">
-<p>Provides static functions to manipulate JSON.</p> <p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 5th edition.</p>
+<p>Provides static functions to manipulate JSON.</p>
+
+<p>Unless otherwise noted, the defintions of the methods match those specified in ECMA-262, 5th edition.</p>
 </div>
 <div class="member function">
 <h3>
@@ -3612,7 +3656,8 @@ Provides static functions to control the behaviour of the JSX runtime.
 static const var <strong>DEBUG</strong> : boolean
 </h3>
 <div class="description">
-A flag which is disabled by <code>--optimize no-debug</code>.<br /> This is intended to remove debugging statements on release build.
+A flag which is disabled by <code>--optimize no-debug</code>.<br />
+This is intended to remove debugging statements on release build.
 </div>
 </div>
 <div class="member function">
@@ -3639,7 +3684,9 @@ static function <strong>postProfileResults</strong>(url : string)
  : void
 </h3>
 <div class="description">
-<p>Posts the profiler results to the given URL.</p> <p>Please refer to <a href="http://jsx.github.io/doc/profiler.html">the profiler document</a> for using the function.</p>
+<p>Posts the profiler results to the given URL.</p>
+
+<p>Please refer to <a href="http://jsx.github.io/doc/profiler.html">the profiler document</a> for using the function.</p>
 </div>
 </div>
 <div class="member function">
@@ -3664,8 +3711,8 @@ Resets the collected profiler results.
 
 <div id="footer">
 <p>Copyright &copy; DeNA., Co., Ltd.</p>
-<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.49<br />
-at 2013-07-03T07:15:15.983Z.</p>
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.50<br />
+at 2013-07-07T04:58:52.607Z.</p>
 
 </div>
 </div>
