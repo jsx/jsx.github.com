@@ -645,7 +645,7 @@ new <strong>EventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-CustomEvent">
-<h2>final native class <strong>CustomEvent</strong></h2>
+<h2>final native class <strong>CustomEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -682,7 +682,7 @@ new <strong>CustomEvent</strong>(type : string, eventInitDict : <a href="lib/js/
 </div>
 </div>
 <div class="class" id="class-CustomEventInit">
-<h2> class <strong>CustomEventInit</strong></h2>
+<h2> class <strong>CustomEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -908,7 +908,7 @@ new <strong>MutationRecord</strong>()
 </div>
 </div>
 <div class="class" id="class-Node">
-<h2>native class <strong>Node</strong></h2>
+<h2>native class <strong>Node</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -1312,7 +1312,7 @@ new <strong>Node</strong>()
 </div>
 </div>
 <div class="class" id="class-Document">
-<h2>native class <strong>Document</strong></h2>
+<h2>native class <strong>Document</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -1659,7 +1659,7 @@ new <strong>Document</strong>()
 </div>
 </div>
 <div class="class" id="class-XMLDocument">
-<h2>final native class <strong>XMLDocument</strong></h2>
+<h2>final native class <strong>XMLDocument</strong> extends <a href="lib/js/js/web.jsx.html#class-Document">Document</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -1727,7 +1727,7 @@ new <strong>DOMImplementation</strong>()
 </div>
 </div>
 <div class="class" id="class-DocumentFragment">
-<h2>final native class <strong>DocumentFragment</strong></h2>
+<h2>final native class <strong>DocumentFragment</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -1785,7 +1785,7 @@ new <strong>DocumentFragment</strong>()
 </div>
 </div>
 <div class="class" id="class-DocumentType">
-<h2>final native class <strong>DocumentType</strong></h2>
+<h2>final native class <strong>DocumentType</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -1864,7 +1864,7 @@ new <strong>DocumentType</strong>()
 </div>
 </div>
 <div class="class" id="class-Element">
-<h2>native class <strong>Element</strong></h2>
+<h2>native class <strong>Element</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -2299,7 +2299,7 @@ new <strong>Attr</strong>()
 </div>
 </div>
 <div class="class" id="class-CharacterData">
-<h2>native class <strong>CharacterData</strong></h2>
+<h2>native class <strong>CharacterData</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -2407,7 +2407,7 @@ new <strong>CharacterData</strong>()
 </div>
 </div>
 <div class="class" id="class-Text">
-<h2>final native class <strong>Text</strong></h2>
+<h2>final native class <strong>Text</strong> extends <a href="lib/js/js/web.jsx.html#class-CharacterData">CharacterData</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -2440,7 +2440,7 @@ new <strong>Text</strong>()
 </div>
 </div>
 <div class="class" id="class-ProcessingInstruction">
-<h2>final native class <strong>ProcessingInstruction</strong></h2>
+<h2>final native class <strong>ProcessingInstruction</strong> extends <a href="lib/js/js/web.jsx.html#class-CharacterData">CharacterData</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -2458,7 +2458,7 @@ new <strong>ProcessingInstruction</strong>()
 </div>
 </div>
 <div class="class" id="class-Comment">
-<h2>final native class <strong>Comment</strong></h2>
+<h2>final native class <strong>Comment</strong> extends <a href="lib/js/js/web.jsx.html#class-CharacterData">CharacterData</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -3241,7 +3241,7 @@ new <strong>DOMTokenList</strong>()
 </div>
 </div>
 <div class="class" id="class-DOMSettableTokenList">
-<h2>final native class <strong>DOMSettableTokenList</strong></h2>
+<h2>final native class <strong>DOMSettableTokenList</strong> extends <a href="lib/js/js/web.jsx.html#class-DOMTokenList">DOMTokenList</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
 </ul>
@@ -3314,7 +3314,7 @@ new <strong>DocumentEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-UIEvent">
-<h2>native class <strong>UIEvent</strong></h2>
+<h2>native class <strong>UIEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3351,7 +3351,7 @@ new <strong>UIEvent</strong>(typeArg : string, dictUIEventInit : <a href="lib/js
 </div>
 </div>
 <div class="class" id="class-FocusEvent">
-<h2>final native class <strong>FocusEvent</strong></h2>
+<h2>final native class <strong>FocusEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-UIEvent">UIEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3382,7 +3382,7 @@ new <strong>FocusEvent</strong>(typeArg : string, focusEventInitDict : <a href="
 </div>
 </div>
 <div class="class" id="class-MouseEvent">
-<h2>native class <strong>MouseEvent</strong></h2>
+<h2>native class <strong>MouseEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-UIEvent">UIEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3536,7 +3536,7 @@ new <strong>MouseEvent</strong>(typeArg : string, mouseEventInitDict : <a href="
 </div>
 </div>
 <div class="class" id="class-WheelEvent">
-<h2>final native class <strong>WheelEvent</strong></h2>
+<h2>final native class <strong>WheelEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-MouseEvent">MouseEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3621,7 +3621,7 @@ new <strong>WheelEvent</strong>(typeArg : string, wheelEventInitDict : <a href="
 </div>
 </div>
 <div class="class" id="class-KeyboardEvent">
-<h2>final native class <strong>KeyboardEvent</strong></h2>
+<h2>final native class <strong>KeyboardEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-UIEvent">UIEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3797,7 +3797,7 @@ new <strong>KeyboardEvent</strong>(typeArg : string, keyboardEventInitDict : <a 
 </div>
 </div>
 <div class="class" id="class-CompositionEvent">
-<h2>final native class <strong>CompositionEvent</strong></h2>
+<h2>final native class <strong>CompositionEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-UIEvent">UIEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3834,7 +3834,7 @@ new <strong>CompositionEvent</strong>(typeArg : string, compositionEventInitDict
 </div>
 </div>
 <div class="class" id="class-MutationEvent">
-<h2>final native class <strong>MutationEvent</strong></h2>
+<h2>final native class <strong>MutationEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
 </ul>
@@ -3919,7 +3919,7 @@ new <strong>MutationEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-UIEventInit">
-<h2> class <strong>UIEventInit</strong></h2>
+<h2> class <strong>UIEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -3985,7 +3985,7 @@ new <strong>FocusEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-MouseEventInit">
-<h2> class <strong>MouseEventInit</strong></h2>
+<h2> class <strong>MouseEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-UIEventInit">UIEventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -4365,7 +4365,7 @@ new <strong>CompositionEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-ProgressEvent">
-<h2>final native class <strong>ProgressEvent</strong></h2>
+<h2>final native class <strong>ProgressEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/progress-events/">http://www.w3.org/TR/progress-events/</a></li>
 </ul>
@@ -4439,7 +4439,7 @@ new <strong>XMLSerializer</strong>()
 </div>
 </div>
 <div class="class" id="class-ProgressEventInit">
-<h2> class <strong>ProgressEventInit</strong></h2>
+<h2> class <strong>ProgressEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -4467,7 +4467,7 @@ new <strong>ProgressEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-XMLHttpRequestEventTarget">
-<h2>native class <strong>XMLHttpRequestEventTarget</strong></h2>
+<h2>native class <strong>XMLHttpRequestEventTarget</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/XMLHttpRequest/">http://www.w3.org/TR/XMLHttpRequest/</a></li>
 </ul>
@@ -4521,7 +4521,7 @@ new <strong>XMLHttpRequestEventTarget</strong>()
 </div>
 </div>
 <div class="class" id="class-XMLHttpRequestUpload">
-<h2>final native class <strong>XMLHttpRequestUpload</strong></h2>
+<h2>final native class <strong>XMLHttpRequestUpload</strong> extends <a href="lib/js/js/web.jsx.html#class-XMLHttpRequestEventTarget">XMLHttpRequestEventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/XMLHttpRequest/">http://www.w3.org/TR/XMLHttpRequest/</a></li>
 </ul>
@@ -4549,7 +4549,7 @@ new <strong>XMLHttpRequestOptions</strong>()
 </div>
 </div>
 <div class="class" id="class-XMLHttpRequest">
-<h2>final native class <strong>XMLHttpRequest</strong></h2>
+<h2>final native class <strong>XMLHttpRequest</strong> extends <a href="lib/js/js/web.jsx.html#class-XMLHttpRequestEventTarget">XMLHttpRequestEventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/XMLHttpRequest/">http://www.w3.org/TR/XMLHttpRequest/</a></li>
 </ul>
@@ -4936,7 +4936,7 @@ new <strong>StyleSheet</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSStyleSheet">
-<h2>final native class <strong>CSSStyleSheet</strong></h2>
+<h2>final native class <strong>CSSStyleSheet</strong> extends <a href="lib/js/js/web.jsx.html#class-StyleSheet">StyleSheet</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -5112,7 +5112,7 @@ new <strong>CSSRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSStyleRule">
-<h2>final native class <strong>CSSStyleRule</strong></h2>
+<h2>final native class <strong>CSSStyleRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -5136,7 +5136,7 @@ new <strong>CSSStyleRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSImportRule">
-<h2>final native class <strong>CSSImportRule</strong></h2>
+<h2>final native class <strong>CSSImportRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -5166,7 +5166,7 @@ new <strong>CSSImportRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSMediaRule">
-<h2>final native class <strong>CSSMediaRule</strong></h2>
+<h2>final native class <strong>CSSMediaRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -5204,7 +5204,7 @@ new <strong>CSSMediaRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSFontFaceRule">
-<h2>final native class <strong>CSSFontFaceRule</strong></h2>
+<h2>final native class <strong>CSSFontFaceRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -5222,7 +5222,7 @@ new <strong>CSSFontFaceRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSPageRule">
-<h2>final native class <strong>CSSPageRule</strong></h2>
+<h2>final native class <strong>CSSPageRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -5246,7 +5246,7 @@ new <strong>CSSPageRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSNamespaceRule">
-<h2>final native class <strong>CSSNamespaceRule</strong></h2>
+<h2>final native class <strong>CSSNamespaceRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -8300,7 +8300,7 @@ new <strong>ElementCSSInlineStyle</strong>()
 </div>
 </div>
 <div class="class" id="class-Window">
-<h2>final native class <strong>Window</strong></h2>
+<h2>final native class <strong>Window</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -9377,7 +9377,7 @@ new <strong>CaretPosition</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLElement">
-<h2>native class <strong>HTMLElement</strong></h2>
+<h2>native class <strong>HTMLElement</strong> extends <a href="lib/js/js/web.jsx.html#class-Element">Element</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -9985,7 +9985,7 @@ new <strong>ClientRect</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLAllCollection">
-<h2>final native class <strong>HTMLAllCollection</strong></h2>
+<h2>final native class <strong>HTMLAllCollection</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10004,7 +10004,7 @@ new <strong>HTMLAllCollection</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLFormControlsCollection">
-<h2>final native class <strong>HTMLFormControlsCollection</strong></h2>
+<h2>final native class <strong>HTMLFormControlsCollection</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10016,7 +10016,7 @@ new <strong>HTMLFormControlsCollection</strong>()
 </div>
 </div>
 <div class="class" id="class-RadioNodeList">
-<h2>final native class <strong>RadioNodeList</strong></h2>
+<h2>final native class <strong>RadioNodeList</strong> extends <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10034,7 +10034,7 @@ new <strong>RadioNodeList</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLOptionsCollection">
-<h2>final native class <strong>HTMLOptionsCollection</strong></h2>
+<h2>final native class <strong>HTMLOptionsCollection</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10113,7 +10113,7 @@ new <strong>DOMStringMap</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDocument">
-<h2>final native class <strong>HTMLDocument</strong></h2>
+<h2>final native class <strong>HTMLDocument</strong> extends <a href="lib/js/js/web.jsx.html#class-Document">Document</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10762,7 +10762,7 @@ new <strong>HTMLDocument</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLUnknownElement">
-<h2>final native class <strong>HTMLUnknownElement</strong></h2>
+<h2>final native class <strong>HTMLUnknownElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10774,7 +10774,7 @@ new <strong>HTMLUnknownElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLHtmlElement">
-<h2>final native class <strong>HTMLHtmlElement</strong></h2>
+<h2>final native class <strong>HTMLHtmlElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10792,7 +10792,7 @@ new <strong>HTMLHtmlElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLHeadElement">
-<h2>final native class <strong>HTMLHeadElement</strong></h2>
+<h2>final native class <strong>HTMLHeadElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10804,7 +10804,7 @@ new <strong>HTMLHeadElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTitleElement">
-<h2>final native class <strong>HTMLTitleElement</strong></h2>
+<h2>final native class <strong>HTMLTitleElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10822,7 +10822,7 @@ new <strong>HTMLTitleElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLBaseElement">
-<h2>final native class <strong>HTMLBaseElement</strong></h2>
+<h2>final native class <strong>HTMLBaseElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10846,7 +10846,7 @@ new <strong>HTMLBaseElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLLinkElement">
-<h2>final native class <strong>HTMLLinkElement</strong></h2>
+<h2>final native class <strong>HTMLLinkElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10932,7 +10932,7 @@ new <strong>HTMLLinkElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLMetaElement">
-<h2>final native class <strong>HTMLMetaElement</strong></h2>
+<h2>final native class <strong>HTMLMetaElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -10968,7 +10968,7 @@ new <strong>HTMLMetaElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLStyleElement">
-<h2>final native class <strong>HTMLStyleElement</strong></h2>
+<h2>final native class <strong>HTMLStyleElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11012,7 +11012,7 @@ new <strong>HTMLStyleElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLScriptElement">
-<h2>final native class <strong>HTMLScriptElement</strong></h2>
+<h2>final native class <strong>HTMLScriptElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11072,7 +11072,7 @@ new <strong>HTMLScriptElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLBodyElement">
-<h2>final native class <strong>HTMLBodyElement</strong></h2>
+<h2>final native class <strong>HTMLBodyElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11198,7 +11198,7 @@ new <strong>HTMLBodyElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLHeadingElement">
-<h2>final native class <strong>HTMLHeadingElement</strong></h2>
+<h2>final native class <strong>HTMLHeadingElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11216,7 +11216,7 @@ new <strong>HTMLHeadingElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLParagraphElement">
-<h2>final native class <strong>HTMLParagraphElement</strong></h2>
+<h2>final native class <strong>HTMLParagraphElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11234,7 +11234,7 @@ new <strong>HTMLParagraphElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLHRElement">
-<h2>final native class <strong>HTMLHRElement</strong></h2>
+<h2>final native class <strong>HTMLHRElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11276,7 +11276,7 @@ new <strong>HTMLHRElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLPreElement">
-<h2>final native class <strong>HTMLPreElement</strong></h2>
+<h2>final native class <strong>HTMLPreElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11294,7 +11294,7 @@ new <strong>HTMLPreElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLQuoteElement">
-<h2>final native class <strong>HTMLQuoteElement</strong></h2>
+<h2>final native class <strong>HTMLQuoteElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11312,7 +11312,7 @@ new <strong>HTMLQuoteElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLOListElement">
-<h2>final native class <strong>HTMLOListElement</strong></h2>
+<h2>final native class <strong>HTMLOListElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11348,7 +11348,7 @@ new <strong>HTMLOListElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLUListElement">
-<h2>final native class <strong>HTMLUListElement</strong></h2>
+<h2>final native class <strong>HTMLUListElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11372,7 +11372,7 @@ new <strong>HTMLUListElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLLIElement">
-<h2>final native class <strong>HTMLLIElement</strong></h2>
+<h2>final native class <strong>HTMLLIElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11396,7 +11396,7 @@ new <strong>HTMLLIElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDListElement">
-<h2>final native class <strong>HTMLDListElement</strong></h2>
+<h2>final native class <strong>HTMLDListElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11414,7 +11414,7 @@ new <strong>HTMLDListElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDivElement">
-<h2>final native class <strong>HTMLDivElement</strong></h2>
+<h2>final native class <strong>HTMLDivElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11432,7 +11432,7 @@ new <strong>HTMLDivElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLAnchorElement">
-<h2>final native class <strong>HTMLAnchorElement</strong></h2>
+<h2>final native class <strong>HTMLAnchorElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11564,7 +11564,7 @@ new <strong>HTMLAnchorElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTimeElement">
-<h2>final native class <strong>HTMLTimeElement</strong></h2>
+<h2>final native class <strong>HTMLTimeElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11582,7 +11582,7 @@ new <strong>HTMLTimeElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLSpanElement">
-<h2>final native class <strong>HTMLSpanElement</strong></h2>
+<h2>final native class <strong>HTMLSpanElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11594,7 +11594,7 @@ new <strong>HTMLSpanElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLBRElement">
-<h2>final native class <strong>HTMLBRElement</strong></h2>
+<h2>final native class <strong>HTMLBRElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11612,7 +11612,7 @@ new <strong>HTMLBRElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLModElement">
-<h2>final native class <strong>HTMLModElement</strong></h2>
+<h2>final native class <strong>HTMLModElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11636,7 +11636,7 @@ new <strong>HTMLModElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLImageElement">
-<h2>final native class <strong>HTMLImageElement</strong></h2>
+<h2>final native class <strong>HTMLImageElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11744,7 +11744,7 @@ new <strong>HTMLImageElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLIFrameElement">
-<h2>final native class <strong>HTMLIFrameElement</strong></h2>
+<h2>final native class <strong>HTMLIFrameElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11846,7 +11846,7 @@ new <strong>HTMLIFrameElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLEmbedElement">
-<h2>final native class <strong>HTMLEmbedElement</strong></h2>
+<h2>final native class <strong>HTMLEmbedElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -11894,7 +11894,7 @@ new <strong>HTMLEmbedElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLObjectElement">
-<h2>final native class <strong>HTMLObjectElement</strong></h2>
+<h2>final native class <strong>HTMLObjectElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12058,7 +12058,7 @@ new <strong>HTMLObjectElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLParamElement">
-<h2>final native class <strong>HTMLParamElement</strong></h2>
+<h2>final native class <strong>HTMLParamElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12094,7 +12094,7 @@ new <strong>HTMLParamElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLVideoElement">
-<h2>final native class <strong>HTMLVideoElement</strong></h2>
+<h2>final native class <strong>HTMLVideoElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLMediaElement">HTMLMediaElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12136,7 +12136,7 @@ new <strong>HTMLVideoElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLAudioElement">
-<h2>final native class <strong>HTMLAudioElement</strong></h2>
+<h2>final native class <strong>HTMLAudioElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLMediaElement">HTMLMediaElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12148,7 +12148,7 @@ new <strong>HTMLAudioElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLSourceElement">
-<h2>final native class <strong>HTMLSourceElement</strong></h2>
+<h2>final native class <strong>HTMLSourceElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12178,7 +12178,7 @@ new <strong>HTMLSourceElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTrackElement">
-<h2>final native class <strong>HTMLTrackElement</strong></h2>
+<h2>final native class <strong>HTMLTrackElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12280,7 +12280,7 @@ new <strong>HTMLTrackElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLMediaElement">
-<h2>native class <strong>HTMLMediaElement</strong></h2>
+<h2>native class <strong>HTMLMediaElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12689,7 +12689,7 @@ new <strong>MediaError</strong>()
 </div>
 </div>
 <div class="class" id="class-AudioTrackList">
-<h2>final native class <strong>AudioTrackList</strong></h2>
+<h2>final native class <strong>AudioTrackList</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12774,7 +12774,7 @@ new <strong>AudioTrack</strong>()
 </div>
 </div>
 <div class="class" id="class-VideoTrackList">
-<h2>final native class <strong>VideoTrackList</strong></h2>
+<h2>final native class <strong>VideoTrackList</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -12865,7 +12865,7 @@ new <strong>VideoTrack</strong>()
 </div>
 </div>
 <div class="class" id="class-MediaController">
-<h2>final native class <strong>MediaController</strong></h2>
+<h2>final native class <strong>MediaController</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13054,7 +13054,7 @@ new <strong>MediaController</strong>()
 </div>
 </div>
 <div class="class" id="class-TextTrackList">
-<h2>final native class <strong>TextTrackList</strong></h2>
+<h2>final native class <strong>TextTrackList</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13084,7 +13084,7 @@ new <strong>TextTrackList</strong>()
 </div>
 </div>
 <div class="class" id="class-TextTrack">
-<h2>final native class <strong>TextTrack</strong></h2>
+<h2>final native class <strong>TextTrack</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13183,7 +13183,7 @@ new <strong>TextTrackCueList</strong>()
 </div>
 </div>
 <div class="class" id="class-TextTrackCue">
-<h2>final native class <strong>TextTrackCue</strong></h2>
+<h2>final native class <strong>TextTrackCue</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13318,7 +13318,7 @@ new <strong>TimeRanges</strong>()
 </div>
 </div>
 <div class="class" id="class-TrackEvent">
-<h2>final native class <strong>TrackEvent</strong></h2>
+<h2>final native class <strong>TrackEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13342,7 +13342,7 @@ new <strong>TrackEvent</strong>(type : string, eventInitDict : <a href="lib/js/j
 </div>
 </div>
 <div class="class" id="class-TrackEventInit">
-<h2> class <strong>TrackEventInit</strong></h2>
+<h2> class <strong>TrackEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -13358,7 +13358,7 @@ new <strong>TrackEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLCanvasElement">
-<h2>final native class <strong>HTMLCanvasElement</strong></h2>
+<h2>final native class <strong>HTMLCanvasElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13403,7 +13403,7 @@ new <strong>HTMLCanvasElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLMapElement">
-<h2>final native class <strong>HTMLMapElement</strong></h2>
+<h2>final native class <strong>HTMLMapElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13433,7 +13433,7 @@ new <strong>HTMLMapElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLAreaElement">
-<h2>final native class <strong>HTMLAreaElement</strong></h2>
+<h2>final native class <strong>HTMLAreaElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13553,7 +13553,7 @@ new <strong>HTMLAreaElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableElement">
-<h2>final native class <strong>HTMLTableElement</strong></h2>
+<h2>final native class <strong>HTMLTableElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13719,7 +13719,7 @@ new <strong>HTMLTableElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableCaptionElement">
-<h2>final native class <strong>HTMLTableCaptionElement</strong></h2>
+<h2>final native class <strong>HTMLTableCaptionElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13737,7 +13737,7 @@ new <strong>HTMLTableCaptionElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableColElement">
-<h2>final native class <strong>HTMLTableColElement</strong></h2>
+<h2>final native class <strong>HTMLTableColElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13785,7 +13785,7 @@ new <strong>HTMLTableColElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableSectionElement">
-<h2>final native class <strong>HTMLTableSectionElement</strong></h2>
+<h2>final native class <strong>HTMLTableSectionElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13848,7 +13848,7 @@ new <strong>HTMLTableSectionElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableRowElement">
-<h2>final native class <strong>HTMLTableRowElement</strong></h2>
+<h2>final native class <strong>HTMLTableRowElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13929,7 +13929,7 @@ new <strong>HTMLTableRowElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableDataCellElement">
-<h2>final native class <strong>HTMLTableDataCellElement</strong></h2>
+<h2>final native class <strong>HTMLTableDataCellElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLTableCellElement">HTMLTableCellElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13941,7 +13941,7 @@ new <strong>HTMLTableDataCellElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableHeaderCellElement">
-<h2>final native class <strong>HTMLTableHeaderCellElement</strong></h2>
+<h2>final native class <strong>HTMLTableHeaderCellElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLTableCellElement">HTMLTableCellElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -13959,7 +13959,7 @@ new <strong>HTMLTableHeaderCellElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTableCellElement">
-<h2>native class <strong>HTMLTableCellElement</strong></h2>
+<h2>native class <strong>HTMLTableCellElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14055,7 +14055,7 @@ new <strong>HTMLTableCellElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLFormElement">
-<h2>final native class <strong>HTMLFormElement</strong></h2>
+<h2>final native class <strong>HTMLFormElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14154,7 +14154,7 @@ new <strong>HTMLFormElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLFieldSetElement">
-<h2>final native class <strong>HTMLFieldSetElement</strong></h2>
+<h2>final native class <strong>HTMLFieldSetElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14228,7 +14228,7 @@ new <strong>HTMLFieldSetElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLLegendElement">
-<h2>final native class <strong>HTMLLegendElement</strong></h2>
+<h2>final native class <strong>HTMLLegendElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14252,7 +14252,7 @@ new <strong>HTMLLegendElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLLabelElement">
-<h2>final native class <strong>HTMLLabelElement</strong></h2>
+<h2>final native class <strong>HTMLLabelElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14282,7 +14282,7 @@ new <strong>HTMLLabelElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLInputElement">
-<h2>final native class <strong>HTMLInputElement</strong></h2>
+<h2>final native class <strong>HTMLInputElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14627,7 +14627,7 @@ new <strong>HTMLInputElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLButtonElement">
-<h2>final native class <strong>HTMLButtonElement</strong></h2>
+<h2>final native class <strong>HTMLButtonElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14743,7 +14743,7 @@ new <strong>HTMLButtonElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLSelectElement">
-<h2>final native class <strong>HTMLSelectElement</strong></h2>
+<h2>final native class <strong>HTMLSelectElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14934,7 +14934,7 @@ new <strong>HTMLSelectElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDataListElement">
-<h2>final native class <strong>HTMLDataListElement</strong></h2>
+<h2>final native class <strong>HTMLDataListElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14952,7 +14952,7 @@ new <strong>HTMLDataListElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLOptGroupElement">
-<h2>final native class <strong>HTMLOptGroupElement</strong></h2>
+<h2>final native class <strong>HTMLOptGroupElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -14976,7 +14976,7 @@ new <strong>HTMLOptGroupElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLOptionElement">
-<h2>final native class <strong>HTMLOptionElement</strong></h2>
+<h2>final native class <strong>HTMLOptionElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15036,7 +15036,7 @@ new <strong>HTMLOptionElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLTextAreaElement">
-<h2>final native class <strong>HTMLTextAreaElement</strong></h2>
+<h2>final native class <strong>HTMLTextAreaElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15221,7 +15221,7 @@ new <strong>HTMLTextAreaElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLKeygenElement">
-<h2>final native class <strong>HTMLKeygenElement</strong></h2>
+<h2>final native class <strong>HTMLKeygenElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15313,7 +15313,7 @@ new <strong>HTMLKeygenElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLOutputElement">
-<h2>final native class <strong>HTMLOutputElement</strong></h2>
+<h2>final native class <strong>HTMLOutputElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15399,7 +15399,7 @@ new <strong>HTMLOutputElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLProgressElement">
-<h2>final native class <strong>HTMLProgressElement</strong></h2>
+<h2>final native class <strong>HTMLProgressElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15435,7 +15435,7 @@ new <strong>HTMLProgressElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLMeterElement">
-<h2>final native class <strong>HTMLMeterElement</strong></h2>
+<h2>final native class <strong>HTMLMeterElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15555,7 +15555,7 @@ new <strong>ValidityState</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDetailsElement">
-<h2>final native class <strong>HTMLDetailsElement</strong></h2>
+<h2>final native class <strong>HTMLDetailsElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15573,7 +15573,7 @@ new <strong>HTMLDetailsElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLCommandElement">
-<h2>final native class <strong>HTMLCommandElement</strong></h2>
+<h2>final native class <strong>HTMLCommandElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15627,7 +15627,7 @@ new <strong>HTMLCommandElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLMenuElement">
-<h2>final native class <strong>HTMLMenuElement</strong></h2>
+<h2>final native class <strong>HTMLMenuElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15657,7 +15657,7 @@ new <strong>HTMLMenuElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDialogElement">
-<h2>final native class <strong>HTMLDialogElement</strong></h2>
+<h2>final native class <strong>HTMLDialogElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15923,7 +15923,7 @@ new <strong>Location</strong>()
 </div>
 </div>
 <div class="class" id="class-PopStateEvent">
-<h2>final native class <strong>PopStateEvent</strong></h2>
+<h2>final native class <strong>PopStateEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15947,7 +15947,7 @@ new <strong>PopStateEvent</strong>(type : string, eventInitDict : <a href="lib/j
 </div>
 </div>
 <div class="class" id="class-PopStateEventInit">
-<h2> class <strong>PopStateEventInit</strong></h2>
+<h2> class <strong>PopStateEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -15963,7 +15963,7 @@ new <strong>PopStateEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-HashChangeEvent">
-<h2>final native class <strong>HashChangeEvent</strong></h2>
+<h2>final native class <strong>HashChangeEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -15993,7 +15993,7 @@ new <strong>HashChangeEvent</strong>(type : string, eventInitDict : <a href="lib
 </div>
 </div>
 <div class="class" id="class-HashChangeEventInit">
-<h2> class <strong>HashChangeEventInit</strong></h2>
+<h2> class <strong>HashChangeEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -16015,7 +16015,7 @@ new <strong>HashChangeEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-PageTransitionEvent">
-<h2>final native class <strong>PageTransitionEvent</strong></h2>
+<h2>final native class <strong>PageTransitionEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16039,7 +16039,7 @@ new <strong>PageTransitionEvent</strong>(type : string, eventInitDict : <a href=
 </div>
 </div>
 <div class="class" id="class-PageTransitionEventInit">
-<h2> class <strong>PageTransitionEventInit</strong></h2>
+<h2> class <strong>PageTransitionEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -16055,7 +16055,7 @@ new <strong>PageTransitionEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-BeforeUnloadEvent">
-<h2>final native class <strong>BeforeUnloadEvent</strong></h2>
+<h2>final native class <strong>BeforeUnloadEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16073,7 +16073,7 @@ new <strong>BeforeUnloadEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-ApplicationCache">
-<h2>final native class <strong>ApplicationCache</strong></h2>
+<h2>final native class <strong>ApplicationCache</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16300,7 +16300,7 @@ new <strong>WindowModal</strong>()
 </div>
 </div>
 <div class="class" id="class-Navigator">
-<h2>final native class <strong>Navigator</strong></h2>
+<h2>final native class <strong>Navigator</strong> extends <a href="lib/js/js/web.jsx.html#class-NavigatorID">NavigatorID</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16696,7 +16696,7 @@ new <strong>DataTransferItem</strong>()
 </div>
 </div>
 <div class="class" id="class-DragEvent">
-<h2>final native class <strong>DragEvent</strong></h2>
+<h2>final native class <strong>DragEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-MouseEvent">MouseEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16720,7 +16720,7 @@ new <strong>DragEvent</strong>(type : string, eventInitDict : <a href="lib/js/js
 </div>
 </div>
 <div class="class" id="class-DragEventInit">
-<h2> class <strong>DragEventInit</strong></h2>
+<h2> class <strong>DragEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -16814,7 +16814,7 @@ new <strong>DragEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLAppletElement">
-<h2>final native class <strong>HTMLAppletElement</strong></h2>
+<h2>final native class <strong>HTMLAppletElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16886,7 +16886,7 @@ new <strong>HTMLAppletElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLMarqueeElement">
-<h2>final native class <strong>HTMLMarqueeElement</strong></h2>
+<h2>final native class <strong>HTMLMarqueeElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -16996,7 +16996,7 @@ new <strong>HTMLMarqueeElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLFrameSetElement">
-<h2>final native class <strong>HTMLFrameSetElement</strong></h2>
+<h2>final native class <strong>HTMLFrameSetElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -17098,7 +17098,7 @@ new <strong>HTMLFrameSetElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLFrameElement">
-<h2>final native class <strong>HTMLFrameElement</strong></h2>
+<h2>final native class <strong>HTMLFrameElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -17170,7 +17170,7 @@ new <strong>HTMLFrameElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLBaseFontElement">
-<h2>final native class <strong>HTMLBaseFontElement</strong></h2>
+<h2>final native class <strong>HTMLBaseFontElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -17200,7 +17200,7 @@ new <strong>HTMLBaseFontElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLDirectoryElement">
-<h2>final native class <strong>HTMLDirectoryElement</strong></h2>
+<h2>final native class <strong>HTMLDirectoryElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -17218,7 +17218,7 @@ new <strong>HTMLDirectoryElement</strong>()
 </div>
 </div>
 <div class="class" id="class-HTMLFontElement">
-<h2>final native class <strong>HTMLFontElement</strong></h2>
+<h2>final native class <strong>HTMLFontElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
@@ -17325,7 +17325,7 @@ new <strong>Blob</strong>()
 </div>
 </div>
 <div class="class" id="class-File">
-<h2>final native class <strong>File</strong></h2>
+<h2>final native class <strong>File</strong> extends <a href="lib/js/js/web.jsx.html#class-Blob">Blob</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-FileAPI-20121025/">http://www.w3.org/TR/2012/WD-FileAPI-20121025/</a></li>
 </ul>
@@ -17349,7 +17349,7 @@ new <strong>File</strong>()
 </div>
 </div>
 <div class="class" id="class-FileReader">
-<h2>final native class <strong>FileReader</strong></h2>
+<h2>final native class <strong>FileReader</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-FileAPI-20121025/">http://www.w3.org/TR/2012/WD-FileAPI-20121025/</a></li>
 </ul>
@@ -17958,7 +17958,7 @@ new <strong>AudioContext</strong>()
 </div>
 </div>
 <div class="class" id="class-OfflineAudioContext">
-<h2>final native class <strong>OfflineAudioContext</strong></h2>
+<h2>final native class <strong>OfflineAudioContext</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioContext">AudioContext</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18062,7 +18062,7 @@ new <strong>AudioNode</strong>()
 </div>
 </div>
 <div class="class" id="class-AudioSourceNode">
-<h2>native class <strong>AudioSourceNode</strong></h2>
+<h2>native class <strong>AudioSourceNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18074,7 +18074,7 @@ new <strong>AudioSourceNode</strong>()
 </div>
 </div>
 <div class="class" id="class-AudioDestinationNode">
-<h2>final native class <strong>AudioDestinationNode</strong></h2>
+<h2>final native class <strong>AudioDestinationNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18182,7 +18182,7 @@ new <strong>AudioParam</strong>()
 </div>
 </div>
 <div class="class" id="class-GainNode">
-<h2>final native class <strong>GainNode</strong></h2>
+<h2>final native class <strong>GainNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18200,7 +18200,7 @@ new <strong>GainNode</strong>()
 </div>
 </div>
 <div class="class" id="class-DelayNode">
-<h2>final native class <strong>DelayNode</strong></h2>
+<h2>final native class <strong>DelayNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18261,7 +18261,7 @@ new <strong>AudioBuffer</strong>()
 </div>
 </div>
 <div class="class" id="class-AudioBufferSourceNode">
-<h2>final native class <strong>AudioBufferSourceNode</strong></h2>
+<h2>final native class <strong>AudioBufferSourceNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioSourceNode">AudioSourceNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18413,7 +18413,7 @@ new <strong>AudioBufferSourceNode</strong>()
 </div>
 </div>
 <div class="class" id="class-MediaElementAudioSourceNode">
-<h2>final native class <strong>MediaElementAudioSourceNode</strong></h2>
+<h2>final native class <strong>MediaElementAudioSourceNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioSourceNode">AudioSourceNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18425,7 +18425,7 @@ new <strong>MediaElementAudioSourceNode</strong>()
 </div>
 </div>
 <div class="class" id="class-ScriptProcessorNode">
-<h2>final native class <strong>ScriptProcessorNode</strong></h2>
+<h2>final native class <strong>ScriptProcessorNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18449,7 +18449,7 @@ new <strong>ScriptProcessorNode</strong>()
 </div>
 </div>
 <div class="class" id="class-AudioProcessingEvent">
-<h2>final native class <strong>AudioProcessingEvent</strong></h2>
+<h2>final native class <strong>AudioProcessingEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18485,7 +18485,7 @@ new <strong>AudioProcessingEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-PannerNode">
-<h2>final native class <strong>PannerNode</strong></h2>
+<h2>final native class <strong>PannerNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18611,7 +18611,7 @@ new <strong>AudioListener</strong>()
 </div>
 </div>
 <div class="class" id="class-ConvolverNode">
-<h2>final native class <strong>ConvolverNode</strong></h2>
+<h2>final native class <strong>ConvolverNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18635,7 +18635,7 @@ new <strong>ConvolverNode</strong>()
 </div>
 </div>
 <div class="class" id="class-AnalyserNode">
-<h2>final native class <strong>AnalyserNode</strong></h2>
+<h2>final native class <strong>AnalyserNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18698,7 +18698,7 @@ new <strong>AnalyserNode</strong>()
 </div>
 </div>
 <div class="class" id="class-ChannelSplitterNode">
-<h2>final native class <strong>ChannelSplitterNode</strong></h2>
+<h2>final native class <strong>ChannelSplitterNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18710,7 +18710,7 @@ new <strong>ChannelSplitterNode</strong>()
 </div>
 </div>
 <div class="class" id="class-ChannelMergerNode">
-<h2>final native class <strong>ChannelMergerNode</strong></h2>
+<h2>final native class <strong>ChannelMergerNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18722,7 +18722,7 @@ new <strong>ChannelMergerNode</strong>()
 </div>
 </div>
 <div class="class" id="class-DynamicsCompressorNode">
-<h2>final native class <strong>DynamicsCompressorNode</strong></h2>
+<h2>final native class <strong>DynamicsCompressorNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18770,7 +18770,7 @@ new <strong>DynamicsCompressorNode</strong>()
 </div>
 </div>
 <div class="class" id="class-BiquadFilterNode">
-<h2>final native class <strong>BiquadFilterNode</strong></h2>
+<h2>final native class <strong>BiquadFilterNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18819,7 +18819,7 @@ new <strong>BiquadFilterNode</strong>()
 </div>
 </div>
 <div class="class" id="class-WaveShaperNode">
-<h2>final native class <strong>WaveShaperNode</strong></h2>
+<h2>final native class <strong>WaveShaperNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioNode">AudioNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18837,7 +18837,7 @@ new <strong>WaveShaperNode</strong>()
 </div>
 </div>
 <div class="class" id="class-OscillatorNode">
-<h2>final native class <strong>OscillatorNode</strong></h2>
+<h2>final native class <strong>OscillatorNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioSourceNode">AudioSourceNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -18968,7 +18968,7 @@ new <strong>WaveTable</strong>()
 </div>
 </div>
 <div class="class" id="class-MediaStreamAudioSourceNode">
-<h2>final native class <strong>MediaStreamAudioSourceNode</strong></h2>
+<h2>final native class <strong>MediaStreamAudioSourceNode</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioSourceNode">AudioSourceNode</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-webaudio-20121213/">http://www.w3.org/TR/2012/WD-webaudio-20121213/</a></li>
 </ul>
@@ -19072,7 +19072,7 @@ new <strong>TouchList</strong>()
 </div>
 </div>
 <div class="class" id="class-TouchEvent">
-<h2>final native class <strong>TouchEvent</strong></h2>
+<h2>final native class <strong>TouchEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-UIEvent">UIEvent</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/touch-events/">http://www.w3.org/TR/touch-events/</a></li>
 </ul>
@@ -19126,7 +19126,7 @@ new <strong>TouchEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-WebSocket">
-<h2>final native class <strong>WebSocket</strong></h2>
+<h2>final native class <strong>WebSocket</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/CR-websockets-20120920/">http://www.w3.org/TR/2012/CR-websockets-20120920/</a></li>
 </ul>
@@ -19307,7 +19307,7 @@ new <strong>WebSocket</strong>(url : string, protocols : Array.&lt;string&gt;)
 </div>
 </div>
 <div class="class" id="class-CloseEvent">
-<h2>final native class <strong>CloseEvent</strong></h2>
+<h2>final native class <strong>CloseEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/CR-websockets-20120920/">http://www.w3.org/TR/2012/CR-websockets-20120920/</a></li>
 </ul>
@@ -19343,7 +19343,7 @@ new <strong>CloseEvent</strong>(type : string, eventInitDict : <a href="lib/js/j
 </div>
 </div>
 <div class="class" id="class-CloseEventInit">
-<h2> class <strong>CloseEventInit</strong></h2>
+<h2> class <strong>CloseEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -19707,7 +19707,7 @@ new <strong>WindowLocalStorage</strong>()
 </div>
 </div>
 <div class="class" id="class-StorageEvent">
-<h2>final native class <strong>StorageEvent</strong></h2>
+<h2>final native class <strong>StorageEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/html5/webstorage/">http://dev.w3.org/html5/webstorage/</a></li>
 </ul>
@@ -19755,7 +19755,7 @@ new <strong>StorageEvent</strong>(type : string, eventInitDict : <a href="lib/js
 </div>
 </div>
 <div class="class" id="class-StorageEventInit">
-<h2> class <strong>StorageEventInit</strong></h2>
+<h2> class <strong>StorageEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -19795,7 +19795,7 @@ new <strong>StorageEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-MessageEvent">
-<h2>final native class <strong>MessageEvent</strong></h2>
+<h2>final native class <strong>MessageEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/webmessaging/">http://www.w3.org/TR/webmessaging/</a></li>
 </ul>
@@ -19843,7 +19843,7 @@ new <strong>MessageEvent</strong>(type : string, eventInitDict : <a href="lib/js
 </div>
 </div>
 <div class="class" id="class-MessageEventInit">
-<h2> class <strong>MessageEventInit</strong></h2>
+<h2> class <strong>MessageEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -19907,7 +19907,7 @@ new <strong>MessageChannel</strong>()
 </div>
 </div>
 <div class="class" id="class-MessagePort">
-<h2>final native class <strong>MessagePort</strong></h2>
+<h2>final native class <strong>MessagePort</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/webmessaging/">http://www.w3.org/TR/webmessaging/</a></li>
 </ul>
@@ -19953,7 +19953,7 @@ new <strong>MessagePort</strong>()
 </div>
 </div>
 <div class="class" id="class-WorkerGlobalScope">
-<h2>native class <strong>WorkerGlobalScope</strong></h2>
+<h2>native class <strong>WorkerGlobalScope</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20015,7 +20015,7 @@ new <strong>WorkerGlobalScope</strong>()
 </div>
 </div>
 <div class="class" id="class-DedicatedWorkerGlobalScope">
-<h2>final native class <strong>DedicatedWorkerGlobalScope</strong></h2>
+<h2>final native class <strong>DedicatedWorkerGlobalScope</strong> extends <a href="lib/js/js/web.jsx.html#class-WorkerGlobalScope">WorkerGlobalScope</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20047,7 +20047,7 @@ new <strong>DedicatedWorkerGlobalScope</strong>()
 </div>
 </div>
 <div class="class" id="class-SharedWorkerGlobalScope">
-<h2>final native class <strong>SharedWorkerGlobalScope</strong></h2>
+<h2>final native class <strong>SharedWorkerGlobalScope</strong> extends <a href="lib/js/js/web.jsx.html#class-WorkerGlobalScope">WorkerGlobalScope</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20077,7 +20077,7 @@ new <strong>SharedWorkerGlobalScope</strong>()
 </div>
 </div>
 <div class="class" id="class-ErrorEvent">
-<h2>final native class <strong>ErrorEvent</strong></h2>
+<h2>final native class <strong>ErrorEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20113,7 +20113,7 @@ new <strong>ErrorEvent</strong>(type : string, eventInitDict : <a href="lib/js/j
 </div>
 </div>
 <div class="class" id="class-ErrorEventInit">
-<h2> class <strong>ErrorEventInit</strong></h2>
+<h2> class <strong>ErrorEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -20159,7 +20159,7 @@ new <strong>AbstractWorker</strong>()
 </div>
 </div>
 <div class="class" id="class-Worker">
-<h2>final native class <strong>Worker</strong></h2>
+<h2>final native class <strong>Worker</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20204,7 +20204,7 @@ new <strong>Worker</strong>(scriptURL : string)
 </div>
 </div>
 <div class="class" id="class-SharedWorker">
-<h2>final native class <strong>SharedWorker</strong></h2>
+<h2>final native class <strong>SharedWorker</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20234,7 +20234,7 @@ new <strong>SharedWorker</strong>(scriptURL : string, name : string)
 </div>
 </div>
 <div class="class" id="class-WorkerUtils">
-<h2>native class <strong>WorkerUtils</strong></h2>
+<h2>native class <strong>WorkerUtils</strong> extends <a href="lib/js/js/web.jsx.html#class-WindowBase64">WindowBase64</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20275,7 +20275,7 @@ new <strong>WorkerUtils</strong>()
 </div>
 </div>
 <div class="class" id="class-WorkerNavigator">
-<h2>final native class <strong>WorkerNavigator</strong></h2>
+<h2>final native class <strong>WorkerNavigator</strong> extends <a href="lib/js/js/web.jsx.html#class-NavigatorID">NavigatorID</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/workers/">http://www.w3.org/TR/workers/</a></li>
 </ul>
@@ -20355,7 +20355,7 @@ new <strong>WorkerLocation</strong>()
 </div>
 </div>
 <div class="class" id="class-EventSource">
-<h2>final native class <strong>EventSource</strong></h2>
+<h2>final native class <strong>EventSource</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/eventsource/">http://www.w3.org/TR/eventsource/</a></li>
 </ul>
@@ -20604,7 +20604,7 @@ new <strong>IDBIndexParameters</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBVersionChangeEventInit">
-<h2> class <strong>IDBVersionChangeEventInit</strong></h2>
+<h2> class <strong>IDBVersionChangeEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -20626,7 +20626,7 @@ new <strong>IDBVersionChangeEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBRequest">
-<h2>native class <strong>IDBRequest</strong></h2>
+<h2>native class <strong>IDBRequest</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -20680,7 +20680,7 @@ new <strong>IDBRequest</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBOpenDBRequest">
-<h2>final native class <strong>IDBOpenDBRequest</strong></h2>
+<h2>final native class <strong>IDBOpenDBRequest</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBRequest">IDBRequest</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -20704,7 +20704,7 @@ new <strong>IDBOpenDBRequest</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBVersionChangeEvent">
-<h2>final native class <strong>IDBVersionChangeEvent</strong></h2>
+<h2>final native class <strong>IDBVersionChangeEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -20792,7 +20792,7 @@ new <strong>IDBFactory</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBDatabase">
-<h2>native class <strong>IDBDatabase</strong></h2>
+<h2>native class <strong>IDBDatabase</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -21213,7 +21213,7 @@ new <strong>IDBCursor</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBCursorWithValue">
-<h2>final native class <strong>IDBCursorWithValue</strong></h2>
+<h2>final native class <strong>IDBCursorWithValue</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBCursor">IDBCursor</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -21231,7 +21231,7 @@ new <strong>IDBCursorWithValue</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBTransaction">
-<h2>native class <strong>IDBTransaction</strong></h2>
+<h2>native class <strong>IDBTransaction</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -21769,7 +21769,7 @@ new <strong>IDBCursorSync</strong>()
 </div>
 </div>
 <div class="class" id="class-IDBCursorWithValueSync">
-<h2>final native class <strong>IDBCursorWithValueSync</strong></h2>
+<h2>final native class <strong>IDBCursorWithValueSync</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBCursorSync">IDBCursorSync</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2013/WD-IndexedDB-20130516/">http://www.w3.org/TR/2013/WD-IndexedDB-20130516/</a></li>
 </ul>
@@ -21831,7 +21831,7 @@ new <strong>IDBTransactionSync</strong>()
 </div>
 </div>
 <div class="class" id="class-Notification">
-<h2>final native class <strong>Notification</strong></h2>
+<h2>final native class <strong>Notification</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2012/WD-notifications-20120614/">http://www.w3.org/TR/2012/WD-notifications-20120614/</a></li>
 </ul>
@@ -21933,7 +21933,7 @@ new <strong>NotificationOptions</strong>()
 </div>
 </div>
 <div class="class" id="class-AudioMediaStreamTrack">
-<h2>final native class <strong>AudioMediaStreamTrack</strong></h2>
+<h2>final native class <strong>AudioMediaStreamTrack</strong> extends <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
 </ul>
@@ -22119,7 +22119,7 @@ new <strong>RTCConfiguration</strong>()
 </div>
 </div>
 <div class="class" id="class-RTCPeerConnection">
-<h2>final native class <strong>RTCPeerConnection</strong></h2>
+<h2>final native class <strong>RTCPeerConnection</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
 </ul>
@@ -22499,7 +22499,7 @@ new <strong>DataChannelInit</strong>()
 </div>
 </div>
 <div class="class" id="class-RTCPeerConnectionIceEvent">
-<h2>final native class <strong>RTCPeerConnectionIceEvent</strong></h2>
+<h2>final native class <strong>RTCPeerConnectionIceEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
 </ul>
@@ -22517,7 +22517,7 @@ new <strong>RTCPeerConnectionIceEvent</strong>(type : string, eventInitDict : <a
 </div>
 </div>
 <div class="class" id="class-RTCPeerConnectionIceEventInit">
-<h2> class <strong>RTCPeerConnectionIceEventInit</strong></h2>
+<h2> class <strong>RTCPeerConnectionIceEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -22533,7 +22533,7 @@ new <strong>RTCPeerConnectionIceEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-MediaStreamEvent">
-<h2>final native class <strong>MediaStreamEvent</strong></h2>
+<h2>final native class <strong>MediaStreamEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
 </ul>
@@ -22551,7 +22551,7 @@ new <strong>MediaStreamEvent</strong>(type : string, eventInitDict : <a href="li
 </div>
 </div>
 <div class="class" id="class-MediaStreamEventInit">
-<h2> class <strong>MediaStreamEventInit</strong></h2>
+<h2> class <strong>MediaStreamEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -22567,7 +22567,7 @@ new <strong>MediaStreamEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-DataChannelEvent">
-<h2>final native class <strong>DataChannelEvent</strong></h2>
+<h2>final native class <strong>DataChannelEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
 </ul>
@@ -22585,7 +22585,7 @@ new <strong>DataChannelEvent</strong>(type : string, eventInitDict : <a href="li
 </div>
 </div>
 <div class="class" id="class-DataChannelEventInit">
-<h2> class <strong>DataChannelEventInit</strong></h2>
+<h2> class <strong>DataChannelEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -22601,7 +22601,7 @@ new <strong>DataChannelEventInit</strong>()
 </div>
 </div>
 <div class="class" id="class-MediaStream">
-<h2>native class <strong>MediaStream</strong></h2>
+<h2>native class <strong>MediaStream</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
 </ul>
@@ -22643,7 +22643,7 @@ new <strong>MediaStream</strong>(audioTracks : <a href="lib/js/js/web.jsx.html#c
 </div>
 </div>
 <div class="class" id="class-LocalMediaStream">
-<h2>final native class <strong>LocalMediaStream</strong></h2>
+<h2>final native class <strong>LocalMediaStream</strong> extends <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
 </ul>
@@ -22917,7 +22917,7 @@ new <strong>NavigatorUserMediaError</strong>()
 </div>
 </div>
 <div class="class" id="class-CanvasRenderingContext2D">
-<h2>final native class <strong>CanvasRenderingContext2D</strong></h2>
+<h2>final native class <strong>CanvasRenderingContext2D</strong> extends <a href="lib/js/js/web.jsx.html#class-CanvasDrawingStyles">CanvasDrawingStyles</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a></li>
 </ul>
@@ -23770,7 +23770,7 @@ new <strong>ImageData</strong>()
 </div>
 </div>
 <div class="class" id="class-DrawingStyle">
-<h2>final native class <strong>DrawingStyle</strong></h2>
+<h2>final native class <strong>DrawingStyle</strong> extends <a href="lib/js/js/web.jsx.html#class-CanvasDrawingStyles">CanvasDrawingStyles</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a></li>
 </ul>
@@ -23788,7 +23788,7 @@ new <strong>DrawingStyle</strong>(scope : <a href="lib/js/js/web.jsx.html#class-
 </div>
 </div>
 <div class="class" id="class-Path">
-<h2>final native class <strong>Path</strong></h2>
+<h2>final native class <strong>Path</strong> extends <a href="lib/js/js/web.jsx.html#class-CanvasPathMethods">CanvasPathMethods</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/2dcontext/">http://www.w3.org/TR/2dcontext/</a></li>
 </ul>
@@ -23928,7 +23928,7 @@ new <strong>WebGLObject</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLBuffer">
-<h2>final native class <strong>WebGLBuffer</strong></h2>
+<h2>final native class <strong>WebGLBuffer</strong> extends <a href="lib/js/js/web.jsx.html#class-WebGLObject">WebGLObject</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -23940,7 +23940,7 @@ new <strong>WebGLBuffer</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLFramebuffer">
-<h2>final native class <strong>WebGLFramebuffer</strong></h2>
+<h2>final native class <strong>WebGLFramebuffer</strong> extends <a href="lib/js/js/web.jsx.html#class-WebGLObject">WebGLObject</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -23952,7 +23952,7 @@ new <strong>WebGLFramebuffer</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLProgram">
-<h2>final native class <strong>WebGLProgram</strong></h2>
+<h2>final native class <strong>WebGLProgram</strong> extends <a href="lib/js/js/web.jsx.html#class-WebGLObject">WebGLObject</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -23964,7 +23964,7 @@ new <strong>WebGLProgram</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLRenderbuffer">
-<h2>final native class <strong>WebGLRenderbuffer</strong></h2>
+<h2>final native class <strong>WebGLRenderbuffer</strong> extends <a href="lib/js/js/web.jsx.html#class-WebGLObject">WebGLObject</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -23976,7 +23976,7 @@ new <strong>WebGLRenderbuffer</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLShader">
-<h2>final native class <strong>WebGLShader</strong></h2>
+<h2>final native class <strong>WebGLShader</strong> extends <a href="lib/js/js/web.jsx.html#class-WebGLObject">WebGLObject</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -23988,7 +23988,7 @@ new <strong>WebGLShader</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLTexture">
-<h2>final native class <strong>WebGLTexture</strong></h2>
+<h2>final native class <strong>WebGLTexture</strong> extends <a href="lib/js/js/web.jsx.html#class-WebGLObject">WebGLObject</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -28881,7 +28881,7 @@ new <strong>WebGLRenderingContext</strong>()
 </div>
 </div>
 <div class="class" id="class-WebGLContextEvent">
-<h2>final native class <strong>WebGLContextEvent</strong></h2>
+<h2>final native class <strong>WebGLContextEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/webgl/specs/latest/webgl.idl">https://www.khronos.org/registry/webgl/specs/latest/webgl.idl</a></li>
 </ul>
@@ -28905,7 +28905,7 @@ new <strong>WebGLContextEvent</strong>(type : string, eventInit : <a href="lib/j
 </div>
 </div>
 <div class="class" id="class-WebGLContextEventInit">
-<h2> class <strong>WebGLContextEventInit</strong></h2>
+<h2> class <strong>WebGLContextEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -28963,7 +28963,7 @@ new <strong>nsIDOMGamepad</strong>()
 </div>
 </div>
 <div class="class" id="class-nsIDOMGamepadConnectionEvent">
-<h2>final native class <strong>nsIDOMGamepadConnectionEvent</strong></h2>
+<h2>final native class <strong>nsIDOMGamepadConnectionEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="https://wiki.mozilla.org/GamepadAPI">https://wiki.mozilla.org/GamepadAPI</a></li>
 </ul>
@@ -28981,7 +28981,7 @@ new <strong>nsIDOMGamepadConnectionEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-nsIDOMGamepadButtonEvent">
-<h2>final native class <strong>nsIDOMGamepadButtonEvent</strong></h2>
+<h2>final native class <strong>nsIDOMGamepadButtonEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="https://wiki.mozilla.org/GamepadAPI">https://wiki.mozilla.org/GamepadAPI</a></li>
 </ul>
@@ -29005,7 +29005,7 @@ new <strong>nsIDOMGamepadButtonEvent</strong>()
 </div>
 </div>
 <div class="class" id="class-nsIDOMGamepadAxisMoveEvent">
-<h2>final native class <strong>nsIDOMGamepadAxisMoveEvent</strong></h2>
+<h2>final native class <strong>nsIDOMGamepadAxisMoveEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 <ul class="see">
 <li><a href="https://wiki.mozilla.org/GamepadAPI">https://wiki.mozilla.org/GamepadAPI</a></li>
 </ul>
@@ -29087,7 +29087,7 @@ new <strong>WindowAnimationTiming</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitURL">
-<h2>final native class <strong>webkitURL</strong></h2>
+<h2>final native class <strong>webkitURL</strong> extends <a href="lib/js/js/web.jsx.html#class-URL">URL</a></h2>
 
 <div class="member function">
 <h3>
@@ -29097,7 +29097,7 @@ new <strong>webkitURL</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitAudioContext">
-<h2>final native class <strong>webkitAudioContext</strong></h2>
+<h2>final native class <strong>webkitAudioContext</strong> extends <a href="lib/js/js/web.jsx.html#class-AudioContext">AudioContext</a></h2>
 
 <div class="member function">
 <h3>
@@ -29107,7 +29107,7 @@ new <strong>webkitAudioContext</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBCursor">
-<h2>final native class <strong>webkitIDBCursor</strong></h2>
+<h2>final native class <strong>webkitIDBCursor</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBCursor">IDBCursor</a></h2>
 
 <div class="member function">
 <h3>
@@ -29117,7 +29117,7 @@ new <strong>webkitIDBCursor</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBDatabase">
-<h2>final native class <strong>webkitIDBDatabase</strong></h2>
+<h2>final native class <strong>webkitIDBDatabase</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBDatabase">IDBDatabase</a></h2>
 
 <div class="member function">
 <h3>
@@ -29127,7 +29127,7 @@ new <strong>webkitIDBDatabase</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBFactory">
-<h2>final native class <strong>webkitIDBFactory</strong></h2>
+<h2>final native class <strong>webkitIDBFactory</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBFactory">IDBFactory</a></h2>
 
 <div class="member function">
 <h3>
@@ -29137,7 +29137,7 @@ new <strong>webkitIDBFactory</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBIndex">
-<h2>final native class <strong>webkitIDBIndex</strong></h2>
+<h2>final native class <strong>webkitIDBIndex</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBIndex">IDBIndex</a></h2>
 
 <div class="member function">
 <h3>
@@ -29147,7 +29147,7 @@ new <strong>webkitIDBIndex</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBKeyRange">
-<h2>final native class <strong>webkitIDBKeyRange</strong></h2>
+<h2>final native class <strong>webkitIDBKeyRange</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBKeyRange">IDBKeyRange</a></h2>
 
 <div class="member function">
 <h3>
@@ -29157,7 +29157,7 @@ new <strong>webkitIDBKeyRange</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBObjectStore">
-<h2>final native class <strong>webkitIDBObjectStore</strong></h2>
+<h2>final native class <strong>webkitIDBObjectStore</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBObjectStore">IDBObjectStore</a></h2>
 
 <div class="member function">
 <h3>
@@ -29167,7 +29167,7 @@ new <strong>webkitIDBObjectStore</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBRequest">
-<h2>final native class <strong>webkitIDBRequest</strong></h2>
+<h2>final native class <strong>webkitIDBRequest</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBRequest">IDBRequest</a></h2>
 
 <div class="member function">
 <h3>
@@ -29177,7 +29177,7 @@ new <strong>webkitIDBRequest</strong>()
 </div>
 </div>
 <div class="class" id="class-webkitIDBTransaction">
-<h2>final native class <strong>webkitIDBTransaction</strong></h2>
+<h2>final native class <strong>webkitIDBTransaction</strong> extends <a href="lib/js/js/web.jsx.html#class-IDBTransaction">IDBTransaction</a></h2>
 
 <div class="member function">
 <h3>
@@ -29209,7 +29209,7 @@ new <strong>JavaScriptAudioNode</strong>()
 </div>
 </div>
 <div class="class" id="class-DeviceOrientationEvent">
-<h2>final native class <strong>DeviceOrientationEvent</strong></h2>
+<h2>final native class <strong>DeviceOrientationEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 
 <div class="member property">
 <h3>
@@ -29249,7 +29249,7 @@ new <strong>DeviceOrientationEvent</strong>(type : string, eventInitDict : <a hr
 </div>
 </div>
 <div class="class" id="class-DeviceOrientationEventInit">
-<h2> class <strong>DeviceOrientationEventInit</strong></h2>
+<h2> class <strong>DeviceOrientationEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -29339,7 +29339,7 @@ new <strong>DeviceRotationRate</strong>()
 </div>
 </div>
 <div class="class" id="class-DeviceMotionEvent">
-<h2>final native class <strong>DeviceMotionEvent</strong></h2>
+<h2>final native class <strong>DeviceMotionEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
 
 <div class="member property">
 <h3>
@@ -29379,7 +29379,7 @@ new <strong>DeviceMotionEvent</strong>(type : string, eventInitDict : <a href="l
 </div>
 </div>
 <div class="class" id="class-DeviceMotionEventInit">
-<h2> class <strong>DeviceMotionEventInit</strong></h2>
+<h2> class <strong>DeviceMotionEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
 
 <div class="member property">
 <h3>
@@ -29489,8 +29489,8 @@ new <strong>StyleSheetList</strong>()
 
 <div id="footer">
 <p>Copyright &copy; DeNA, Co., Ltd.</p>
-<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.50<br />
-at 2013-07-07T04:58:55.149Z.</p>
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.51<br />
+at 2013-07-07T17:31:05.308Z.</p>
 
 </div>
 </div>

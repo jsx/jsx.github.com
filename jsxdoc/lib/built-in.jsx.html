@@ -572,17 +572,6 @@ Apply a function simultaneously against two values of the array
 
 </div>
 </div>
-<div class="class" id="class-g_Enumerable">
-<h2> interface <strong>g_Enumerable</strong>.&lt;T&gt;</h2>
-
-<div class="member function">
-<h3>
-abstract function <strong>next</strong>()
- : T
-</h3>
-
-</div>
-</div>
 <div class="class" id="class-Object">
 <h2>native class <strong>Object</strong></h2>
 <div class="description">
@@ -2104,7 +2093,7 @@ new <strong>Error</strong>(message : string)
 </div>
 </div>
 <div class="class" id="class-EvalError">
-<h2>native class <strong>EvalError</strong></h2>
+<h2>native class <strong>EvalError</strong> extends <a href="lib/built-in.jsx.html#class-Error">Error</a></h2>
 
 <div class="member function">
 <h3>
@@ -2120,7 +2109,7 @@ new <strong>EvalError</strong>(message : string)
 </div>
 </div>
 <div class="class" id="class-RangeError">
-<h2>native class <strong>RangeError</strong></h2>
+<h2>native class <strong>RangeError</strong> extends <a href="lib/built-in.jsx.html#class-Error">Error</a></h2>
 
 <div class="member function">
 <h3>
@@ -2136,7 +2125,7 @@ new <strong>RangeError</strong>(message : string)
 </div>
 </div>
 <div class="class" id="class-ReferenceError">
-<h2>native class <strong>ReferenceError</strong></h2>
+<h2>native class <strong>ReferenceError</strong> extends <a href="lib/built-in.jsx.html#class-Error">Error</a></h2>
 
 <div class="member function">
 <h3>
@@ -2152,7 +2141,7 @@ new <strong>ReferenceError</strong>(message : string)
 </div>
 </div>
 <div class="class" id="class-SyntaxError">
-<h2>native class <strong>SyntaxError</strong></h2>
+<h2>native class <strong>SyntaxError</strong> extends <a href="lib/built-in.jsx.html#class-Error">Error</a></h2>
 
 <div class="member function">
 <h3>
@@ -2168,7 +2157,7 @@ new <strong>SyntaxError</strong>(message : string)
 </div>
 </div>
 <div class="class" id="class-TypeError">
-<h2>native class <strong>TypeError</strong></h2>
+<h2>native class <strong>TypeError</strong> extends <a href="lib/built-in.jsx.html#class-Error">Error</a></h2>
 
 <div class="member function">
 <h3>
@@ -2179,18 +2168,6 @@ new <strong>TypeError</strong>()
 <div class="member function">
 <h3>
 new <strong>TypeError</strong>(message : string)
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-g_StopIteration">
-<h2> class <strong>g_StopIteration</strong></h2>
-<div class="description">
-Provides classes and interfaces related to generator.
-</div>
-<div class="member function">
-<h3>
-new <strong>g_StopIteration</strong>()
 </h3>
 
 </div>
@@ -2258,7 +2235,7 @@ new <strong>Transferable</strong>()
 </div>
 </div>
 <div class="class" id="class-ArrayBuffer">
-<h2>final native class <strong>ArrayBuffer</strong></h2>
+<h2>final native class <strong>ArrayBuffer</strong> extends <a href="lib/built-in.jsx.html#class-Transferable">Transferable</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -2320,7 +2297,7 @@ new <strong>ArrayBufferView</strong>()
 </div>
 </div>
 <div class="class" id="class-Int8Array">
-<h2>final native class <strong>Int8Array</strong></h2>
+<h2>final native class <strong>Int8Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -2449,7 +2426,7 @@ new <strong>Int8Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-Arr
 </div>
 </div>
 <div class="class" id="class-Uint8Array">
-<h2>native class <strong>Uint8Array</strong></h2>
+<h2>native class <strong>Uint8Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -2578,7 +2555,7 @@ new <strong>Uint8Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-Ar
 </div>
 </div>
 <div class="class" id="class-Uint8ClampedArray">
-<h2>final native class <strong>Uint8ClampedArray</strong></h2>
+<h2>final native class <strong>Uint8ClampedArray</strong> extends <a href="lib/built-in.jsx.html#class-Uint8Array">Uint8Array</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -2653,7 +2630,7 @@ override function <strong>subarray</strong>(start : number, end : number)
 </div>
 </div>
 <div class="class" id="class-Int16Array">
-<h2>final native class <strong>Int16Array</strong></h2>
+<h2>final native class <strong>Int16Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -2782,7 +2759,7 @@ new <strong>Int16Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-Ar
 </div>
 </div>
 <div class="class" id="class-Uint16Array">
-<h2>final native class <strong>Uint16Array</strong></h2>
+<h2>final native class <strong>Uint16Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -2911,7 +2888,7 @@ new <strong>Uint16Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-A
 </div>
 </div>
 <div class="class" id="class-Int32Array">
-<h2>final native class <strong>Int32Array</strong></h2>
+<h2>final native class <strong>Int32Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -3040,7 +3017,7 @@ new <strong>Int32Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-Ar
 </div>
 </div>
 <div class="class" id="class-Uint32Array">
-<h2>final native class <strong>Uint32Array</strong></h2>
+<h2>final native class <strong>Uint32Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -3169,7 +3146,7 @@ new <strong>Uint32Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-A
 </div>
 </div>
 <div class="class" id="class-Float32Array">
-<h2>final native class <strong>Float32Array</strong></h2>
+<h2>final native class <strong>Float32Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -3298,7 +3275,7 @@ new <strong>Float32Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-
 </div>
 </div>
 <div class="class" id="class-Float64Array">
-<h2>final native class <strong>Float64Array</strong></h2>
+<h2>final native class <strong>Float64Array</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -3427,7 +3404,7 @@ new <strong>Float64Array</strong>(buffer : <a href="lib/built-in.jsx.html#class-
 </div>
 </div>
 <div class="class" id="class-DataView">
-<h2>final native class <strong>DataView</strong></h2>
+<h2>final native class <strong>DataView</strong> extends <a href="lib/built-in.jsx.html#class-ArrayBufferView">ArrayBufferView</a></h2>
 <ul class="see">
 <li><a href="https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl">https://www.khronos.org/registry/typedarray/specs/latest/typedarray.idl</a></li>
 </ul>
@@ -3711,8 +3688,8 @@ Resets the collected profiler results.
 
 <div id="footer">
 <p>Copyright &copy; DeNA., Co., Ltd.</p>
-<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.50<br />
-at 2013-07-07T04:58:52.607Z.</p>
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.51<br />
+at 2013-07-07T17:31:02.984Z.</p>
 
 </div>
 </div>
