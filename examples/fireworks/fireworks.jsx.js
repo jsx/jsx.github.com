@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.48 (2013-06-29 14:28:24 -0700; 694977540e8d28a6c304a6fa2130bc10a4225469)
+// generatedy by JSX compiler 0.9.56 (2013-07-17 21:18:01 -0700; 6acc52a3f509ed30c9e04715405d1181adc00070)
 var JSX = {};
 (function (JSX) {
 /**
@@ -56,7 +56,7 @@ function $__jsx_div_assign(obj, prop, divisor) {
  */
 var $__jsx_parseInt = parseInt;
 var $__jsx_parseFloat = parseFloat;
-var $__jsx_isNaN = isNaN;
+function $__jsx_isNaN(n) { return n !== n; }
 var $__jsx_isFinite = isFinite;
 
 var $__jsx_encodeURIComponent = encodeURIComponent;
@@ -138,7 +138,7 @@ Spark.prototype._decay$ = function () {
 };
 
 
-function Spark$_decay_0$LSpark$($this) {
+function Spark$_decay$LSpark$($this) {
 	var size$0;
 	$this.velX *= 0.98;
 	$this.velY *= 0.98;
@@ -150,7 +150,7 @@ function Spark$_decay_0$LSpark$($this) {
 	}
 };
 
-Spark._decay_0$LSpark$ = Spark$_decay_0$LSpark$;
+Spark._decay$LSpark$ = Spark$_decay$LSpark$;
 
 Spark.prototype._move$ = function () {
 	this.posX += this.velX + (Math.random() - 0.5);
@@ -158,12 +158,12 @@ Spark.prototype._move$ = function () {
 };
 
 
-function Spark$_move_0$LSpark$($this) {
+function Spark$_move$LSpark$($this) {
 	$this.posX += $this.velX + (Math.random() - 0.5);
 	$this.posY += $this.velY + (Math.random() - 0.5) + 2.0;
 };
 
-Spark._move_0$LSpark$ = Spark$_move_0$LSpark$;
+Spark._move$LSpark$ = Spark$_move$LSpark$;
 
 Spark.prototype._render$LFireworkView$ = function (view) {
 	view.cx.beginPath();
@@ -173,44 +173,44 @@ Spark.prototype._render$LFireworkView$ = function (view) {
 };
 
 
-function Spark$_render_0$LSpark$LFireworkView$($this, view) {
+function Spark$_render$LSpark$LFireworkView$($this, view) {
 	view.cx.beginPath();
 	view.cx.arc($this.posX, $this.posY, $this.size, 0, 6.283185307179586, true);
 	view.cx.fillStyle = (Math.random() > 0.2 ? $this.color : "white");
 	view.cx.fill();
 };
 
-Spark._render_0$LSpark$LFireworkView$ = Spark$_render_0$LSpark$LFireworkView$;
+Spark._render$LSpark$LFireworkView$ = Spark$_render$LSpark$LFireworkView$;
 
 Spark.prototype._isLiving$LFireworkView$ = function (view) {
 	return (this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true);
 };
 
 
-function Spark$_isLiving_0$LSpark$LFireworkView$($this, view) {
+function Spark$_isLiving$LSpark$LFireworkView$($this, view) {
 	return ($this.size <= 0.01 ? false : $this.posX <= 0 ? false : $this.posX >= view.width || $this.posY >= view.height ? false : true);
 };
 
-Spark._isLiving_0$LSpark$LFireworkView$ = Spark$_isLiving_0$LSpark$LFireworkView$;
+Spark._isLiving$LSpark$LFireworkView$ = Spark$_isLiving$LSpark$LFireworkView$;
 
 Spark.prototype.draw$LFireworkView$ = function (view) {
-	Spark$_decay_0$LSpark$(this);
+	Spark$_decay$LSpark$(this);
 	this.posX += this.velX + (Math.random() - 0.5);
 	this.posY += this.velY + (Math.random() - 0.5) + 2.0;
-	Spark$_render_0$LSpark$LFireworkView$(this, view);
+	Spark$_render$LSpark$LFireworkView$(this, view);
 	return (this.size <= 0.01 ? false : this.posX <= 0 ? false : this.posX >= view.width || this.posY >= view.height ? false : true);
 };
 
 
-function Spark$draw_0$LSpark$LFireworkView$($this, view) {
-	Spark$_decay_0$LSpark$($this);
+function Spark$draw$LSpark$LFireworkView$($this, view) {
+	Spark$_decay$LSpark$($this);
 	$this.posX += $this.velX + (Math.random() - 0.5);
 	$this.posY += $this.velY + (Math.random() - 0.5) + 2.0;
-	Spark$_render_0$LSpark$LFireworkView$($this, view);
+	Spark$_render$LSpark$LFireworkView$($this, view);
 	return ($this.size <= 0.01 ? false : $this.posX <= 0 ? false : $this.posX >= view.width || $this.posY >= view.height ? false : true);
 };
 
-Spark.draw_0$LSpark$LFireworkView$ = Spark$draw_0$LSpark$LFireworkView$;
+Spark.draw$LSpark$LFireworkView$ = Spark$draw$LSpark$LFireworkView$;
 
 function Firework(view, x, y) {
 	var color;
@@ -243,7 +243,7 @@ Firework.prototype.update$ = function () {
 	var s;
 	for (i = 0; i < this.sparks.length; ++ i) {
 		s = this.sparks[i];
-		if (! Spark$draw_0$LSpark$LFireworkView$(s, this.view)) {
+		if (! Spark$draw$LSpark$LFireworkView$(s, this.view)) {
 			this.sparks.splice(i, 1);
 		}
 	}
@@ -251,19 +251,19 @@ Firework.prototype.update$ = function () {
 };
 
 
-function Firework$update_0$LFirework$($this) {
+function Firework$update$LFirework$($this) {
 	var i;
 	var s;
 	for (i = 0; i < $this.sparks.length; ++ i) {
 		s = $this.sparks[i];
-		if (! Spark$draw_0$LSpark$LFireworkView$(s, $this.view)) {
+		if (! Spark$draw$LSpark$LFireworkView$(s, $this.view)) {
 			$this.sparks.splice(i, 1);
 		}
 	}
 	return $this.sparks.length > 0;
 };
 
-Firework.update_0$LFirework$ = Firework$update_0$LFirework$;
+Firework.update$LFirework$ = Firework$update$LFirework$;
 
 function FireworkView(canvas) {
 	var $this = this;
@@ -279,12 +279,12 @@ function FireworkView(canvas) {
 	canvas.addEventListener("mousedown", (function (e) {
 		var me;
 		me = e;
-		FireworkView$explode_0$LFireworkView$II($this, (me.clientX | 0), (me.clientY | 0));
+		FireworkView$explode$LFireworkView$II($this, (me.clientX | 0), (me.clientY | 0));
 	}));
 	canvas.addEventListener("touchstart", (function (e) {
 		var te;
 		te = e;
-		FireworkView$explode_0$LFireworkView$II($this, (te.touches[0].pageX | 0), (te.touches[0].pageY | 0));
+		FireworkView$explode$LFireworkView$II($this, (te.touches[0].pageX | 0), (te.touches[0].pageY | 0));
 	}));
 };
 
@@ -294,23 +294,23 @@ FireworkView.prototype.explode$II = function (x, y) {
 };
 
 
-function FireworkView$explode_0$LFireworkView$II($this, x, y) {
+function FireworkView$explode$LFireworkView$II($this, x, y) {
 	$this.fireworks.push(new Firework($this, x - $this.left, y - $this.top));
 };
 
-FireworkView.explode_0$LFireworkView$II = FireworkView$explode_0$LFireworkView$II;
+FireworkView.explode$LFireworkView$II = FireworkView$explode$LFireworkView$II;
 
 FireworkView.prototype.update$ = function () {
 	var i;
 	var fw;
 	var cx$0;
 	if (this.fireworks.length === 0) {
-		FireworkView$explode_0$LFireworkView$II(this, (this.width / 2 + this.left | 0), (this.height / 3 | 0));
+		FireworkView$explode$LFireworkView$II(this, (this.width / 2 + this.left | 0), (this.height / 3 | 0));
 	}
 	this.numSparks = 0;
 	for (i = 0; i < this.fireworks.length; ++ i) {
 		fw = this.fireworks[i];
-		if (Firework$update_0$LFirework$(fw)) {
+		if (Firework$update$LFirework$(fw)) {
 			this.numSparks += fw.sparks.length;
 		} else {
 			this.fireworks.splice(i, 1);
@@ -321,17 +321,17 @@ FireworkView.prototype.update$ = function () {
 };
 
 
-function FireworkView$update_0$LFireworkView$($this) {
+function FireworkView$update$LFireworkView$($this) {
 	var i;
 	var fw;
 	var cx$0;
 	if ($this.fireworks.length === 0) {
-		FireworkView$explode_0$LFireworkView$II($this, ($this.width / 2 + $this.left | 0), ($this.height / 3 | 0));
+		FireworkView$explode$LFireworkView$II($this, ($this.width / 2 + $this.left | 0), ($this.height / 3 | 0));
 	}
 	$this.numSparks = 0;
 	for (i = 0; i < $this.fireworks.length; ++ i) {
 		fw = $this.fireworks[i];
-		if (Firework$update_0$LFirework$(fw)) {
+		if (Firework$update$LFirework$(fw)) {
 			$this.numSparks += fw.sparks.length;
 		} else {
 			$this.fireworks.splice(i, 1);
@@ -341,7 +341,7 @@ function FireworkView$update_0$LFireworkView$($this) {
 	cx$0.fillRect(0, 0, $this.width, $this.height);
 };
 
-FireworkView.update_0$LFireworkView$ = FireworkView$update_0$LFireworkView$;
+FireworkView.update$LFireworkView$ = FireworkView$update$LFireworkView$;
 
 function FPSWatcher(elementId) {
 	this.start = Date.now();
@@ -355,21 +355,21 @@ FPSWatcher.prototype.update$I = function (numSparks) {
 	++ this.frameCount;
 	if (this.frameCount % 100 === 0) {
 		message = "FPS: " + ((this.frameCount / (Date.now() - this.start) * 1000 | 0) + "") + " (sparks: " + (numSparks + "") + ")";
-		dom$id$S(this.elementId).innerHTML = message;
+		dom.document.getElementById(this.elementId).innerHTML = message;
 	}
 };
 
 
-function FPSWatcher$update_0$LFPSWatcher$I($this, numSparks) {
+function FPSWatcher$update$LFPSWatcher$I($this, numSparks) {
 	var message;
 	++ $this.frameCount;
 	if ($this.frameCount % 100 === 0) {
 		message = "FPS: " + (($this.frameCount / (Date.now() - $this.start) * 1000 | 0) + "") + " (sparks: " + (numSparks + "") + ")";
-		dom$id$S($this.elementId).innerHTML = message;
+		dom.document.getElementById($this.elementId).innerHTML = message;
 	}
 };
 
-FPSWatcher.update_0$LFPSWatcher$I = FPSWatcher$update_0$LFPSWatcher$I;
+FPSWatcher.update$LFPSWatcher$I = FPSWatcher$update$LFPSWatcher$I;
 
 function _Main() {
 };
@@ -393,8 +393,8 @@ function _Main$main$AS(args) {
 	view = new FireworkView(canvas);
 	watcher = new FPSWatcher("fps");
 	dom.window.setInterval((function () {
-		FireworkView$update_0$LFireworkView$(view);
-		FPSWatcher$update_0$LFPSWatcher$I(watcher, (view.numSparks | 0));
+		FireworkView$update$LFireworkView$(view);
+		FPSWatcher$update$LFPSWatcher$I(watcher, (view.numSparks | 0));
 	}), 0);
 };
 
@@ -928,6 +928,8 @@ JSX.runMain = function (sourceFile, args) {
  */
 JSX.runTests = function (sourceFile, tests) {
 	var module = JSX.require(sourceFile);
+	if (! module) return;
+
 	var testClass = module._Test;
 
 	if (!testClass) return; // skip if there's no test class
@@ -966,7 +968,7 @@ JSX.runTests = function (sourceFile, tests) {
 function $__jsx_onload (event) {
 	window.removeEventListener("load", $__jsx_onload);
 	document.removeEventListener("DOMContentLoaded", $__jsx_onload);
-	JSX.runMain("fireworks.jsx", [])
+	JSX.runMain("fireworks.jsx", []);
 }
 
 window.addEventListener("load", $__jsx_onload);

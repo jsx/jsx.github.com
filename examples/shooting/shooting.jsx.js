@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.48 (2013-06-29 14:28:24 -0700; 694977540e8d28a6c304a6fa2130bc10a4225469)
+// generatedy by JSX compiler 0.9.56 (2013-07-17 21:18:01 -0700; 6acc52a3f509ed30c9e04715405d1181adc00070)
 var JSX = {};
 (function (JSX) {
 /**
@@ -56,7 +56,7 @@ function $__jsx_div_assign(obj, prop, divisor) {
  */
 var $__jsx_parseInt = parseInt;
 var $__jsx_parseFloat = parseFloat;
-var $__jsx_isNaN = isNaN;
+function $__jsx_isNaN(n) { return n !== n; }
 var $__jsx_isFinite = isFinite;
 
 var $__jsx_encodeURIComponent = encodeURIComponent;
@@ -117,8 +117,9 @@ $__jsx_extend([Sprite], Object);
 Sprite.prototype.$__jsx_implements_Sprite = true;
 
 Sprite.prototype.detectCollision$LSprite$ = function (other) {
-	var $math_abs_t;
-	return (($math_abs_t = this.x - other.x) >= 0 ? $math_abs_t : -$math_abs_t) < 16 && (($math_abs_t = this.y - other.y) >= 0 ? $math_abs_t : -$math_abs_t) < 16;
+	var abs$x$0;
+	var abs$x$1;
+	return (abs$x$0 = this.x - other.x, abs$x$0 >= 0 ? abs$x$0 : - abs$x$0) < 16 && (abs$x$1 = this.y - other.y, abs$x$1 >= 0 ? abs$x$1 : - abs$x$1) < 16;
 };
 
 
@@ -147,7 +148,7 @@ MovingObject.prototype.update$ = function () {
 };
 
 
-function MovingObject$update_0$LMovingObject$($this) {
+function MovingObject$update$LMovingObject$($this) {
 	var x$0;
 	var y$0;
 	x$0 = $this.x += $this.dx;
@@ -155,7 +156,7 @@ function MovingObject$update_0$LMovingObject$($this) {
 	return ! (x$0 <= 0 || x$0 >= 320 || y$0 <= 0 || y$0 >= 480);
 };
 
-MovingObject.update_0$LMovingObject$ = MovingObject$update_0$LMovingObject$;
+MovingObject.update$LMovingObject$ = MovingObject$update$LMovingObject$;
 
 MovingObject.prototype._inDisplay$ = function () {
 	var x$0;
@@ -164,13 +165,13 @@ MovingObject.prototype._inDisplay$ = function () {
 };
 
 
-function MovingObject$_inDisplay_0$LMovingObject$($this) {
+function MovingObject$_inDisplay$LMovingObject$($this) {
 	var x$0;
 	var y$0;
 	return ! ((x$0 = $this.x) <= 0 || x$0 >= 320 || (y$0 = $this.y) <= 0 || y$0 >= 480);
 };
 
-MovingObject._inDisplay_0$LMovingObject$ = MovingObject$_inDisplay_0$LMovingObject$;
+MovingObject._inDisplay$LMovingObject$ = MovingObject$_inDisplay$LMovingObject$;
 
 function Bullet(x, y, dx, dy, image) {
 	this.x = x;
@@ -184,19 +185,18 @@ function Bullet(x, y, dx, dy, image) {
 
 $__jsx_extend([Bullet], MovingObject);
 Bullet.prototype.update$LStage$ = function (st) {
-	var $math_abs_t;
 	var inDisplay;
 	var rockKey;
 	var rock;
 	var newState;
 	var context$0;
 	var value1$0;
-	inDisplay = MovingObject$update_0$LMovingObject$(this);
+	inDisplay = MovingObject$update$LMovingObject$(this);
 	context$0 = st.ctx;
 	context$0.drawImage(this.image, this.x - (this.width >> 1), this.y - (this.height >> 1));
 	for (rockKey in st.rocks) {
 		rock = st.rocks[rockKey];
-		if ((($math_abs_t = this.x - rock.x) >= 0 ? $math_abs_t : -$math_abs_t) < 16 && (($math_abs_t = this.y - rock.y) >= 0 ? $math_abs_t : -$math_abs_t) < 16) {
+		if (this.detectCollision$LSprite$(rock)) {
 			if (rock.hp === 0) {
 				return false;
 			}
@@ -204,7 +204,7 @@ Bullet.prototype.update$LStage$ = function (st) {
 			if (-- rock.hp === 0) {
 				value1$0 = st.score + rock.score;
 				st.score = (value1$0 <= 999999999 ? value1$0 : 999999999);
-				Stage$updateScore_0$LStage$(st);
+				Stage$updateScore$LStage$(st);
 				rock.dx = rock.dy = 0;
 				rock.state = "bomb1";
 				rock.image = st.images.bomb1;
@@ -219,20 +219,19 @@ Bullet.prototype.update$LStage$ = function (st) {
 };
 
 
-function Bullet$update_0$LBullet$LStage$($this, st) {
-	var $math_abs_t;
+function Bullet$update$LBullet$LStage$($this, st) {
 	var inDisplay;
 	var rockKey;
 	var rock;
 	var newState;
 	var context$0;
 	var value1$0;
-	inDisplay = MovingObject$update_0$LMovingObject$($this);
+	inDisplay = MovingObject$update$LMovingObject$($this);
 	context$0 = st.ctx;
 	context$0.drawImage($this.image, $this.x - ($this.width >> 1), $this.y - ($this.height >> 1));
 	for (rockKey in st.rocks) {
 		rock = st.rocks[rockKey];
-		if ((($math_abs_t = $this.x - rock.x) >= 0 ? $math_abs_t : -$math_abs_t) < 16 && (($math_abs_t = $this.y - rock.y) >= 0 ? $math_abs_t : -$math_abs_t) < 16) {
+		if ($this.detectCollision$LSprite$(rock)) {
 			if (rock.hp === 0) {
 				return false;
 			}
@@ -240,7 +239,7 @@ function Bullet$update_0$LBullet$LStage$($this, st) {
 			if (-- rock.hp === 0) {
 				value1$0 = st.score + rock.score;
 				st.score = (value1$0 <= 999999999 ? value1$0 : 999999999);
-				Stage$updateScore_0$LStage$(st);
+				Stage$updateScore$LStage$(st);
 				rock.dx = rock.dy = 0;
 				rock.state = "bomb1";
 				rock.image = st.images.bomb1;
@@ -254,7 +253,7 @@ function Bullet$update_0$LBullet$LStage$($this, st) {
 	return inDisplay;
 };
 
-Bullet.update_0$LBullet$LStage$ = Bullet$update_0$LBullet$LStage$;
+Bullet.update$LBullet$LStage$ = Bullet$update$LBullet$LStage$;
 
 function Rock(x, y, dx, dy, hp, score, state, image) {
 	this.x = x;
@@ -276,7 +275,7 @@ Rock.prototype.update$LStage$ = function (st) {
 	var context$0;
 	var state$0;
 	var state$1;
-	inDisplay = MovingObject$update_0$LMovingObject$(this);
+	inDisplay = MovingObject$update$LMovingObject$(this);
 	context$0 = st.ctx;
 	context$0.drawImage(this.image, this.x - (this.width >> 1), this.y - (this.height >> 1));
 	if (this.hp === 0) {
@@ -301,13 +300,13 @@ Rock.prototype.update$LStage$ = function (st) {
 };
 
 
-function Rock$update_0$LRock$LStage$($this, st) {
+function Rock$update$LRock$LStage$($this, st) {
 	var inDisplay;
 	var next;
 	var context$0;
 	var state$0;
 	var state$1;
-	inDisplay = MovingObject$update_0$LMovingObject$($this);
+	inDisplay = MovingObject$update$LMovingObject$($this);
 	context$0 = st.ctx;
 	context$0.drawImage($this.image, $this.x - ($this.width >> 1), $this.y - ($this.height >> 1));
 	if ($this.hp === 0) {
@@ -331,7 +330,7 @@ function Rock$update_0$LRock$LStage$($this, st) {
 	return inDisplay;
 };
 
-Rock.update_0$LRock$LStage$ = Rock$update_0$LRock$LStage$;
+Rock.update$LRock$LStage$ = Rock$update$LRock$LStage$;
 
 Rock.prototype.setState$LStage$S = function (stage, state) {
 	this.state = state;
@@ -339,12 +338,12 @@ Rock.prototype.setState$LStage$S = function (stage, state) {
 };
 
 
-function Rock$setState_0$LRock$LStage$S($this, stage, state) {
+function Rock$setState$LRock$LStage$S($this, stage, state) {
 	$this.state = state;
 	$this.image = stage.images[state];
 };
 
-Rock.setState_0$LRock$LStage$S = Rock$setState_0$LRock$LStage$S;
+Rock.setState$LRock$LStage$S = Rock$setState$LRock$LStage$S;
 
 function SpaceShip(x, y, image) {
 	this.width = 32;
@@ -413,7 +412,7 @@ function Stage(stageCanvas, scoreboard) {
 		cx.drawImage(image, 0, 0);
 		$this.images[image.name] = canvas;
 		if (++ loadedCount === $this.imageName.length) {
-			Stage$initialize_0$LStage$($this);
+			Stage$initialize$LStage$($this);
 		}
 	});
 	for (i = 0; i < this.imageName.length; ++ i) {
@@ -426,11 +425,11 @@ function Stage(stageCanvas, scoreboard) {
 	touchStart = (function (e) {
 		var p;
 		e.preventDefault();
-		p = Stage$getPoint_0$LStage$LEvent$($this, e);
+		p = Stage$getPoint$LStage$LEvent$($this, e);
 		$this.lastX = p[0];
 		$this.lastY = p[1];
 		if ($this.state === "gameover") {
-			Stage$initialize_0$LStage$($this);
+			Stage$initialize$LStage$($this);
 		}
 	});
 	body = dom.window.document.body;
@@ -444,8 +443,8 @@ function Stage(stageCanvas, scoreboard) {
 		var x$1;
 		var y$0;
 		e.preventDefault();
-		p = Stage$getPoint_0$LStage$LEvent$($this, e);
-		if (Stage$isGaming_0$LStage$($this) && $this.lastX !== -1) {
+		p = Stage$getPoint$LStage$LEvent$($this, e);
+		if ($this.state === "gaming" && $this.lastX !== -1) {
 			ship = $this.ship;
 			x$0 = ship.x += (p[0] - $this.lastX) * 2.5 | 0;
 			ship.y += (p[1] - $this.lastY) * 3.0 | 0;
@@ -468,133 +467,133 @@ Stage.prototype.changeStateToBeLoading$ = function () {
 };
 
 
-function Stage$changeStateToBeLoading_0$LStage$($this) {
+function Stage$changeStateToBeLoading$LStage$($this) {
 	$this.state = "loading";
 };
 
-Stage.changeStateToBeLoading_0$LStage$ = Stage$changeStateToBeLoading_0$LStage$;
+Stage.changeStateToBeLoading$LStage$ = Stage$changeStateToBeLoading$LStage$;
 
 Stage.prototype.isLoading$ = function () {
 	return this.state === "loading";
 };
 
 
-function Stage$isLoading_0$LStage$($this) {
+function Stage$isLoading$LStage$($this) {
 	return $this.state === "loading";
 };
 
-Stage.isLoading_0$LStage$ = Stage$isLoading_0$LStage$;
+Stage.isLoading$LStage$ = Stage$isLoading$LStage$;
 
 Stage.prototype.changeStateToBeGaming$ = function () {
 	this.state = "gaming";
 };
 
 
-function Stage$changeStateToBeGaming_0$LStage$($this) {
+function Stage$changeStateToBeGaming$LStage$($this) {
 	$this.state = "gaming";
 };
 
-Stage.changeStateToBeGaming_0$LStage$ = Stage$changeStateToBeGaming_0$LStage$;
+Stage.changeStateToBeGaming$LStage$ = Stage$changeStateToBeGaming$LStage$;
 
 Stage.prototype.isGaming$ = function () {
 	return this.state === "gaming";
 };
 
 
-function Stage$isGaming_0$LStage$($this) {
+function Stage$isGaming$LStage$($this) {
 	return $this.state === "gaming";
 };
 
-Stage.isGaming_0$LStage$ = Stage$isGaming_0$LStage$;
+Stage.isGaming$LStage$ = Stage$isGaming$LStage$;
 
 Stage.prototype.changeStateToBeDying$ = function () {
 	this.state = "dying";
 };
 
 
-function Stage$changeStateToBeDying_0$LStage$($this) {
+function Stage$changeStateToBeDying$LStage$($this) {
 	$this.state = "dying";
 };
 
-Stage.changeStateToBeDying_0$LStage$ = Stage$changeStateToBeDying_0$LStage$;
+Stage.changeStateToBeDying$LStage$ = Stage$changeStateToBeDying$LStage$;
 
 Stage.prototype.isDying$ = function () {
 	return this.state === "dying";
 };
 
 
-function Stage$isDying_0$LStage$($this) {
+function Stage$isDying$LStage$($this) {
 	return $this.state === "dying";
 };
 
-Stage.isDying_0$LStage$ = Stage$isDying_0$LStage$;
+Stage.isDying$LStage$ = Stage$isDying$LStage$;
 
 Stage.prototype.changeStateToBeGameOver$ = function () {
 	this.state = "gameover";
 };
 
 
-function Stage$changeStateToBeGameOver_0$LStage$($this) {
+function Stage$changeStateToBeGameOver$LStage$($this) {
 	$this.state = "gameover";
 };
 
-Stage.changeStateToBeGameOver_0$LStage$ = Stage$changeStateToBeGameOver_0$LStage$;
+Stage.changeStateToBeGameOver$LStage$ = Stage$changeStateToBeGameOver$LStage$;
 
 Stage.prototype.isGameOver$ = function () {
 	return this.state === "gameover";
 };
 
 
-function Stage$isGameOver_0$LStage$($this) {
+function Stage$isGameOver$LStage$($this) {
 	return $this.state === "gameover";
 };
 
-Stage.isGameOver_0$LStage$ = Stage$isGameOver_0$LStage$;
+Stage.isGameOver$LStage$ = Stage$isGameOver$LStage$;
 
 Stage.prototype.level$ = function () {
 	return (this.frameCount / 500 | 0);
 };
 
 
-function Stage$level_0$LStage$($this) {
+function Stage$level$LStage$($this) {
 	return ($this.frameCount / 500 | 0);
 };
 
-Stage.level_0$LStage$ = Stage$level_0$LStage$;
+Stage.level$LStage$ = Stage$level$LStage$;
 
 Stage.prototype.drawBackground$ = function () {
-	var $math_abs_t;
 	var bottom;
+	var abs$x$0;
 	bottom = 512 - this.currentTop;
 	if (bottom > 0) {
 		this.ctx.drawImage(this.bgCtx.canvas, 0, this.currentTop, 320, bottom, 0, 0, 320, bottom);
 	}
-	if ((($math_abs_t = 480 - bottom) >= 0 ? $math_abs_t : -$math_abs_t) > 0) {
+	if ((abs$x$0 = 480 - bottom, abs$x$0 >= 0 ? abs$x$0 : - abs$x$0) > 0) {
 		this.ctx.drawImage(this.bgCtx.canvas, 0, bottom);
 	}
 };
 
 
-function Stage$drawBackground_0$LStage$($this) {
-	var $math_abs_t;
+function Stage$drawBackground$LStage$($this) {
 	var bottom;
+	var abs$x$0;
 	bottom = 512 - $this.currentTop;
 	if (bottom > 0) {
 		$this.ctx.drawImage($this.bgCtx.canvas, 0, $this.currentTop, 320, bottom, 0, 0, 320, bottom);
 	}
-	if ((($math_abs_t = 480 - bottom) >= 0 ? $math_abs_t : -$math_abs_t) > 0) {
+	if ((abs$x$0 = 480 - bottom, abs$x$0 >= 0 ? abs$x$0 : - abs$x$0) > 0) {
 		$this.ctx.drawImage($this.bgCtx.canvas, 0, bottom);
 	}
 };
 
-Stage.drawBackground_0$LStage$ = Stage$drawBackground_0$LStage$;
+Stage.drawBackground$LStage$ = Stage$drawBackground$LStage$;
 
 Stage.prototype.draw$ = function () {
 	var ship;
 	var context$0;
 	var context$1;
 	var image$0;
-	Stage$drawBackground_0$LStage$(this);
+	Stage$drawBackground$LStage$(this);
 	ship = this.ship;
 	if (this.state === "gaming") {
 		context$0 = this.ctx;
@@ -605,19 +604,19 @@ Stage.prototype.draw$ = function () {
 			context$1 = this.ctx;
 			context$1.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
 			if (++ this.dying > 10) {
-				Stage$initialize_0$LStage$(this);
+				Stage$initialize$LStage$(this);
 			}
 		}
 	}
 };
 
 
-function Stage$draw_0$LStage$($this) {
+function Stage$draw$LStage$($this) {
 	var ship;
 	var context$0;
 	var context$1;
 	var image$0;
-	Stage$drawBackground_0$LStage$($this);
+	Stage$drawBackground$LStage$($this);
 	ship = $this.ship;
 	if ($this.state === "gaming") {
 		context$0 = $this.ctx;
@@ -628,13 +627,13 @@ function Stage$draw_0$LStage$($this) {
 			context$1 = $this.ctx;
 			context$1.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
 			if (++ $this.dying > 10) {
-				Stage$initialize_0$LStage$($this);
+				Stage$initialize$LStage$($this);
 			}
 		}
 	}
 };
 
-Stage.draw_0$LStage$ = Stage$draw_0$LStage$;
+Stage.draw$LStage$ = Stage$draw$LStage$;
 
 Stage.prototype.drawSpace$NN = function (px, py) {
 	var spaceType;
@@ -645,7 +644,7 @@ Stage.prototype.drawSpace$NN = function (px, py) {
 };
 
 
-function Stage$drawSpace_0$LStage$NN($this, px, py) {
+function Stage$drawSpace$LStage$NN($this, px, py) {
 	var spaceType;
 	var image;
 	spaceType = (Math.random() * 10 + 1 | 0) + "";
@@ -653,7 +652,7 @@ function Stage$drawSpace_0$LStage$NN($this, px, py) {
 	$this.bgCtx.drawImage(image, px * 32, py * 32);
 };
 
-Stage.drawSpace_0$LStage$NN = Stage$drawSpace_0$LStage$NN;
+Stage.drawSpace$LStage$NN = Stage$drawSpace$LStage$NN;
 
 Stage.prototype.createBullet$NN = function (dx, dy) {
 	var ship$0;
@@ -661,12 +660,12 @@ Stage.prototype.createBullet$NN = function (dx, dy) {
 };
 
 
-function Stage$createBullet_0$LStage$NN($this, dx, dy) {
+function Stage$createBullet$LStage$NN($this, dx, dy) {
 	var ship$0;
 	return new Bullet((ship$0 = $this.ship).x, ship$0.y, dx * 20, dy * 20, $this.images.bullet);
 };
 
-Stage.createBullet_0$LStage$NN = Stage$createBullet_0$LStage$NN;
+Stage.createBullet$LStage$NN = Stage$createBullet$LStage$NN;
 
 Stage.prototype.createRock$ = function () {
 	var level;
@@ -693,7 +692,7 @@ Stage.prototype.createRock$ = function () {
 };
 
 
-function Stage$createRock_0$LStage$($this) {
+function Stage$createRock$LStage$($this) {
 	var level;
 	var px;
 	var py;
@@ -717,7 +716,7 @@ function Stage$createRock_0$LStage$($this) {
 	return new Rock(fx, fy, Math.cos(r) * d, Math.sin(r) * d, hp, hp * hp * 100, "rock" + rockId, $this.images["rock" + rockId]);
 };
 
-Stage.createRock_0$LStage$ = Stage$createRock_0$LStage$;
+Stage.createRock$LStage$ = Stage$createRock$LStage$;
 
 Stage.prototype.tick$ = function () {
 	var $this = this;
@@ -726,11 +725,12 @@ Stage.prototype.tick$ = function () {
 	var fc;
 	var bulletKey;
 	var rockKey;
+	var frameCount$0;
 	++ this.frameCount;
 	dom.window.setTimeout((function () {
-		Stage$tick_0$LStage$($this);
+		Stage$tick$LStage$($this);
 	}), 33);
-	Stage$watchFPS_0$LStage$(this);
+	Stage$watchFPS$LStage$(this);
 	if (this.state === "loading") {
 		return;
 	}
@@ -740,29 +740,29 @@ Stage.prototype.tick$ = function () {
 	if (this.currentTop % 32 === 0) {
 		line = this.currentTop / 32 - 1;
 		for (px = 0; px < 10; ++ px) {
-			Stage$drawSpace_0$LStage$NN(this, px, line);
+			Stage$drawSpace$LStage$NN(this, px, line);
 		}
 	}
-	Stage$draw_0$LStage$(this);
-	fc = this.frameCount + "";
-	if (Stage$isGaming_0$LStage$(this) && this.frameCount % 3 === 0) {
-		this.bullets[fc + "a"] = Stage$createBullet_0$LStage$NN(this, -1, -1);
-		this.bullets[fc + "b"] = Stage$createBullet_0$LStage$NN(this, 0, -1);
-		this.bullets[fc + "c"] = Stage$createBullet_0$LStage$NN(this, 1, -1);
-		this.bullets[fc + "d"] = Stage$createBullet_0$LStage$NN(this, -1, 1);
-		this.bullets[fc + "e"] = Stage$createBullet_0$LStage$NN(this, 1, 1);
+	Stage$draw$LStage$(this);
+	fc = (frameCount$0 = this.frameCount) + "";
+	if (this.state === "gaming" && frameCount$0 % 3 === 0) {
+		this.bullets[fc + "a"] = new Bullet(this.ship.x, this.ship.y, -20, -20, this.images.bullet);
+		this.bullets[fc + "b"] = new Bullet(this.ship.x, this.ship.y, 0, -20, this.images.bullet);
+		this.bullets[fc + "c"] = new Bullet(this.ship.x, this.ship.y, 20, -20, this.images.bullet);
+		this.bullets[fc + "d"] = new Bullet(this.ship.x, this.ship.y, -20, 20, this.images.bullet);
+		this.bullets[fc + "e"] = new Bullet(this.ship.x, this.ship.y, 20, 20, this.images.bullet);
 	}
-	if (this.numRocks < 5 + Stage$level_0$LStage$(this)) {
-		this.rocks[fc + "r"] = Stage$createRock_0$LStage$(this);
+	if (this.numRocks < 5 + this.frameCount / 500) {
+		this.rocks[fc + "r"] = Stage$createRock$LStage$(this);
 		++ this.numRocks;
 	}
 	for (bulletKey in this.bullets) {
-		if (! Bullet$update_0$LBullet$LStage$(this.bullets[bulletKey], this)) {
+		if (! Bullet$update$LBullet$LStage$(this.bullets[bulletKey], this)) {
 			delete this.bullets[bulletKey];
 		}
 	}
 	for (rockKey in this.rocks) {
-		if (! Rock$update_0$LRock$LStage$(this.rocks[rockKey], this)) {
+		if (! Rock$update$LRock$LStage$(this.rocks[rockKey], this)) {
 			delete this.rocks[rockKey];
 			-- this.numRocks;
 		}
@@ -770,7 +770,7 @@ Stage.prototype.tick$ = function () {
 };
 
 
-function Stage$tick_0$LStage$($this) {
+function Stage$tick$LStage$($this) {
 	var line;
 	var px;
 	var fc;
@@ -779,9 +779,9 @@ function Stage$tick_0$LStage$($this) {
 	var frameCount$0;
 	++ $this.frameCount;
 	dom.window.setTimeout((function () {
-		Stage$tick_0$LStage$($this);
+		Stage$tick$LStage$($this);
 	}), 33);
-	Stage$watchFPS_0$LStage$($this);
+	Stage$watchFPS$LStage$($this);
 	if ($this.state === "loading") {
 		return;
 	}
@@ -791,10 +791,10 @@ function Stage$tick_0$LStage$($this) {
 	if ($this.currentTop % 32 === 0) {
 		line = $this.currentTop / 32 - 1;
 		for (px = 0; px < 10; ++ px) {
-			Stage$drawSpace_0$LStage$NN($this, px, line);
+			Stage$drawSpace$LStage$NN($this, px, line);
 		}
 	}
-	Stage$draw_0$LStage$($this);
+	Stage$draw$LStage$($this);
 	fc = (frameCount$0 = $this.frameCount) + "";
 	if ($this.state === "gaming" && frameCount$0 % 3 === 0) {
 		$this.bullets[fc + "a"] = new Bullet($this.ship.x, $this.ship.y, -20, -20, $this.images.bullet);
@@ -804,23 +804,23 @@ function Stage$tick_0$LStage$($this) {
 		$this.bullets[fc + "e"] = new Bullet($this.ship.x, $this.ship.y, 20, 20, $this.images.bullet);
 	}
 	if ($this.numRocks < 5 + $this.frameCount / 500) {
-		$this.rocks[fc + "r"] = Stage$createRock_0$LStage$($this);
+		$this.rocks[fc + "r"] = Stage$createRock$LStage$($this);
 		++ $this.numRocks;
 	}
 	for (bulletKey in $this.bullets) {
-		if (! Bullet$update_0$LBullet$LStage$($this.bullets[bulletKey], $this)) {
+		if (! Bullet$update$LBullet$LStage$($this.bullets[bulletKey], $this)) {
 			delete $this.bullets[bulletKey];
 		}
 	}
 	for (rockKey in $this.rocks) {
-		if (! Rock$update_0$LRock$LStage$($this.rocks[rockKey], $this)) {
+		if (! Rock$update$LRock$LStage$($this.rocks[rockKey], $this)) {
 			delete $this.rocks[rockKey];
 			-- $this.numRocks;
 		}
 	}
 };
 
-Stage.tick_0$LStage$ = Stage$tick_0$LStage$;
+Stage.tick$LStage$ = Stage$tick$LStage$;
 
 Stage.prototype.initialize$ = function () {
 	var $this = this;
@@ -832,7 +832,7 @@ Stage.prototype.initialize$ = function () {
 	var k;
 	for (px = 0; px < 10; ++ px) {
 		for (py = 0; py < 16; ++ py) {
-			Stage$drawSpace_0$LStage$NN(this, px, py);
+			Stage$drawSpace$LStage$NN(this, px, py);
 		}
 	}
 	for (i = 0; i < 3; ++ i) {
@@ -860,7 +860,7 @@ Stage.prototype.initialize$ = function () {
 };
 
 
-function Stage$initialize_0$LStage$($this) {
+function Stage$initialize$LStage$($this) {
 	var px;
 	var py;
 	var i;
@@ -869,7 +869,7 @@ function Stage$initialize_0$LStage$($this) {
 	var k;
 	for (px = 0; px < 10; ++ px) {
 		for (py = 0; py < 16; ++ py) {
-			Stage$drawSpace_0$LStage$NN($this, px, py);
+			Stage$drawSpace$LStage$NN($this, px, py);
 		}
 	}
 	for (i = 0; i < 3; ++ i) {
@@ -896,7 +896,7 @@ function Stage$initialize_0$LStage$($this) {
 	}), 250);
 };
 
-Stage.initialize_0$LStage$ = Stage$initialize_0$LStage$;
+Stage.initialize$LStage$ = Stage$initialize$LStage$;
 
 Stage.prototype.getPoint$LEvent$ = function (e) {
 	var px;
@@ -920,7 +920,7 @@ Stage.prototype.getPoint$LEvent$ = function (e) {
 };
 
 
-function Stage$getPoint_0$LStage$LEvent$($this, e) {
+function Stage$getPoint$LStage$LEvent$($this, e) {
 	var px;
 	var py;
 	var me;
@@ -941,24 +941,24 @@ function Stage$getPoint_0$LStage$LEvent$($this, e) {
 	return [ px, py ];
 };
 
-Stage.getPoint_0$LStage$LEvent$ = Stage$getPoint_0$LStage$LEvent$;
+Stage.getPoint$LStage$LEvent$ = Stage$getPoint$LStage$LEvent$;
 
 Stage.prototype.watchFPS$ = function () {
 	if (this.frameCount % 30 === 0) {
 		this.fps = this.frameCount / (Date.now() - this.start) * 1000 | 0;
-		Stage$updateScore_0$LStage$(this);
+		Stage$updateScore$LStage$(this);
 	}
 };
 
 
-function Stage$watchFPS_0$LStage$($this) {
+function Stage$watchFPS$LStage$($this) {
 	if ($this.frameCount % 30 === 0) {
 		$this.fps = $this.frameCount / (Date.now() - $this.start) * 1000 | 0;
-		Stage$updateScore_0$LStage$($this);
+		Stage$updateScore$LStage$($this);
 	}
 };
 
-Stage.watchFPS_0$LStage$ = Stage$watchFPS_0$LStage$;
+Stage.watchFPS$LStage$ = Stage$watchFPS$LStage$;
 
 Stage.prototype.updateScore$ = function () {
 	var scoreStr;
@@ -969,7 +969,7 @@ Stage.prototype.updateScore$ = function () {
 };
 
 
-function Stage$updateScore_0$LStage$($this) {
+function Stage$updateScore$LStage$($this) {
 	var scoreStr;
 	var fillz;
 	scoreStr = $this.score + "";
@@ -977,7 +977,7 @@ function Stage$updateScore_0$LStage$($this) {
 	$this.scoreElement.innerHTML = fillz + scoreStr + "<br/>\n" + ($this.fps + "") + " FPS";
 };
 
-Stage.updateScore_0$LStage$ = Stage$updateScore_0$LStage$;
+Stage.updateScore$LStage$ = Stage$updateScore$LStage$;
 
 function _Main() {
 };
@@ -990,7 +990,7 @@ function _Main$main$AS(args) {
 	stageCanvas = dom.document.getElementById("stage");
 	scoreboard = dom.document.getElementById("scoreboard");
 	stage = new Stage(stageCanvas, scoreboard);
-	Stage$tick_0$LStage$(stage);
+	Stage$tick$LStage$(stage);
 };
 
 _Main.main = _Main$main$AS;
@@ -1534,6 +1534,8 @@ JSX.runMain = function (sourceFile, args) {
  */
 JSX.runTests = function (sourceFile, tests) {
 	var module = JSX.require(sourceFile);
+	if (! module) return;
+
 	var testClass = module._Test;
 
 	if (!testClass) return; // skip if there's no test class
@@ -1572,7 +1574,7 @@ JSX.runTests = function (sourceFile, tests) {
 function $__jsx_onload (event) {
 	window.removeEventListener("load", $__jsx_onload);
 	document.removeEventListener("DOMContentLoaded", $__jsx_onload);
-	JSX.runMain("shooting.jsx", [])
+	JSX.runMain("shooting.jsx", []);
 }
 
 window.addEventListener("load", $__jsx_onload);
