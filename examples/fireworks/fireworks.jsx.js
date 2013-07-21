@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.56 (2013-07-17 21:18:01 -0700; 6acc52a3f509ed30c9e04715405d1181adc00070)
+// generatedy by JSX compiler 0.9.57 (2013-07-21 09:29:11 -0700; 3116e11459163d65dd09e578fd516f0c532fb30b)
 var JSX = {};
 (function (JSX) {
 /**
@@ -352,20 +352,22 @@ function FPSWatcher(elementId) {
 $__jsx_extend([FPSWatcher], Object);
 FPSWatcher.prototype.update$I = function (numSparks) {
 	var message;
+	var id$0;
 	++ this.frameCount;
 	if (this.frameCount % 100 === 0) {
 		message = "FPS: " + ((this.frameCount / (Date.now() - this.start) * 1000 | 0) + "") + " (sparks: " + (numSparks + "") + ")";
-		dom.document.getElementById(this.elementId).innerHTML = message;
+		(id$0 = this.elementId, dom.document.getElementById(id$0)).innerHTML = message;
 	}
 };
 
 
 function FPSWatcher$update$LFPSWatcher$I($this, numSparks) {
 	var message;
+	var id$0;
 	++ $this.frameCount;
 	if ($this.frameCount % 100 === 0) {
 		message = "FPS: " + (($this.frameCount / (Date.now() - $this.start) * 1000 | 0) + "") + " (sparks: " + (numSparks + "") + ")";
-		dom.document.getElementById($this.elementId).innerHTML = message;
+		(id$0 = $this.elementId, dom.document.getElementById(id$0)).innerHTML = message;
 	}
 };
 
@@ -381,15 +383,15 @@ function _Main$main$AS(args) {
 	var watcher;
 	var value1$0;
 	var value2$0;
-	var value1$1;
-	var value2$1;
+	var value1$2;
+	var value2$2;
 	canvas = dom.document.getElementById("night-sky");
 	value1$0 = canvas.width;
 	value2$0 = dom.window.innerWidth;
 	canvas.width = (value1$0 <= value2$0 ? value1$0 : value2$0);
-	value1$1 = canvas.height;
-	value2$1 = dom.window.innerHeight;
-	canvas.height = (value1$1 <= value2$1 ? value1$1 : value2$1);
+	value1$2 = canvas.height;
+	value2$2 = dom.window.innerHeight;
+	canvas.height = (value1$2 <= value2$2 ? value1$2 : value2$2);
 	view = new FireworkView(canvas);
 	watcher = new FPSWatcher("fps");
 	dom.window.setInterval((function () {

@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.56 (2013-07-17 21:18:01 -0700; 6acc52a3f509ed30c9e04715405d1181adc00070)
+// generatedy by JSX compiler 0.9.57 (2013-07-21 09:29:11 -0700; 3116e11459163d65dd09e578fd516f0c532fb30b)
 var JSX = {};
 (function (JSX) {
 /**
@@ -117,9 +117,9 @@ $__jsx_extend([Sprite], Object);
 Sprite.prototype.$__jsx_implements_Sprite = true;
 
 Sprite.prototype.detectCollision$LSprite$ = function (other) {
-	var abs$x$0;
-	var abs$x$1;
-	return (abs$x$0 = this.x - other.x, abs$x$0 >= 0 ? abs$x$0 : - abs$x$0) < 16 && (abs$x$1 = this.y - other.y, abs$x$1 >= 0 ? abs$x$1 : - abs$x$1) < 16;
+	var x$0;
+	var x$1;
+	return (x$0 = this.x - other.x, x$0 >= 0 ? x$0 : - x$0) < 16 && (x$1 = this.y - other.y, x$1 >= 0 ? x$1 : - x$1) < 16;
 };
 
 
@@ -438,7 +438,7 @@ function Stage(stageCanvas, scoreboard) {
 	touchMove = (function (e) {
 		var p;
 		var ship;
-		var value1$2;
+		var value1$4;
 		var x$0;
 		var x$1;
 		var y$0;
@@ -450,8 +450,8 @@ function Stage(stageCanvas, scoreboard) {
 			ship.y += (p[1] - $this.lastY) * 3.0 | 0;
 			x$1 = ship.x = (x$0 >= 0 ? x$0 : 0);
 			ship.x = (x$1 <= 320 ? x$1 : 320);
-			value1$2 = ship.y;
-			y$0 = ship.y = (value1$2 >= 0 ? value1$2 : 0);
+			value1$4 = ship.y;
+			y$0 = ship.y = (value1$4 >= 0 ? value1$4 : 0);
 			ship.y = (y$0 <= 480 ? y$0 : 480);
 		}
 		$this.lastX = p[0];
@@ -563,12 +563,12 @@ Stage.level$LStage$ = Stage$level$LStage$;
 
 Stage.prototype.drawBackground$ = function () {
 	var bottom;
-	var abs$x$0;
+	var x$0;
 	bottom = 512 - this.currentTop;
 	if (bottom > 0) {
 		this.ctx.drawImage(this.bgCtx.canvas, 0, this.currentTop, 320, bottom, 0, 0, 320, bottom);
 	}
-	if ((abs$x$0 = 480 - bottom, abs$x$0 >= 0 ? abs$x$0 : - abs$x$0) > 0) {
+	if ((x$0 = 480 - bottom, x$0 >= 0 ? x$0 : - x$0) > 0) {
 		this.ctx.drawImage(this.bgCtx.canvas, 0, bottom);
 	}
 };
@@ -576,12 +576,12 @@ Stage.prototype.drawBackground$ = function () {
 
 function Stage$drawBackground$LStage$($this) {
 	var bottom;
-	var abs$x$0;
+	var x$0;
 	bottom = 512 - $this.currentTop;
 	if (bottom > 0) {
 		$this.ctx.drawImage($this.bgCtx.canvas, 0, $this.currentTop, 320, bottom, 0, 0, 320, bottom);
 	}
-	if ((abs$x$0 = 480 - bottom, abs$x$0 >= 0 ? abs$x$0 : - abs$x$0) > 0) {
+	if ((x$0 = 480 - bottom, x$0 >= 0 ? x$0 : - x$0) > 0) {
 		$this.ctx.drawImage($this.bgCtx.canvas, 0, bottom);
 	}
 };
@@ -591,7 +591,7 @@ Stage.drawBackground$LStage$ = Stage$drawBackground$LStage$;
 Stage.prototype.draw$ = function () {
 	var ship;
 	var context$0;
-	var context$1;
+	var context$2;
 	var image$0;
 	Stage$drawBackground$LStage$(this);
 	ship = this.ship;
@@ -601,8 +601,8 @@ Stage.prototype.draw$ = function () {
 	} else {
 		if (this.state === "dying") {
 			image$0 = ship.image = this.images["bomb" + (this.dying + "")];
-			context$1 = this.ctx;
-			context$1.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
+			context$2 = this.ctx;
+			context$2.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
 			if (++ this.dying > 10) {
 				Stage$initialize$LStage$(this);
 			}
@@ -614,7 +614,7 @@ Stage.prototype.draw$ = function () {
 function Stage$draw$LStage$($this) {
 	var ship;
 	var context$0;
-	var context$1;
+	var context$2;
 	var image$0;
 	Stage$drawBackground$LStage$($this);
 	ship = $this.ship;
@@ -624,8 +624,8 @@ function Stage$draw$LStage$($this) {
 	} else {
 		if ($this.state === "dying") {
 			image$0 = ship.image = $this.images["bomb" + ($this.dying + "")];
-			context$1 = $this.ctx;
-			context$1.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
+			context$2 = $this.ctx;
+			context$2.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
 			if (++ $this.dying > 10) {
 				Stage$initialize$LStage$($this);
 			}
@@ -730,7 +730,10 @@ Stage.prototype.tick$ = function () {
 	dom.window.setTimeout((function () {
 		Stage$tick$LStage$($this);
 	}), 33);
-	Stage$watchFPS$LStage$(this);
+	if (this.frameCount % 30 === 0) {
+		this.fps = this.frameCount / (Date.now() - this.start) * 1000 | 0;
+		Stage$updateScore$LStage$(this);
+	}
 	if (this.state === "loading") {
 		return;
 	}
@@ -781,7 +784,10 @@ function Stage$tick$LStage$($this) {
 	dom.window.setTimeout((function () {
 		Stage$tick$LStage$($this);
 	}), 33);
-	Stage$watchFPS$LStage$($this);
+	if ($this.frameCount % 30 === 0) {
+		$this.fps = $this.frameCount / (Date.now() - $this.start) * 1000 | 0;
+		Stage$updateScore$LStage$($this);
+	}
 	if ($this.state === "loading") {
 		return;
 	}
