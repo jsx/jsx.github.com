@@ -409,37 +409,6 @@ order.
 </div>
 <div class="member function">
 <h3>
- function <strong>map</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;) : Nullable.&lt;U&gt;)
- : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
-</h3>
-<div class="description">
-Creates a new array with the results of calling a provided function
-on every element in this array.
-</div>
-<table class="arguments">
-<tr>
-<td class="param-name">callbackfn</td>
-<td class="param-desc">A function that produces an element of the new
-<code>Array.&lt;U&gt;</code> from an element of the current one.</td>
-</tr>
-</table>
-</div>
-<div class="member function">
-<h3>
- function <strong>map</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :number) : Nullable.&lt;U&gt;)
- : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>map</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : Nullable.&lt;U&gt;)
- : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;U&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
  function <strong>filter</strong>(callbackfn : function (:Nullable.&lt;T&gt;) : boolean)
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
 </h3>
@@ -465,109 +434,6 @@ the provided function.
 <h3>
  function <strong>filter</strong>(callbackfn : function (:Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : boolean)
  : <a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduce</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;U&gt;, :Nullable.&lt;T&gt;) : U)
- : U
-</h3>
-<div class="description">
-Apply a function against an accumulator and each value of the array
-(from left-to-right) as to reduce it to a single value.
-
-<code>reduce</code> will throw <code>TypeError</code> if the array
-contains no elements and no initialValue is suplied.
-</div>
-<table class="arguments">
-<tr>
-<td class="param-name">callbackfn</td>
-<td class="param-desc">A function to execute on each value in the element,
-taking four arguments: the previousValue (the value previously
-returned in the last invocation of the callback), the
-currentValue (the current element being processed in the array),
-the currentIndex and the array.</td>
-</tr>
-</table>
-</div>
-<div class="member function">
-<h3>
- function <strong>reduce</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;U&gt;, :Nullable.&lt;T&gt;, :number) : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduce</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;U&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduce</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;U&gt;, :Nullable.&lt;T&gt;) : U, initialValue : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduce</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;U&gt;, :Nullable.&lt;T&gt;, :number) : U, initialValue : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduce</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;U&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U, initialValue : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduceRight</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : U)
- : U
-</h3>
-<div class="description">
-Apply a function simultaneously against two values of the array
-(from right-to-left) as to reduce it to a single value.
-</div>
-</div>
-<div class="member function">
-<h3>
- function <strong>reduceRight</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number) : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduceRight</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduceRight</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;) : U, initialValue : T)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduceRight</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number) : U, initialValue : T)
- : U
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>reduceRight</strong>.&lt;U&gt;(callbackfn : function (:Nullable.&lt;T&gt;, :Nullable.&lt;T&gt;, :number, :<a href="lib/built-in.jsx.html#class-Array">Array</a>.&lt;T&gt;) : U, initialValue : T)
- : U
 </h3>
 
 </div>
@@ -3695,8 +3561,8 @@ Resets the collected profiler results.
 
 <div id="footer">
 <p>Copyright &copy; DeNA., Co., Ltd.</p>
-<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.57<br />
-at 2013-07-21T16:36:26.802Z.</p>
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.58<br />
+at 2013-07-27T04:48:08.055Z.</p>
 
 </div>
 </div>

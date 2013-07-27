@@ -93,16 +93,30 @@ The table lists the keyword literals of JSX.  In contrary to JavaScript, there i
 <h3>Number Literal</h3>
 
 <p>
-Identical to JavaScript.
+Identical to JavaScript in strict mode.
 </p>
 
+<pre class="prettyprint"><code class="language-jsx">var a = 10;
+var b = 3.14;
+var c = 0xCafe;
+</code></pre>
 <h3>String Literal</h3>
 
 <p>
 Identical to JavaScript.
 </p>
 
+<pre class="prettyprint"><code class="language-jsx">var a = &quot;foo\n&quot;;
+var b = &#39;bar\n&#39;;
+var c = &quot;\x5c&quot;;   // ascii escape
+var d = &quot;\u005C&quot;; // unicode escape
+</code></pre>
+
 <h3>RegExp Literal</h3>
+
+<pre class="prettyprint"><code class="language-jsx">var a = /foo/;
+var b = /[a-zA-Z0-9]+/;
+</code></pre>
 
 <p>
 Identical to JavaScript.
@@ -115,13 +129,13 @@ Type annotations against arguments and return types are required for function de
 </p>
 
 <pre class="prettyprint"><code class="language-jsx">// a function that takes no arguments, and returns void
-function () : void {}
+var f = function () : void {};
 
 // a function that takes one argument (of number),
 // and returns a number that in incremented by one
-function (n : number) : number {
+var g = function (n : number) : number {
     return n + 1;
-}
+};
 
 // the argument types and return types may be omitted
 // (if it is deductable from the outer expression)
@@ -142,7 +156,7 @@ log s; // A0B1C
 </code></pre>
 
 <p>
-A statement starting with <code>function</code> is parsed as inner function declaration, as is by JavaScript. Surround the function declaration with <code>()</code> if your intention is to create an anonymous function and call it immediately.
+A statement starting with <code>function</code> is parsed as an inner function declaration, as is by JavaScript. Surround the function declaration with <code>()</code> if your intention is to create an anonymous function and call it immediately.
 </p>
 
 <pre class="prettyprint"><code class="language-jsx">// inner function declaration (when used within a function declaration)
@@ -159,6 +173,59 @@ function innerFunc() : void {
 <p>
 See also: <i>Member Function</i> in <a href="doc/class.html">Class, Interface, and Mixin</a>.
 </p>
+
+<h3>Array Literal</h3>
+
+<p>
+Array literal is identical to JavaScript except
+that it may have type annotations if its value type is not deduced.
+</p>
+
+<pre class="prettyprint"><code class="language-jsx">// empty array literals require an explicit type
+var a = [] : string[];
+// the type is clear; you can omit type declaration
+var b : string[] = [];
+
+function f(a : string[]) : void { }
+// the type is also clear
+f([]);
+
+// the type is number[] because it has a number as an element
+var c = [1];
+
+// trailing commas are allowed
+var d = [
+  &quot;foo&quot;,
+  &quot;bar&quot;,
+  &quot;baz&quot;,
+];
+</code></pre>
+
+<h3>Map Literal</h3>
+
+<p>Map literal is identical to JavaScript except
+that it may have type annotations if its value type is not deduced.
+</p>
+
+<pre class="prettyprint"><code class="language-jsx">// empty array literals require an explicit type
+var a = {} : Map.&lt;string&gt;;
+// the type is clear; you can omit type declaration
+var b : Map.&lt;string&gt; = {};
+
+function f(a : string[]) : void { }
+// the type is also clear
+f({});
+
+// the type is Map.&lt;number&gt; because it has a number as an element
+var c = { foo: 1 };
+
+// trailing commas are allowed
+var d = {
+  foo: &quot;foo&quot;,
+  bar: &quot;bar&quot;,
+  baz: &quot;baz&quot;,
+};
+</code></pre>
 
 </div>
 
