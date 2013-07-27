@@ -39,16 +39,36 @@ The table lists the keyword literals of JSX.  In contrary to JavaScript, there i
 <h3>Number Literal</h3>
 
 <p>
-Identical to JavaScript.
+Identical to JavaScript in strict mode.
 </p>
 
+<?= $context->{prettify}->('jsx', <<'EOT')
+var a = 10;
+var b = 3.14;
+var c = 0xCafe;
+EOT
+?>
 <h3>String Literal</h3>
 
 <p>
 Identical to JavaScript.
 </p>
 
+<?= $context->{prettify}->('jsx', <<'EOT')
+var a = "foo\n";
+var b = 'bar\n';
+var c = "\x5c";   // ascii escape
+var d = "\u005C"; // unicode escape
+EOT
+?>
+
 <h3>RegExp Literal</h3>
+
+<?= $context->{prettify}->('jsx', <<'EOT')
+var a = /foo/;
+var b = /[a-zA-Z0-9]+/;
+EOT
+?>
 
 <p>
 Identical to JavaScript.
@@ -62,13 +82,13 @@ Type annotations against arguments and return types are required for function de
 
 <?= $context->{prettify}->('jsx', <<'EOT')
 // a function that takes no arguments, and returns void
-function () : void {}
+var f = function () : void {};
 
 // a function that takes one argument (of number),
 // and returns a number that in incremented by one
-function (n : number) : number {
+var g = function (n : number) : number {
     return n + 1;
-}
+};
 
 // the argument types and return types may be omitted
 // (if it is deductable from the outer expression)
@@ -90,7 +110,7 @@ EOT
 ?>
 
 <p>
-A statement starting with <code>function</code> is parsed as inner function declaration, as is by JavaScript. Surround the function declaration with <code>()</code> if your intention is to create an anonymous function and call it immediately.
+A statement starting with <code>function</code> is parsed as an inner function declaration, as is by JavaScript. Surround the function declaration with <code>()</code> if your intention is to create an anonymous function and call it immediately.
 </p>
 
 <?= $context->{prettify}->('jsx', <<'EOT')
@@ -109,6 +129,63 @@ EOT
 <p>
 See also: <i>Member Function</i> in <a href="doc/class.html">Class, Interface, and Mixin</a>.
 </p>
+
+<h3>Array Literal</h3>
+
+<p>
+Array literal is identical to JavaScript except
+that it may have type annotations if its value type is not deduced.
+</p>
+
+<?= $context->{prettify}->('jsx', <<'EOT')
+// empty array literals require an explicit type
+var a = [] : string[];
+// the type is clear; you can omit type declaration
+var b : string[] = [];
+
+function f(a : string[]) : void { }
+// the type is also clear
+f([]);
+
+// the type is number[] because it has a number as an element
+var c = [1];
+
+// trailing commas are allowed
+var d = [
+  "foo",
+  "bar",
+  "baz",
+];
+EOT
+?>
+
+<h3>Map Literal</h3>
+
+<p>Map literal is identical to JavaScript except
+that it may have type annotations if its value type is not deduced.
+</p>
+
+<?= $context->{prettify}->('jsx', <<'EOT')
+// empty array literals require an explicit type
+var a = {} : Map.<string>;
+// the type is clear; you can omit type declaration
+var b : Map.<string> = {};
+
+function f(a : string[]) : void { }
+// the type is also clear
+f({});
+
+// the type is Map.<number> because it has a number as an element
+var c = { foo: 1 };
+
+// trailing commas are allowed
+var d = {
+  foo: "foo",
+  bar: "bar",
+  baz: "baz",
+};
+EOT
+?>
 
 </div>
 
