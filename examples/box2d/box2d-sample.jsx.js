@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.57 (2013-07-21 09:29:11 -0700; 3116e11459163d65dd09e578fd516f0c532fb30b)
+// generatedy by JSX compiler 0.9.58 (2013-07-27 21:46:01 -0700; 2bb8e3d1b0ce87950d636b3b8662b1a0bd930915)
 var JSX = {};
 (function (JSX) {
 /**
@@ -101,11 +101,11 @@ JSX.resetProfileResults = function () {
 	return $__jsx_profiler.resetResults();
 };
 JSX.DEBUG = false;
-function g_StopIteration() {
+function StopIteration() {
 	Error.call(this);
 };
 
-$__jsx_extend([g_StopIteration], Error);
+$__jsx_extend([StopIteration], Error);
 function _Main() {
 };
 
@@ -220,20 +220,18 @@ _Main.drawShape$Lb2Shape$LCanvasRenderingContext2D$ = _Main$drawShape$Lb2Shape$L
 function _Main$createWorld$() {
 	var worldAABB;
 	var gravity;
-	var doSleep;
 	var world;
 	var this$0;
-	var this$1;
+	var this$2;
 	worldAABB = ({minVertex: ({x: 0, y: 0}), maxVertex: ({x: 0, y: 0})});
 	this$0 = worldAABB.minVertex;
 	this$0.x = -1000;
 	this$0.y = -1000;
-	this$1 = worldAABB.maxVertex;
-	this$1.x = 1000;
-	this$1.y = 1000;
+	this$2 = worldAABB.maxVertex;
+	this$2.x = 1000;
+	this$2.y = 1000;
 	gravity = ({x: 0, y: 300});
-	doSleep = true;
-	world = new b2World(worldAABB, gravity, doSleep);
+	world = new b2World(worldAABB, gravity, true);
 	_Main$createGround$Lb2World$(world);
 	_Main$createBox$Lb2World$NNNN(world, 0, 0, 10, 1000);
 	_Main$createBox$Lb2World$NNNN(world, 320, 0, 10, 1000);
@@ -247,7 +245,7 @@ function _Main$createGround$Lb2World$(world) {
 	var groundBd;
 	var this$0;
 	var i$0;
-	var this$1;
+	var this$2;
 	groundSd = new b2BoxDef();
 	this$0 = groundSd.extents;
 	this$0.x = 1000;
@@ -261,9 +259,9 @@ function _Main$createGround$Lb2World$(world) {
 			break;
 		}
 	}
-	this$1 = groundBd.position;
-	this$1.x = -500;
-	this$1.y = 400;
+	this$2 = groundBd.position;
+	this$2.x = -500;
+	this$2.y = 400;
 	return b2World$CreateBody$Lb2World$Lb2BodyDef$(world, groundBd);
 };
 
@@ -274,7 +272,7 @@ function _Main$createBox$Lb2World$NNNN(world, x, y, width, height) {
 	var boxBd;
 	var this$0;
 	var i$0;
-	var this$1;
+	var this$2;
 	boxSd = new b2BoxDef();
 	this$0 = boxSd.extents;
 	this$0.x = width;
@@ -286,9 +284,9 @@ function _Main$createBox$Lb2World$NNNN(world, x, y, width, height) {
 			break;
 		}
 	}
-	this$1 = boxBd.position;
-	this$1.x = x;
-	this$1.y = y;
+	this$2 = boxBd.position;
+	this$2.x = x;
+	this$2.y = y;
 	return b2World$CreateBody$Lb2World$Lb2BodyDef$(world, boxBd);
 };
 
@@ -304,11 +302,11 @@ function _Main$createMy$Lb2World$NNN(world, x, y, r) {
 	var x$0;
 	var y$0;
 	var i$0;
-	var this$1;
+	var this$2;
 	ballSd = new b2PolyDef();
 	ballSd.density = 1.0;
 	ballSd.restitution = 0.8;
-	v = 3 + (_Main$random$() * 5 | 0);
+	v = 3 + ((_Main.seed = _Main.seed * 713 + 17 & 0xFF, _Main.seed / 256) * 5 | 0);
 	ballSd.vertexCount = v;
 	for (i = 0; i < v; i++) {
 		this$0 = ballSd.vertices[i];
@@ -324,9 +322,9 @@ function _Main$createMy$Lb2World$NNN(world, x, y, r) {
 			break;
 		}
 	}
-	this$1 = ballBd.position;
-	this$1.x = x;
-	this$1.y = y;
+	this$2 = ballBd.position;
+	this$2.x = x;
+	this$2.y = y;
 	body = b2World$CreateBody$Lb2World$Lb2BodyDef$(world, ballBd);
 	return body;
 };
@@ -351,7 +349,7 @@ function _Main$main$AS(args) {
 	world = _Main$createWorld$();
 	count = 50;
 	for (i = 0; i < count; i++) {
-		_Main$createMy$Lb2World$NNN(world, i * (270 / count) + 25, -200 + _Main$random$() * 300, 15 + _Main$random$() * 10);
+		_Main$createMy$Lb2World$NNN(world, i * (270 / count) + 25, -200 + (_Main.seed = _Main.seed * 713 + 17 & 0xFF, _Main.seed / 256) * 300, 15 + (_Main.seed = _Main.seed * 713 + 17 & 0xFF, _Main.seed / 256) * 10);
 	}
 	frame = 0;
 	frameTotal = 0;
@@ -425,7 +423,7 @@ b2Mat22.prototype.initializer$NLb2Vec2$Lb2Vec2$ = function (angle, c1, c2) {
 	var c;
 	var s;
 	var this$0;
-	var this$1;
+	var this$2;
 	var col1$0;
 	var col2$0;
 	this.col1 = ({x: 0, y: 0});
@@ -434,9 +432,9 @@ b2Mat22.prototype.initializer$NLb2Vec2$Lb2Vec2$ = function (angle, c1, c2) {
 		this$0 = this.col1;
 		this$0.x = c1.x;
 		this$0.y = c1.y;
-		this$1 = this.col2;
-		this$1.x = c2.x;
-		this$1.y = c2.y;
+		this$2 = this.col2;
+		this$2.x = c2.x;
+		this$2.y = c2.y;
 	} else {
 		c = Math.cos(angle);
 		s = Math.sin(angle);
@@ -452,7 +450,7 @@ function b2Mat22$initializer$Lb2Mat22$NLb2Vec2$Lb2Vec2$($this, angle, c1, c2) {
 	var c;
 	var s;
 	var this$0;
-	var this$1;
+	var this$2;
 	var col1$0;
 	var col2$0;
 	$this.col1 = ({x: 0, y: 0});
@@ -461,9 +459,9 @@ function b2Mat22$initializer$Lb2Mat22$NLb2Vec2$Lb2Vec2$($this, angle, c1, c2) {
 		this$0 = $this.col1;
 		this$0.x = c1.x;
 		this$0.y = c1.y;
-		this$1 = $this.col2;
-		this$1.x = c2.x;
-		this$1.y = c2.y;
+		this$2 = $this.col2;
+		this$2.x = c2.x;
+		this$2.y = c2.y;
 	} else {
 		c = Math.cos(angle);
 		s = Math.sin(angle);
@@ -507,25 +505,25 @@ b2Mat22.Set$Lb2Mat22$N = b2Mat22$Set$Lb2Mat22$N;
 
 b2Mat22.prototype.SetVV$Lb2Vec2$Lb2Vec2$ = function (c1, c2) {
 	var this$0;
-	var this$1;
+	var this$2;
 	this$0 = this.col1;
 	this$0.x = c1.x;
 	this$0.y = c1.y;
-	this$1 = this.col2;
-	this$1.x = c2.x;
-	this$1.y = c2.y;
+	this$2 = this.col2;
+	this$2.x = c2.x;
+	this$2.y = c2.y;
 };
 
 
 function b2Mat22$SetVV$Lb2Mat22$Lb2Vec2$Lb2Vec2$($this, c1, c2) {
 	var this$0;
-	var this$1;
+	var this$2;
 	this$0 = $this.col1;
 	this$0.x = c1.x;
 	this$0.y = c1.y;
-	this$1 = $this.col2;
-	this$1.x = c2.x;
-	this$1.y = c2.y;
+	this$2 = $this.col2;
+	this$2.x = c2.x;
+	this$2.y = c2.y;
 };
 
 b2Mat22.SetVV$Lb2Mat22$Lb2Vec2$Lb2Vec2$ = b2Mat22$SetVV$Lb2Mat22$Lb2Vec2$Lb2Vec2$;
@@ -544,32 +542,32 @@ b2Mat22.Copy$Lb2Mat22$ = b2Mat22$Copy$Lb2Mat22$;
 b2Mat22.prototype.SetM$Lb2Mat22$ = function (m) {
 	var this$0;
 	var v$0;
-	var this$1;
-	var v$1;
+	var this$2;
+	var v$2;
 	this$0 = this.col1;
 	v$0 = m.col1;
 	this$0.x = v$0.x;
 	this$0.y = v$0.y;
-	this$1 = this.col2;
-	v$1 = m.col2;
-	this$1.x = v$1.x;
-	this$1.y = v$1.y;
+	this$2 = this.col2;
+	v$2 = m.col2;
+	this$2.x = v$2.x;
+	this$2.y = v$2.y;
 };
 
 
 function b2Mat22$SetM$Lb2Mat22$Lb2Mat22$($this, m) {
 	var this$0;
 	var v$0;
-	var this$1;
-	var v$1;
+	var this$2;
+	var v$2;
 	this$0 = $this.col1;
 	v$0 = m.col1;
 	this$0.x = v$0.x;
 	this$0.y = v$0.y;
-	this$1 = $this.col2;
-	v$1 = m.col2;
-	this$1.x = v$1.x;
-	this$1.y = v$1.y;
+	this$2 = $this.col2;
+	v$2 = m.col2;
+	this$2.x = v$2.x;
+	this$2.y = v$2.y;
 };
 
 b2Mat22.SetM$Lb2Mat22$Lb2Mat22$ = b2Mat22$SetM$Lb2Mat22$Lb2Mat22$;
@@ -735,19 +733,19 @@ b2Mat22.prototype.Abs$ = function () {
 	var this$0;
 	var x$0$0;
 	var x$2$0;
-	var this$1;
-	var x$0$1;
-	var x$2$1;
+	var this$2;
+	var x$0$2;
+	var x$2$2;
 	this$0 = this.col1;
 	x$0$0 = this$0.x;
 	this$0.x = (x$0$0 >= 0 ? x$0$0 : - x$0$0);
 	x$2$0 = this$0.y;
 	this$0.y = (x$2$0 >= 0 ? x$2$0 : - x$2$0);
-	this$1 = this.col2;
-	x$0$1 = this$1.x;
-	this$1.x = (x$0$1 >= 0 ? x$0$1 : - x$0$1);
-	x$2$1 = this$1.y;
-	this$1.y = (x$2$1 >= 0 ? x$2$1 : - x$2$1);
+	this$2 = this.col2;
+	x$0$2 = this$2.x;
+	this$2.x = (x$0$2 >= 0 ? x$0$2 : - x$0$2);
+	x$2$2 = this$2.y;
+	this$2.y = (x$2$2 >= 0 ? x$2$2 : - x$2$2);
 };
 
 
@@ -755,19 +753,19 @@ function b2Mat22$Abs$Lb2Mat22$($this) {
 	var this$0;
 	var x$0$0;
 	var x$2$0;
-	var this$1;
-	var x$0$1;
-	var x$2$1;
+	var this$2;
+	var x$0$2;
+	var x$2$2;
 	this$0 = $this.col1;
 	x$0$0 = this$0.x;
 	this$0.x = (x$0$0 >= 0 ? x$0$0 : - x$0$0);
 	x$2$0 = this$0.y;
 	this$0.y = (x$2$0 >= 0 ? x$2$0 : - x$2$0);
-	this$1 = $this.col2;
-	x$0$1 = this$1.x;
-	this$1.x = (x$0$1 >= 0 ? x$0$1 : - x$0$1);
-	x$2$1 = this$1.y;
-	this$1.y = (x$2$1 >= 0 ? x$2$1 : - x$2$1);
+	this$2 = $this.col2;
+	x$0$2 = this$2.x;
+	this$2.x = (x$0$2 >= 0 ? x$0$2 : - x$0$2);
+	x$2$2 = this$2.y;
+	this$2.y = (x$2$2 >= 0 ? x$2$2 : - x$2$2);
 };
 
 b2Mat22.Abs$Lb2Mat22$ = b2Mat22$Abs$Lb2Mat22$;
@@ -905,7 +903,13 @@ function b2Math$b2AbsV$Lb2Vec2$(a) {
 b2Math.b2AbsV$Lb2Vec2$ = b2Math$b2AbsV$Lb2Vec2$;
 
 function b2Math$b2AbsM$Lb2Mat22$(A) {
-	return new b2Mat22(0, b2Math$b2AbsV$Lb2Vec2$(A.col1), b2Math$b2AbsV$Lb2Vec2$(A.col2));
+	var a$0;
+	var a$0$0;
+	var a$1$0;
+	var a$1;
+	var a$0$1;
+	var a$1$1;
+	return new b2Mat22(0, (a$0 = A.col1, ({x: (a$0$0 = a$0.x, a$0$0 >= 0 ? a$0$0 : - a$0$0), y: (a$1$0 = a$0.y, a$1$0 >= 0 ? a$1$0 : - a$1$0)})), (a$1 = A.col2, ({x: (a$0$1 = a$1.x, a$0$1 >= 0 ? a$0$1 : - a$0$1), y: (a$1$1 = a$1.y, a$1$1 >= 0 ? a$1$1 : - a$1$1)})));
 };
 
 b2Math.b2AbsM$Lb2Mat22$ = b2Math$b2AbsM$Lb2Mat22$;
@@ -1242,6 +1246,11 @@ function b2AABB$IsValid$Lb2AABB$($this) {
 	var dX;
 	var dY;
 	var valid;
+	var x$0$0;
+	var x$1$0;
+	var this$1;
+	var x$0$1;
+	var x$1$1;
 	var maxVertex$0;
 	var minVertex$0;
 	dX = (maxVertex$0 = $this.maxVertex).x;
@@ -1249,7 +1258,7 @@ function b2AABB$IsValid$Lb2AABB$($this) {
 	dX -= (minVertex$0 = $this.minVertex).x;
 	dY -= minVertex$0.y;
 	valid = dX >= 0.0 && dY >= 0.0;
-	valid = valid && b2Vec2$IsValid$Lb2Vec2$(minVertex$0) && b2Vec2$IsValid$Lb2Vec2$($this.maxVertex);
+	valid = valid && (minVertex$0, (x$0$0 = minVertex$0.x, $__jsx_isFinite(x$0$0)) && (x$1$0 = minVertex$0.y, $__jsx_isFinite(x$1$0))) && (this$1 = $this.maxVertex, (x$0$1 = this$1.x, $__jsx_isFinite(x$0$1)) && (x$1$1 = this$1.y, $__jsx_isFinite(x$1$1)));
 	return valid;
 };
 
@@ -2831,9 +2840,9 @@ function b2Collision$FindIncidentEdge$ALClipVertex$Lb2PolyShape$NLb2PolyShape$(c
 	var dot;
 	var tClip;
 	var v$0;
-	var v$1;
 	var v$2;
-	var v$3;
+	var v$4;
+	var v$6;
 	var col1$0;
 	var col2$0;
 	var col1$1;
@@ -2898,21 +2907,21 @@ function b2Collision$FindIncidentEdge$ALClipVertex$Lb2PolyShape$NLb2PolyShape$(c
 	tVec.x = v$0.x;
 	tVec.y = v$0.y;
 	b2Vec2$MulM$Lb2Vec2$Lb2Mat22$(tVec, poly2.m_R);
-	v$1 = poly2.m_position;
-	tVec.x += v$1.x;
-	tVec.y += v$1.y;
+	v$2 = poly2.m_position;
+	tVec.x += v$2.x;
+	tVec.y += v$2.y;
 	(features$0 = tClip.id.features).referenceFace = edge1;
 	features$0.incidentEdge = vertex21;
 	features$0.incidentVertex = vertex21;
 	tClip = c[1];
 	tVec = tClip.v;
-	v$2 = vert2s[vertex22];
-	tVec.x = v$2.x;
-	tVec.y = v$2.y;
+	v$4 = vert2s[vertex22];
+	tVec.x = v$4.x;
+	tVec.y = v$4.y;
 	b2Vec2$MulM$Lb2Vec2$Lb2Mat22$(tVec, poly2.m_R);
-	v$3 = poly2.m_position;
-	tVec.x += v$3.x;
-	tVec.y += v$3.y;
+	v$6 = poly2.m_position;
+	tVec.x += v$6.x;
+	tVec.y += v$6.y;
 	(features$1 = tClip.id.features).referenceFace = edge1;
 	features$1.incidentEdge = vertex21;
 	features$1.incidentVertex = vertex22;
@@ -2959,12 +2968,16 @@ function b2Collision$b2CollidePoly$Lb2Manifold$Lb2PolyShape$Lb2PolyShape$B(manif
 	var separation;
 	var cp;
 	var this$0;
-	var this$1;
+	var x$0;
+	var y$0;
 	var this$2;
-	var this$3;
 	var this$4;
+	var x$2;
+	var y$2;
+	var this$6;
+	var this$8;
 	var v$0;
-	var this$5;
+	var this$10;
 	var id$0;
 	var col1$0;
 	var col2$0;
@@ -2974,8 +2987,8 @@ function b2Collision$b2CollidePoly$Lb2Manifold$Lb2PolyShape$Lb2PolyShape$B(manif
 	var m_R$0;
 	var col1$2;
 	var col2$2;
-	var x$0;
-	var y$0;
+	var x$1;
+	var y$1;
 	manifold.pointCount = 0;
 	edgeA = 0;
 	edgeAOut = [ 0 ];
@@ -3030,16 +3043,16 @@ function b2Collision$b2CollidePoly$Lb2Manifold$Lb2PolyShape$Lb2PolyShape$B(manif
 	tMat = m_R$0 = poly1.m_R;
 	v11X = (col1$1 = tMat.col1).x * tX + (col2$1 = tMat.col2).x * v11Y;
 	v11Y = col1$1.y * tX + col2$1.y * v11Y;
-	v11X += x$0 = (m_position$0 = poly1.m_position).x;
-	v11Y += y$0 = m_position$0.y;
+	v11X += x$1 = (m_position$0 = poly1.m_position).x;
+	v11Y += y$1 = m_position$0.y;
 	v12X = v12.x;
 	v12Y = v12.y;
 	tX = v12X;
 	tMat = m_R$0;
 	v12X = (col1$2 = m_R$0.col1).x * tX + (col2$2 = m_R$0.col2).x * v12Y;
 	v12Y = col1$2.y * tX + col2$2.y * v12Y;
-	v12X += x$0;
-	v12Y += y$0;
+	v12X += x$1;
+	v12Y += y$1;
 	frontOffset = frontNormalX * v11X + frontNormalY * v11Y;
 	sideOffset1 = - (sideNormalX * v11X + sideNormalY * v11Y);
 	sideOffset2 = sideNormalX * v12X + sideNormalY * v12Y;
@@ -3047,27 +3060,31 @@ function b2Collision$b2CollidePoly$Lb2Manifold$Lb2PolyShape$Lb2PolyShape$B(manif
 	clipPoints2 = [ ({v: ({x: 0, y: 0}), id: new b2ContactID()}), ({v: ({x: 0, y: 0}), id: new b2ContactID()}) ];
 	np = 0;
 	this$0 = b2Collision.b2CollidePolyTempVec;
-	this$0.x = - sideNormalX;
-	this$0.y = - sideNormalY;
+	x$0 = - sideNormalX;
+	y$0 = - sideNormalY;
+	this$0.x = x$0;
+	this$0.y = y$0;
 	np = b2Collision$ClipSegmentToLine$ALClipVertex$ALClipVertex$Lb2Vec2$N(clipPoints1, incidentEdge, b2Collision.b2CollidePolyTempVec, sideOffset1);
 	if (np < 2) {
 		return;
 	}
-	this$1 = b2Collision.b2CollidePolyTempVec;
-	this$1.x = sideNormalX;
-	this$1.y = sideNormalY;
+	this$2 = b2Collision.b2CollidePolyTempVec;
+	this$2.x = sideNormalX;
+	this$2.y = sideNormalY;
 	np = b2Collision$ClipSegmentToLine$ALClipVertex$ALClipVertex$Lb2Vec2$N(clipPoints2, clipPoints1, b2Collision.b2CollidePolyTempVec, sideOffset2);
 	if (np < 2) {
 		return;
 	}
 	if (flip !== 0) {
-		this$2 = manifold.normal;
-		this$2.x = - frontNormalX;
-		this$2.y = - frontNormalY;
+		this$4 = manifold.normal;
+		x$2 = - frontNormalX;
+		y$2 = - frontNormalY;
+		this$4.x = x$2;
+		this$4.y = y$2;
 	} else {
-		this$3 = manifold.normal;
-		this$3.x = frontNormalX;
-		this$3.y = frontNormalY;
+		this$6 = manifold.normal;
+		this$6.x = frontNormalX;
+		this$6.y = frontNormalY;
 	}
 	pointCount = 0;
 	for (i = 0; i < 2; ++ i) {
@@ -3076,13 +3093,13 @@ function b2Collision$b2CollidePoly$Lb2Manifold$Lb2PolyShape$Lb2PolyShape$B(manif
 		if (separation <= 0.0 || conservative === true) {
 			cp = manifold.points[pointCount];
 			cp.separation = separation;
-			this$4 = cp.position;
+			this$8 = cp.position;
 			v$0 = clipPoints2[i].v;
-			this$4.x = v$0.x;
-			this$4.y = v$0.y;
-			this$5 = cp.id;
+			this$8.x = v$0.x;
+			this$8.y = v$0.y;
+			this$10 = cp.id;
 			id$0 = clipPoints2[i].id;
-			b2ContactID$set_key$Lb2ContactID$N(this$5, id$0._key);
+			b2ContactID$set_key$Lb2ContactID$N(this$10, id$0._key);
 			cp.id.features.flip = flip;
 			++ pointCount;
 		}
@@ -3165,9 +3182,9 @@ function b2Collision$b2CollidePolyAndCircle$Lb2Manifold$Lb2PolyShape$Lb2CircleSh
 	var this$0;
 	var x$0;
 	var y$0;
-	var this$1;
-	var x$1;
-	var y$1;
+	var this$2;
+	var x$2;
+	var y$2;
 	var m_normals$0;
 	var m_vertices$0;
 	var m_position$0;
@@ -3176,9 +3193,9 @@ function b2Collision$b2CollidePolyAndCircle$Lb2Manifold$Lb2PolyShape$Lb2CircleSh
 	var col2$0;
 	var normal$0;
 	var col1$1;
-	var x$2;
+	var x$1;
 	var col2$1;
-	var y$2;
+	var y$1;
 	var features$0;
 	var x$3;
 	var position$0;
@@ -3224,8 +3241,8 @@ function b2Collision$b2CollidePolyAndCircle$Lb2Manifold$Lb2PolyShape$Lb2CircleSh
 	if (separation < Number.MIN_VALUE) {
 		manifold.pointCount = 1;
 		tVec = poly.m_normals[normalIndex];
-		x$3 = (normal$0 = manifold.normal).x = (col1$1 = tMat.col1).x * (x$2 = tVec.x) + (col2$1 = tMat.col2).x * (y$2 = tVec.y);
-		normal$0.y = col1$1.y * x$2 + col2$1.y * y$2;
+		x$3 = (normal$0 = manifold.normal).x = (col1$1 = tMat.col1).x * (x$1 = tVec.x) + (col2$1 = tMat.col2).x * (y$1 = tVec.y);
+		normal$0.y = col1$1.y * x$1 + col2$1.y * y$1;
 		tPoint = manifold.points[0];
 		(features$0 = tPoint.id.features).incidentEdge = normalIndex;
 		features$0.incidentVertex = b2Collision.b2_nullFeature;
@@ -3298,11 +3315,11 @@ function b2Collision$b2CollidePolyAndCircle$Lb2Manifold$Lb2PolyShape$Lb2CircleSh
 		return;
 	}
 	manifold.pointCount = 1;
-	this$1 = normal$2 = manifold.normal;
-	x$1 = (col1$3 = tMat.col1).x * dX + (col2$3 = tMat.col2).x * dY;
-	y$1 = col1$3.y * dX + col2$3.y * dY;
-	this$1.x = x$1;
-	this$1.y = y$1;
+	this$2 = normal$2 = manifold.normal;
+	x$2 = (col1$3 = tMat.col1).x * dX + (col2$3 = tMat.col2).x * dY;
+	y$2 = col1$3.y * dX + col2$3.y * dY;
+	this$2.x = x$2;
+	this$2.y = y$2;
 	(position$2 = tPoint.position).x = (m_position$4 = circle.m_position).x - radius * normal$2.x;
 	position$2.y = m_position$4.y - radius * normal$2.y;
 	tPoint.separation = dist - radius;
@@ -4164,7 +4181,7 @@ function b2Shape$PolyMass$Lb2MassData$ALb2Vec2$NN(massData, vs, count, rho) {
 	var intx2;
 	var inty2;
 	var a$0;
-	var a$1;
+	var a$2;
 	var e1$x$0;
 	var e1$y$0;
 	var e2$x$0;
@@ -4212,9 +4229,9 @@ function b2Shape$PolyMass$Lb2MassData$ALb2Vec2$NN(massData, vs, count, rho) {
 		I += D * (intx2 + inty2);
 	}
 	massData.mass = rho * area;
-	a$1 = 1.0 / area;
-	x$3 = center.x *= a$1;
-	y$3 = center.y *= a$1;
+	a$2 = 1.0 / area;
+	x$3 = center.x *= a$2;
+	y$3 = center.y *= a$2;
 	massData.center = center;
 	I = rho * (I - area * (x$3 * x$3 + y$3 * y$3));
 	massData.I = I;
@@ -4303,10 +4320,12 @@ function b2PolyShape(def, body, newOrigin) {
 	var value1$0;
 	var value2$12;
 	var this$0;
-	var this$1;
+	var this$2;
 	var x$0;
 	var y$0;
-	var this$2;
+	var this$4;
+	var x$2;
+	var y$2;
 	var m_localCentroid$0;
 	var localPosition$0;
 	var extents$0;
@@ -4352,31 +4371,31 @@ function b2PolyShape(def, body, newOrigin) {
 	var m_position$0;
 	var m_position$1;
 	var col1$11;
-	var x$2;
-	var col2$11;
-	var y$2;
 	var x$3;
+	var col2$11;
+	var y$3;
 	var x$4;
+	var x$5;
 	var col1$12;
 	var R$0;
-	var y$3;
-	var x$5;
 	var y$4;
-	var y$5;
-	var col2$12;
 	var x$6;
+	var y$5;
 	var y$6;
-	var extents$1;
-	var m_localOBB$2;
+	var col2$12;
 	var x$7;
 	var y$7;
+	var extents$1;
+	var m_localOBB$2;
+	var x$8;
+	var y$8;
 	var m_R$1;
 	var center$0;
 	var m_position$2;
 	var col1$13;
-	var x$8;
+	var x$9;
 	var col2$13;
-	var y$8;
+	var y$9;
 	var minVertex$0;
 	var maxVertex$0;
 	b2Shape.call(this, def, body);
@@ -4482,14 +4501,16 @@ function b2PolyShape(def, body, newOrigin) {
 	(col2$10 = this$0.col2).x = 0.0;
 	col1$10.y = 0.0;
 	col2$10.y = 1.0;
-	this$1 = m_localOBB$0.center;
+	this$2 = m_localOBB$0.center;
 	x$0 = (minVertexX + maxVertexX) * 0.5;
 	y$0 = (minVertexY + maxVertexY) * 0.5;
-	this$1.x = x$0;
-	this$1.y = y$0;
-	this$2 = m_localOBB$0.extents;
-	this$2.x = (maxVertexX - minVertexX) * 0.5;
-	this$2.y = (maxVertexY - minVertexY) * 0.5;
+	this$2.x = x$0;
+	this$2.y = y$0;
+	this$4 = m_localOBB$0.extents;
+	x$2 = (maxVertexX - minVertexX) * 0.5;
+	y$2 = (maxVertexY - minVertexY) * 0.5;
+	this$4.x = x$2;
+	this$4.y = y$2;
 	i2 = 0;
 	for (i = 0; i < this.m_vertexCount; ++ i) {
 		this.m_normals[i] = ({x: 0, y: 0});
@@ -4502,17 +4523,17 @@ function b2PolyShape(def, body, newOrigin) {
 		i2 = (i + 1 < this.m_vertexCount ? i + 1 : 0);
 	}
 	b2Mat22$SetM$Lb2Mat22$Lb2Mat22$(this.m_R, this.m_body.m_R);
-	(m_position$0 = this.m_position).x = (m_position$1 = this.m_body.m_position).x + ((x$3 = (col1$11 = (m_R$0 = this.m_R).col1).x) * (x$2 = (m_localCentroid$2 = this.m_localCentroid).x) + (x$4 = (col2$11 = m_R$0.col2).x) * (y$2 = m_localCentroid$2.y));
-	m_position$0.y = m_position$1.y + ((y$3 = col1$11.y) * x$2 + (y$4 = col2$11.y) * y$2);
-	b2PolyShape.tAbsR.col1.x = x$3 * (x$5 = (col1$12 = (R$0 = this.m_localOBB.R).col1).x) + x$4 * (y$5 = col1$12.y);
-	b2PolyShape.tAbsR.col1.y = y$3 * x$5 + y$4 * y$5;
-	b2PolyShape.tAbsR.col2.x = x$3 * (x$6 = (col2$12 = R$0.col2).x) + x$4 * (y$6 = col2$12.y);
-	b2PolyShape.tAbsR.col2.y = y$3 * x$6 + y$4 * y$6;
+	(m_position$0 = this.m_position).x = (m_position$1 = this.m_body.m_position).x + ((x$4 = (col1$11 = (m_R$0 = this.m_R).col1).x) * (x$3 = (m_localCentroid$2 = this.m_localCentroid).x) + (x$5 = (col2$11 = m_R$0.col2).x) * (y$3 = m_localCentroid$2.y));
+	m_position$0.y = m_position$1.y + ((y$4 = col1$11.y) * x$3 + (y$5 = col2$11.y) * y$3);
+	b2PolyShape.tAbsR.col1.x = x$4 * (x$6 = (col1$12 = (R$0 = this.m_localOBB.R).col1).x) + x$5 * (y$6 = col1$12.y);
+	b2PolyShape.tAbsR.col1.y = y$4 * x$6 + y$5 * y$6;
+	b2PolyShape.tAbsR.col2.x = x$4 * (x$7 = (col2$12 = R$0.col2).x) + x$5 * (y$7 = col2$12.y);
+	b2PolyShape.tAbsR.col2.y = y$4 * x$7 + y$5 * y$7;
 	b2Mat22$Abs$Lb2Mat22$(b2PolyShape.tAbsR);
-	hX = b2PolyShape.tAbsR.col1.x * (x$7 = (extents$1 = (m_localOBB$2 = this.m_localOBB).extents).x) + b2PolyShape.tAbsR.col2.x * (y$7 = extents$1.y);
-	hY = b2PolyShape.tAbsR.col1.y * x$7 + b2PolyShape.tAbsR.col2.y * y$7;
-	positionX = (m_position$2 = this.m_position).x + ((col1$13 = (m_R$1 = this.m_R).col1).x * (x$8 = (center$0 = m_localOBB$2.center).x) + (col2$13 = m_R$1.col2).x * (y$8 = center$0.y));
-	positionY = m_position$2.y + (col1$13.y * x$8 + col2$13.y * y$8);
+	hX = b2PolyShape.tAbsR.col1.x * (x$8 = (extents$1 = (m_localOBB$2 = this.m_localOBB).extents).x) + b2PolyShape.tAbsR.col2.x * (y$8 = extents$1.y);
+	hY = b2PolyShape.tAbsR.col1.y * x$8 + b2PolyShape.tAbsR.col2.y * y$8;
+	positionX = (m_position$2 = this.m_position).x + ((col1$13 = (m_R$1 = this.m_R).col1).x * (x$9 = (center$0 = m_localOBB$2.center).x) + (col2$13 = m_R$1.col2).x * (y$9 = center$0.y));
+	positionY = m_position$2.y + (col1$13.y * x$9 + col2$13.y * y$9);
 	(minVertex$0 = aabb.minVertex).x = positionX - hX;
 	minVertex$0.y = positionY - hY;
 	(maxVertex$0 = aabb.maxVertex).x = positionX + hX;
@@ -4534,7 +4555,7 @@ b2PolyShape.prototype.TestPoint$Lb2Vec2$ = function (p) {
 	var i;
 	var dot;
 	var v$0;
-	var v$1;
+	var v$2;
 	var a$0;
 	var tVec$x$0;
 	var tVec$y$0;
@@ -4548,9 +4569,9 @@ b2PolyShape.prototype.TestPoint$Lb2Vec2$ = function (p) {
 	for (i = 0; i < this.m_vertexCount; ++ i) {
 		tVec$x$0 = pLocal.x;
 		tVec$y$0 = pLocal.y;
-		v$1 = this.m_vertices[i];
-		tVec$x$0 -= v$1.x;
-		tVec$y$0 -= v$1.y;
+		v$2 = this.m_vertices[i];
+		tVec$x$0 -= v$2.x;
+		tVec$y$0 -= v$2.y;
 		a$0 = this.m_normals[i];
 		dot = a$0.x * tVec$x$0 + a$0.y * tVec$y$0;
 		if (dot > 0.0) {
@@ -4566,7 +4587,7 @@ function b2PolyShape$TestPoint$Lb2PolyShape$Lb2Vec2$($this, p) {
 	var i;
 	var dot;
 	var v$0;
-	var v$1;
+	var v$2;
 	var a$0;
 	var tVec$x$0;
 	var tVec$y$0;
@@ -4580,9 +4601,9 @@ function b2PolyShape$TestPoint$Lb2PolyShape$Lb2Vec2$($this, p) {
 	for (i = 0; i < $this.m_vertexCount; ++ i) {
 		tVec$x$0 = pLocal.x;
 		tVec$y$0 = pLocal.y;
-		v$1 = $this.m_vertices[i];
-		tVec$x$0 -= v$1.x;
-		tVec$y$0 -= v$1.y;
+		v$2 = $this.m_vertices[i];
+		tVec$x$0 -= v$2.x;
+		tVec$y$0 -= v$2.y;
 		a$0 = $this.m_normals[i];
 		dot = a$0.x * tVec$x$0 + a$0.y * tVec$y$0;
 		if (dot > 0.0) {
@@ -4747,7 +4768,7 @@ b2PolyShape.prototype.ResetProxy$Lb2BroadPhase$ = function (broadPhase) {
 	var v$2;
 	var v$4;
 	var this$0;
-	var this$2;
+	var this$4;
 	var h$x$0;
 	var h$y$0;
 	var position$x$0;
@@ -4771,7 +4792,7 @@ b2PolyShape.prototype.ResetProxy$Lb2BroadPhase$ = function (broadPhase) {
 	b2BroadPhase$DestroyProxy$Lb2BroadPhase$N(broadPhase, this.m_proxyId);
 	proxy = null;
 	R = b2Math$b2MulMM$Lb2Mat22$Lb2Mat22$(this.m_R, this.m_localOBB.R);
-	absR = new b2Mat22(0, b2Math$b2AbsV$Lb2Vec2$(R.col1), b2Math$b2AbsV$Lb2Vec2$(R.col2));
+	absR = b2Math$b2AbsM$Lb2Mat22$(R);
 	v$0 = (m_localOBB$0 = this.m_localOBB).extents;
 	h$x$0 = (col1$0 = absR.col1).x * (x$0 = v$0.x) + (col2$0 = absR.col2).x * (y$0 = v$0.y);
 	h$y$0 = col1$0.y * x$0 + col2$0.y * y$0;
@@ -4788,9 +4809,9 @@ b2PolyShape.prototype.ResetProxy$Lb2BroadPhase$ = function (broadPhase) {
 	this$0.y = position$y$0;
 	minVertex$0.x -= h$x$0;
 	minVertex$0.y -= h$y$0;
-	this$2 = maxVertex$0 = aabb.maxVertex;
-	this$2.x = position$x$0;
-	this$2.y = position$y$0;
+	this$4 = maxVertex$0 = aabb.maxVertex;
+	this$4.x = position$x$0;
+	this$4.y = position$y$0;
 	maxVertex$0.x += h$x$0;
 	maxVertex$0.y += h$y$0;
 	if (b2BroadPhase$InRange$Lb2BroadPhase$Lb2AABB$(broadPhase, aabb)) {
@@ -4848,26 +4869,26 @@ function b2CircleShape(def, body, localCenter) {
 	var broadPhase;
 	var x$0;
 	var y$0;
-	var this$1;
-	var x$1;
-	var y$1;
 	var this$2;
 	var x$2;
 	var y$2;
+	var this$4;
+	var x$4;
+	var y$4;
 	var m_localPosition$0;
 	var localPosition$0;
 	var m_R$0;
 	var m_localPosition$1;
 	var col1$0;
-	var x$3;
+	var x$1;
 	var col2$0;
-	var y$3;
+	var y$1;
 	var m_position$0;
 	var m_position$1;
 	var m_position$2;
 	var m_radius$0;
-	var x$4;
-	var y$4;
+	var x$3;
+	var y$3;
 	b2Shape.call(this, def, body);
 	this.m_radius = 0;
 	m_localPosition$0 = this.m_localPosition = ({x: 0, y: 0});
@@ -4878,22 +4899,22 @@ function b2CircleShape(def, body, localCenter) {
 	this.m_type = 0;
 	this.m_radius = def.radius;
 	b2Mat22$SetM$Lb2Mat22$Lb2Mat22$(this.m_R, this.m_body.m_R);
-	rX = (col1$0 = (m_R$0 = this.m_R).col1).x * (x$3 = (m_localPosition$1 = this.m_localPosition).x) + (col2$0 = m_R$0.col2).x * (y$3 = m_localPosition$1.y);
-	rY = col1$0.y * x$3 + col2$0.y * y$3;
+	rX = (col1$0 = (m_R$0 = this.m_R).col1).x * (x$1 = (m_localPosition$1 = this.m_localPosition).x) + (col2$0 = m_R$0.col2).x * (y$1 = m_localPosition$1.y);
+	rY = col1$0.y * x$1 + col2$0.y * y$1;
 	(m_position$0 = this.m_position).x = (m_position$1 = this.m_body.m_position).x + rX;
 	m_position$0.y = m_position$1.y + rY;
 	this.m_maxRadius = Math.sqrt(rX * rX + rY * rY) + this.m_radius;
 	aabb = ({minVertex: ({x: 0, y: 0}), maxVertex: ({x: 0, y: 0})});
-	this$1 = aabb.minVertex;
-	x$1 = (x$4 = (m_position$2 = this.m_position).x) - (m_radius$0 = this.m_radius);
-	y$1 = (y$4 = m_position$2.y) - m_radius$0;
-	this$1.x = x$1;
-	this$1.y = y$1;
-	this$2 = aabb.maxVertex;
-	x$2 = x$4 + m_radius$0;
-	y$2 = y$4 + m_radius$0;
+	this$2 = aabb.minVertex;
+	x$2 = (x$3 = (m_position$2 = this.m_position).x) - (m_radius$0 = this.m_radius);
+	y$2 = (y$3 = m_position$2.y) - m_radius$0;
 	this$2.x = x$2;
 	this$2.y = y$2;
+	this$4 = aabb.maxVertex;
+	x$4 = x$3 + m_radius$0;
+	y$4 = y$3 + m_radius$0;
+	this$4.x = x$4;
+	this$4.y = y$4;
 	broadPhase = this.m_body.m_world.m_broadPhase;
 	if (b2BroadPhase$InRange$Lb2BroadPhase$Lb2AABB$(broadPhase, aabb)) {
 		this.m_proxyId = b2BroadPhase$CreateProxy$Lb2BroadPhase$Lb2AABB$X(broadPhase, aabb, this);
@@ -4951,15 +4972,15 @@ b2CircleShape.prototype.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$ = functio
 	var this$0;
 	var x$0;
 	var y$0;
-	var this$1;
-	var x$1;
-	var y$1;
+	var this$2;
+	var x$2;
+	var y$2;
 	var m_localPosition$0;
 	var m_position$0;
 	var col1$0;
-	var x$2;
+	var x$1;
 	var col2$0;
-	var y$2;
+	var y$1;
 	var m_localPosition$1;
 	var col1$1;
 	var x$3;
@@ -4967,8 +4988,8 @@ b2CircleShape.prototype.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$ = functio
 	var y$3;
 	var m_radius$0;
 	b2Mat22$SetM$Lb2Mat22$Lb2Mat22$(this.m_R, R2);
-	(m_position$0 = this.m_position).x = (col1$0 = R2.col1).x * (x$2 = (m_localPosition$0 = this.m_localPosition).x) + (col2$0 = R2.col2).x * (y$2 = m_localPosition$0.y) + position2.x;
-	m_position$0.y = col1$0.y * x$2 + col2$0.y * y$2 + position2.y;
+	(m_position$0 = this.m_position).x = (col1$0 = R2.col1).x * (x$1 = (m_localPosition$0 = this.m_localPosition).x) + (col2$0 = R2.col2).x * (y$1 = m_localPosition$0.y) + position2.x;
+	m_position$0.y = col1$0.y * x$1 + col2$0.y * y$1 + position2.y;
 	if (this.m_proxyId === b2Pair.b2_nullProxy) {
 		return;
 	}
@@ -4988,11 +5009,11 @@ b2CircleShape.prototype.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$ = functio
 	y$0 = lowerY - m_radius$0;
 	this$0.x = x$0;
 	this$0.y = y$0;
-	this$1 = aabb.maxVertex;
-	x$1 = upperX + m_radius$0;
-	y$1 = upperY + m_radius$0;
-	this$1.x = x$1;
-	this$1.y = y$1;
+	this$2 = aabb.maxVertex;
+	x$2 = upperX + m_radius$0;
+	y$2 = upperY + m_radius$0;
+	this$2.x = x$2;
+	this$2.y = y$2;
 	broadPhase = this.m_body.m_world.m_broadPhase;
 	if (b2BroadPhase$InRange$Lb2BroadPhase$Lb2AABB$(broadPhase, aabb)) {
 		b2BroadPhase$MoveProxy$Lb2BroadPhase$NLb2AABB$(broadPhase, this.m_proxyId, aabb);
@@ -5023,13 +5044,13 @@ b2CircleShape.prototype.ResetProxy$Lb2BroadPhase$ = function (broadPhase) {
 	var this$0;
 	var x$0;
 	var y$0;
-	var this$1;
-	var x$1;
-	var y$1;
-	var m_position$0;
-	var m_radius$0;
+	var this$2;
 	var x$2;
 	var y$2;
+	var m_position$0;
+	var m_radius$0;
+	var x$1;
+	var y$1;
 	if (this.m_proxyId === b2Pair.b2_nullProxy) {
 		return;
 	}
@@ -5039,15 +5060,15 @@ b2CircleShape.prototype.ResetProxy$Lb2BroadPhase$ = function (broadPhase) {
 	proxy = null;
 	aabb = ({minVertex: ({x: 0, y: 0}), maxVertex: ({x: 0, y: 0})});
 	this$0 = aabb.minVertex;
-	x$0 = (x$2 = (m_position$0 = this.m_position).x) - (m_radius$0 = this.m_radius);
-	y$0 = (y$2 = m_position$0.y) - m_radius$0;
+	x$0 = (x$1 = (m_position$0 = this.m_position).x) - (m_radius$0 = this.m_radius);
+	y$0 = (y$1 = m_position$0.y) - m_radius$0;
 	this$0.x = x$0;
 	this$0.y = y$0;
-	this$1 = aabb.maxVertex;
-	x$1 = x$2 + m_radius$0;
-	y$1 = y$2 + m_radius$0;
-	this$1.x = x$1;
-	this$1.y = y$1;
+	this$2 = aabb.maxVertex;
+	x$2 = x$1 + m_radius$0;
+	y$2 = y$1 + m_radius$0;
+	this$2.x = x$2;
+	this$2.y = y$2;
 	if (b2BroadPhase$InRange$Lb2BroadPhase$Lb2AABB$(broadPhase, aabb)) {
 		this.m_proxyId = b2BroadPhase$CreateProxy$Lb2BroadPhase$Lb2AABB$X(broadPhase, aabb, this);
 	} else {
@@ -5094,9 +5115,9 @@ b2ShapeDef.prototype.ComputeMass$Lb2MassData$ = function (massData) {
 	var box;
 	var poly;
 	var this$0;
-	var this$1;
 	var this$2;
-	var this$3;
+	var this$4;
+	var this$6;
 	var radius$0;
 	var mass$0;
 	var extents$0;
@@ -5113,17 +5134,17 @@ b2ShapeDef.prototype.ComputeMass$Lb2MassData$ = function (massData) {
 	case 0:
 		circle = this;
 		mass$0 = massData.mass = this.density * 3.141592653589793 * (radius$0 = circle.radius) * radius$0;
-		this$1 = massData.center;
-		this$1.x = 0.0;
-		this$1.y = 0.0;
+		this$2 = massData.center;
+		this$2.x = 0.0;
+		this$2.y = 0.0;
 		massData.I = 0.5 * mass$0 * radius$0 * radius$0;
 		break;
 	case 1:
 		box = this;
 		mass$1 = massData.mass = 4.0 * this.density * (extents$0 = box.extents).x * extents$0.y;
-		this$2 = massData.center;
-		this$2.x = 0.0;
-		this$2.y = 0.0;
+		this$4 = massData.center;
+		this$4.x = 0.0;
+		this$4.y = 0.0;
 		massData.I = mass$1 / 3.0 * (extents$0, extents$0, extents$0.x * extents$0.x + extents$0.y * extents$0.y);
 		break;
 	case 2:
@@ -5132,9 +5153,9 @@ b2ShapeDef.prototype.ComputeMass$Lb2MassData$ = function (massData) {
 		break;
 	default:
 		massData.mass = 0.0;
-		this$3 = massData.center;
-		this$3.x = 0.0;
-		this$3.y = 0.0;
+		this$6 = massData.center;
+		this$6.x = 0.0;
+		this$6.y = 0.0;
 		massData.I = 0.0;
 		break;
 	}
@@ -5146,9 +5167,9 @@ function b2ShapeDef$ComputeMass$Lb2ShapeDef$Lb2MassData$($this, massData) {
 	var box;
 	var poly;
 	var this$0;
-	var this$1;
 	var this$2;
-	var this$3;
+	var this$4;
+	var this$6;
 	var radius$0;
 	var mass$0;
 	var extents$0;
@@ -5165,17 +5186,17 @@ function b2ShapeDef$ComputeMass$Lb2ShapeDef$Lb2MassData$($this, massData) {
 	case 0:
 		circle = $this;
 		mass$0 = massData.mass = $this.density * 3.141592653589793 * (radius$0 = circle.radius) * radius$0;
-		this$1 = massData.center;
-		this$1.x = 0.0;
-		this$1.y = 0.0;
+		this$2 = massData.center;
+		this$2.x = 0.0;
+		this$2.y = 0.0;
 		massData.I = 0.5 * mass$0 * radius$0 * radius$0;
 		break;
 	case 1:
 		box = $this;
 		mass$1 = massData.mass = 4.0 * $this.density * (extents$0 = box.extents).x * extents$0.y;
-		this$2 = massData.center;
-		this$2.x = 0.0;
-		this$2.y = 0.0;
+		this$4 = massData.center;
+		this$4.x = 0.0;
+		this$4.y = 0.0;
 		massData.I = mass$1 / 3.0 * (extents$0, extents$0, extents$0.x * extents$0.x + extents$0.y * extents$0.y);
 		break;
 	case 2:
@@ -5184,9 +5205,9 @@ function b2ShapeDef$ComputeMass$Lb2ShapeDef$Lb2MassData$($this, massData) {
 		break;
 	default:
 		massData.mass = 0.0;
-		this$3 = massData.center;
-		this$3.x = 0.0;
-		this$3.y = 0.0;
+		this$6 = massData.center;
+		this$6.x = 0.0;
+		this$6.y = 0.0;
 		massData.I = 0.0;
 		break;
 	}
@@ -5261,29 +5282,29 @@ function b2Body(bd, world) {
 	var shape;
 	var this$0;
 	var v$0;
-	var this$1;
-	var v$1;
+	var this$2;
+	var v$2;
 	var a$0;
 	var b$0$0;
-	var a$1;
-	var b$0$1;
-	var this$2;
 	var a$2;
-	var this$3;
-	var b$0;
-	var a$6;
+	var b$0$2;
 	var this$4;
-	var A$1;
+	var a$4;
+	var this$6;
+	var b$0;
 	var a$9;
+	var this$8;
+	var A$1;
+	var a$12;
 	var b$5;
 	var s$1;
-	var a$11;
+	var a$14;
 	var r$x$0;
 	var r$y$0;
-	var v$2$x$0;
-	var v$2$y$0;
-	var a$3$x$0;
-	var a$3$y$0;
+	var v$4$x$0;
+	var v$4$y$0;
+	var a$6$x$0;
+	var a$6$y$0;
 	var b$3$x$0;
 	var b$3$y$0;
 	var m_rotation$0;
@@ -5330,18 +5351,18 @@ function b2Body(bd, world) {
 	this$0.y = v$0.y;
 	m_rotation$0 = this.m_rotation = bd.rotation;
 	b2Mat22$Set$Lb2Mat22$N(this.m_R, m_rotation$0);
-	this$1 = this.m_position0;
-	v$1 = this.m_position;
-	this$1.x = v$1.x;
-	this$1.y = v$1.y;
+	this$2 = this.m_position0;
+	v$2 = this.m_position;
+	this$2.x = v$2.x;
+	this$2.y = v$2.y;
 	this.m_rotation0 = this.m_rotation;
 	this.m_world = world;
 	a$0 = 1.0 - bd.linearDamping;
 	b$0$0 = (a$0 < 1.0 ? a$0 : 1.0);
 	this.m_linearDamping = (0.0 > b$0$0 ? 0.0 : b$0$0);
-	a$1 = 1.0 - bd.angularDamping;
-	b$0$1 = (a$1 < 1.0 ? a$1 : 1.0);
-	this.m_angularDamping = (0.0 > b$0$1 ? 0.0 : b$0$1);
+	a$2 = 1.0 - bd.angularDamping;
+	b$0$2 = (a$2 < 1.0 ? a$2 : 1.0);
+	this.m_angularDamping = (0.0 > b$0$2 ? 0.0 : b$0$2);
 	this.m_force = ({x: 0.0, y: 0.0});
 	this.m_torque = 0.0;
 	this.m_mass = 0.0;
@@ -5365,16 +5386,16 @@ function b2Body(bd, world) {
 		++ this.m_shapeCount;
 	}
 	if (this.m_mass > 0.0) {
-		this$2 = m_center$1 = this.m_center;
-		a$2 = 1.0 / this.m_mass;
-		this$2.x *= a$2;
-		this$2.y *= a$2;
-		this$3 = this.m_position;
+		this$4 = m_center$1 = this.m_center;
+		a$4 = 1.0 / this.m_mass;
+		this$4.x *= a$4;
+		this$4.y *= a$4;
+		this$6 = this.m_position;
 		A$1 = this.m_R;
-		v$2$x$0 = (col1$0 = A$1.col1).x * (x$0 = m_center$1.x) + (col2$0 = A$1.col2).x * (y$0 = m_center$1.y);
-		v$2$y$0 = col1$0.y * x$0 + col2$0.y * y$0;
-		this$3.x += v$2$x$0;
-		this$3.y += v$2$y$0;
+		v$4$x$0 = (col1$0 = A$1.col1).x * (x$0 = m_center$1.x) + (col2$0 = A$1.col2).x * (y$0 = m_center$1.y);
+		v$4$y$0 = col1$0.y * x$0 + col2$0.y * y$0;
+		this$6.x += v$4$x$0;
+		this$6.y += v$4$y$0;
 	} else {
 		this.m_flags |= 0x0001;
 	}
@@ -5383,13 +5404,13 @@ function b2Body(bd, world) {
 		sd = bd.shapes[i];
 		massData = massDatas[i];
 		this.m_I += massData.I;
-		a$9 = sd.localPosition;
+		a$12 = sd.localPosition;
 		b$5 = massData.center;
-		a$3$x$0 = a$9.x + b$5.x;
-		a$3$y$0 = a$9.y + b$5.y;
+		a$6$x$0 = a$12.x + b$5.x;
+		a$6$y$0 = a$12.y + b$5.y;
 		b$0 = this.m_center;
-		r$x$0 = a$3$x$0 - b$0.x;
-		r$y$0 = a$3$y$0 - b$0.y;
+		r$x$0 = a$6$x$0 - b$0.x;
+		r$y$0 = a$6$y$0 - b$0.y;
 		this.m_I += massData.mass * (r$x$0 * r$x$0 + r$y$0 * r$y$0);
 	}
 	if (this.m_mass > 0.0) {
@@ -5403,12 +5424,12 @@ function b2Body(bd, world) {
 		this.m_I = 0.0;
 		this.m_invI = 0.0;
 	}
-	a$6 = bd.linearVelocity;
+	a$9 = bd.linearVelocity;
 	s$1 = bd.angularVelocity;
-	a$11 = this.m_center;
-	b$3$x$0 = - s$1 * a$11.y;
-	b$3$y$0 = s$1 * a$11.x;
-	this.m_linearVelocity = ({x: a$6.x + b$3$x$0, y: a$6.y + b$3$y$0});
+	a$14 = this.m_center;
+	b$3$x$0 = - s$1 * a$14.y;
+	b$3$y$0 = s$1 * a$14.x;
+	this.m_linearVelocity = ({x: a$9.x + b$3$x$0, y: a$9.y + b$3$y$0});
 	this.m_angularVelocity = bd.angularVelocity;
 	this.m_jointList = null;
 	this.m_contactList = null;
@@ -5429,9 +5450,9 @@ function b2Body(bd, world) {
 		this.m_flags |= 0x0008;
 	}
 	if ((this.m_flags & 0x0008) !== 0 || this.m_invMass === 0.0) {
-		this$4 = this.m_linearVelocity;
-		this$4.x = 0.0;
-		this$4.y = 0.0;
+		this$8 = this.m_linearVelocity;
+		this$8.x = 0.0;
+		this$8.y = 0.0;
 		this.m_angularVelocity = 0.0;
 	}
 	this.m_userData = bd.userData;
@@ -5441,9 +5462,9 @@ $__jsx_extend([b2Body], Object);
 b2Body.prototype.SetOriginPosition$Lb2Vec2$N = function (position, rotation) {
 	var s;
 	var this$0;
-	var this$1;
+	var this$2;
 	var A$1;
-	var v$2;
+	var v$3;
 	var b$0$x$0;
 	var b$0$y$0;
 	var m_position$0;
@@ -5460,8 +5481,8 @@ b2Body.prototype.SetOriginPosition$Lb2Vec2$N = function (position, rotation) {
 	m_rotation$0 = this.m_rotation = rotation;
 	b2Mat22$Set$Lb2Mat22$N(this.m_R, m_rotation$0);
 	A$1 = this.m_R;
-	v$2 = this.m_center;
-	b$0$x$0 = (col1$0 = A$1.col1).x * (x$0 = v$2.x) + (col2$0 = A$1.col2).x * (y$0 = v$2.y);
+	v$3 = this.m_center;
+	b$0$x$0 = (col1$0 = A$1.col1).x * (x$0 = v$3.x) + (col2$0 = A$1.col2).x * (y$0 = v$3.y);
 	b$0$y$0 = col1$0.y * x$0 + col2$0.y * y$0;
 	m_position$1 = this.m_position = ({x: position.x + b$0$x$0, y: position.y + b$0$y$0});
 	this$0 = this.m_position0;
@@ -5471,17 +5492,17 @@ b2Body.prototype.SetOriginPosition$Lb2Vec2$N = function (position, rotation) {
 	for (s = this.m_shapeList; s != null; s = s.m_next) {
 		s.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$(m_position$0 = this.m_position, m_R$0 = this.m_R, m_position$0, m_R$0);
 	}
-	this$1 = this.m_world.m_broadPhase;
-	b2PairManager$Commit$Lb2PairManager$(this$1.m_pairManager);
+	this$2 = this.m_world.m_broadPhase;
+	b2PairManager$Commit$Lb2PairManager$(this$2.m_pairManager);
 };
 
 
 function b2Body$SetOriginPosition$Lb2Body$Lb2Vec2$N($this, position, rotation) {
 	var s;
 	var this$0;
-	var this$1;
+	var this$2;
 	var A$1;
-	var v$2;
+	var v$3;
 	var b$0$x$0;
 	var b$0$y$0;
 	var m_position$0;
@@ -5498,8 +5519,8 @@ function b2Body$SetOriginPosition$Lb2Body$Lb2Vec2$N($this, position, rotation) {
 	m_rotation$0 = $this.m_rotation = rotation;
 	b2Mat22$Set$Lb2Mat22$N($this.m_R, m_rotation$0);
 	A$1 = $this.m_R;
-	v$2 = $this.m_center;
-	b$0$x$0 = (col1$0 = A$1.col1).x * (x$0 = v$2.x) + (col2$0 = A$1.col2).x * (y$0 = v$2.y);
+	v$3 = $this.m_center;
+	b$0$x$0 = (col1$0 = A$1.col1).x * (x$0 = v$3.x) + (col2$0 = A$1.col2).x * (y$0 = v$3.y);
 	b$0$y$0 = col1$0.y * x$0 + col2$0.y * y$0;
 	m_position$1 = $this.m_position = ({x: position.x + b$0$x$0, y: position.y + b$0$y$0});
 	this$0 = $this.m_position0;
@@ -5509,8 +5530,8 @@ function b2Body$SetOriginPosition$Lb2Body$Lb2Vec2$N($this, position, rotation) {
 	for (s = $this.m_shapeList; s != null; s = s.m_next) {
 		s.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$(m_position$0 = $this.m_position, m_R$0 = $this.m_R, m_position$0, m_R$0);
 	}
-	this$1 = $this.m_world.m_broadPhase;
-	b2PairManager$Commit$Lb2PairManager$(this$1.m_pairManager);
+	this$2 = $this.m_world.m_broadPhase;
+	b2PairManager$Commit$Lb2PairManager$(this$2.m_pairManager);
 };
 
 b2Body.SetOriginPosition$Lb2Body$Lb2Vec2$N = b2Body$SetOriginPosition$Lb2Body$Lb2Vec2$N;
@@ -5557,8 +5578,8 @@ b2Body.GetOriginPosition$Lb2Body$ = b2Body$GetOriginPosition$Lb2Body$;
 b2Body.prototype.SetCenterPosition$Lb2Vec2$N = function (position, rotation) {
 	var s;
 	var this$0;
-	var this$1;
 	var this$2;
+	var this$4;
 	var m_position$0;
 	var m_R$0;
 	var m_rotation$0;
@@ -5571,23 +5592,23 @@ b2Body.prototype.SetCenterPosition$Lb2Vec2$N = function (position, rotation) {
 	this$0 = m_position$1 = this.m_position;
 	this$0.x = position.x;
 	this$0.y = position.y;
-	this$1 = this.m_position0;
-	this$1.x = m_position$1.x;
-	this$1.y = m_position$1.y;
+	this$2 = this.m_position0;
+	this$2.x = m_position$1.x;
+	this$2.y = m_position$1.y;
 	this.m_rotation0 = this.m_rotation;
 	for (s = this.m_shapeList; s != null; s = s.m_next) {
 		s.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$(m_position$0 = this.m_position, m_R$0 = this.m_R, m_position$0, m_R$0);
 	}
-	this$2 = this.m_world.m_broadPhase;
-	b2PairManager$Commit$Lb2PairManager$(this$2.m_pairManager);
+	this$4 = this.m_world.m_broadPhase;
+	b2PairManager$Commit$Lb2PairManager$(this$4.m_pairManager);
 };
 
 
 function b2Body$SetCenterPosition$Lb2Body$Lb2Vec2$N($this, position, rotation) {
 	var s;
 	var this$0;
-	var this$1;
 	var this$2;
+	var this$4;
 	var m_position$0;
 	var m_R$0;
 	var m_rotation$0;
@@ -5600,15 +5621,15 @@ function b2Body$SetCenterPosition$Lb2Body$Lb2Vec2$N($this, position, rotation) {
 	this$0 = m_position$1 = $this.m_position;
 	this$0.x = position.x;
 	this$0.y = position.y;
-	this$1 = $this.m_position0;
-	this$1.x = m_position$1.x;
-	this$1.y = m_position$1.y;
+	this$2 = $this.m_position0;
+	this$2.x = m_position$1.x;
+	this$2.y = m_position$1.y;
 	$this.m_rotation0 = $this.m_rotation;
 	for (s = $this.m_shapeList; s != null; s = s.m_next) {
 		s.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$(m_position$0 = $this.m_position, m_R$0 = $this.m_R, m_position$0, m_R$0);
 	}
-	this$2 = $this.m_world.m_broadPhase;
-	b2PairManager$Commit$Lb2PairManager$(this$2.m_pairManager);
+	this$4 = $this.m_world.m_broadPhase;
+	b2PairManager$Commit$Lb2PairManager$(this$4.m_pairManager);
 };
 
 b2Body.SetCenterPosition$Lb2Body$Lb2Vec2$N = b2Body$SetCenterPosition$Lb2Body$Lb2Vec2$N;
@@ -6614,14 +6635,14 @@ b2Island.prototype.Solve$Lb2TimeStep$Lb2Vec2$ = function (step, gravity) {
 	var s$0;
 	var a$0;
 	var b$0;
-	var this$1;
-	var a$2;
 	var this$2;
-	var v$1;
+	var a$2;
+	var this$4;
+	var v$2;
 	var s$2;
-	var this$3;
+	var this$6;
 	var s$3;
-	var a$3;
+	var a$4;
 	var v$0$x$0;
 	var v$0$y$0;
 	var m_position$0;
@@ -6636,21 +6657,21 @@ b2Island.prototype.Solve$Lb2TimeStep$Lb2Vec2$ = function (step, gravity) {
 		}
 		this$0 = b.m_linearVelocity;
 		s$3 = step.dt;
-		a$3 = (b$0 = (s$0 = b.m_invMass, a$0 = b.m_force, ({x: s$0 * a$0.x, y: s$0 * a$0.y})), ({x: gravity.x + b$0.x, y: gravity.y + b$0.y}));
-		v$0$x$0 = s$3 * a$3.x;
-		v$0$y$0 = s$3 * a$3.y;
+		a$4 = (b$0 = (s$0 = b.m_invMass, a$0 = b.m_force, ({x: s$0 * a$0.x, y: s$0 * a$0.y})), ({x: gravity.x + b$0.x, y: gravity.y + b$0.y}));
+		v$0$x$0 = s$3 * a$4.x;
+		v$0$y$0 = s$3 * a$4.y;
 		this$0.x += v$0$x$0;
 		this$0.y += v$0$y$0;
 		b.m_angularVelocity += step.dt * b.m_invI * b.m_torque;
-		this$1 = b.m_linearVelocity;
+		this$2 = b.m_linearVelocity;
 		a$2 = b.m_linearDamping;
-		this$1.x *= a$2;
-		this$1.y *= a$2;
+		this$2.x *= a$2;
+		this$2.y *= a$2;
 		b.m_angularVelocity *= b.m_angularDamping;
-		this$2 = b.m_position0;
-		v$1 = b.m_position;
-		this$2.x = v$1.x;
-		this$2.y = v$1.y;
+		this$4 = b.m_position0;
+		v$2 = b.m_position;
+		this$4.x = v$2.x;
+		this$4.y = v$2.y;
 		b.m_rotation0 = b.m_rotation;
 	}
 	contactSolver = new b2ContactSolver(this.m_contacts, this.m_contactCount, this.m_allocator);
@@ -6700,9 +6721,9 @@ b2Island.prototype.Solve$Lb2TimeStep$Lb2Vec2$ = function (step, gravity) {
 		for (s$2 = b.m_shapeList; s$2 != null; s$2 = s$2.m_next) {
 			s$2.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$(b.m_position0, b.sMat0, b.m_position, b.m_R);
 		}
-		this$3 = b.m_force;
-		this$3.x = 0.0;
-		this$3.y = 0.0;
+		this$6 = b.m_force;
+		this$6.x = 0.0;
+		this$6.y = 0.0;
 		b.m_torque = 0.0;
 	}
 };
@@ -6719,14 +6740,14 @@ function b2Island$Solve$Lb2Island$Lb2TimeStep$Lb2Vec2$($this, step, gravity) {
 	var s$0;
 	var a$0;
 	var b$0;
-	var this$1;
-	var a$2;
 	var this$2;
-	var v$1;
+	var a$2;
+	var this$4;
+	var v$2;
 	var s$2;
-	var this$3;
+	var this$6;
 	var s$3;
-	var a$3;
+	var a$4;
 	var v$0$x$0;
 	var v$0$y$0;
 	var m_position$0;
@@ -6741,21 +6762,21 @@ function b2Island$Solve$Lb2Island$Lb2TimeStep$Lb2Vec2$($this, step, gravity) {
 		}
 		this$0 = b.m_linearVelocity;
 		s$3 = step.dt;
-		a$3 = (b$0 = (s$0 = b.m_invMass, a$0 = b.m_force, ({x: s$0 * a$0.x, y: s$0 * a$0.y})), ({x: gravity.x + b$0.x, y: gravity.y + b$0.y}));
-		v$0$x$0 = s$3 * a$3.x;
-		v$0$y$0 = s$3 * a$3.y;
+		a$4 = (b$0 = (s$0 = b.m_invMass, a$0 = b.m_force, ({x: s$0 * a$0.x, y: s$0 * a$0.y})), ({x: gravity.x + b$0.x, y: gravity.y + b$0.y}));
+		v$0$x$0 = s$3 * a$4.x;
+		v$0$y$0 = s$3 * a$4.y;
 		this$0.x += v$0$x$0;
 		this$0.y += v$0$y$0;
 		b.m_angularVelocity += step.dt * b.m_invI * b.m_torque;
-		this$1 = b.m_linearVelocity;
+		this$2 = b.m_linearVelocity;
 		a$2 = b.m_linearDamping;
-		this$1.x *= a$2;
-		this$1.y *= a$2;
+		this$2.x *= a$2;
+		this$2.y *= a$2;
 		b.m_angularVelocity *= b.m_angularDamping;
-		this$2 = b.m_position0;
-		v$1 = b.m_position;
-		this$2.x = v$1.x;
-		this$2.y = v$1.y;
+		this$4 = b.m_position0;
+		v$2 = b.m_position;
+		this$4.x = v$2.x;
+		this$4.y = v$2.y;
 		b.m_rotation0 = b.m_rotation;
 	}
 	contactSolver = new b2ContactSolver($this.m_contacts, $this.m_contactCount, $this.m_allocator);
@@ -6805,9 +6826,9 @@ function b2Island$Solve$Lb2Island$Lb2TimeStep$Lb2Vec2$($this, step, gravity) {
 		for (s$2 = b.m_shapeList; s$2 != null; s$2 = s$2.m_next) {
 			s$2.Synchronize$Lb2Vec2$Lb2Mat22$Lb2Vec2$Lb2Mat22$(b.m_position0, b.sMat0, b.m_position, b.m_R);
 		}
-		this$3 = b.m_force;
-		this$3.x = 0.0;
-		this$3.y = 0.0;
+		this$6 = b.m_force;
+		this$6.x = 0.0;
+		this$6.y = 0.0;
 		b.m_torque = 0.0;
 	}
 };
@@ -7655,14 +7676,14 @@ function b2Contact$Destroy$Lb2Contact$X(contact, allocator) {
 	var type2;
 	var destroyFcn;
 	var this$0;
-	var this$1;
+	var this$2;
 	if (contact.m_manifoldCount > 0) {
 		this$0 = contact.m_shape1.m_body;
 		this$0.m_flags &= -9;
 		this$0.m_sleepTime = 0.0;
-		this$1 = contact.m_shape2.m_body;
-		this$1.m_flags &= -9;
-		this$1.m_sleepTime = 0.0;
+		this$2 = contact.m_shape2.m_body;
+		this$2.m_flags &= -9;
+		this$2.m_sleepTime = 0.0;
 	}
 	type1 = contact.m_shape1.m_type;
 	type2 = contact.m_shape2.m_type;
@@ -8367,6 +8388,8 @@ b2ContactSolver.prototype.SolvePositionConstraints$N = function (beta) {
 	var impulseX;
 	var impulseY;
 	var a$0;
+	var b$0$0;
+	var a$1;
 	var col1$0;
 	var x$0;
 	var col2$0;
@@ -8411,11 +8434,11 @@ b2ContactSolver.prototype.SolvePositionConstraints$N = function (beta) {
 			dpY = p2Y - p1Y;
 			separation = dpX * normalX + dpY * normalY + ccp.separation;
 			minSeparation = (minSeparation < separation ? minSeparation : separation);
-			C = beta * b2Math$b2Clamp$NNN(separation + 0.15, -6, 0.0);
+			C = beta * (a$0 = separation + 0.15, b$0$0 = (a$0 < 0.0 ? a$0 : 0.0), -6 > b$0$0 ? -6 : b$0$0);
 			dImpulse = - ccp.normalMass * C;
 			impulse0 = ccp.positionImpulse;
-			a$0 = impulse0 + dImpulse;
-			positionImpulse$0 = ccp.positionImpulse = (a$0 > 0.0 ? a$0 : 0.0);
+			a$1 = impulse0 + dImpulse;
+			positionImpulse$0 = ccp.positionImpulse = (a$1 > 0.0 ? a$1 : 0.0);
 			dImpulse = positionImpulse$0 - impulse0;
 			impulseX = dImpulse * normalX;
 			impulseY = dImpulse * normalY;
@@ -8473,6 +8496,8 @@ function b2ContactSolver$SolvePositionConstraints$Lb2ContactSolver$N($this, beta
 	var impulseX;
 	var impulseY;
 	var a$0;
+	var b$0$0;
+	var a$1;
 	var col1$0;
 	var x$0;
 	var col2$0;
@@ -8517,11 +8542,11 @@ function b2ContactSolver$SolvePositionConstraints$Lb2ContactSolver$N($this, beta
 			dpY = p2Y - p1Y;
 			separation = dpX * normalX + dpY * normalY + ccp.separation;
 			minSeparation = (minSeparation < separation ? minSeparation : separation);
-			C = beta * b2Math$b2Clamp$NNN(separation + 0.15, -6, 0.0);
+			C = beta * (a$0 = separation + 0.15, b$0$0 = (a$0 < 0.0 ? a$0 : 0.0), -6 > b$0$0 ? -6 : b$0$0);
 			dImpulse = - ccp.normalMass * C;
 			impulse0 = ccp.positionImpulse;
-			a$0 = impulse0 + dImpulse;
-			positionImpulse$0 = ccp.positionImpulse = (a$0 > 0.0 ? a$0 : 0.0);
+			a$1 = impulse0 + dImpulse;
+			positionImpulse$0 = ccp.positionImpulse = (a$1 > 0.0 ? a$1 : 0.0);
 			dImpulse = positionImpulse$0 - impulse0;
 			impulseX = dImpulse * normalX;
 			impulseY = dImpulse * normalY;
@@ -9112,6 +9137,7 @@ function DeviceMotionEventInit() {
 };
 
 $__jsx_extend([DeviceMotionEventInit], EventInit);
+var js$0 = (function () { var global = (function () { return this; }()); return { global: global, eval: global.eval, invoke: function(invocant, methodName, args) { return invocant[methodName].apply(invocant, args); } }; }());
 _Main.PROFILER_URL = "http://localhosrt:5001/post-profile";
 _Main.seed = 0;
 b2Settings.USHRT_MAX = 0x0000ffff;
@@ -9205,17 +9231,16 @@ b2Contact.e_destroyFlag = 0x0002;
 b2Contact.s_registers = null;
 b2Contact.s_initialized = false;
 $__jsx_lazy_init(dom, "window", function () {
-	return js.global.window;
+	return js$0.global.window;
 });
 $__jsx_lazy_init(dom, "document", function () {
-	return js.global.document;
+	return js$0.global.document;
 });
-var js = { global: function () { return this; }() };
 
 var $__jsx_classMap = {
 	"system:lib/built-in.jsx": {
-		g_StopIteration: g_StopIteration,
-		g_StopIteration$: g_StopIteration
+		StopIteration: StopIteration,
+		StopIteration$: StopIteration
 	},
 	"box2d-sample.jsx": {
 		_Main: _Main,

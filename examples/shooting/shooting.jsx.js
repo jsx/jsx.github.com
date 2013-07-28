@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.57 (2013-07-21 09:29:11 -0700; 3116e11459163d65dd09e578fd516f0c532fb30b)
+// generatedy by JSX compiler 0.9.58 (2013-07-27 21:46:01 -0700; 2bb8e3d1b0ce87950d636b3b8662b1a0bd930915)
 var JSX = {};
 (function (JSX) {
 /**
@@ -101,11 +101,11 @@ JSX.resetProfileResults = function () {
 	return $__jsx_profiler.resetResults();
 };
 JSX.DEBUG = false;
-function g_StopIteration() {
+function StopIteration() {
 	Error.call(this);
 };
 
-$__jsx_extend([g_StopIteration], Error);
+$__jsx_extend([StopIteration], Error);
 function Config() {
 };
 
@@ -274,7 +274,7 @@ Rock.prototype.update$LStage$ = function (st) {
 	var next;
 	var context$0;
 	var state$0;
-	var state$1;
+	var state$2;
 	inDisplay = MovingObject$update$LMovingObject$(this);
 	context$0 = st.ctx;
 	context$0.drawImage(this.image, this.x - (this.width >> 1), this.y - (this.height >> 1));
@@ -288,9 +288,9 @@ Rock.prototype.update$LStage$ = function (st) {
 			this.image = st.images[state$0];
 		}
 	} else {
-		state$1 = this.state.substring(0, 5);
-		this.state = state$1;
-		this.image = st.images[state$1];
+		state$2 = this.state.substring(0, 5);
+		this.state = state$2;
+		this.image = st.images[state$2];
 		if (st.state === "gaming" && this.detectCollision$LSprite$(st.ship)) {
 			st.state = "dying";
 			st.dying = 1;
@@ -305,7 +305,7 @@ function Rock$update$LRock$LStage$($this, st) {
 	var next;
 	var context$0;
 	var state$0;
-	var state$1;
+	var state$2;
 	inDisplay = MovingObject$update$LMovingObject$($this);
 	context$0 = st.ctx;
 	context$0.drawImage($this.image, $this.x - ($this.width >> 1), $this.y - ($this.height >> 1));
@@ -319,9 +319,9 @@ function Rock$update$LRock$LStage$($this, st) {
 			$this.image = st.images[state$0];
 		}
 	} else {
-		state$1 = $this.state.substring(0, 5);
-		$this.state = state$1;
-		$this.image = st.images[state$1];
+		state$2 = $this.state.substring(0, 5);
+		$this.state = state$2;
+		$this.image = st.images[state$2];
 		if (st.state === "gaming" && $this.detectCollision$LSprite$(st.ship)) {
 			st.state = "dying";
 			st.dying = 1;
@@ -1385,6 +1385,7 @@ function DeviceMotionEventInit() {
 };
 
 $__jsx_extend([DeviceMotionEventInit], EventInit);
+var js$0 = (function () { var global = (function () { return this; }()); return { global: global, eval: global.eval, invoke: function(invocant, methodName, args) { return invocant[methodName].apply(invocant, args); } }; }());
 Config.cols = 10;
 Config.rows = 15;
 Config.cellWidth = 32;
@@ -1401,17 +1402,16 @@ Config.imagePath = "img";
 Config.canvasId = "stage";
 Config.scoreboardId = "scoreboard";
 $__jsx_lazy_init(dom, "window", function () {
-	return js.global.window;
+	return js$0.global.window;
 });
 $__jsx_lazy_init(dom, "document", function () {
-	return js.global.document;
+	return js$0.global.document;
 });
-var js = { global: function () { return this; }() };
 
 var $__jsx_classMap = {
 	"system:lib/built-in.jsx": {
-		g_StopIteration: g_StopIteration,
-		g_StopIteration$: g_StopIteration
+		StopIteration: StopIteration,
+		StopIteration$: StopIteration
 	},
 	"shooting.jsx": {
 		Config: Config,

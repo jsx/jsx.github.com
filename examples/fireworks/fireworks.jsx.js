@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.57 (2013-07-21 09:29:11 -0700; 3116e11459163d65dd09e578fd516f0c532fb30b)
+// generatedy by JSX compiler 0.9.58 (2013-07-27 21:46:01 -0700; 2bb8e3d1b0ce87950d636b3b8662b1a0bd930915)
 var JSX = {};
 (function (JSX) {
 /**
@@ -101,11 +101,11 @@ JSX.resetProfileResults = function () {
 	return $__jsx_profiler.resetResults();
 };
 JSX.DEBUG = false;
-function g_StopIteration() {
+function StopIteration() {
 	Error.call(this);
 };
 
-$__jsx_extend([g_StopIteration], Error);
+$__jsx_extend([StopIteration], Error);
 function Config() {
 };
 
@@ -786,6 +786,7 @@ function DeviceMotionEventInit() {
 };
 
 $__jsx_extend([DeviceMotionEventInit], EventInit);
+var js$0 = (function () { var global = (function () { return this; }()); return { global: global, eval: global.eval, invoke: function(invocant, methodName, args) { return invocant[methodName].apply(invocant, args); } }; }());
 Config.quantity = 360;
 Config.size = 2.0;
 Config.decay = 0.98;
@@ -795,17 +796,16 @@ Config.canvasId = "night-sky";
 Config.fpsElementId = "fps";
 Spark.rad = 6.283185307179586;
 $__jsx_lazy_init(dom, "window", function () {
-	return js.global.window;
+	return js$0.global.window;
 });
 $__jsx_lazy_init(dom, "document", function () {
-	return js.global.document;
+	return js$0.global.document;
 });
-var js = { global: function () { return this; }() };
 
 var $__jsx_classMap = {
 	"system:lib/built-in.jsx": {
-		g_StopIteration: g_StopIteration,
-		g_StopIteration$: g_StopIteration
+		StopIteration: StopIteration,
+		StopIteration$: StopIteration
 	},
 	"fireworks.jsx": {
 		Config: Config,
