@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.58 (2013-07-27 21:46:01 -0700; 2bb8e3d1b0ce87950d636b3b8662b1a0bd930915)
+// generatedy by JSX compiler 0.9.59 (2013-08-08 21:45:23 +0900; 45c866115f50499f6899410900427d146fd1f06e)
 var JSX = {};
 (function (JSX) {
 /**
@@ -103,6 +103,8 @@ JSX.resetProfileResults = function () {
 JSX.DEBUG = false;
 function StopIteration() {
 	Error.call(this);
+	this.name = "StopIteration";
+	if (Error.captureStackTrace) Error.captureStackTrace(this, StopIteration);
 };
 
 $__jsx_extend([StopIteration], Error);
@@ -598,14 +600,12 @@ Stage.prototype.draw$ = function () {
 	if (this.state === "gaming") {
 		context$0 = this.ctx;
 		context$0.drawImage(ship.image, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
-	} else {
-		if (this.state === "dying") {
-			image$0 = ship.image = this.images["bomb" + (this.dying + "")];
-			context$2 = this.ctx;
-			context$2.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
-			if (++ this.dying > 10) {
-				Stage$initialize$LStage$(this);
-			}
+	} else if (this.state === "dying") {
+		image$0 = ship.image = this.images["bomb" + (this.dying + "")];
+		context$2 = this.ctx;
+		context$2.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
+		if (++ this.dying > 10) {
+			Stage$initialize$LStage$(this);
 		}
 	}
 };
@@ -621,14 +621,12 @@ function Stage$draw$LStage$($this) {
 	if ($this.state === "gaming") {
 		context$0 = $this.ctx;
 		context$0.drawImage(ship.image, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
-	} else {
-		if ($this.state === "dying") {
-			image$0 = ship.image = $this.images["bomb" + ($this.dying + "")];
-			context$2 = $this.ctx;
-			context$2.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
-			if (++ $this.dying > 10) {
-				Stage$initialize$LStage$($this);
-			}
+	} else if ($this.state === "dying") {
+		image$0 = ship.image = $this.images["bomb" + ($this.dying + "")];
+		context$2 = $this.ctx;
+		context$2.drawImage(image$0, ship.x - (ship.width >> 1), ship.y - (ship.height >> 1));
+		if (++ $this.dying > 10) {
+			Stage$initialize$LStage$($this);
 		}
 	}
 };
@@ -915,12 +913,10 @@ Stage.prototype.getPoint$LEvent$ = function (e) {
 		me = e;
 		px = me.clientX;
 		py = me.clientY;
-	} else {
-		if (e instanceof TouchEvent) {
-			te = e;
-			px = te.touches[0].pageX;
-			py = te.touches[0].pageY;
-		}
+	} else if (e instanceof TouchEvent) {
+		te = e;
+		px = te.touches[0].pageX;
+		py = te.touches[0].pageY;
 	}
 	return [ px, py ];
 };
@@ -937,12 +933,10 @@ function Stage$getPoint$LStage$LEvent$($this, e) {
 		me = e;
 		px = me.clientX;
 		py = me.clientY;
-	} else {
-		if (e instanceof TouchEvent) {
-			te = e;
-			px = te.touches[0].pageX;
-			py = te.touches[0].pageY;
-		}
+	} else if (e instanceof TouchEvent) {
+		te = e;
+		px = te.touches[0].pageX;
+		py = te.touches[0].pageY;
 	}
 	return [ px, py ];
 };
@@ -1152,6 +1146,13 @@ function XMLHttpRequestOptions() {
 };
 
 $__jsx_extend([XMLHttpRequestOptions], Object);
+function ScrollOptions() {
+	this.x = 0;
+	this.y = 0;
+	this.behavior = "";
+};
+
+$__jsx_extend([ScrollOptions], Object);
 function TrackEventInit() {
 	this.bubbles = false;
 	this.cancelable = false;
@@ -1181,26 +1182,22 @@ function PageTransitionEventInit() {
 };
 
 $__jsx_extend([PageTransitionEventInit], EventInit);
-function DragEventInit() {
+function ErrorEventInit() {
 	this.bubbles = false;
 	this.cancelable = false;
-	this.view = null;
-	this.detail = 0;
-	this.screenX = 0;
-	this.screenY = 0;
-	this.clientX = 0;
-	this.clientY = 0;
-	this.ctrlKey = false;
-	this.shiftKey = false;
-	this.altKey = false;
-	this.metaKey = false;
-	this.button = 0;
-	this.buttons = 0;
-	this.relatedTarget = null;
+	this.message = "";
+	this.filename = "";
+	this.lineno = 0;
+	this.column = 0;
+};
+
+$__jsx_extend([ErrorEventInit], EventInit);
+function DragEventInit() {
+	MouseEventInit.call(this);
 	this.dataTransfer = null;
 };
 
-$__jsx_extend([DragEventInit], EventInit);
+$__jsx_extend([DragEventInit], MouseEventInit);
 function CloseEventInit() {
 	this.bubbles = false;
 	this.cancelable = false;
@@ -1232,15 +1229,6 @@ function MessageEventInit() {
 };
 
 $__jsx_extend([MessageEventInit], EventInit);
-function ErrorEventInit() {
-	this.bubbles = false;
-	this.cancelable = false;
-	this.message = "";
-	this.filename = "";
-	this.lineno = 0;
-};
-
-$__jsx_extend([ErrorEventInit], EventInit);
 function EventSourceInit() {
 	this.withCredentials = false;
 };
@@ -1456,6 +1444,8 @@ var $__jsx_classMap = {
 		ProgressEventInit$: ProgressEventInit,
 		XMLHttpRequestOptions: XMLHttpRequestOptions,
 		XMLHttpRequestOptions$: XMLHttpRequestOptions,
+		ScrollOptions: ScrollOptions,
+		ScrollOptions$: ScrollOptions,
 		TrackEventInit: TrackEventInit,
 		TrackEventInit$: TrackEventInit,
 		PopStateEventInit: PopStateEventInit,
@@ -1464,6 +1454,8 @@ var $__jsx_classMap = {
 		HashChangeEventInit$: HashChangeEventInit,
 		PageTransitionEventInit: PageTransitionEventInit,
 		PageTransitionEventInit$: PageTransitionEventInit,
+		ErrorEventInit: ErrorEventInit,
+		ErrorEventInit$: ErrorEventInit,
 		DragEventInit: DragEventInit,
 		DragEventInit$: DragEventInit,
 		CloseEventInit: CloseEventInit,
@@ -1472,8 +1464,6 @@ var $__jsx_classMap = {
 		StorageEventInit$: StorageEventInit,
 		MessageEventInit: MessageEventInit,
 		MessageEventInit$: MessageEventInit,
-		ErrorEventInit: ErrorEventInit,
-		ErrorEventInit$: ErrorEventInit,
 		EventSourceInit: EventSourceInit,
 		EventSourceInit$: EventSourceInit,
 		IDBObjectStoreParameters: IDBObjectStoreParameters,

@@ -1,4 +1,4 @@
-// generatedy by JSX compiler 0.9.58 (2013-07-27 21:46:01 -0700; 2bb8e3d1b0ce87950d636b3b8662b1a0bd930915)
+// generatedy by JSX compiler 0.9.59 (2013-08-08 21:45:23 +0900; 45c866115f50499f6899410900427d146fd1f06e)
 var JSX = {};
 (function (JSX) {
 /**
@@ -103,6 +103,8 @@ JSX.resetProfileResults = function () {
 JSX.DEBUG = false;
 function StopIteration() {
 	Error.call(this);
+	this.name = "StopIteration";
+	if (Error.captureStackTrace) Error.captureStackTrace(this, StopIteration);
 };
 
 $__jsx_extend([StopIteration], Error);
@@ -137,7 +139,6 @@ function _Main$drawShape$Lb2Shape$LCanvasRenderingContext2D$(shape, context) {
 	var theta;
 	var dtheta;
 	var i;
-	var d;
 	var ax;
 	var poly;
 	var a$0;
@@ -146,6 +147,8 @@ function _Main$drawShape$Lb2Shape$LCanvasRenderingContext2D$(shape, context) {
 	var v$2;
 	var A$4;
 	var v$4;
+	var d$x$0;
+	var d$y$0;
 	var v$x$0;
 	var v$y$0;
 	var pos2$x$0;
@@ -176,9 +179,10 @@ function _Main$drawShape$Lb2Shape$LCanvasRenderingContext2D$(shape, context) {
 		dtheta = 0.39269908169872414;
 		context.moveTo(pos.x + r, pos.y);
 		for (i = 0; i < segments; i++) {
-			d = ({x: r * Math.cos(theta), y: r * Math.sin(theta)});
-			v$x$0 = pos.x + d.x;
-			v$y$0 = pos.y + d.y;
+			d$x$0 = r * Math.cos(theta);
+			d$y$0 = r * Math.sin(theta);
+			v$x$0 = pos.x + d$x$0;
+			v$y$0 = pos.y + d$y$0;
 			context.lineTo(v$x$0, v$y$0);
 			theta += dtheta;
 		}
@@ -2589,12 +2593,10 @@ function b2BroadPhase$BinarySearch$ALb2Bound$NN(bounds, count, value) {
 		mid = Math.floor((low + high) / 2);
 		if (bounds[mid].value > value) {
 			high = mid - 1;
+		} else if (bounds[mid].value < value) {
+			low = mid + 1;
 		} else {
-			if (bounds[mid].value < value) {
-				low = mid + 1;
-			} else {
-				return mid;
-			}
+			return mid;
 		}
 	}
 	return low;
@@ -2780,15 +2782,13 @@ function b2Collision$FindMaxSeparation$ANLb2PolyShape$Lb2PolyShape$B(edgeIndex, 
 		increment = -1;
 		bestEdge = prevEdge;
 		bestSeparation = sPrev;
+	} else if (sNext > s) {
+		increment = 1;
+		bestEdge = nextEdge;
+		bestSeparation = sNext;
 	} else {
-		if (sNext > s) {
-			increment = 1;
-			bestEdge = nextEdge;
-			bestSeparation = sNext;
-		} else {
-			edgeIndex[0] = edge;
-			return s;
-		}
+		edgeIndex[0] = edge;
+		return s;
 	}
 	while (true) {
 		if (increment === -1) {
@@ -3295,16 +3295,14 @@ function b2Collision$b2CollidePolyAndCircle$Lb2Manifold$Lb2PolyShape$Lb2CircleSh
 		pX = (m_vertices$3 = poly.m_vertices)[vertIndex1].x;
 		pY = m_vertices$3[vertIndex1].y;
 		tPoint.id.features.incidentVertex = vertIndex1;
+	} else if (u >= length) {
+		pX = (m_vertices$4 = poly.m_vertices)[vertIndex2].x;
+		pY = m_vertices$4[vertIndex2].y;
+		tPoint.id.features.incidentVertex = vertIndex2;
 	} else {
-		if (u >= length) {
-			pX = (m_vertices$4 = poly.m_vertices)[vertIndex2].x;
-			pY = m_vertices$4[vertIndex2].y;
-			tPoint.id.features.incidentVertex = vertIndex2;
-		} else {
-			pX = eX * u + (m_vertices$5 = poly.m_vertices)[vertIndex1].x;
-			pY = eY * u + m_vertices$5[vertIndex1].y;
-			tPoint.id.features.incidentEdge = vertIndex1;
-		}
+		pX = eX * u + (m_vertices$5 = poly.m_vertices)[vertIndex1].x;
+		pY = eY * u + m_vertices$5[vertIndex1].y;
+		tPoint.id.features.incidentEdge = vertIndex1;
 	}
 	dX = xLocalX - pX;
 	dY = xLocalY - pY;
@@ -3674,11 +3672,9 @@ b2PairManager.prototype.Commit$ = function () {
 			(m_pairBuffer$1 = this.m_pairBuffer)[removeCount].proxyId1 = pair.proxyId1;
 			m_pairBuffer$1[removeCount].proxyId2 = pair.proxyId2;
 			++ removeCount;
-		} else {
-			if (((pair.status & 0x0004) === 0x0004) === false) {
-				pair.userData = this.m_callback.PairAdded$XX(proxy1.userData, proxy2.userData);
-				pair.status |= 0x0004;
-			}
+		} else if (((pair.status & 0x0004) === 0x0004) === false) {
+			pair.userData = this.m_callback.PairAdded$XX(proxy1.userData, proxy2.userData);
+			pair.status |= 0x0004;
 		}
 	}
 	for (i = 0; i < removeCount; ++ i) {
@@ -3726,11 +3722,9 @@ function b2PairManager$Commit$Lb2PairManager$($this) {
 			(m_pairBuffer$1 = $this.m_pairBuffer)[removeCount].proxyId1 = pair.proxyId1;
 			m_pairBuffer$1[removeCount].proxyId2 = pair.proxyId2;
 			++ removeCount;
-		} else {
-			if (((pair.status & 0x0004) === 0x0004) === false) {
-				pair.userData = $this.m_callback.PairAdded$XX(proxy1.userData, proxy2.userData);
-				pair.status |= 0x0004;
-			}
+		} else if (((pair.status & 0x0004) === 0x0004) === false) {
+			pair.userData = $this.m_callback.PairAdded$XX(proxy1.userData, proxy2.userData);
+			pair.status |= 0x0004;
 		}
 	}
 	for (i = 0; i < removeCount; ++ i) {
@@ -6465,35 +6459,33 @@ b2ContactManager.prototype.Collide$ = function () {
 				node2.next.prev = node2;
 			}
 			body2.m_contactList = node2;
-		} else {
-			if (oldCount > 0 && newCount === 0) {
-				body1 = c.m_shape1.m_body;
-				body2 = c.m_shape2.m_body;
-				node1 = c.m_node1;
-				node2 = c.m_node2;
-				if (node1.prev != null) {
-					node1.prev.next = node1.next;
-				}
-				if (node1.next != null) {
-					node1.next.prev = node1.prev;
-				}
-				if (node1 == body1.m_contactList) {
-					body1.m_contactList = node1.next;
-				}
-				node1.prev = null;
-				node1.next = null;
-				if (node2.prev != null) {
-					node2.prev.next = node2.next;
-				}
-				if (node2.next != null) {
-					node2.next.prev = node2.prev;
-				}
-				if (node2 == body2.m_contactList) {
-					body2.m_contactList = node2.next;
-				}
-				node2.prev = null;
-				node2.next = null;
+		} else if (oldCount > 0 && newCount === 0) {
+			body1 = c.m_shape1.m_body;
+			body2 = c.m_shape2.m_body;
+			node1 = c.m_node1;
+			node2 = c.m_node2;
+			if (node1.prev != null) {
+				node1.prev.next = node1.next;
 			}
+			if (node1.next != null) {
+				node1.next.prev = node1.prev;
+			}
+			if (node1 == body1.m_contactList) {
+				body1.m_contactList = node1.next;
+			}
+			node1.prev = null;
+			node1.next = null;
+			if (node2.prev != null) {
+				node2.prev.next = node2.next;
+			}
+			if (node2.next != null) {
+				node2.next.prev = node2.prev;
+			}
+			if (node2 == body2.m_contactList) {
+				body2.m_contactList = node2.next;
+			}
+			node2.prev = null;
+			node2.next = null;
 		}
 	}
 };
@@ -6539,35 +6531,33 @@ function b2ContactManager$Collide$Lb2ContactManager$($this) {
 				node2.next.prev = node2;
 			}
 			body2.m_contactList = node2;
-		} else {
-			if (oldCount > 0 && newCount === 0) {
-				body1 = c.m_shape1.m_body;
-				body2 = c.m_shape2.m_body;
-				node1 = c.m_node1;
-				node2 = c.m_node2;
-				if (node1.prev != null) {
-					node1.prev.next = node1.next;
-				}
-				if (node1.next != null) {
-					node1.next.prev = node1.prev;
-				}
-				if (node1 == body1.m_contactList) {
-					body1.m_contactList = node1.next;
-				}
-				node1.prev = null;
-				node1.next = null;
-				if (node2.prev != null) {
-					node2.prev.next = node2.next;
-				}
-				if (node2.next != null) {
-					node2.next.prev = node2.prev;
-				}
-				if (node2 == body2.m_contactList) {
-					body2.m_contactList = node2.next;
-				}
-				node2.prev = null;
-				node2.next = null;
+		} else if (oldCount > 0 && newCount === 0) {
+			body1 = c.m_shape1.m_body;
+			body2 = c.m_shape2.m_body;
+			node1 = c.m_node1;
+			node2 = c.m_node2;
+			if (node1.prev != null) {
+				node1.prev.next = node1.next;
 			}
+			if (node1.next != null) {
+				node1.next.prev = node1.prev;
+			}
+			if (node1 == body1.m_contactList) {
+				body1.m_contactList = node1.next;
+			}
+			node1.prev = null;
+			node1.next = null;
+			if (node2.prev != null) {
+				node2.prev.next = node2.next;
+			}
+			if (node2.next != null) {
+				node2.next.prev = node2.prev;
+			}
+			if (node2 == body2.m_contactList) {
+				body2.m_contactList = node2.next;
+			}
+			node2.prev = null;
+			node2.next = null;
 		}
 	}
 };
@@ -8904,6 +8894,13 @@ function XMLHttpRequestOptions() {
 };
 
 $__jsx_extend([XMLHttpRequestOptions], Object);
+function ScrollOptions() {
+	this.x = 0;
+	this.y = 0;
+	this.behavior = "";
+};
+
+$__jsx_extend([ScrollOptions], Object);
 function TrackEventInit() {
 	this.bubbles = false;
 	this.cancelable = false;
@@ -8933,26 +8930,22 @@ function PageTransitionEventInit() {
 };
 
 $__jsx_extend([PageTransitionEventInit], EventInit);
-function DragEventInit() {
+function ErrorEventInit() {
 	this.bubbles = false;
 	this.cancelable = false;
-	this.view = null;
-	this.detail = 0;
-	this.screenX = 0;
-	this.screenY = 0;
-	this.clientX = 0;
-	this.clientY = 0;
-	this.ctrlKey = false;
-	this.shiftKey = false;
-	this.altKey = false;
-	this.metaKey = false;
-	this.button = 0;
-	this.buttons = 0;
-	this.relatedTarget = null;
+	this.message = "";
+	this.filename = "";
+	this.lineno = 0;
+	this.column = 0;
+};
+
+$__jsx_extend([ErrorEventInit], EventInit);
+function DragEventInit() {
+	MouseEventInit.call(this);
 	this.dataTransfer = null;
 };
 
-$__jsx_extend([DragEventInit], EventInit);
+$__jsx_extend([DragEventInit], MouseEventInit);
 function CloseEventInit() {
 	this.bubbles = false;
 	this.cancelable = false;
@@ -8984,15 +8977,6 @@ function MessageEventInit() {
 };
 
 $__jsx_extend([MessageEventInit], EventInit);
-function ErrorEventInit() {
-	this.bubbles = false;
-	this.cancelable = false;
-	this.message = "";
-	this.filename = "";
-	this.lineno = 0;
-};
-
-$__jsx_extend([ErrorEventInit], EventInit);
 function EventSourceInit() {
 	this.withCredentials = false;
 };
@@ -9456,6 +9440,8 @@ var $__jsx_classMap = {
 		ProgressEventInit$: ProgressEventInit,
 		XMLHttpRequestOptions: XMLHttpRequestOptions,
 		XMLHttpRequestOptions$: XMLHttpRequestOptions,
+		ScrollOptions: ScrollOptions,
+		ScrollOptions$: ScrollOptions,
 		TrackEventInit: TrackEventInit,
 		TrackEventInit$: TrackEventInit,
 		PopStateEventInit: PopStateEventInit,
@@ -9464,6 +9450,8 @@ var $__jsx_classMap = {
 		HashChangeEventInit$: HashChangeEventInit,
 		PageTransitionEventInit: PageTransitionEventInit,
 		PageTransitionEventInit$: PageTransitionEventInit,
+		ErrorEventInit: ErrorEventInit,
+		ErrorEventInit$: ErrorEventInit,
 		DragEventInit: DragEventInit,
 		DragEventInit$: DragEventInit,
 		CloseEventInit: CloseEventInit,
@@ -9472,8 +9460,6 @@ var $__jsx_classMap = {
 		StorageEventInit$: StorageEventInit,
 		MessageEventInit: MessageEventInit,
 		MessageEventInit$: MessageEventInit,
-		ErrorEventInit: ErrorEventInit,
-		ErrorEventInit$: ErrorEventInit,
 		EventSourceInit: EventSourceInit,
 		EventSourceInit$: EventSourceInit,
 		IDBObjectStoreParameters: IDBObjectStoreParameters,
