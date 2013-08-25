@@ -162,15 +162,8 @@ var m2 = {                     // m2 is Map.<string>
 EOT
 ?>
 <p>
-Functions can only be instantiated by using the <code>function</code> expression.
+Variables of the <code>Function</code> class can only be instantiated as a static function or by using function expression or function statement (the details are described laterwards).
 </p>
-<?= $context->{prettify}->('jsx', <<'EOT')
-var doubleIt = function (n : number) : number {
-  return n * 2;
-};
-var doubled = [ 1, 2, 3 ].map(doubleIt);  // returns [ 2, 4, 6 ]
-EOT
-?>
 <h3 id="variant-type">The Variant Type</h3>
 <p>
 Variant type, which means "no static type information," is useful for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.
@@ -228,6 +221,98 @@ When the source code is compiled in debug mode (which is the default), the compi
 Please refer to the <a href="doc/typeref.html">Types</a> section of the language reference for more information.
 </p>
 
+<h2 id="expressions">Expressions</h2>
+
+<p>
+<em>The definitions of operators in JSX are almost equivalent to JavaScript</em>, however there are few exceptions.
+</p>
+
+<ul>
+<li>
+arithmetic operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>...) only accept numbers as the operands
+<?= $context->{prettify}->('jsx', <<'EOT')
+var a = 3;
+a + 1;      // OK, returns 4
+a * a;      // OK, returns 9
+a + "abc";  // compile error
+EOT
+?>
+<div class="note">Note: concatenation operator <code>+</code> exists for concatenation of strings</div>
+</li>
+<li>the dot property accessor can only access the defined properties
+<?= $context->{prettify}->('jsx', <<'EOT')
+class Point {
+    var x : number;
+    var y : number;
+    function print() : void {
+        log this.z;             // compile error! no property named z
+    }
+}
+EOT
+?>
+</li>
+<li>the [] property accessor can only be applied to values of type <code>Map</code> or <code>variant</code>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var m = {            // m is Map.<string>
+    hello: "world!"
+};
+log m["hello"];      // OK
+log m.hello;         // compile error!
+EOT
+?>
+</li>
+<li>introduction of the <code>as</code> operator, used for type conversion between primitive types / casting object types
+<?= $context->{prettify}->('jsx', <<'EOT')
+var n = 123;
+var s = "value of n is " + (n as string);
+log s;               // print "value of n is 123"
+EOT
+?>
+</li>
+<li>logical operators (<code>&&</code>, <code>||</code>) returns boolean, and the introduction of binary <code>?:</code> operator as the equivalent to the <code>||</code> operator of JavaScript</li>
+</ul>
+<p>
+A complete list of operators can be found in the <a href="doc/operatorref.html">Operator Reference</a>.
+</p>
+
+<h2 id="statements">Statements</h2>
+
+<p>
+<em>JSX supports most of the statement types provided by JavaScript.</em>  The exceptions are:</p>
+<ul>
+<li>log statement
+<?= $context->{prettify}->('jsx', << 'EOT')
+log "hello, world";    // log strings to console, can turned off with compile option: --release
+EOT
+?>
+</li>
+<li>assert statement
+<?= $context->{prettify}->('jsx', << 'EOT')
+var n = 123;
+assert n != 0;         // assertions.  also can be turned off with --release
+EOT
+?>
+<li>try-catch-finally statement
+<?= $context->{prettify}->('jsx', << 'EOT')
+try {
+    ...
+} catch (e : TypeError) {
+    // got TypeError
+} catch (e : Error) {
+    // got Error, which is not TypeError
+} catch (e : variant) {
+    // applications may throw any kind of value
+} finally {
+    ...
+}
+EOT
+?>
+</li>
+<li>no <code>with</code> statement</li>
+</ul>
+<p>
+A complete list of statements can be found in the <a href="doc/statementref.html">Statement Reference</a>.
+</p>
 <h2 id="classes-and-interfaces">Classes and Interfaces</h2>
 <p>
 JSX is a class-based object-oriented language, and its class model is similar to Java.
@@ -319,7 +404,7 @@ class _Main {
 EOT
 ?>
 <p>
-Type annocations of function expressions / statements may be omitted if they can be inferred by the compiler.  In the exmaple below, both the type of the argument <code>n</code> and the return type of the function expression is inferred from the definition of <code>Array#map</code> to be <code>number<code>.
+Type annocations of function expressions / statements may be omitted if they can be inferred by the compiler.  In the exmaple below, both the type of the argument <code>n</code> and the return type of the function expression is inferred from the definition of <code>Array#map</code> to be <code>number</code>.
 </p>
 <?= $context->{prettify}->('jsx', <<'EOT')
 var doubled = [ 1, 2, 3 ].map(function (n) {
