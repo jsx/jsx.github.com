@@ -110,33 +110,107 @@ You might be surprised at multiple definition of constructors: one takes no para
 Other forms of construction, e.g. <code>new Point(42)</code> or <code>new Point("foo", "bar")</code> will cause compilation errors of mismatching signatures. The <code>Point#set()</code> functions are also overloaded and the compiler know how to call the correct one.
 </p>
 
-<h2 id="static-types">Static Types</h2>
+<h2 id="static-typing">Static Typing</h2>
 <p>
 Basic type concept will be described in this section.  Primitive types, object types, variant type, and Nullable types exist in JSX.
 </p>
+<h3 id="primitive-types">Pritimive Types</h3>
 <p>
-Primitive types, e.g. <code>string</code>, <code>boolean</code>, or <code>number</code> are non-nullable, immutable types.
+There are three pritimive types in JSX: <code>string</code>, <code>number</code>, and <code>boolean</code>.  The three are non-nullable, immutable types.  The code snippet below declares three variables <code>s</code>, <code>n</code>, <code>b</code> with their repective types, annocated to the right of the name of the variables using the <code>:</code> mark.
 </p>
 <?= $context->{prettify}->('jsx', <<'EOT')
-var s : string = "hello";
-var n : number = 42;
-var b : boolean = true;
+var s : string;
+var n : number;
+var b : boolean;
 EOT
 ?>
 <p>
-Object types, e.g. <code>string[]</code> (array of string), functions or <code>Date</code>, are nullable, mutable types.</p>
+Type annotations can be omitted when a variable is initialized at the same moment of declaration.
+</p>
 <?= $context->{prettify}->('jsx', <<'EOT')
-var d : Date = new Date(); // Date
-var f : function():void = function() : void { log "Hi!"; };
-var a : string[] = ["foo"]; // string[] is an alias to Array.<string>;
+var s = "hello";  // s is string, initialized as "hello"
+var n = 42;       // n is number, initialized as 42
+var b = true;     // b is boolean, initialized as true
+EOT
+?>
+<h3 id="object-types">Object Types</h3>
+<p>
+Object types are types of values to hold reference to objects - which are instances of classes.  For example, functions, <code>string[]</code> (array of strings), <code>Date</code> are all object types.  Whether they are mutable or not depends on the definition of each class.
+</p>
+<p>
+Most of the objects (values of object types) are constructed using the <code>new</code> operator.
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var d = new Date();            // instantiate an object of class Date
+var a = new Array.<string>();  // instantiate an array of string
+var m = new Map.<number>();    // instantiate an associative map of strings to numbers
 EOT
 ?>
 <p>
-Variant type, which means "no static type information," is used for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.
+<code>Array</code> and <code>Map</code> types can also be instatiated by using their initializer expressions.
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var a1 = [] : Array.<string>;  // a1 is Array.<string>, and is empty
+var a2 = [ 1, 2, 3 ];          // a2 is Array.<number> with three elements
+
+var m1 : {} : May.<number>;    // m1 is Map.<number>
+var m2 = {                     // m2 is Map.<string>
+  en: "Good morning",
+  de: "Guten Morgen",
+  ja: "おはようございます"
+};
+EOT
+?>
+<p>
+Functions can only be instantiated by using the <code>function</code> expression.
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var doubleIt = function (n : number) : number {
+  return n * 2;
+};
+var doubled = [ 1, 2, 3 ].map(doubleIt);  // returns [ 2, 4, 6 ]
+EOT
+?>
+<h3 id="variant-type">The Variant Type</h3>
+<p>
+Variant type, which means "no static type information," is useful for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.
 All you can do on variant values is to check equality of a variant value to another variant value. You have to cast it to another type before doing anything else on the value.
 </p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+function guessTheType(v : variant) : void {
+    if (typeof v == "string") {
+        log "v is string and the value is:" + v as string;
+    } else {
+        log "v is not string";
+    }
+}
+EOT
+?>
+<h3 id="nullable-types">Nullable Types</h3>
 <p>
-Nullable type is a meta type which indicates a value may be null.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>Nullable.&lt;string&gt;</code>. When you use a Nullable value, you have to make sure of the value is not null.  Only primitive types can be marked Nullable.  Object types and variants are nullable by default.</p>
+Nullable type is a meta type which indicates a value may be null.  It is prohibited to assign <code>null</code> to the primitive types (note: Object types are nullable by default).  <code>Nullable</code> types should instead be used for such purposes.
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var s1 : string;
+s1 = "abc";       // ok
+s1 = null;        // compile error!  cannot assign null to string
+
+var s2 : Nullable.<string>;
+s2 = "abc";       // ok
+s2 = null;        // ok
+EOT
+?>
+<p>
+The most prominent use case of <code>Nullable</code> types is when interacting with an array.  For example, an out-of-bounds access to an array returns <code>null</code>.
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var a = [ 1, 2, 3 ]; // creates Array.<number> with three elements
+a[3];                // out-of-bounds access, returns null
+EOT
+?>
+<p>
+There are APIs that return <code>Nullable</code> types also exists.  For example, the return type of <code>Array.&lt;string&gt;#shift()</code> is <code>Nullable.&lt;string&gt;</code>. When you use a Nullable value, you have to make sure of the value is not null.
+</p>
 <?= $context->{prettify}->('jsx', <<'EOT')
 function shiftOrReturnEmptyString(args : string[]) : string {
     if (args.length > 0)
@@ -149,6 +223,10 @@ EOT
 <div class="note">
 When the source code is compiled in debug mode (which is the default), the compiler will insert run-time type-checking code.  An exception will be raised (or the debugger will be activated) when misuse of a null value as actual value is detected.  Run-time type checks can be omitted by compiling the source code with the <code>--release</code> option.
 </div>
+
+<p>
+Please refer to the <a href="doc/typeref.html">Types</a> section of the language reference for more information.
+</p>
 
 <h2 id="classes-and-interfaces">Classes and Interfaces</h2>
 <p>
@@ -220,7 +298,7 @@ When overriding a member function, the use the <code>override</code> keyword is 
 <p>
 In JSX, functions are first-class objects and they have static types.  You can declare a variable of a function type like <code>var f : function(arg : number) : number</code>, a function that takes a number as an argument and returns another number (or, just returns the same value as the argument; but it's not important here). The variable <code>f</code> can be called as <code>f(42)</code> from which you will get a number value.
 </p>
-It is possible to define closures (or anonymous functions).   They are typically used to implement event listeners, which are popular in GUI programming.  Closures are similar to JavaScript except for what <code>this</code> points at: when a closure is defined within a member function, it refers to the receiver of the member function.  See the following example.
+It is possible to define closures using the <code>function</code> expression or the <code>function</code> statement.   They are typically used to implement callbacks ore event listeners which are popular in GUI programming.  Closures are similar to JavaScript except for what <code>this</code> points at: when a closure is defined within a member function, it refers to the receiver of the member function.  See the following example.
 </p>
 <?= $context->{prettify}->('jsx', <<'EOT')
 class _Main {
@@ -238,6 +316,15 @@ class _Main {
         var o = new _Main();
     }
 }
+EOT
+?>
+<p>
+Type annocations of function expressions / statements may be omitted if they can be inferred by the compiler.  In the exmaple below, both the type of the argument <code>n</code> and the return type of the function expression is inferred from the definition of <code>Array#map</code> to be <code>number<code>.
+</p>
+<?= $context->{prettify}->('jsx', <<'EOT')
+var doubled = [ 1, 2, 3 ].map(function (n) {
+    return n * 2;
+});
 EOT
 ?>
 
