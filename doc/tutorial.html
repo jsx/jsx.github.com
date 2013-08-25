@@ -202,13 +202,8 @@ var m2 = {                     // m2 is Map.&lt;string&gt;
 };
 </code></pre>
 <p>
-Functions can only be instantiated by using the <code>function</code> expression.
+Variables of the <code>Function</code> class can only be instantiated as a static function or by using function expression or function statement (the details are described laterwards).
 </p>
-<pre class="prettyprint"><code class="language-jsx">var doubleIt = function (n : number) : number {
-  return n * 2;
-};
-var doubled = [ 1, 2, 3 ].map(doubleIt);  // returns [ 2, 4, 6 ]
-</code></pre>
 <h3 id="variant-type">The Variant Type</h3>
 <p>
 Variant type, which means "no static type information," is useful for interacting with existing JavaScript APIs.  Some JavaScript libraries may return a variant value, which type cannot be determined at compile time.
@@ -258,6 +253,84 @@ When the source code is compiled in debug mode (which is the default), the compi
 Please refer to the <a href="doc/typeref.html">Types</a> section of the language reference for more information.
 </p>
 
+<h2 id="expressions">Expressions</h2>
+
+<p>
+<em>The definitions of operators in JSX are almost equivalent to JavaScript</em>, however there are few exceptions.
+</p>
+
+<ul>
+<li>
+arithmetic operators (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>...) only accept numbers as the operands
+<pre class="prettyprint"><code class="language-jsx">var a = 3;
+a + 1;      // OK, returns 4
+a * a;      // OK, returns 9
+a + &quot;abc&quot;;  // compile error
+</code></pre>
+<div class="note">Note: concatenation operator <code>+</code> exists for concatenation of strings</div>
+</li>
+<li>the dot property accessor can only access the defined properties
+<pre class="prettyprint"><code class="language-jsx">class Point {
+    var x : number;
+    var y : number;
+    function print() : void {
+        log this.z;             // compile error! no property named z
+    }
+}
+</code></pre>
+</li>
+<li>the [] property accessor can only be applied to values of type <code>Map</code> or <code>variant</code>
+<pre class="prettyprint"><code class="language-jsx">var m = {            // m is Map.&lt;string&gt;
+    hello: &quot;world!&quot;
+};
+log m[&quot;hello&quot;];      // OK
+log m.hello;         // compile error!
+</code></pre>
+</li>
+<li>introduction of the <code>as</code> operator, used for type conversion between primitive types / casting object types
+<pre class="prettyprint"><code class="language-jsx">var n = 123;
+var s = &quot;value of n is &quot; + (n as string);
+log s;               // print &quot;value of n is 123&quot;
+</code></pre>
+</li>
+<li>logical operators (<code>&&</code>, <code>||</code>) returns boolean, and the introduction of binary <code>?:</code> operator as the equivalent to the <code>||</code> operator of JavaScript</li>
+</ul>
+<p>
+A complete list of operators can be found in the <a href="doc/operatorref.html">Operator Reference</a>.
+</p>
+
+<h2 id="statements">Statements</h2>
+
+<p>
+<em>JSX supports most of the statement types provided by JavaScript.</em>  The exceptions are:</p>
+<ul>
+<li>log statement
+<pre class="prettyprint"><code class="language-jsx">log &quot;hello, world&quot;;    // log strings to console, can turned off with compile option: --release
+</code></pre>
+</li>
+<li>assert statement
+<pre class="prettyprint"><code class="language-jsx">var n = 123;
+assert n != 0;         // assertions.  also can be turned off with --release
+</code></pre>
+<li>try-catch-finally statement
+<pre class="prettyprint"><code class="language-jsx">try {
+    ...
+} catch (e : TypeError) {
+    // got TypeError
+} catch (e : Error) {
+    // got Error, which is not TypeError
+} catch (e : variant) {
+    // applications may throw any kind of value
+} finally {
+    ...
+}
+</code></pre>
+</li>
+<li>no <code>with</code> statement</li>
+</ul>
+<p>
+A complete list of statements can be found in the <a href="doc/statementref.html">Statement Reference</a>.
+</p>
 <h2 id="classes-and-interfaces">Classes and Interfaces</h2>
 <p>
 JSX is a class-based object-oriented language, and its class model is similar to Java.
@@ -345,7 +418,7 @@ It is possible to define closures using the <code>function</code> expression or 
 }
 </code></pre>
 <p>
-Type annocations of function expressions / statements may be omitted if they can be inferred by the compiler.  In the exmaple below, both the type of the argument <code>n</code> and the return type of the function expression is inferred from the definition of <code>Array#map</code> to be <code>number<code>.
+Type annocations of function expressions / statements may be omitted if they can be inferred by the compiler.  In the exmaple below, both the type of the argument <code>n</code> and the return type of the function expression is inferred from the definition of <code>Array#map</code> to be <code>number</code>.
 </p>
 <pre class="prettyprint"><code class="language-jsx">var doubled = [ 1, 2, 3 ].map(function (n) {
     return n * 2;
