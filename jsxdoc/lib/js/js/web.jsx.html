@@ -91,7 +91,7 @@ same as <code>dom.document.createElement(id)</code>, except returns
 <div class="class" id="class-DOMException">
 <h2>final native class <strong>DOMException</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -407,9 +407,9 @@ new <strong>DOMException</strong>()
 </div>
 </div>
 <div class="class" id="class-DOMError">
-<h2>final native class <strong>DOMError</strong></h2>
+<h2>native class <strong>DOMError</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -417,9 +417,21 @@ __readonly__ var <strong>name</strong> : string
 </h3>
 
 </div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>message</strong> : string
+</h3>
+
+</div>
 <div class="member function">
 <h3>
-new <strong>DOMError</strong>()
+new <strong>DOMError</strong>(name : string)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMError</strong>(name : string, message : string)
 </h3>
 
 </div>
@@ -434,7 +446,7 @@ new <strong>DOMError</strong>()
 __readonly__ var <strong>type</strong> : string
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -442,7 +454,7 @@ __readonly__ var <strong>type</strong> : string
 __readonly__ var <strong>target</strong> : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -450,7 +462,7 @@ __readonly__ var <strong>target</strong> : <a href="lib/js/js/web.jsx.html#class
 __readonly__ var <strong>currentTarget</strong> : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -458,7 +470,7 @@ __readonly__ var <strong>currentTarget</strong> : <a href="lib/js/js/web.jsx.htm
 static __readonly__ var <strong>NONE</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -466,7 +478,7 @@ static __readonly__ var <strong>NONE</strong> : number
 __readonly__ var <strong>NONE</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -474,7 +486,7 @@ __readonly__ var <strong>NONE</strong> : number
 static __readonly__ var <strong>CAPTURING_PHASE</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -482,7 +494,7 @@ static __readonly__ var <strong>CAPTURING_PHASE</strong> : number
 __readonly__ var <strong>CAPTURING_PHASE</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -490,7 +502,7 @@ __readonly__ var <strong>CAPTURING_PHASE</strong> : number
 static __readonly__ var <strong>AT_TARGET</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -498,7 +510,7 @@ static __readonly__ var <strong>AT_TARGET</strong> : number
 __readonly__ var <strong>AT_TARGET</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -506,7 +518,7 @@ __readonly__ var <strong>AT_TARGET</strong> : number
 static __readonly__ var <strong>BUBBLING_PHASE</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -514,7 +526,7 @@ static __readonly__ var <strong>BUBBLING_PHASE</strong> : number
 __readonly__ var <strong>BUBBLING_PHASE</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -522,7 +534,7 @@ __readonly__ var <strong>BUBBLING_PHASE</strong> : number
 __readonly__ var <strong>eventPhase</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -530,7 +542,7 @@ __readonly__ var <strong>eventPhase</strong> : number
 __readonly__ var <strong>bubbles</strong> : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -538,7 +550,7 @@ __readonly__ var <strong>bubbles</strong> : boolean
 __readonly__ var <strong>cancelable</strong> : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -546,7 +558,7 @@ __readonly__ var <strong>cancelable</strong> : boolean
 __readonly__ var <strong>defaultPrevented</strong> : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -554,7 +566,7 @@ __readonly__ var <strong>defaultPrevented</strong> : boolean
 __readonly__ var <strong>isTrusted</strong> : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -562,7 +574,7 @@ __readonly__ var <strong>isTrusted</strong> : boolean
 __readonly__ var <strong>timeStamp</strong> : number
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -570,7 +582,7 @@ __readonly__ var <strong>timeStamp</strong> : number
 new <strong>Event</strong>(type : string)
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -578,8 +590,14 @@ new <strong>Event</strong>(type : string)
 new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a>)
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
+</div>
+<div class="member function">
+<h3>
+new <strong>Event</strong>()
+</h3>
+
 </div>
 <div class="member function">
 <h3>
@@ -587,7 +605,7 @@ new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -596,7 +614,7 @@ new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -605,7 +623,7 @@ new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -614,7 +632,7 @@ new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 </div>
@@ -626,7 +644,7 @@ new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web
  var <strong>bubbles</strong> : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member property">
@@ -634,7 +652,7 @@ new <strong>Event</strong>(type : string, eventInitDict : <a href="lib/js/js/web
  var <strong>cancelable</strong> : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -654,7 +672,7 @@ new <strong>EventInit</strong>()
 __readonly__ var <strong>detail</strong> : variant
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -662,7 +680,7 @@ __readonly__ var <strong>detail</strong> : variant
 new <strong>CustomEvent</strong>(type : string)
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -670,15 +688,23 @@ new <strong>CustomEvent</strong>(type : string)
 new <strong>CustomEvent</strong>(type : string, eventInitDict : <a href="lib/js/js/web.jsx.html#class-CustomEventInit">CustomEventInit</a>)
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
 <h3>
- function <strong>initCustomEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, detailArg : variant)
- : void
+new <strong>CustomEvent</strong>()
 </h3>
 
+</div>
+<div class="member function">
+<h3>
+ function <strong>initCustomEvent</strong>(type : string, bubbles : boolean, cancelable : boolean, detail : variant)
+ : void
+</h3>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
+</ul>
 </div>
 </div>
 <div class="class" id="class-CustomEventInit">
@@ -689,7 +715,7 @@ new <strong>CustomEvent</strong>(type : string, eventInitDict : <a href="lib/js/
  var <strong>detail</strong> : variant
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -716,7 +742,7 @@ new <strong>EventTarget</strong>()
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -725,7 +751,7 @@ new <strong>EventTarget</strong>()
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -734,7 +760,7 @@ new <strong>EventTarget</strong>()
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -743,7 +769,7 @@ new <strong>EventTarget</strong>()
  : void
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 </div>
 <div class="member function">
@@ -752,14 +778,236 @@ new <strong>EventTarget</strong>()
  : boolean
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
+</div>
+</div>
+<div class="class" id="class-ParentNode">
+<h2>native class <strong>ParentNode</strong></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>children</strong> : <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>firstElementChild</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>lastElementChild</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>childElementCount</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>ParentNode</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>prepend</strong>(nodes : ...<a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>prepend</strong>(nodes : ...string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>append</strong>(nodes : ...<a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>append</strong>(nodes : ...string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>query</strong>(relativeSelectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>queryAll</strong>(relativeSelectors : string)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-Element">Element</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>querySelector</strong>(selectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>querySelectorAll</strong>(selectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ChildNode">
+<h2>native class <strong>ChildNode</strong></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>previousElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>nextElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>ChildNode</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>before</strong>(nodes : ...<a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>before</strong>(nodes : ...string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>after</strong>(nodes : ...<a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>after</strong>(nodes : ...string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>replace</strong>(nodes : ...<a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>replace</strong>(nodes : ...string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>remove</strong>()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-NodeList">
+<h2>native class <strong>NodeList</strong></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>length</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>NodeList</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>item</strong>(index : number)
+ : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-HTMLCollection">
+<h2>native class <strong>HTMLCollection</strong></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>length</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>HTMLCollection</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>item</strong>(index : number)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>namedItem</strong>(name : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
 </div>
 </div>
 <div class="class" id="class-MutationObserver">
 <h2>final native class <strong>MutationObserver</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member function">
 <h3>
@@ -844,7 +1092,7 @@ new <strong>MutationObserverInit</strong>()
 <div class="class" id="class-MutationRecord">
 <h2>final native class <strong>MutationRecord</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -910,7 +1158,7 @@ new <strong>MutationRecord</strong>()
 <div class="class" id="class-Node">
 <h2>native class <strong>Node</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -1221,34 +1469,6 @@ new <strong>Node</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>insertBefore</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, child : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
- : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>appendChild</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
- : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>replaceChild</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, child : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
- : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>removeChild</strong>(child : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
- : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
  function <strong>normalize</strong>()
  : void
 </h3>
@@ -1310,11 +1530,39 @@ new <strong>Node</strong>()
 </h3>
 
 </div>
+<div class="member function">
+<h3>
+ function <strong>insertBefore</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, child : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>appendChild</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>replaceChild</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, child : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>removeChild</strong>(child : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
+</h3>
+
+</div>
 </div>
 <div class="class" id="class-Document">
 <h2>native class <strong>Document</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -1361,6 +1609,30 @@ __readonly__ var <strong>doctype</strong> : <a href="lib/js/js/web.jsx.html#clas
 <div class="member property">
 <h3>
 __readonly__ var <strong>documentElement</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>children</strong> : <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>firstElementChild</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>lastElementChild</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>childElementCount</strong> : number
 </h3>
 
 </div>
@@ -1866,6 +2138,42 @@ __readonly__ var <strong>styleSheetSets</strong> : Array.&lt;string&gt;
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
 </div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>fullscreenEnabled</strong> : Nullable.&lt;boolean&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>fullscreenElement</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>webkitFullscreenEnabled</strong> : Nullable.&lt;boolean&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>webkitFullscreenElement</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>mozFullscreenEnabled</strong> : Nullable.&lt;boolean&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>mozFullscreenElement</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
 <div class="member function">
 <h3>
 new <strong>Document</strong>()
@@ -2049,6 +2357,34 @@ new <strong>Document</strong>()
 </div>
 <div class="member function">
 <h3>
+ function <strong>query</strong>(relativeSelectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>queryAll</strong>(relativeSelectors : string)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-Element">Element</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>querySelector</strong>(selectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>querySelectorAll</strong>(selectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
  function <strong>enableStyleSheetsForSet</strong>(name : Nullable.&lt;string&gt;)
  : void
 </h3>
@@ -2085,7 +2421,79 @@ new <strong>Document</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>createTouch</strong>(view : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, target : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>, identifier : number, pageX : number, pageY : number, screenX : number, screenY : number)
+ function <strong>getBoxQuads</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>(options : <a href="lib/js/js/web.jsx.html#class-BoxQuadOptions">BoxQuadOptions</a>)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>createTouch</strong>(view : <a href="lib/js/js/web.jsx.html#class-Window">Window</a>, target : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>, identifier : number, pageX : number, pageY : number, screenX : number, screenY : number)
  : <a href="lib/js/js/web.jsx.html#class-Touch">Touch</a>
 </h3>
 <ul class="see">
@@ -2094,7 +2502,7 @@ new <strong>Document</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>createTouchList</strong>(touches : Array.&lt;<a href="lib/js/js/web.jsx.html#class-Touch">Touch</a>&gt;)
+ function <strong>createTouchList</strong>(touches : ...<a href="lib/js/js/web.jsx.html#class-Touch">Touch</a>)
  : <a href="lib/js/js/web.jsx.html#class-TouchList">TouchList</a>
 </h3>
 <ul class="see">
@@ -2103,36 +2511,30 @@ new <strong>Document</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>createTouchList</strong>(touch : <a href="lib/js/js/web.jsx.html#class-Touch">Touch</a>)
- : <a href="lib/js/js/web.jsx.html#class-TouchList">TouchList</a>
+ function <strong>exitFullscreen</strong>()
+ : void
 </h3>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/touch-events/">http://www.w3.org/TR/touch-events/</a></li>
-</ul>
+
 </div>
 <div class="member function">
 <h3>
- function <strong>querySelector</strong>(selectors : string)
- : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+ function <strong>webkitExitFullscreen</strong>()
+ : void
 </h3>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/selectors-api/">http://www.w3.org/TR/selectors-api/</a></li>
-</ul>
+
 </div>
 <div class="member function">
 <h3>
- function <strong>querySelectorAll</strong>(selectors : string)
- : <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a>
+ function <strong>mozExitFullscreen</strong>()
+ : void
 </h3>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/selectors-api/">http://www.w3.org/TR/selectors-api/</a></li>
-</ul>
+
 </div>
 </div>
 <div class="class" id="class-XMLDocument">
 <h2>final native class <strong>XMLDocument</strong> extends <a href="lib/js/js/web.jsx.html#class-Document">Document</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member function">
 <h3>
@@ -2153,7 +2555,7 @@ new <strong>XMLDocument</strong>()
 <div class="class" id="class-DOMImplementation">
 <h2>final native class <strong>DOMImplementation</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member function">
 <h3>
@@ -2165,6 +2567,13 @@ new <strong>DOMImplementation</strong>()
 <h3>
  function <strong>createDocumentType</strong>(qualifiedName : string, publicId : string, systemId : string)
  : <a href="lib/js/js/web.jsx.html#class-DocumentType">DocumentType</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>createDocument</strong>(namespace : Nullable.&lt;string&gt;, qualifiedName : string)
+ : <a href="lib/js/js/web.jsx.html#class-XMLDocument">XMLDocument</a>
 </h3>
 
 </div>
@@ -2200,8 +2609,32 @@ new <strong>DOMImplementation</strong>()
 <div class="class" id="class-DocumentFragment">
 <h2>final native class <strong>DocumentFragment</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>children</strong> : <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>firstElementChild</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>lastElementChild</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>childElementCount</strong> : number
+</h3>
+
+</div>
 <div class="member function">
 <h3>
 new <strong>DocumentFragment</strong>()
@@ -2238,27 +2671,37 @@ new <strong>DocumentFragment</strong>()
 </div>
 <div class="member function">
 <h3>
+ function <strong>query</strong>(relativeSelectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>queryAll</strong>(relativeSelectors : string)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-Element">Element</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
  function <strong>querySelector</strong>(selectors : string)
  : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
 </h3>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/selectors-api/">http://www.w3.org/TR/selectors-api/</a></li>
-</ul>
+
 </div>
 <div class="member function">
 <h3>
  function <strong>querySelectorAll</strong>(selectors : string)
  : <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a>
 </h3>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/selectors-api/">http://www.w3.org/TR/selectors-api/</a></li>
-</ul>
+
 </div>
 </div>
 <div class="class" id="class-DocumentType">
 <h2>final native class <strong>DocumentType</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -2275,6 +2718,18 @@ __readonly__ var <strong>publicId</strong> : string
 <div class="member property">
 <h3>
 __readonly__ var <strong>systemId</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>previousElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>nextElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
 </h3>
 
 </div>
@@ -2337,7 +2792,7 @@ new <strong>DocumentType</strong>()
 <div class="class" id="class-Element">
 <h2>native class <strong>Element</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -2407,6 +2862,12 @@ __readonly__ var <strong>lastElementChild</strong> : <a href="lib/js/js/web.jsx.
 </div>
 <div class="member property">
 <h3>
+__readonly__ var <strong>childElementCount</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
 __readonly__ var <strong>previousElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
 </h3>
 
@@ -2414,12 +2875,6 @@ __readonly__ var <strong>previousElementSibling</strong> : <a href="lib/js/js/we
 <div class="member property">
 <h3>
 __readonly__ var <strong>nextElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>childElementCount</strong> : number
 </h3>
 
 </div>
@@ -2441,7 +2896,7 @@ __readonly__ var <strong>childElementCount</strong> : number
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>specifiedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
+__readonly__ var <strong>cascadedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
@@ -2449,15 +2904,7 @@ __readonly__ var <strong>specifiedStyle</strong> : <a href="lib/js/js/web.jsx.ht
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>defaultStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
-</h3>
-<ul class="see">
-<li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
-</ul>
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>computedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
+__readonly__ var <strong>rawComputedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
@@ -2599,6 +3046,13 @@ new <strong>Element</strong>()
 </div>
 <div class="member function">
 <h3>
+ function <strong>matches</strong>(selectors : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
  function <strong>getElementsByTagName</strong>(localName : string)
  : <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a>
 </h3>
@@ -2643,6 +3097,34 @@ new <strong>Element</strong>()
 <h3>
  function <strong>append</strong>(nodes : ...string)
  : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>query</strong>(relativeSelectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>queryAll</strong>(relativeSelectors : string)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-Element">Element</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>querySelector</strong>(selectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>querySelectorAll</strong>(selectors : string)
+ : <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a>
 </h3>
 
 </div>
@@ -2716,7 +3198,7 @@ new <strong>Element</strong>()
 <div class="member function">
 <h3>
  function <strong>getClientRects</strong>()
- : <a href="lib/js/js/web.jsx.html#class-ClientRectList">ClientRectList</a>
+ : <a href="lib/js/js/web.jsx.html#class-DOMRectList">DOMRectList</a>
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
@@ -2725,7 +3207,7 @@ new <strong>Element</strong>()
 <div class="member function">
 <h3>
  function <strong>getBoundingClientRect</strong>()
- : <a href="lib/js/js/web.jsx.html#class-ClientRect">ClientRect</a>
+ : <a href="lib/js/js/web.jsx.html#class-DOMRect">DOMRect</a>
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
@@ -2760,37 +3242,118 @@ new <strong>Element</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>querySelector</strong>(selectors : string)
- : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+ function <strong>getBoxQuads</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/selectors-api/">http://www.w3.org/TR/selectors-api/</a></li>
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
 </ul>
 </div>
 <div class="member function">
 <h3>
- function <strong>querySelectorAll</strong>(selectors : string)
- : <a href="lib/js/js/web.jsx.html#class-NodeList">NodeList</a>
+ function <strong>getBoxQuads</strong>(options : <a href="lib/js/js/web.jsx.html#class-BoxQuadOptions">BoxQuadOptions</a>)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
 </h3>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/selectors-api/">http://www.w3.org/TR/selectors-api/</a></li>
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
 </ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>requestFullscreen</strong>()
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>webkitRequestFullscreen</strong>()
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>mozRequestFullscreen</strong>()
+ : void
+</h3>
+
 </div>
 </div>
 <div class="class" id="class-Attr">
 <h2>final native class <strong>Attr</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>name</strong> : string
+__readonly__ var <strong>localName</strong> : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
  var <strong>value</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>name</strong> : string
 </h3>
 
 </div>
@@ -2806,12 +3369,6 @@ __readonly__ var <strong>prefix</strong> : Nullable.&lt;string&gt;
 </h3>
 
 </div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>localName</strong> : string
-</h3>
-
-</div>
 <div class="member function">
 <h3>
 new <strong>Attr</strong>()
@@ -2822,7 +3379,7 @@ new <strong>Attr</strong>()
 <div class="class" id="class-CharacterData">
 <h2>native class <strong>CharacterData</strong> extends <a href="lib/js/js/web.jsx.html#class-Node">Node</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -2833,6 +3390,18 @@ new <strong>Attr</strong>()
 <div class="member property">
 <h3>
 __readonly__ var <strong>length</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>previousElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>nextElementSibling</strong> : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
 </h3>
 
 </div>
@@ -2930,7 +3499,7 @@ new <strong>CharacterData</strong>()
 <div class="class" id="class-Text">
 <h2>final native class <strong>Text</strong> extends <a href="lib/js/js/web.jsx.html#class-CharacterData">CharacterData</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -2954,16 +3523,94 @@ new <strong>Text</strong>()
 </div>
 <div class="member function">
 <h3>
+new <strong>Text</strong>(data : string)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
  function <strong>splitText</strong>(offset : number)
  : <a href="lib/js/js/web.jsx.html#class-Text">Text</a>
 </h3>
 
 </div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>(options : <a href="lib/js/js/web.jsx.html#class-BoxQuadOptions">BoxQuadOptions</a>)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
 </div>
 <div class="class" id="class-ProcessingInstruction">
 <h2>final native class <strong>ProcessingInstruction</strong> extends <a href="lib/js/js/web.jsx.html#class-CharacterData">CharacterData</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -2989,7 +3636,7 @@ new <strong>ProcessingInstruction</strong>()
 <div class="class" id="class-Comment">
 <h2>final native class <strong>Comment</strong> extends <a href="lib/js/js/web.jsx.html#class-CharacterData">CharacterData</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member function">
 <h3>
@@ -2997,11 +3644,17 @@ new <strong>Comment</strong>()
 </h3>
 
 </div>
+<div class="member function">
+<h3>
+new <strong>Comment</strong>(data : string)
+</h3>
+
+</div>
 </div>
 <div class="class" id="class-Range">
 <h2>final native class <strong>Range</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -3095,42 +3748,49 @@ new <strong>Range</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>setStart</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, offset : number)
+ function <strong>setStart</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, offset : number)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>setEnd</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, offset : number)
+ function <strong>setEnd</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, offset : number)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>setStartBefore</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ function <strong>setStartBefore</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>setStartAfter</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ function <strong>setStartAfter</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>setEndBefore</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ function <strong>setEndBefore</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>setEndAfter</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ function <strong>setEndAfter</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>collapse</strong>()
  : void
 </h3>
 
@@ -3144,14 +3804,14 @@ new <strong>Range</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>selectNode</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ function <strong>selectNode</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>selectNodeContents</strong>(refNode : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
+ function <strong>selectNodeContents</strong>(node : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>)
  : void
 </h3>
 
@@ -3245,7 +3905,7 @@ new <strong>Range</strong>()
 <div class="member function">
 <h3>
  function <strong>getClientRects</strong>()
- : <a href="lib/js/js/web.jsx.html#class-ClientRectList">ClientRectList</a>
+ : <a href="lib/js/js/web.jsx.html#class-DOMRectList">DOMRectList</a>
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
@@ -3254,7 +3914,7 @@ new <strong>Range</strong>()
 <div class="member function">
 <h3>
  function <strong>getBoundingClientRect</strong>()
- : <a href="lib/js/js/web.jsx.html#class-ClientRect">ClientRect</a>
+ : <a href="lib/js/js/web.jsx.html#class-DOMRect">DOMRect</a>
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
@@ -3264,7 +3924,7 @@ new <strong>Range</strong>()
 <div class="class" id="class-NodeIterator">
 <h2>final native class <strong>NodeIterator</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -3327,7 +3987,7 @@ new <strong>NodeIterator</strong>()
 <div class="class" id="class-TreeWalker">
 <h2>final native class <strong>TreeWalker</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -3412,7 +4072,7 @@ new <strong>TreeWalker</strong>()
 <div class="class" id="class-NodeFilter">
 <h2>final native class <strong>NodeFilter</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -3620,99 +4280,10 @@ new <strong>NodeFilter</strong>()
 
 </div>
 </div>
-<div class="class" id="class-NodeList">
-<h2>native class <strong>NodeList</strong></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>length</strong> : number
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>NodeList</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>item</strong>(index : number)
- : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-HTMLCollection">
-<h2>native class <strong>HTMLCollection</strong></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>length</strong> : number
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>HTMLCollection</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>item</strong>(index : number)
- : <a href="lib/js/js/web.jsx.html#class-Element">Element</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>namedItem</strong>(name : string)
- : Object
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-DOMStringList">
-<h2>final native class <strong>DOMStringList</strong></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>length</strong> : number
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>DOMStringList</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>item</strong>(index : number)
- : Nullable.&lt;string&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>contains</strong>(string : string)
- : boolean
-</h3>
-
-</div>
-</div>
 <div class="class" id="class-DOMTokenList">
 <h2>native class <strong>DOMTokenList</strong></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -3772,7 +4343,7 @@ new <strong>DOMTokenList</strong>()
 <div class="class" id="class-DOMSettableTokenList">
 <h2>final native class <strong>DOMSettableTokenList</strong> extends <a href="lib/js/js/web.jsx.html#class-DOMTokenList">DOMTokenList</a></h2>
 <ul class="see">
-<li><a href="http://www.w3.org/TR/dom/">http://www.w3.org/TR/dom/</a></li>
+<li><a href="http://www.w3.org/TR/2013/WD-dom-20131107/">http://www.w3.org/TR/2013/WD-dom-20131107/</a></li>
 </ul>
 <div class="member property">
 <h3>
@@ -3861,19 +4432,13 @@ __readonly__ var <strong>detail</strong> : number
 </div>
 <div class="member function">
 <h3>
-new <strong>UIEvent</strong>(typeArg : string)
+new <strong>UIEvent</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>UIEvent</strong>(typeArg : string, dictUIEventInit : <a href="lib/js/js/web.jsx.html#class-UIEventInit">UIEventInit</a>)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>initUIEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number)
+ function <strong>initUIEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number)
  : void
 </h3>
 
@@ -3892,19 +4457,13 @@ __readonly__ var <strong>relatedTarget</strong> : <a href="lib/js/js/web.jsx.htm
 </div>
 <div class="member function">
 <h3>
-new <strong>FocusEvent</strong>(typeArg : string)
+new <strong>FocusEvent</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>FocusEvent</strong>(typeArg : string, focusEventInitDict : <a href="lib/js/js/web.jsx.html#class-FocusEventInit">FocusEventInit</a>)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>initFocusEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, relatedTargetArg : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>)
+ function <strong>initFocusEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, relatedTargetArg : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>)
  : void
 </h3>
 
@@ -4039,20 +4598,7 @@ __readonly__ var <strong>region</strong> : Nullable.&lt;string&gt;
 </div>
 <div class="member function">
 <h3>
-new <strong>MouseEvent</strong>(typeArg : string)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>MouseEvent</strong>(typeArg : string, mouseEventInitDict : <a href="lib/js/js/web.jsx.html#class-MouseEventInit">MouseEventInit</a>)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>initMouseEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, screenXArg : number, screenYArg : number, clientXArg : number, clientYArg : number, ctrlKeyArg : boolean, altKeyArg : boolean, shiftKeyArg : boolean, metaKeyArg : boolean, buttonArg : number, relatedTargetArg : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>)
- : void
+new <strong>MouseEvent</strong>()
 </h3>
 
 </div>
@@ -4060,6 +4606,13 @@ new <strong>MouseEvent</strong>(typeArg : string, mouseEventInitDict : <a href="
 <h3>
  function <strong>getModifierState</strong>(keyArg : string)
  : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>initMouseEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, screenXArg : number, screenYArg : number, clientXArg : number, clientYArg : number, ctrlKeyArg : boolean, altKeyArg : boolean, shiftKeyArg : boolean, metaKeyArg : boolean, buttonArg : number, relatedTargetArg : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>)
+ : void
 </h3>
 
 </div>
@@ -4131,20 +4684,32 @@ __readonly__ var <strong>deltaMode</strong> : number
 </div>
 <div class="member function">
 <h3>
-new <strong>WheelEvent</strong>(typeArg : string)
+new <strong>WheelEvent</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>WheelEvent</strong>(typeArg : string, wheelEventInitDict : <a href="lib/js/js/web.jsx.html#class-WheelEventInit">WheelEventInit</a>)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>initWheelEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, screenXArg : number, screenYArg : number, clientXArg : number, clientYArg : number, buttonArg : number, relatedTargetArg : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>, modifiersListArg : string, deltaXArg : number, deltaYArg : number, deltaZArg : number, deltaMode : number)
+ function <strong>initWheelEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, screenXArg : number, screenYArg : number, clientXArg : number, clientYArg : number, buttonArg : number, relatedTargetArg : <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a>, modifiersListArg : string, deltaXArg : number, deltaYArg : number, deltaZArg : number, deltaMode : number)
  : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-InputEvent">
+<h2>final native class <strong>InputEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>data</strong> : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>InputEvent</strong>()
 </h3>
 
 </div>
@@ -4204,36 +4769,6 @@ __readonly__ var <strong>DOM_KEY_LOCATION_NUMPAD</strong> : number
 </div>
 <div class="member property">
 <h3>
-static __readonly__ var <strong>DOM_KEY_LOCATION_MOBILE</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>DOM_KEY_LOCATION_MOBILE</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>DOM_KEY_LOCATION_JOYSTICK</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>DOM_KEY_LOCATION_JOYSTICK</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>char</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
 __readonly__ var <strong>key</strong> : string
 </h3>
 
@@ -4276,12 +4811,6 @@ __readonly__ var <strong>repeat</strong> : boolean
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>locale</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
 __readonly__ var <strong>charCode</strong> : number
 </h3>
 
@@ -4300,13 +4829,7 @@ __readonly__ var <strong>which</strong> : number
 </div>
 <div class="member function">
 <h3>
-new <strong>KeyboardEvent</strong>(typeArg : string)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>KeyboardEvent</strong>(typeArg : string, keyboardEventInitDict : <a href="lib/js/js/web.jsx.html#class-KeyboardEventInit">KeyboardEventInit</a>)
+new <strong>KeyboardEvent</strong>()
 </h3>
 
 </div>
@@ -4319,7 +4842,7 @@ new <strong>KeyboardEvent</strong>(typeArg : string, keyboardEventInitDict : <a 
 </div>
 <div class="member function">
 <h3>
- function <strong>initKeyboardEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, charArg : string, keyArg : string, locationArg : number, modifiersListArg : string, repeat : boolean, localeArg : string)
+ function <strong>initKeyboardEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, detailArg : number, keyArg : string, locationArg : number, modifiersListArg : string, repeat : boolean)
  : void
 </h3>
 
@@ -4336,112 +4859,15 @@ __readonly__ var <strong>data</strong> : Nullable.&lt;string&gt;
 </h3>
 
 </div>
-<div class="member property">
+<div class="member function">
 <h3>
-__readonly__ var <strong>locale</strong> : string
+new <strong>CompositionEvent</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>CompositionEvent</strong>(typeArg : string)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>CompositionEvent</strong>(typeArg : string, compositionEventInitDict : <a href="lib/js/js/web.jsx.html#class-CompositionEventInit">CompositionEventInit</a>)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>initCompositionEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, dataArg : Nullable.&lt;string&gt;, localeArg : string)
- : void
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-MutationEvent">
-<h2>final native class <strong>MutationEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
-</ul>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>MODIFICATION</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>MODIFICATION</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>ADDITION</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>ADDITION</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>REMOVAL</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>REMOVAL</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>relatedNode</strong> : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>prevValue</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>newValue</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>attrName</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>attrChange</strong> : number
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>MutationEvent</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>initMutationEvent</strong>(typeArg : string, canBubbleArg : boolean, cancelableArg : boolean, relatedNodeArg : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, prevValueArg : string, newValueArg : string, attrNameArg : string, attrChangeArg : number)
+ function <strong>initCompositionEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, viewArg : <a href="lib/js/js/web.jsx.html#class-AbstractView">AbstractView</a>, dataArg : Nullable.&lt;string&gt;)
  : void
 </h3>
 
@@ -4770,12 +5196,6 @@ new <strong>WheelEventInit</strong>()
 </div>
 <div class="member property">
 <h3>
- var <strong>char</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
  var <strong>key</strong> : string
 </h3>
 
@@ -4813,12 +5233,6 @@ new <strong>WheelEventInit</strong>()
 <div class="member property">
 <h3>
  var <strong>repeat</strong> : boolean
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>locale</strong> : string
 </h3>
 
 </div>
@@ -4880,15 +5294,94 @@ new <strong>KeyboardEventInit</strong>()
 </h3>
 
 </div>
+<div class="member function">
+<h3>
+new <strong>CompositionEventInit</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-MutationEvent">
+<h2>final native class <strong>MutationEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/DOM-Level-3-Events/">http://www.w3.org/TR/DOM-Level-3-Events/</a></li>
+</ul>
 <div class="member property">
 <h3>
- var <strong>locale</strong> : string
+static __readonly__ var <strong>MODIFICATION</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>MODIFICATION</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static __readonly__ var <strong>ADDITION</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>ADDITION</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+static __readonly__ var <strong>REMOVAL</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>REMOVAL</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>relatedNode</strong> : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>prevValue</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>newValue</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>attrName</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>attrChange</strong> : number
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>CompositionEventInit</strong>()
+new <strong>MutationEvent</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>initMutationEvent</strong>(typeArg : string, bubblesArg : boolean, cancelableArg : boolean, relatedNodeArg : <a href="lib/js/js/web.jsx.html#class-Node">Node</a>, prevValueArg : string, newValueArg : string, attrNameArg : string, attrChangeArg : number)
+ : void
 </h3>
 
 </div>
@@ -6013,6 +6506,18 @@ __readonly__ var <strong>PAGE_RULE</strong> : number
 </div>
 <div class="member property">
 <h3>
+static __readonly__ var <strong>MARGIN_RULE</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>MARGIN_RULE</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
 static __readonly__ var <strong>NAMESPACE_RULE</strong> : number
 </h3>
 
@@ -6177,7 +6682,7 @@ new <strong>CSSMediaRule</strong>()
 </div>
 </div>
 <div class="class" id="class-CSSPageRule">
-<h2>final native class <strong>CSSPageRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
+<h2>final native class <strong>CSSPageRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSGroupingRule">CSSGroupingRule</a></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
 </ul>
@@ -6196,6 +6701,30 @@ __readonly__ var <strong>style</strong> : <a href="lib/js/js/web.jsx.html#class-
 <div class="member function">
 <h3>
 new <strong>CSSPageRule</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-CSSMarginRule">
+<h2>final native class <strong>CSSMarginRule</strong> extends <a href="lib/js/js/web.jsx.html#class-CSSRule">CSSRule</a></h2>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>name</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>style</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>CSSMarginRule</strong>()
 </h3>
 
 </div>
@@ -9230,6 +9759,20 @@ new <strong>CSSStyleDeclaration</strong>()
 </div>
 <div class="member function">
 <h3>
+ function <strong>setPropertyValue</strong>(property : string, value : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>setPropertyPriority</strong>(property : string, priority : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
  function <strong>removeProperty</strong>(property : string)
  : string
 </h3>
@@ -9342,6 +9885,14 @@ __readonly__ var <strong>outerWidth</strong> : number
 <div class="member property">
 <h3>
 __readonly__ var <strong>outerHeight</strong> : number
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>devicePixelRatio</strong> : number
 </h3>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
@@ -9982,6 +10533,42 @@ new <strong>Window</strong>()
 </div>
 <div class="member function">
 <h3>
+ function <strong>moveTo</strong>(x : number, y : number)
+ : void
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>moveBy</strong>(x : number, y : number)
+ : void
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>resizeTo</strong>(x : number, y : number)
+ : void
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>resizeBy</strong>(x : number, y : number)
+ : void
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
  function <strong>scroll</strong>(x : number, y : number)
  : void
 </h3>
@@ -10287,19 +10874,13 @@ new <strong>Window</strong>()
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>specifiedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
+__readonly__ var <strong>cascadedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>defaultStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>computedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
+__readonly__ var <strong>rawComputedStyle</strong> : <a href="lib/js/js/web.jsx.html#class-CSSStyleDeclaration">CSSStyleDeclaration</a>
 </h3>
 
 </div>
@@ -10327,22 +10908,115 @@ new <strong>PseudoElement</strong>()
 </h3>
 
 </div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>(options : <a href="lib/js/js/web.jsx.html#class-BoxQuadOptions">BoxQuadOptions</a>)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+</div>
+<div class="class" id="class-CSS">
+<h2>final native class <strong>CSS</strong></h2>
+
+<div class="member function">
+<h3>
+new <strong>CSS</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function <strong>escape</strong>(ident : string)
+ : string
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom/">http://dev.w3.org/csswg/cssom/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+static function <strong>supports</strong>(property : string, value : string)
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function <strong>supports</strong>(conditionText : string)
+ : boolean
+</h3>
+
+</div>
 </div>
 <div class="class" id="class-ScrollOptions">
 <h2> class <strong>ScrollOptions</strong></h2>
 
-<div class="member property">
-<h3>
- var <strong>x</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>y</strong> : number
-</h3>
-
-</div>
 <div class="member property">
 <h3>
  var <strong>behavior</strong> : string
@@ -10468,7 +11142,39 @@ new <strong>CaretPosition</strong>()
 <div class="member function">
 <h3>
  function <strong>getClientRect</strong>()
- : <a href="lib/js/js/web.jsx.html#class-ClientRect">ClientRect</a>
+ : <a href="lib/js/js/web.jsx.html#class-DOMRect">DOMRect</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ScrollOptionsHorizontal">
+<h2> class <strong>ScrollOptionsHorizontal</strong> extends <a href="lib/js/js/web.jsx.html#class-ScrollOptions">ScrollOptions</a></h2>
+
+<div class="member property">
+<h3>
+ var <strong>x</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>ScrollOptionsHorizontal</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ScrollOptionsVertical">
+<h2> class <strong>ScrollOptionsVertical</strong> extends <a href="lib/js/js/web.jsx.html#class-ScrollOptions">ScrollOptions</a></h2>
+
+<div class="member property">
+<h3>
+ var <strong>y</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>ScrollOptionsVertical</strong>()
 </h3>
 
 </div>
@@ -10986,75 +11692,244 @@ new <strong>HTMLElement</strong>()
 
 </div>
 </div>
-<div class="class" id="class-ClientRectList">
-<h2>final native class <strong>ClientRectList</strong></h2>
+<div class="class" id="class-HTMLImageElement">
+<h2>final native class <strong>HTMLImageElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+<li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>length</strong> : number
+__readonly__ var <strong>x</strong> : number
 </h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>ClientRectList</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>item</strong>(index : number)
- : <a href="lib/js/js/web.jsx.html#class-ClientRect">ClientRect</a>
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-ClientRect">
-<h2>final native class <strong>ClientRect</strong></h2>
 <ul class="see">
 <li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
 </ul>
+</div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>top</strong> : number
+__readonly__ var <strong>y</strong> : number
+</h3>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+</div>
+<div class="member property">
+<h3>
+ var <strong>alt</strong> : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>right</strong> : number
+ var <strong>src</strong> : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>bottom</strong> : number
+ var <strong>crossOrigin</strong> : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>left</strong> : number
+ var <strong>useMap</strong> : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>width</strong> : number
+ var <strong>isMap</strong> : boolean
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>height</strong> : number
+ var <strong>width</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>height</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>naturalWidth</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>naturalHeight</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>complete</strong> : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>name</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>lowsrc</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>align</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>hspace</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>vspace</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>longDesc</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>border</strong> : string
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>ClientRect</strong>()
+new <strong>HTMLImageElement</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-BoxQuadOptions">
+<h2> class <strong>BoxQuadOptions</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>box</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>relativeTo</strong> : Object
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>BoxQuadOptions</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-ConvertCoordinateOptions">
+<h2> class <strong>ConvertCoordinateOptions</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>fromBox</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>toBox</strong> : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>ConvertCoordinateOptions</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-GeometryUtils">
+<h2>native class <strong>GeometryUtils</strong></h2>
+<ul class="see">
+<li><a href="http://dev.w3.org/csswg/cssom-view/">http://dev.w3.org/csswg/cssom-view/</a></li>
+</ul>
+<div class="member function">
+<h3>
+new <strong>GeometryUtils</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>getBoxQuads</strong>(options : <a href="lib/js/js/web.jsx.html#class-BoxQuadOptions">BoxQuadOptions</a>)
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertQuadFromNode</strong>(quad : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertRectFromNode</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMQuad">DOMQuad</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>convertPointFromNode</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, from : Object, options : <a href="lib/js/js/web.jsx.html#class-ConvertCoordinateOptions">ConvertCoordinateOptions</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
 </h3>
 
 </div>
@@ -11089,6 +11964,24 @@ new <strong>URL</strong>(url : string, base : <a href="lib/js/js/web.jsx.html#cl
 <div class="member function">
 <h3>
 new <strong>URL</strong>(url : string, base : string)
+</h3>
+<ul class="see">
+<li><a href="http://url.spec.whatwg.org/">http://url.spec.whatwg.org/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+static function <strong>domainToASCII</strong>(domain : string)
+ : string
+</h3>
+<ul class="see">
+<li><a href="http://url.spec.whatwg.org/">http://url.spec.whatwg.org/</a></li>
+</ul>
+</div>
+<div class="member function">
+<h3>
+static function <strong>domainToUnicode</strong>(domain : string)
+ : string
 </h3>
 <ul class="see">
 <li><a href="http://url.spec.whatwg.org/">http://url.spec.whatwg.org/</a></li>
@@ -11245,7 +12138,7 @@ __readonly__ var <strong>origin</strong> : string
 </div>
 <div class="member property">
 <h3>
- var <strong>query</strong> : <a href="lib/js/js/web.jsx.html#class-URLQuery">URLQuery</a>
+ var <strong>searchParams</strong> : <a href="lib/js/js/web.jsx.html#class-URLSearchParams">URLSearchParams</a>
 </h3>
 
 </div>
@@ -11322,20 +12215,28 @@ new <strong>URLUtilsReadOnly</strong>()
 
 </div>
 </div>
-<div class="class" id="class-URLQuery">
-<h2>final native class <strong>URLQuery</strong></h2>
+<div class="class" id="class-URLSearchParams">
+<h2>final native class <strong>URLSearchParams</strong></h2>
 <ul class="see">
 <li><a href="http://url.spec.whatwg.org/">http://url.spec.whatwg.org/</a></li>
 </ul>
-<div class="member property">
+<div class="member function">
 <h3>
-__readonly__ var <strong>size</strong> : number
+new <strong>URLSearchParams</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>URLQuery</strong>()
+ function <strong>append</strong>(name : string, value : string)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>delete</strong>(name : string)
+ : void
 </h3>
 
 </div>
@@ -11355,20 +12256,6 @@ new <strong>URLQuery</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>set</strong>(name : string, value : string)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>append</strong>(name : string, value : string)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
  function <strong>has</strong>(name : string)
  : boolean
 </h3>
@@ -11376,17 +12263,23 @@ new <strong>URLQuery</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>delete</strong>(name : string)
+ function <strong>set</strong>(name : string, value : string)
  : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-HTMLAllCollection">
-<h2>final native class <strong>HTMLAllCollection</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a></h2>
+<h2>final native class <strong>HTMLAllCollection</strong></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
+<div class="member property">
+<h3>
+ var <strong>length</strong> : number
+</h3>
+
+</div>
 <div class="member function">
 <h3>
 new <strong>HTMLAllCollection</strong>()
@@ -11402,7 +12295,7 @@ new <strong>HTMLAllCollection</strong>()
 </div>
 <div class="member function">
 <h3>
-override function <strong>namedItem</strong>(name : string)
+ function <strong>namedItem</strong>(name : string)
  : Object
 </h3>
 
@@ -11416,10 +12309,16 @@ override function <strong>namedItem</strong>(name : string)
 </div>
 </div>
 <div class="class" id="class-HTMLFormControlsCollection">
-<h2>final native class <strong>HTMLFormControlsCollection</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLCollection">HTMLCollection</a></h2>
+<h2>final native class <strong>HTMLFormControlsCollection</strong></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
 </ul>
+<div class="member property">
+<h3>
+ var <strong>length</strong> : number
+</h3>
+
+</div>
 <div class="member function">
 <h3>
 new <strong>HTMLFormControlsCollection</strong>()
@@ -11428,7 +12327,7 @@ new <strong>HTMLFormControlsCollection</strong>()
 </div>
 <div class="member function">
 <h3>
-override function <strong>namedItem</strong>(name : string)
+ function <strong>namedItem</strong>(name : string)
  : Object
 </h3>
 
@@ -12692,7 +13591,7 @@ __readonly__ var <strong>origin</strong> : string
 </div>
 <div class="member property">
 <h3>
- var <strong>query</strong> : <a href="lib/js/js/web.jsx.html#class-URLQuery">URLQuery</a>
+ var <strong>searchParams</strong> : <a href="lib/js/js/web.jsx.html#class-URLSearchParams">URLSearchParams</a>
 </h3>
 <ul class="see">
 <li><a href="http://url.spec.whatwg.org/">http://url.spec.whatwg.org/</a></li>
@@ -12799,120 +13698,6 @@ new <strong>HTMLBRElement</strong>()
 <div class="member function">
 <h3>
 new <strong>HTMLModElement</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-HTMLImageElement">
-<h2>final native class <strong>HTMLImageElement</strong> extends <a href="lib/js/js/web.jsx.html#class-HTMLElement">HTMLElement</a></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/html5/single-page.html">http://www.w3.org/TR/html5/single-page.html</a></li>
-</ul>
-<div class="member property">
-<h3>
- var <strong>alt</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>src</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>crossOrigin</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>useMap</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>isMap</strong> : boolean
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>width</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>height</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>naturalWidth</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>naturalHeight</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>complete</strong> : boolean
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>name</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>lowsrc</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>align</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>hspace</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>vspace</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>longDesc</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>border</strong> : string
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>HTMLImageElement</strong>()
 </h3>
 
 </div>
@@ -13739,6 +14524,14 @@ __readonly__ var <strong>videoTracks</strong> : <a href="lib/js/js/web.jsx.html#
 __readonly__ var <strong>textTracks</strong> : <a href="lib/js/js/web.jsx.html#class-TextTrackList">TextTrackList</a>
 </h3>
 
+</div>
+<div class="member property">
+<h3>
+ var <strong>srcObject</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>
+</h3>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
+</ul>
 </div>
 <div class="member function">
 <h3>
@@ -14723,7 +15516,7 @@ __readonly__ var <strong>origin</strong> : string
 </div>
 <div class="member property">
 <h3>
- var <strong>query</strong> : <a href="lib/js/js/web.jsx.html#class-URLQuery">URLQuery</a>
+ var <strong>searchParams</strong> : <a href="lib/js/js/web.jsx.html#class-URLSearchParams">URLSearchParams</a>
 </h3>
 <ul class="see">
 <li><a href="http://url.spec.whatwg.org/">http://url.spec.whatwg.org/</a></li>
@@ -17694,7 +18487,7 @@ new <strong>Navigator</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>getUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void)
+ function <strong>getUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
  : void
 </h3>
 <ul class="see">
@@ -17703,23 +18496,14 @@ new <strong>Navigator</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>getUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
- : void
-</h3>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
-</ul>
-</div>
-<div class="member function">
-<h3>
- function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void)
+ function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>) : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
+ function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
  : void
 </h3>
 
@@ -20128,13 +20912,6 @@ new <strong>TouchList</strong>()
 <div class="member function">
 <h3>
  function <strong>item</strong>(index : number)
- : <a href="lib/js/js/web.jsx.html#class-Touch">Touch</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>identifiedTouch</strong>(identifier : number)
  : <a href="lib/js/js/web.jsx.html#class-Touch">Touch</a>
 </h3>
 
@@ -22937,833 +23714,867 @@ new <strong>NotificationOptions</strong>()
 
 </div>
 </div>
-<div class="class" id="class-AudioMediaStreamTrack">
-<h2>final native class <strong>AudioMediaStreamTrack</strong> extends <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a></h2>
+<div class="class" id="class-DOMPointReadOnly">
+<h2>native class <strong>DOMPointReadOnly</strong></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>canInsertDTMF</strong> : boolean
+__readonly__ var <strong>x</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>y</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>z</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>w</strong> : number
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>AudioMediaStreamTrack</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>insertDTMF</strong>(tones : string)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>insertDTMF</strong>(tones : string, duration : number)
- : void
+new <strong>DOMPointReadOnly</strong>()
 </h3>
 
 </div>
 </div>
-<div class="class" id="class-RTCSessionDescription">
-<h2>final native class <strong>RTCSessionDescription</strong></h2>
+<div class="class" id="class-DOMPoint">
+<h2>final native class <strong>DOMPoint</strong> extends <a href="lib/js/js/web.jsx.html#class-DOMPointReadOnly">DOMPointReadOnly</a></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
+</ul>
+<div class="member function">
+<h3>
+new <strong>DOMPoint</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMPoint</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMPoint</strong>(x : number, y : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMPoint</strong>(x : number, y : number, z : number)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMPoint</strong>(x : number, y : number, z : number, w : number)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-DOMPointInit">
+<h2> class <strong>DOMPointInit</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>x</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>y</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>z</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>w</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMPointInit</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-DOMRect">
+<h2>final native class <strong>DOMRect</strong> extends <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a></h2>
+<ul class="see">
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
+</ul>
+<div class="member function">
+<h3>
+new <strong>DOMRect</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMRect</strong>(x : number, y : number, width : number, height : number)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-DOMRectReadOnly">
+<h2>native class <strong>DOMRectReadOnly</strong></h2>
+<ul class="see">
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
 </ul>
 <div class="member property">
 <h3>
- var <strong>type</strong> : Nullable.&lt;string&gt;
+__readonly__ var <strong>x</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>sdp</strong> : Nullable.&lt;string&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>RTCSessionDescription</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>RTCSessionDescription</strong>(descriptionInitDict : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescriptionInit">RTCSessionDescriptionInit</a>)
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-RTCSessionDescriptionInit">
-<h2> class <strong>RTCSessionDescriptionInit</strong></h2>
-
-<div class="member property">
-<h3>
- var <strong>type</strong> : string
+__readonly__ var <strong>y</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>sdp</strong> : string
+__readonly__ var <strong>width</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>height</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>top</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>right</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>bottom</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>left</strong> : number
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCSessionDescriptionInit</strong>()
+new <strong>DOMRectReadOnly</strong>()
 </h3>
 
 </div>
 </div>
-<div class="class" id="class-RTCIceCandidate">
-<h2>final native class <strong>RTCIceCandidate</strong></h2>
+<div class="class" id="class-DOMRectList">
+<h2>final native class <strong>DOMRectList</strong></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
 </ul>
 <div class="member property">
 <h3>
- var <strong>candidate</strong> : Nullable.&lt;string&gt;
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>sdpMid</strong> : Nullable.&lt;string&gt;
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>sdpMLineIndex</strong> : Nullable.&lt;number&gt;
+__readonly__ var <strong>length</strong> : number
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCIceCandidate</strong>()
+new <strong>DOMRectList</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCIceCandidate</strong>(candidateInitDict : <a href="lib/js/js/web.jsx.html#class-RTCIceCandidateInit">RTCIceCandidateInit</a>)
+ function <strong>item</strong>(index : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMRect">DOMRect</a>
 </h3>
 
 </div>
 </div>
-<div class="class" id="class-RTCIceCandidateInit">
-<h2> class <strong>RTCIceCandidateInit</strong></h2>
-
-<div class="member property">
-<h3>
- var <strong>candidate</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>sdpMid</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>sdpMLineIndex</strong> : number
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>RTCIceCandidateInit</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-RTCIceServer">
-<h2> class <strong>RTCIceServer</strong></h2>
-
-<div class="member property">
-<h3>
- var <strong>url</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>credential</strong> : Nullable.&lt;string&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>RTCIceServer</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-RTCConfiguration">
-<h2> class <strong>RTCConfiguration</strong></h2>
-
-<div class="member property">
-<h3>
- var <strong>iceServers</strong> : Array.&lt;<a href="lib/js/js/web.jsx.html#class-RTCIceServer">RTCIceServer</a>&gt;
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>RTCConfiguration</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-RTCPeerConnection">
-<h2>final native class <strong>RTCPeerConnection</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
+<div class="class" id="class-DOMQuad">
+<h2>final native class <strong>DOMQuad</strong></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>localDescription</strong> : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>
+__readonly__ var <strong>p1</strong> : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>remoteDescription</strong> : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>
+__readonly__ var <strong>p2</strong> : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>readyState</strong> : string
+__readonly__ var <strong>p3</strong> : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>iceState</strong> : string
+__readonly__ var <strong>p4</strong> : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>localStreams</strong> : Array.&lt;<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>&gt;
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>remoteStreams</strong> : Array.&lt;<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>&gt;
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>ondatachannel</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onnegotationneeded</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onicecandidate</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onopen</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onstatechange</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onaddstream</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onremovestream</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onicechange</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+__readonly__ var <strong>bounds</strong> : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCPeerConnection</strong>(configuration : <a href="lib/js/js/web.jsx.html#class-RTCConfiguration">RTCConfiguration</a>)
+new <strong>DOMQuad</strong>(p1 : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, p2 : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, p3 : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>, p4 : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCPeerConnection</strong>(configuration : <a href="lib/js/js/web.jsx.html#class-RTCConfiguration">RTCConfiguration</a>, constraints : Map.&lt;variant&gt;)
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createOffer</strong>(successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createOffer</strong>(successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void, failureCallback : function (:string) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createOffer</strong>(successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void, failureCallback : function (:string) : void, constraints : Map.&lt;variant&gt;)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createAnswer</strong>(offer : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createAnswer</strong>(offer : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void, failureCallback : function (:string) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createAnswer</strong>(offer : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void, failureCallback : function (:string) : void, constraints : Map.&lt;variant&gt;)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createAnswer</strong>(offer : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>) : void, failureCallback : function (:string) : void, constraints : Map.&lt;variant&gt;, createProvisionalAnswer : boolean)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>setLocalDescription</strong>(description : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>setLocalDescription</strong>(description : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function () : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>setLocalDescription</strong>(description : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function () : void, failureCallback : function (:string) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>setRemoteDescription</strong>(description : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>setRemoteDescription</strong>(description : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function () : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>setRemoteDescription</strong>(description : <a href="lib/js/js/web.jsx.html#class-RTCSessionDescription">RTCSessionDescription</a>, successCallback : function () : void, failureCallback : function (:string) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>updateIce</strong>()
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>updateIce</strong>(configuration : <a href="lib/js/js/web.jsx.html#class-RTCConfiguration">RTCConfiguration</a>)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>updateIce</strong>(configuration : <a href="lib/js/js/web.jsx.html#class-RTCConfiguration">RTCConfiguration</a>, constraints : Map.&lt;variant&gt;)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>updateIce</strong>(configuration : <a href="lib/js/js/web.jsx.html#class-RTCConfiguration">RTCConfiguration</a>, constraints : Map.&lt;variant&gt;, restart : boolean)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>addIceCandidate</strong>(candidate : <a href="lib/js/js/web.jsx.html#class-RTCIceCandidate">RTCIceCandidate</a>)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createDataChannel</strong>(label : string)
- : <a href="lib/js/js/web.jsx.html#class-DataChannel">DataChannel</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>createDataChannel</strong>(label : string, dataChannelDict : <a href="lib/js/js/web.jsx.html#class-DataChannelInit">DataChannelInit</a>)
- : <a href="lib/js/js/web.jsx.html#class-DataChannel">DataChannel</a>
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>addStream</strong>(stream : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>addStream</strong>(stream : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>, constraints : Map.&lt;variant&gt;)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>removeStream</strong>(stream : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>close</strong>()
- : void
+new <strong>DOMQuad</strong>(rect : <a href="lib/js/js/web.jsx.html#class-DOMRectReadOnly">DOMRectReadOnly</a>)
 </h3>
 
 </div>
 </div>
-<div class="class" id="class-DataChannel">
-<h2>final native class <strong>DataChannel</strong></h2>
+<div class="class" id="class-DOMMatrixReadOnly">
+<h2>native class <strong>DOMMatrixReadOnly</strong></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>label</strong> : string
+__readonly__ var <strong>a</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>reliable</strong> : boolean
+__readonly__ var <strong>b</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>readyState</strong> : string
+__readonly__ var <strong>c</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>bufferedAmount</strong> : number
+__readonly__ var <strong>d</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>onopen</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+__readonly__ var <strong>e</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>onerror</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+__readonly__ var <strong>f</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>onclose</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+__readonly__ var <strong>m11</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>onmessage</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+__readonly__ var <strong>m12</strong> : number
 </h3>
 
 </div>
 <div class="member property">
 <h3>
- var <strong>binaryType</strong> : string
+__readonly__ var <strong>m13</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m14</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m21</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m22</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m23</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m24</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m31</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m32</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m33</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m34</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m41</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m42</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m43</strong> : number
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>m44</strong> : number
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>DataChannel</strong>()
+new <strong>DOMMatrixReadOnly</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>close</strong>()
- : void
+ function <strong>translate</strong>(tx : number, ty : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>send</strong>(data : string)
- : void
+ function <strong>translate</strong>(tx : number, ty : number, tz : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>send</strong>(data : ArrayBuffer)
- : void
+ function <strong>scale</strong>(scale : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>send</strong>(data : <a href="lib/js/js/web.jsx.html#class-Blob">Blob</a>)
- : void
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-DataChannelInit">
-<h2> class <strong>DataChannelInit</strong></h2>
-
-<div class="member property">
-<h3>
- var <strong>reliable</strong> : boolean
+ function <strong>scale</strong>(scale : number, originX : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>DataChannelInit</strong>()
+ function <strong>scale</strong>(scale : number, originX : number, originY : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3d</strong>(scale : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3d</strong>(scale : number, originX : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3d</strong>(scale : number, originX : number, originY : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3d</strong>(scale : number, originX : number, originY : number, originZ : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniform</strong>(scaleX : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniform</strong>(scaleX : number, scaleY : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniform</strong>(scaleX : number, scaleY : number, scaleZ : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniform</strong>(scaleX : number, scaleY : number, scaleZ : number, originX : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniform</strong>(scaleX : number, scaleY : number, scaleZ : number, originX : number, originY : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniform</strong>(scaleX : number, scaleY : number, scaleZ : number, originX : number, originY : number, originZ : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotate</strong>(angle : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotate</strong>(angle : number, originX : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotate</strong>(angle : number, originX : number, originY : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateFromVector</strong>(x : number, y : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateAxisAngle</strong>(x : number, y : number, z : number, angle : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>skewX</strong>(sx : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>skewY</strong>(sy : number)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>multiply</strong>(other : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>flipX</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>flipY</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>inverse</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>is2D</strong>()
+ : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>determinant</strong>()
+ : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>transformPoint</strong>(point : <a href="lib/js/js/web.jsx.html#class-DOMPointInit">DOMPointInit</a>)
+ : <a href="lib/js/js/web.jsx.html#class-DOMPoint">DOMPoint</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>toFloat32Array</strong>()
+ : Float32Array
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>toFloat64Array</strong>()
+ : Float64Array
 </h3>
 
 </div>
 </div>
-<div class="class" id="class-RTCPeerConnectionIceEvent">
-<h2>final native class <strong>RTCPeerConnectionIceEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
+<div class="class" id="class-DOMMatrix">
+<h2>final native class <strong>DOMMatrix</strong> extends <a href="lib/js/js/web.jsx.html#class-DOMMatrixReadOnly">DOMMatrixReadOnly</a></h2>
 <ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
+<li><a href="http://dev.w3.org/fxtf/geometry/">http://dev.w3.org/fxtf/geometry/</a></li>
 </ul>
-<div class="member property">
+<div class="member function">
 <h3>
-__readonly__ var <strong>candidate</strong> : <a href="lib/js/js/web.jsx.html#class-RTCIceCandidate">RTCIceCandidate</a>
+new <strong>DOMMatrix</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCPeerConnectionIceEvent</strong>(type : string, eventInitDict : <a href="lib/js/js/web.jsx.html#class-RTCPeerConnectionIceEventInit">RTCPeerConnectionIceEventInit</a>)
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-RTCPeerConnectionIceEventInit">
-<h2> class <strong>RTCPeerConnectionIceEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
-
-<div class="member property">
-<h3>
- var <strong>candidate</strong> : <a href="lib/js/js/web.jsx.html#class-RTCIceCandidate">RTCIceCandidate</a>
+new <strong>DOMMatrix</strong>(transformList : string)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>RTCPeerConnectionIceEventInit</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-MediaStreamEvent">
-<h2>final native class <strong>MediaStreamEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
-<ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>stream</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>
+new <strong>DOMMatrix</strong>(other : <a href="lib/js/js/web.jsx.html#class-DOMMatrixReadOnly">DOMMatrixReadOnly</a>)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>MediaStreamEvent</strong>(type : string, eventInitDict : <a href="lib/js/js/web.jsx.html#class-MediaStreamEventInit">MediaStreamEventInit</a>)
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-MediaStreamEventInit">
-<h2> class <strong>MediaStreamEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
-
-<div class="member property">
-<h3>
- var <strong>stream</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>
+new <strong>DOMMatrix</strong>(array32 : Float32Array)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>MediaStreamEventInit</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-DataChannelEvent">
-<h2>final native class <strong>DataChannelEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
-<ul class="see">
-<li><a href="http://dev.w3.org/2011/webrtc/editor/webrtc.html">http://dev.w3.org/2011/webrtc/editor/webrtc.html</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>channel</strong> : <a href="lib/js/js/web.jsx.html#class-DataChannel">DataChannel</a>
+new <strong>DOMMatrix</strong>(array64 : Float64Array)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>DataChannelEvent</strong>(type : string, eventInitDict : <a href="lib/js/js/web.jsx.html#class-DataChannelEventInit">DataChannelEventInit</a>)
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-DataChannelEventInit">
-<h2> class <strong>DataChannelEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
-
-<div class="member property">
-<h3>
- var <strong>channel</strong> : <a href="lib/js/js/web.jsx.html#class-DataChannel">DataChannel</a>
+new <strong>DOMMatrix</strong>(numberSequence : Array.&lt;number&gt;)
 </h3>
 
 </div>
 <div class="member function">
 <h3>
-new <strong>DataChannelEventInit</strong>()
+new <strong>DOMMatrix</strong>(numberSequence : Array.&lt;int&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>multiplyBy</strong>(other : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>preMultiplyBy</strong>(other : <a href="lib/js/js/web.jsx.html#class-DOMMatrix">DOMMatrix</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>translateBy</strong>(tx : number, ty : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>translateBy</strong>(tx : number, ty : number, tz : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleBy</strong>(scale : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleBy</strong>(scale : number, originX : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleBy</strong>(scale : number, originX : number, originY : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3dBy</strong>(scale : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3dBy</strong>(scale : number, originX : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3dBy</strong>(scale : number, originX : number, originY : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scale3dBy</strong>(scale : number, originX : number, originY : number, originZ : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniformBy</strong>(scaleX : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniformBy</strong>(scaleX : number, scaleY : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniformBy</strong>(scaleX : number, scaleY : number, scaleZ : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniformBy</strong>(scaleX : number, scaleY : number, scaleZ : number, originX : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniformBy</strong>(scaleX : number, scaleY : number, scaleZ : number, originX : number, originY : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>scaleNonUniformBy</strong>(scaleX : number, scaleY : number, scaleZ : number, originX : number, originY : number, originZ : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateBy</strong>(angle : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateBy</strong>(angle : number, originX : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateBy</strong>(angle : number, originX : number, originY : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateFromVectorBy</strong>(x : number, y : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>rotateAxisAngleBy</strong>(x : number, y : number, z : number, angle : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>skewXBy</strong>(sx : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>skewYBy</strong>(sy : number)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>invert</strong>()
+ : void
 </h3>
 
 </div>
 </div>
 <div class="class" id="class-MediaStream">
-<h2>native class <strong>MediaStream</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
+<h2>final native class <strong>MediaStream</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
 </ul>
 <div class="member property">
 <h3>
-__readonly__ var <strong>label</strong> : string
+__readonly__ var <strong>id</strong> : string
 </h3>
 
 </div>
 <div class="member property">
 <h3>
-__readonly__ var <strong>audioTracks</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrackList">MediaStreamTrackList</a>
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>videoTracks</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrackList">MediaStreamTrackList</a>
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>ended</strong> : boolean
+__readonly__ var <strong>ended</strong> : boolean
 </h3>
 
 </div>
 <div class="member property">
 <h3>
  var <strong>onended</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>MediaStream</strong>(audioTracks : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrackList">MediaStreamTrackList</a>, videoTracks : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrackList">MediaStreamTrackList</a>)
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-LocalMediaStream">
-<h2>final native class <strong>LocalMediaStream</strong> extends <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
-</ul>
-<div class="member function">
-<h3>
-new <strong>LocalMediaStream</strong>()
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>stop</strong>()
- : void
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-MediaStreamTrack">
-<h2>native class <strong>MediaStreamTrack</strong></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>kind</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>label</strong> : string
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>enabled</strong> : boolean
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>LIVE</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>LIVE</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>MUTED</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>MUTED</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-static __readonly__ var <strong>ENDED</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>ENDED</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>readyState</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onmute</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onunmute</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member property">
-<h3>
- var <strong>onended</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
-new <strong>MediaStreamTrack</strong>()
-</h3>
-
-</div>
-</div>
-<div class="class" id="class-MediaStreamTrackList">
-<h2>final native class <strong>MediaStreamTrackList</strong></h2>
-<ul class="see">
-<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
-</ul>
-<div class="member property">
-<h3>
-__readonly__ var <strong>length</strong> : number
 </h3>
 
 </div>
@@ -23781,28 +24592,460 @@ __readonly__ var <strong>length</strong> : number
 </div>
 <div class="member function">
 <h3>
-new <strong>MediaStreamTrackList</strong>()
+new <strong>MediaStream</strong>()
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>item</strong>(index : number)
+new <strong>MediaStream</strong>(stream : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>MediaStream</strong>(tracks : Array.&lt;<a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>&gt;)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>getAudioTracks</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>getVideoTracks</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>getTrackById</strong>(trackId : string)
  : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>add</strong>(track : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>)
+ function <strong>addTrack</strong>(track : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>remove</strong>(track : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>)
+ function <strong>removeTrack</strong>(track : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>)
  : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>clone</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-MediaStreamTrack">
+<h2>native class <strong>MediaStreamTrack</strong> extends <a href="lib/js/js/web.jsx.html#class-EventTarget">EventTarget</a></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>kind</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>id</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>label</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>enabled</strong> : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>muted</strong> : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>onmute</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>onunmute</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>remote</strong> : boolean
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+__readonly__ var <strong>readyState</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>onstarted</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>onended</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>onoverconstrained</strong> : function (:<a href="lib/js/js/web.jsx.html#class-Event">Event</a>) : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>MediaStreamTrack</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function <strong>getSourceInfos</strong>()
+ : Array.&lt;<a href="lib/js/js/web.jsx.html#class-SourceInfo">SourceInfo</a>&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>constraints</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-MediaTrackConstraints">MediaTrackConstraints</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>states</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-MediaSourceStates">MediaSourceStates</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>capabilities</strong>()
+ : Object
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>applyConstraints</strong>(constraints : <a href="lib/js/js/web.jsx.html#class-MediaTrackConstraints">MediaTrackConstraints</a>)
+ : void
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>clone</strong>()
+ : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>stop</strong>()
+ : void
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-SourceInfo">
+<h2> class <strong>SourceInfo</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>sourceId</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>kind</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>label</strong> : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>SourceInfo</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-MediaStreamTrackEventInit">
+<h2> class <strong>MediaStreamTrackEventInit</strong> extends <a href="lib/js/js/web.jsx.html#class-EventInit">EventInit</a></h2>
+
+<div class="member property">
+<h3>
+ var <strong>track</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>MediaStreamTrackEventInit</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-MediaStreamTrackEvent">
+<h2>final native class <strong>MediaStreamTrackEvent</strong> extends <a href="lib/js/js/web.jsx.html#class-Event">Event</a></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
+</ul>
+<div class="member property">
+<h3>
+__readonly__ var <strong>track</strong> : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>MediaStreamTrackEvent</strong>(type : string, eventInitDict : <a href="lib/js/js/web.jsx.html#class-MediaStreamTrackEventInit">MediaStreamTrackEventInit</a>)
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-VideoStreamTrack">
+<h2>final native class <strong>VideoStreamTrack</strong> extends <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
+</ul>
+<div class="member function">
+<h3>
+new <strong>VideoStreamTrack</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>VideoStreamTrack</strong>(videoConstraints : <a href="lib/js/js/web.jsx.html#class-MediaTrackConstraints">MediaTrackConstraints</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function <strong>getSourceIds</strong>()
+ : Array.&lt;string&gt;
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-AudioStreamTrack">
+<h2>final native class <strong>AudioStreamTrack</strong> extends <a href="lib/js/js/web.jsx.html#class-MediaStreamTrack">MediaStreamTrack</a></h2>
+<ul class="see">
+<li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
+</ul>
+<div class="member function">
+<h3>
+new <strong>AudioStreamTrack</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>AudioStreamTrack</strong>(audioConstraints : <a href="lib/js/js/web.jsx.html#class-MediaTrackConstraints">MediaTrackConstraints</a>)
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+static function <strong>getSourceIds</strong>()
+ : Array.&lt;string&gt;
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-MediaSourceStates">
+<h2> class <strong>MediaSourceStates</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>sourceType</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>sourceId</strong> : string
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>width</strong> : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>height</strong> : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>frameRate</strong> : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>aspectRatio</strong> : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>facingMode</strong> : Nullable.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>volume</strong> : Nullable.&lt;number&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>MediaSourceStates</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-CapabilityRange">
+<h2> class <strong>CapabilityRange</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>max</strong> : variant
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>min</strong> : variant
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>supported</strong> : boolean
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>CapabilityRange</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-AllVideoCapabilities">
+<h2> class <strong>AllVideoCapabilities</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>sourceType</strong> : Array.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>sourceId</strong> : Array.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>width</strong> : <a href="lib/js/js/web.jsx.html#class-CapabilityRange">CapabilityRange</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>height</strong> : <a href="lib/js/js/web.jsx.html#class-CapabilityRange">CapabilityRange</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>frameRate</strong> : <a href="lib/js/js/web.jsx.html#class-CapabilityRange">CapabilityRange</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>aspectRatio</strong> : <a href="lib/js/js/web.jsx.html#class-CapabilityRange">CapabilityRange</a>
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>facingMode</strong> : Array.&lt;string&gt;
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>AllVideoCapabilities</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-AllAudioCapabilities">
+<h2> class <strong>AllAudioCapabilities</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>volume</strong> : <a href="lib/js/js/web.jsx.html#class-CapabilityRange">CapabilityRange</a>
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>AllAudioCapabilities</strong>()
 </h3>
 
 </div>
@@ -23820,28 +25063,21 @@ new <strong>NavigatorUserMedia</strong>()
 </div>
 <div class="member function">
 <h3>
- function <strong>getUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void)
+ function <strong>getUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>getUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
+ function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>) : void)
  : void
 </h3>
 
 </div>
 <div class="member function">
 <h3>
- function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void)
- : void
-</h3>
-
-</div>
-<div class="member function">
-<h3>
- function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-LocalMediaStream">LocalMediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
+ function <strong>webkitGetUserMedia</strong>(constraints : Map.&lt;variant&gt;, successCallback : function (:<a href="lib/js/js/web.jsx.html#class-MediaStream">MediaStream</a>) : void, errorCallback : function (:<a href="lib/js/js/web.jsx.html#class-NavigatorUserMediaError">NavigatorUserMediaError</a>) : void)
  : void
 </h3>
 
@@ -23878,12 +25114,6 @@ new <strong>MediaStreamConstraints</strong>()
 </h3>
 
 </div>
-<div class="member property">
-<h3>
- var <strong>optional</strong> : Array.&lt;Map.&lt;variant&gt;&gt;
-</h3>
-
-</div>
 <div class="member function">
 <h3>
 new <strong>MediaTrackConstraints</strong>()
@@ -23892,31 +25122,41 @@ new <strong>MediaTrackConstraints</strong>()
 </div>
 </div>
 <div class="class" id="class-NavigatorUserMediaError">
-<h2>final native class <strong>NavigatorUserMediaError</strong></h2>
+<h2>final native class <strong>NavigatorUserMediaError</strong> extends <a href="lib/js/js/web.jsx.html#class-DOMError">DOMError</a></h2>
 <ul class="see">
 <li><a href="http://www.w3.org/TR/mediacapture-streams/">http://www.w3.org/TR/mediacapture-streams/</a></li>
 </ul>
 <div class="member property">
 <h3>
-static __readonly__ var <strong>PERMISSION_DENIED</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>PERMISSION_DENIED</strong> : number
-</h3>
-
-</div>
-<div class="member property">
-<h3>
-__readonly__ var <strong>code</strong> : number
+__readonly__ var <strong>constraintName</strong> : Nullable.&lt;string&gt;
 </h3>
 
 </div>
 <div class="member function">
 <h3>
 new <strong>NavigatorUserMediaError</strong>()
+</h3>
+
+</div>
+</div>
+<div class="class" id="class-MinMaxConstraint">
+<h2> class <strong>MinMaxConstraint</strong></h2>
+
+<div class="member property">
+<h3>
+ var <strong>max</strong> : variant
+</h3>
+
+</div>
+<div class="member property">
+<h3>
+ var <strong>min</strong> : variant
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>MinMaxConstraint</strong>()
 </h3>
 
 </div>
@@ -30366,13 +31606,43 @@ new <strong>CanvasPixelArray</strong>()
 
 </div>
 </div>
+<div class="class" id="class-DOMStringList">
+<h2>final native class <strong>DOMStringList</strong></h2>
+
+<div class="member property">
+<h3>
+__readonly__ var <strong>length</strong> : number
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+new <strong>DOMStringList</strong>()
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>item</strong>(index : number)
+ : string
+</h3>
+
+</div>
+<div class="member function">
+<h3>
+ function <strong>contains</strong>(str : string)
+ : boolean
+</h3>
+
+</div>
+</div>
 </div>
 </div><!--/jsxdoc-->
 
 <div id="footer">
 <p>Copyright &copy; DeNA, Co., Ltd.</p>
-<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.62<br />
-at 2013-08-25T02:28:23.707Z.</p>
+<p class="jsxdoc-notice">This document was automatically generated by <a href="http://jsx.github.io/">JSX</a> 0.9.71<br />
+at 2013-12-11T07:50:01.442Z.</p>
 
 </div>
 </div>
