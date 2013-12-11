@@ -36,6 +36,12 @@
 <li><a href="doc/stdlibref.html">Built-in and standard class libraries</a></li>
 </ul>
 
+<h2>Other Documents</h2>
+
+<ul>
+<li><a href="doc/compilerref.html">Compiler Reference</a></li>
+</ul>
+
 <h2>Wiki</h2>
 
 <p>
