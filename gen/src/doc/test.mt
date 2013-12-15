@@ -93,7 +93,7 @@ class _Test extends TestCase {
 
         async.done(); // to tell this test is finished
       }, to);
-    }, 1000);
+    }, 1000 /* timeout in milliseconds */);
   }
 }
 EOT
