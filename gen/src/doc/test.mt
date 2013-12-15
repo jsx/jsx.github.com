@@ -8,7 +8,7 @@
 <title>Unit Test - JSX</title>
 
 ?= $_mt->render_file("header.mt")
-?= $_mt->render_file("breadcrumb.mt", [ qw(Documents doc.html) ], [ 'Unit Test' ])
+?= $_mt->render_file("breadcrumb.mt", [ qw(Documents doc.html compilerref.html) ], [ 'Unit Test' ])
 <div id="main">
 
 <h1>Unit Test</h1>
@@ -16,10 +16,10 @@
 <h2>Introduction</h2>
 
 <p>
-JSX has a built-in test runner invoked by <code>--test</code> option and has a unit test framework <code>test-case.jsx</code>. The unit test framework is an xUnit style, running <code>_Test#test*():void</code> of the main file.
+JSX has a built-in test runner invoked by <code>--test</code> option and has an unit test framework <code>test-case.jsx</code>. The unit test framework is an xUnit style, running <code>_Test#test*():void</code> of the given file.
 </p>
 <p>
-Here is a basic test file, which is typically placed in <code>t/</code> of a project.
+Here is a simple test file, which is typically placed in <code>t/</code> of a project.
 </p>
 
 <?= $context->{prettify}->('jsx', <<'EOT')
@@ -45,7 +45,6 @@ ok 1 - testAdd
 </pre>
 
 <p>NOTE: it is recommended to use prove(1) to run tests and parse TAP, which can run test files in parallel. See .proverc and and Makefile in the <a href="https://github.com/jsx/mizuki">mizuki</a> project.</p>
-
 
 <h2>Synchronous Test</h2>
 
@@ -98,6 +97,10 @@ class _Test extends TestCase {
 }
 EOT
 ?>
+
+<h2>Misc.</h2>
+
+<p>jsx --test can takes test method names to run specific tests in a file. When you use <a href="https://github.com/jsx/jsx.vim">jsx.vim</a> you can run the currently editing test method by <code>\t</code>.</p>
 
 <h2>See Also</h2>
 
