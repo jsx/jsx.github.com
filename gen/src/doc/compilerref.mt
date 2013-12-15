@@ -27,7 +27,7 @@ When specified, the compiler executes the program immediately following a succes
 <h3>--test</h3>
 
 <p>
-When specified, the compiler executes the unit tests defined in the source file.  For how to write tests conforming to the interface, please refer to <a href="http://d.hatena.ne.jp/gfx/20120603/1338692446">Unit tests for JSX - Islands in the byte stream</a>.
+When specified, the compiler executes the unit tests defined in the source file.  For how to write tests conforming to the interface, please refer to <a href="test.html">Unit tests for JSX</a>.
 </p>
 
 <h3>--executable</h3>
