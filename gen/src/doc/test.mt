@@ -8,7 +8,7 @@
 <title>Unit Test - JSX</title>
 
 ?= $_mt->render_file("header.mt")
-?= $_mt->render_file("breadcrumb.mt", [ qw(Documents doc.html) ], [ qw(Unit Test) ])
+?= $_mt->render_file("breadcrumb.mt", [ qw(Documents doc.html) ], [ 'Unit Test' ])
 <div id="main">
 
 <h1>Unit Test</h1>
