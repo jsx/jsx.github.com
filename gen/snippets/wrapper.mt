@@ -25,7 +25,12 @@
 <link rel="stylesheet" href="google-code-prettify/prettify.css" type="text/css" />
 ?= $_[0]
 <div id="footer">
-Copyright &copy; 2012 <a href="http://dena.com/intl/">DeNA Co., Ltd.</a>
+<p>
+Copyright &copy; 2012, 2013 <a href="http://dena.com/intl/">DeNA Co., Ltd.</a> et al.
+</p>
+<p>
+Copyright belongs to the authors or to the authors' employers of each contribution.  Please refer to <a href="https://github.com/jsx/JSX/commits/">https://github.com/jsx/JSX/commits/</a>.
+</p>
 </div>
 
 </body>
