@@ -55,6 +55,6 @@ for my $src_file (@ARGV) {
     mkpath(dirname($dst_file));
 
     chmod 0666, $dst_file;
-    write_file($dst_file, $output);
+    write_file($dst_file, { binmode => ':utf8' }, $output);
     chmod 0444, $dst_file;
 }
