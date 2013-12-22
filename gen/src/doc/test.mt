@@ -38,9 +38,9 @@ EOT
 
 <pre>
 1..1
-	ok 1
-	ok 2
-	1..2
+  ok 1
+  ok 2
+  1..2
 ok 1 - testAdd
 </pre>
 
@@ -72,10 +72,9 @@ EOT
 <h2>Asynchronous Test</h2>
 
 <p>
-<code>test-case.jsx</code> supports asynchronous tests, which are not completed in serial. Rather, a test runs while another test waits for completion.
-</p>
+<code>test-case.jsx</code> supports asynchronous tests to test callback-based methods, such as <code>Timer.setTimeout()</code>.</p>
 
-<p>An asynchronous test start with <code>this.async()</code> method, taking a block with an AsyncContext instance, and telling it that the test is done.</p>
+<p>An asynchronous test starts with <code>this.async()</code> method, taking a block with an AsyncContext instance, and telling it that the test is done.</p>
 
 <?= $context->{prettify}->('jsx', <<'EOT')
 import "test-case.jsx";
@@ -93,6 +92,68 @@ class _Test extends TestCase {
         async.done(); // to tell this test is finished
       }, to);
     }, 1000 /* timeout in milliseconds */);
+  }
+}
+EOT
+?>
+
+<h2>Set Up / Tear Down</h2>
+
+<p>You can define <code>setUp()</code> / <code>tearDown()</code> which are called for each test method to manage test environments.</p>
+
+<p>These methods take no arguments for synchronous test methods, while take an AsyncContext for asynchronous test methods.</code>
+
+<?= $context->{prettify}->('jsx', <<'EOT')
+import "test-case.jsx";
+
+// for synchronous test
+class _Test extends TestCase {
+  override function setUp() : void {
+    this.diag("setUp");
+  }
+  override function tearDown() : void {
+    this.diag("tearDown");
+  }
+
+  function testFoo() : void {
+    this.pass("foo");
+  }
+  function testBar() : void {
+    this.pass("bar");
+  }
+}
+EOT
+?>
+
+<?= $context->{prettify}->('jsx', <<'EOT')
+import "test-case.jsx";
+import "timer.jsx";
+
+// for asynchronous test
+class _Test extends TestCase {
+  override function setUp(async : AsyncContext) : void {
+    this.diag("setUp for " + async.name());
+  }
+  override function tearDown(async : AsyncContext) : void {
+    this.diag("tearDown for " + async.name());
+  }
+
+  function testFooAsync() : void {
+    this.async((async) -> {
+      Timer.setTimeout(() -> {
+        this.pass("foo");
+        async.done();
+      }, 1);
+    }, 1000);
+  }
+
+  function testBarAsync() : void {
+    this.async((async) -> {
+      Timer.setTimeout(() -> {
+        this.pass("bar");
+        async.done();
+      }, 1);
+    }, 1000);
   }
 }
 EOT
