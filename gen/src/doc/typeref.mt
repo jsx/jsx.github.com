@@ -10,7 +10,7 @@
 
 <h2>Primitive Types</h2>
 
-<p>JSX provides the following four primitive types.  Primitive types are non-nullable. <code>Int</code> exists as a type, but would be equal to or slower than using <code>number</code> in some cases (the definition of <code>int</code> is: an integral number between -2<sup>31</sup> to 2<sup>31</sup>-1, or <code>NaN</code>, or <code>+-Infinity</code>).</p>
+<p>JSX provides the following four primitive types. Primitive types are non-nullable.</p>
 
 <ul>
 <li><code>boolean</code></li>
@@ -18,6 +18,8 @@
 <li><code>string</code></li>
 <li><code>(int)</code></li>
 </ul>
+
+<p><code>Int</code> (represents 32-bit signed integer) exists as a type, but variables (or properties or constants) of the type are generated only when the type is specified explicitly (i.e. <code>var n = 1;</code> defines a variable <code>n</code> of type <code>number</code>, <code>var i : int = 1;</code> defines a variable <code>i</code> of type <code>int</code>).  This is due to the fact that the use of <code>int</code> may lead to slower execution speed.</p>
 
 <h2>Nullable Primitive Types</h2>
 
