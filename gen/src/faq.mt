@@ -35,7 +35,7 @@ JSX emits JavaScript fully-annotated by type hints understood by Google Closure 
 <h3>Q. What are the future plans?</h3>
 
 <div>
-Some of the fetures we might add to the language are: generic programming, asynchronous error handling, default arguments, named arguments, node.js support.
+Some of the features we might add to the language are: generic programming, asynchronous error handling, default arguments, named arguments, node.js support.
 </div>
 
 <h3>Q. How can I contribute?</h3>
@@ -44,7 +44,7 @@ Some of the fetures we might add to the language are: generic programming, async
 Your contribution is welcome in all areas, from contribution to the language development to tweeting about JSX :-)
 </div>
 <div>
-We deseparately need more libraries, including a high-level interface for web programming (like jQuery).  Although it would not be included as part of the JSX distribution, such a library would help us and others using JSX a lot!
+We desperately need more libraries, including a high-level interface for web programming (like jQuery).  Although it would not be included as part of the JSX distribution, such a library would help us and others using JSX a lot!
 </div>
 <div>
 It would also be great if we could have syntax coloring support in editors other than vim (.vim file for syntax coloring of JSX code is included in the etc/ directory of the distribution).
