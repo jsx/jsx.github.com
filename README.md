@@ -1,7 +1,6 @@
-UPDATE THE SITE
-=====================
+UPDATING THE SITE
+=================
 
-Almost all the HTML files are generated from the templates.
-Do not edit `*.html` themself. Edit `src/**/*.mt` instead.
+The contents of this web site is automatically generated from https://github.com/jsx/JSX (esp. the doc/ directory).
 
-`make` command generates HTML files.
+Please submit changes to the aforementioned repository.
